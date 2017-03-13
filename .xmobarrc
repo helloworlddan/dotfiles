@@ -31,5 +31,5 @@ Config { font = "-*-fixed-medium-r-normal-*-11-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%hostname% | %cpu% | %memory% | %enp0s3% }{ %date% | %EDDT% | %uname%"
+       , template = " %hostname% | %cpu% | %memory% | %enp0s3% }{ %date% | %EDDT% | %uname% "
        }

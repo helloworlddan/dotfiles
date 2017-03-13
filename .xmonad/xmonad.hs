@@ -6,9 +6,11 @@ import System.IO
 baseConfig = desktopConfig
 
 main = do
+  xmproc <- spawnPipe "urxvtd"
   xmproc <- spawnPipe "xmobar"
+  xmproc <- spawnPipe "VBoxClient-all"
   xmonad $ baseConfig
-    { terminal = "xfce4-terminal"
+    { terminal = "urxvtc"
     , borderWidth = 2
     , normalBorderColor = "#404040"
     , focusedBorderColor = "#ffffff"
