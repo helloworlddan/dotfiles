@@ -1,4 +1,4 @@
-Xft.dpi: 80
+Xft.dpi: 100
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintfull
@@ -8,31 +8,42 @@ Xft.rgba: rgb
 Uft.font: -*-montecarlo-medium-r-normal-*-11-*-*-*-*-*-*-*
 
 URxvt.font: -*-montecarlo-medium-r-normal-*-11-*-*-*-*-*-*-*
-URxvt.background: #252525
-URxvt.foreground: white
 URxvt.scrollBar: false
 
+! special
+*.foreground:   #d4dee9
+*.background:   #030405
+*.cursorColor:  #d4dee9
+
 ! black
-URxvt.color0  : #2E3436
-URxvt.color8  : #555753
+*.color0:       #05080b
+*.color8:       #977a44
+
 ! red
-URxvt.color1  : #CC0000
-URxvt.color9  : #EF2929
+*.color1:       #10161b
+*.color9:       #5a9089
+
 ! green
-URxvt.color2  : #4E9A06
-URxvt.color10 : #8AE234
+*.color2:       #1f2830
+*.color10:      #c99bd4
+
 ! yellow
-URxvt.color3  : #C4A000
-URxvt.color11 : #FCE94F
+*.color3:       #34414d
+*.color11:      #83b66e
+
 ! blue
-URxvt.color4  : #3465A4
-URxvt.color12 : #729FCF
+*.color4:       #4f6071
+*.color12:      #d77189
+
 ! magenta
-URxvt.color5  : #75507B
-URxvt.color13 : #AD7FA8
+*.color5:       #6f879e
+*.color13:      #d174e3
+
 ! cyan
-URxvt.color6  : #06989A
-URxvt.color14 : #34E2E2
+*.color6:       #98b3ce
+*.color14:      #e46c8b
+
 ! white
-URxvt.color7  : #D3D7CF
-URxvt.color15 : #EEEEEC
+*.color7:       #dbe3ed
+*.color15:      #e46c8b
+

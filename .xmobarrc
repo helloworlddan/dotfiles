@@ -1,9 +1,9 @@
 Config { font = "-*-fixed-medium-r-normal-*-11-*-*-*-*-*-*-*"
        , additionalFonts = []
-       , borderColor = "#252525"
+       , borderColor = "#030405"
        , border = TopB
-       , bgColor = "#252525"
-       , fgColor = "grey"
+       , bgColor = "#030405"
+       , fgColor = "#e46c8b"
        , alpha = 255
        , position = Top
        , textOffset = -1
