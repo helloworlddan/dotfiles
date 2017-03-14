@@ -5,6 +5,7 @@ Xft.hintstyle: hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
+Uft.font: -*-montecarlo-medium-r-normal-*-11-*-*-*-*-*-*-*
 
 URxvt.font: -*-montecarlo-medium-r-normal-*-11-*-*-*-*-*-*-*
 URxvt.background: #252525
