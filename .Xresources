@@ -5,45 +5,46 @@ Xft.hintstyle: hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-Uft.font: -*-montecarlo-medium-r-normal-*-11-*-*-*-*-*-*-*
+Uft.font: -*-montecarlo-medium-r-normal-*-12-*-*-*-*-*-*-*
 
-URxvt.font: -*-montecarlo-medium-r-normal-*-11-*-*-*-*-*-*-*
+URxvt.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
 URxvt.scrollBar: false
 
+
 ! special
-*.foreground:   #d4dee9
-*.background:   #030405
-*.cursorColor:  #d4dee9
+*.foreground:   #e1dfe1
+*.background:   #020202
+*.cursorColor:  #e1dfe1
 
 ! black
-*.color0:       #05080b
-*.color8:       #977a44
+*.color0:       #040404
+*.color8:       #f08480
 
 ! red
-*.color1:       #10161b
-*.color9:       #5a9089
+*.color1:       #141214
+*.color9:       #2aa9aa
 
 ! green
-*.color2:       #1f2830
-*.color10:      #c99bd4
+*.color2:       #272427
+*.color10:      #23d9db
 
 ! yellow
-*.color3:       #34414d
-*.color11:      #83b66e
+*.color3:       #413c40
+*.color11:      #3cb95f
 
 ! blue
-*.color4:       #4f6071
-*.color12:      #d77189
+*.color4:       #615b60
+*.color12:      #88a5e7
 
 ! magenta
-*.color5:       #6f879e
-*.color13:      #d174e3
+*.color5:       #898187
+*.color13:      #f365e4
 
 ! cyan
-*.color6:       #98b3ce
-*.color14:      #e46c8b
+*.color6:       #b4aeb3
+*.color14:      #37c9cb
 
 ! white
-*.color7:       #dbe3ed
-*.color15:      #e46c8b
+*.color7:       #e4e2e3
+*.color15:      #f4beed
 
