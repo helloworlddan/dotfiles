@@ -22,15 +22,12 @@ Config { font = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*"
  		    , Run DiskIO [("/", "I/O: <read> <write>")] [] 20
 		    , Run BatteryP ["BAT0"] ["-t", "Bat: <left>%"] 600
                     , Run DynNetwork ["-t", "Net: <rx>K <tx>K", "-L","0","-H","32", "--normal","green","--high","red"] 20
+		    , Run Wireless "wlp2s0" ["-t", "<essid>"] 600
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
- 		    , Run Weather "EDDT" ["-t","<station>: <tempC>C",
-                                          "-L","18","-H","25",
-                                          "--normal","green",
-                                          "--high","red",
-                                          "--low","lightblue"] 36000
+ 		    , Run Weather "EDDT" ["-t","<station>: <tempC>C", "-L","18","-H","25", "--normal","green", "--high","red", "--low","lightblue"] 36000
                     , Run Com "uname" ["-s","-r"] "" 36000
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %hostname% | %cpu% %thermal0% | %memory% | %diskio% | %battery% | %dynnetwork% }{ %date% | %EDDT% | %uname% "
+       , template = " %hostname% | %cpu% %thermal0% | %memory% | %diskio% | %battery% | %dynnetwork% %wlp2s0wi% }{ %date% | %EDDT% | %uname% "
        }
