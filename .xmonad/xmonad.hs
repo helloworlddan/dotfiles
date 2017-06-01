@@ -6,9 +6,9 @@ import XMonad.Util.EZConfig
 import System.IO
 
 main = do
+  xmproc <- spawnPipe "feh --bg-scale ~/Pictures/Wallpapers/Alejandra/_MG_6088.jpg &"
   xmproc <- spawnPipe "xmobar"
   xmproc <- spawnPipe "urxvtd"
-  xmproc <- spawnPipe "VBoxClient-all"
   xmonad $ defaultConfig
     { modMask = mod4Mask
     , manageHook = manageDocks <+> manageHook defaultConfig
@@ -21,6 +21,6 @@ main = do
     , normalBorderColor = "#404040"
     , focusedBorderColor = "#d4dee9"
     }
-	`additionalKeys`
-		[ ((mod4Mask, xK_r ), spawn "dmenu_run -nb '#030405' -nf '#e46c8b' -fn 'terminus-8'")
+      `additionalKeys`
+          [ ((mod4Mask, xK_r ), spawn "dmenu_run -nb '#030405' -nf '#e46c8b' -fn 'terminus-9'")
 	]

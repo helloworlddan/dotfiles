@@ -2,8 +2,8 @@ Config { font = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*"
        , additionalFonts = []
        , borderColor = "#030405"
        , border = TopB
-       , bgColor = "#020202"
-       , fgColor = "#23d9db"
+       , bgColor = "#1d1f21"
+       , fgColor = "#7cafc2"
        , alpha = 255
        , position = Top
        , textOffset = -1
@@ -15,21 +15,22 @@ Config { font = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*"
        , iconRoot = "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run Weather "EDDT" ["-t","<station>: <tempC>C",
+       , commands = [ Run Com "hostname" [] "" 36000
+  		    , Run Cpu ["-L","3","-H","50", "--normal","green","--high","red"] 20
+		    , Run ThermalZone 0 ["-t","<temp>C"] 30
+                    , Run Memory ["-t","Mem: <usedratio>%"] 20
+ 		    , Run DiskIO [("/", "I/O: <read> <write>")] [] 20
+		    , Run BatteryP ["BAT0"] ["-t", "Bat: <left>%"] 600
+                    , Run DynNetwork ["-t", "Net: <rx>K <tx>K", "-L","0","-H","32", "--normal","green","--high","red"] 20
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+ 		    , Run Weather "EDDT" ["-t","<station>: <tempC>C",
                                           "-L","18","-H","25",
                                           "--normal","green",
                                           "--high","red",
                                           "--low","lightblue"] 36000
-                    , Run Network "wlp2s0" ["-L","0","-H","32",
-                                          "--normal","green","--high","red"] 10
-                    , Run Cpu ["-L","3","-H","50",
-                               "--normal","green","--high","red"] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Com "uname" ["-s","-r"] "" 36000
-                    , Run Com "hostname" [] "" 36000
-                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %hostname% | %cpu% | %memory% | %wlp2s0% }{ %date% | %EDDT% | %uname% "
+       , template = " %hostname% | %cpu% %thermal0% | %memory% | %diskio% | %battery% | %dynnetwork% }{ %date% | %EDDT% | %uname% "
        }
