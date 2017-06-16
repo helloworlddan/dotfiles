@@ -1,58 +1,58 @@
+! colors
+
+! special
+*.foreground:   #d1d1d1
+*.background:   #272822 
+*.cursorColor:  #d1d1d1
+
+! black
+*.color0:       #272822
+*.color8:       #75715e
+
+! red
+*.color1:       #f92672
+*.color9:       #f92672
+
+! green
+*.color2:       #a6e22e
+*.color10:      #a6e22e
+
+! yellow
+*.color3:       #f4bf75
+*.color11:      #f4bf75
+
+! blue
+*.color4:       #66d9ef
+*.color12:      #66d9ef
+
+! magenta
+*.color5:       #ae81ff
+*.color13:      #ae81ff
+
+! cyan
+*.color6:       #a1efe4
+*.color14:      #a1efe4
+
+! white
+*.color7:       #f8f8f2
+*.color15:      #f9f8f5
+
 Xft.dpi: 96
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintfull
-Xft.hinting: true 
 Xft.antialias: true
+Xft.hinting: true
 Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
 Xft.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
 
 URxvt.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
-URxvt.scrollBar: false
+URxvt.depth: 32
+URxvt*scrollBar:                      false
+URxvt*mouseWheelScrollPage:           false
+URxvt*cursorBlink:                    true
+URxvt*saveLines:                      5000
+URxvt*perl-ext-common: default,matcher
+URxvt*matcher.button: 1
+URxvt*url-launcher: /usr/bin/google-chrome
 
-! colors
-
-#define base00 #1D1F21
-#define base01 #282828
-#define base02 #383838
-#define base03 #585858
-#define base04 #B8B8B8
-#define base05 #D8D8D8
-#define base06 #E8E8E8
-#define base07 #F8F8F8
-#define base08 #AB4642
-#define base09 #DC9656
-#define base0A #F7CA88
-#define base0B #A1B56C
-#define base0C #86C1B9
-#define base0D #7CAFC2
-#define base0E #BA8BAF
-#define base0F #A16946
-
-*.foreground:   base05
-*.background:   base00
-*.cursorColor:  base05
-
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
-
-*.color8:       base03
-*.color9:       base08
-*.color10:      base0B
-*.color11:      base0A
-*.color12:      base0D
-*.color13:      base0E
-*.color14:      base0C
-*.color15:      base07
-
-*.color16:      base09
-*.color17:      base0F
-*.color18:      base01
-*.color19:      base02
-*.color20:      base04
-*.color21:      base06

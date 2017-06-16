@@ -1,7 +1,8 @@
 #! /bin/sh
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-feh --bg-scale ~/Pictures/Wallpapers/Alejandra/_MG_6088.jpg  &
+[ ! -s ~/.mpd/pid ] && mpd
+feh --bg-scale ~/Pictures/Wallpapers/gray.png &
 setxkbmap de
 sxhkd &
 urxvtd &
@@ -15,4 +16,4 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   false
 bspc config gapless_monocle      true
 
-.config/lemonbar.sh | lemonbar -B "#ff1d1f21" -F "#ffd8d8d8" -f "-xos4-terminus-medium-r-normal--0-0-72-72-c-0-iso8859-1" -a "0" -p
+limones | lemonbar -B "#ff272822" -F "#ffd1d1d1" -f "-xos4-terminus-medium-r-normal--0-0-72-72-c-0-iso8859-1" -a "0" -p
