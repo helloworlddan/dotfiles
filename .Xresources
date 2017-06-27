@@ -44,10 +44,11 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
-Xft.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
+Xft.font: xft:Misc Ohsnapu:pixelsize=13,style=regular
+!Xft.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
 
 !URxvt.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
-URxvt.font: xft:Misc Ohsnap:pixelsize=12,style=regular
+URxvt.font: xft:Misc Ohsnapu:pixelsize=13,style=regular
 URxvt.depth: 32
 URxvt*scrollBar:                      false
 URxvt*mouseWheelScrollPage:           false
