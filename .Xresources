@@ -46,7 +46,8 @@ Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 Xft.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
 
-URxvt.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
+!URxvt.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
+URxvt.font: xft:Misc Ohsnap:pixelsize=12,style=regular
 URxvt.depth: 32
 URxvt*scrollBar:                      false
 URxvt*mouseWheelScrollPage:           false
