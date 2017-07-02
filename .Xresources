@@ -45,16 +45,3 @@ Xft.autohint: false
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 Xft.font: xft:Misc Ohsnapu:pixelsize=13,style=regular
-!Xft.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
-
-!URxvt.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
-URxvt.font: xft:Misc Ohsnapu:pixelsize=13,style=regular
-URxvt.depth: 32
-URxvt*scrollBar:                      false
-URxvt*mouseWheelScrollPage:           false
-URxvt*cursorBlink:                    true
-URxvt*saveLines:                      5000
-URxvt*perl-ext-common: default,matcher
-URxvt*matcher.button: 1
-URxvt*url-launcher: /usr/bin/google-chrome
-

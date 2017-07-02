@@ -1,6 +1,6 @@
 # terminal emulator
 super + Return
-	urxvtc
+	termite
 
 # program launcher
 super + r
