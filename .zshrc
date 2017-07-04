@@ -30,6 +30,18 @@ gitup() {
 	done
 }
 
+pass () {
+	cd ~/Documents/Passwords
+	rm -f pass.yaml.gpg.back
+	cp pass.yaml.gpg pass.yaml.gpg.back
+	gpg -d pass.yaml.gpg > pass.yaml
+	vim pass.yaml
+	rm -f pass.yaml.gpg
+	gpg -e -r daniel@stamer.info pass.yaml
+	rm -f pass.yaml
+	cd ~
+}
+
 backup () {
 	duplicity --encrypt-key daniel@stamer.info $1 /mnt/hdd/backup/$1
 }
