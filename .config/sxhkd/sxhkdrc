@@ -1,3 +1,17 @@
+# audio control
+XF86AudioMute
+	amixer set Master 1+ toggle
+
+XF86AudioLowerVolume
+	amixer set Master 3%-
+
+XF86AudioRaiseVolume
+	amixer set Master 3%+
+
+# lock
+XF86Launch1
+	slock
+
 # terminal emulator
 super + Return
 	termite
@@ -11,10 +25,6 @@ super + g
 	google-chrome-stable
 super + shift + g
 	google-chrome-stable --incognito 
-
-# lock
-super + Pause
-	slock
 
 # make sxhkd reload its configuration files:
 super + Escape
