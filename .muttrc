@@ -4,6 +4,7 @@ set from="daniel.stamer@icloud.com"
 set folder = "~/Mail/icloud/"
 set mbox_type  = Maildir
 set spoolfile = "~/Mail/icloud/Inbox"
+set mailcap_path 	= ~/.mutt/mailcap
 set record = "+Sent Messages"
 set sendmail="/usr/bin/msmtp -a default"
 set use_from=yes
@@ -22,30 +23,130 @@ set sidebar_visible = yes
 set sidebar_width   = 20
 set status_chars  = " *%A"
 set status_format = "───────────────────[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+set envelope_from
+set sig_dashes
+set edit_headers
+set fast_reply
+set askcc
+set fcc_attach
+set forward_format  = "Fwd: %s"
+set forward_decode
+set attribution     = "On %d, %n wrote:"
+set reply_to
+set reverse_name
+set include
+set forward_quote
+
+auto_view text/html
 
 unset mark_old
 unset confirmappend
+unset mime_forward
 unset move
 
-color status cyan default
-color sidebar_new color221 color233
+color normal     default	default
+color tree	magenta		default
+color error	brightred	default
+color message	brightgreen	default
+color status	brightred		black
+color indicator	yellow 	black
+color index      cyan          default "~u"
+color index_author  brightcyan      default     ".*"
+color index_date    brightblue      default
+color index_number  white           default
+color index_size    blue            default
+color index_flags   white           default     "~F"
+color index         green		default		"~A"
+color index         brightblack		default		"~E"
+color index         brightgreen		black		"~N"
+color index         brightblack		default		"~O"
+color index         brightyellow		default		"~Q"
+color index         blue		default		"~R"
+color index         brightgreen		default		"~U"
+color index         brightyellow    default		"~U~$"
+color index         color241		default		"~v"
+color index         magenta		default		"~P"
+color index         red		default		"~p!~F"
+color index         magenta		default		"~N~p!~F"
+color index         brightgreen		default	"~U~p!~F"
+color index         magenta     default		"~R~p!~F"
+color index         brightyellow		default		"~F"
+color index         brightgreen		default		"~F~p"
+color index         brightgreen		default		"~N~F"
+color index         brightgreen		default		"~N~F~p"
+color index         brightgreen		default		"~U~F~p"
+color index         brightblack		magenta		"~D"
+color index         color245		default		"~v~(!~N)"
+color index         color136		default		"~v~(~N)"
+color index         color64		default		"~N~v~(~N)"
+color header     brightmagenta default "^from:"
+color header     green         default "^to:"
+color header     yellow        default "^cc:"
+color header     blue          default "^date:"
+color header     cyan          default "^subject:"
+color attachment brightblack   default
+color search     red           brightblack
+color signature  cyan          default
+color tilde      brightblack   default
+color hdrdefault yellow        default
+color bold       brightyellow  default
+color body       brightblue    default "(^|<| )mailto:[^ ]+@[^ ]( |>|$)"
+color body       brightblue    default "(^|<| )(http|https|ftp|file|telnet|news|finger)://[^ ]+( |>|$)"
+color body       brightblue   default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
+color body       brightblue   default "((@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]),)*@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]):)?[0-9a-z_.+%$-]+@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\])"
+color body       brightblue   default "(my regex 1)"
+color body       brightcyan   default "(my regex 2)"
+color body       brightred    default "(my regex 3|my regex 4|my regex 5)"
+color body       brightmagenta default "(^| )+(|[<>|])[8;:](|[^ ])[)(/|DOPS]( |$)+"
+color body       brightmagenta default "(^| )+[)(/|DOPS](|[^ ])[8;:](|[<>|])( |$)+"
+color body       brightcyan    default "(^| )\\*[^ ]+\\*( |$)"
+color body       brightcyan    default "(^| )_[^ ]+_( |$)"
+color body       brightcyan    default "(^| )/[^ ]+/( |$)"
+color quoted     magenta       default
+color quoted1    cyan          default
+color quoted2    green         default
+color quoted3    yellow        default
+color quoted4    brightmagenta default
+color quoted5    brightgreen   default
+color quoted6    brightyellow  default
+color quoted7    brightcyan    default
+color progress  white magenta
+color body      brightgreen    default "^gpg signature OK.*"
+color body      yellow         default "^gpg "
+color body      brightred      default "^gpg signature NOT OK. *"
 
 bind index g noop
 bind index gg first-entry
 bind index G  last-entry
+bind pager q           exit
+bind pager /           search
+bind pager k           previous-line
+bind pager j           next-line
+bind pager g          noop
+bind pager gg          top
+bind pager G           bottom
+bind index gg          first-entry
+bind index G           last-entry
+bind pager K           previous-undeleted
+bind pager J           next-undeleted
+bind index K           previous-unread
+bind index J           next-unread
+bind index,pager R     group-reply
 
 macro index,pager <up> "<sidebar-prev>" "previous folder in sidebar"
 macro index,pager <down> "<sidebar-next>" "next folder in sidebar"
 macro index,pager <right> "<sidebar-open>" "open folder in sidebar"
 
+source ~/.mutt/gpg.rc
+
 mailboxes =Inbox \
-=Archives \
-="Sent Messages" \
-="Deleted Messages" \
-=Drafts \
-=Junk \
-=Alejandra \
-="Alejandra's Authority Shit" \
-=Brudi \
-=Kuba \
-=Audiowolf
+		   =Archive \
+		   ="Sent Messages" \
+		   ="Deleted Messages" \
+		   =Drafts \
+		   =Junk \
+		   =Alejandra \
+		   ="Alejandra's Authority Shit" \
+		   =Brudi \
+		   =Kuba \
+		   =Audiowolf
