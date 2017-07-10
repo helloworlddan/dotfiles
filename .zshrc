@@ -22,6 +22,10 @@ nls() {
         ls -c ~/Notes/ | grep "$*"
 }
 
+mails() {
+	mbsync -a && mutt && mbsync -a
+}
+
 gitup() {
 	for d in */ ; do
 		cd  $d

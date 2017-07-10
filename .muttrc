@@ -1,0 +1,51 @@
+set my_name = "Daniel Stamer"
+set realname="Daniel Stamer"
+set from="daniel.stamer@icloud.com"
+set folder = "~/Mail/icloud/"
+set mbox_type  = Maildir
+set spoolfile = "~/Mail/icloud/Inbox"
+set record = "+Sent Messages"
+set sendmail="/usr/bin/msmtp -a default"
+set use_from=yes
+set editor = vim
+set envelope_from=yes
+set wait_key   = no
+set timeout    = 3
+set mail_check = 0
+set markers    = no
+set delete
+set quit
+set beep_new
+set pipe_decode
+set thorough_search
+set sidebar_visible = yes
+set sidebar_width   = 20
+set status_chars  = " *%A"
+set status_format = "───────────────────[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+unset mark_old
+unset confirmappend
+unset move
+
+color status cyan default
+color sidebar_new color221 color233
+
+bind index g noop
+bind index gg first-entry
+bind index G  last-entry
+
+macro index,pager <up> "<sidebar-prev>" "previous folder in sidebar"
+macro index,pager <down> "<sidebar-next>" "next folder in sidebar"
+macro index,pager <right> "<sidebar-open>" "open folder in sidebar"
+
+mailboxes =Inbox \
+=Archives \
+="Sent Messages" \
+="Deleted Messages" \
+=Drafts \
+=Junk \
+=Alejandra \
+="Alejandra's Authority Shit" \
+=Brudi \
+=Kuba \
+=Audiowolf
