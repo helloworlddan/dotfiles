@@ -47,5 +47,5 @@ pass () {
 }
 
 backup () {
-	duplicity --encrypt-key daniel@stamer.info $1 /mnt/hdd/backup/$1
+	duplicity --encrypt-key daniel@stamer.info $1 file:///mnt/hdd/backup/$1
 }
