@@ -20,7 +20,7 @@ set beep_new
 set pipe_decode
 set thorough_search
 set sidebar_visible = yes
-set sidebar_width   = 20
+set sidebar_width   = 29
 set status_chars  = " *%A"
 set status_format = "───────────────────[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 set envelope_from
@@ -133,6 +133,7 @@ bind index K           previous-unread
 bind index J           next-unread
 bind index,pager R     group-reply
 
+macro index,pager a "<save-message>=Archive" "move to archive"
 macro index,pager <up> "<sidebar-prev>" "previous folder in sidebar"
 macro index,pager <down> "<sidebar-next>" "next folder in sidebar"
 macro index,pager <right> "<sidebar-open>" "open folder in sidebar"
