@@ -42,6 +42,10 @@ pass () {
 	cd ~
 }
 
+lan() {
+    sudo netctl stop-all && sudo netctl start $1
+}
+
 backup () {
 	duplicity --encrypt-key daniel@stamer.info $1 file:///mnt/hdd/backup/$1
 }

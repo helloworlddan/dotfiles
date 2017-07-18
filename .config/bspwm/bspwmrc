@@ -2,7 +2,7 @@
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-feh --bg-scale ~/Pictures/Wallpapers/m6io6j1.jpg &
+feh --bg-scale ~/Pictures/Wallpapers/Alejandra/_MG_6140.jpg &
 setxkbmap de
 
 sxhkd &
