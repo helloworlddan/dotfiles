@@ -13,6 +13,7 @@ ssh-add -l | grep "The agent has no identities" && ssh-add
 
 prompt "paradox"
 
+export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR=vim
 export GOPATH="$HOME/Development/Go"
 export PATH="$GOPATH/bin:$PATH"
