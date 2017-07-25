@@ -48,7 +48,7 @@ Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
-Xft.autohint: false
+Xft.autohint: true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
-Xft.font: xft:Misc Ohsnapu:pixelsize=13,style=regular
+Xft.font: xft:Hack:pixelsize=11,style=regular

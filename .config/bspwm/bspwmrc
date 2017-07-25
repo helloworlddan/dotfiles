@@ -16,4 +16,4 @@ bspc config borderless_monocle   	true
 bspc config gapless_monocle      	true
 bspc config focus_follows_pointer 	true
 
-limones | lemonbar -B "#ff272822" -F "#fff8f8f2" -f "misc ohsnapu-10" -a "0" -p
+limones | lemonbar -B "#ff272822" -F "#fff8f8f2" -f "hack-9" -a "0" -p

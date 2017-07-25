@@ -18,7 +18,7 @@ super + Return
 
 # program launcher
 super + r
-	dmenu_run -i -q -fn 'misc ohsnapu-10' -nb "#272822" -sb "#272822" -nf "#f8f8f2" -p " ) "
+	dmenu_run -i -q -fn 'Hack-9' -nb "#272822" -sb "#272822" -nf "#f8f8f2" -p " ) "
 
 # program launcher
 super + g
