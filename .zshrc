@@ -46,6 +46,13 @@ lan() {
     sudo netctl stop-all && sudo netctl start $1
 }
 
-backup () {
+backup() {
     duplicity --encrypt-key daniel@stamer.info $1 file:///mnt/hdd/backup/$1
+}
+
+backupall(){
+    for d in */ ; do
+        echo BACKING UP $d
+        backup $d
+    done
 }
