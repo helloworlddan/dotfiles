@@ -20,7 +20,6 @@ export EDITOR=vim
 export GOPATH="$HOME/Development/Go"
 export PATH="$GOPATH/bin:$PATH"
 
-
 weather(){
     curl wttr.in/Berlin
 }
@@ -66,4 +65,8 @@ backupall(){
         echo BACKING UP $d
         backup $d
     done
+}
+
+backup-stats(){
+    duplicity collection-status file:///mnt/hdd/backup/$1
 }
