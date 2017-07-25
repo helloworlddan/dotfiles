@@ -7,7 +7,7 @@ setxkbmap de
 
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d web dev eml trm trm trm trm trm trm
 bspc config border_width         	2
 bspc config window_gap           	10
 bspc config split_ratio          	0.5
