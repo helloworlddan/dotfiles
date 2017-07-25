@@ -13,6 +13,8 @@ ssh-add -l | grep "The agent has no identities" && ssh-add
 
 prompt "paradox"
 
+export GPG_TTY=$(tty)
+export GPGKEY=9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
 export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR=vim
 export GOPATH="$HOME/Development/Go"
