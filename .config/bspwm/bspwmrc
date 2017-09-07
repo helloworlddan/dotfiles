@@ -1,8 +1,14 @@
 #! /bin/sh
 
-bspc monitor  -d web dev eml trm trm trm trm trm trm
-#bspc monitor LVDS-1 -d web dev eml trm trm trm trm trm trm
-#bspc monitor VGA-1 -d web dev eml trm trm trm trm trm trm
+VGA=$(xrandr | grep "VGA1 disconnected")
+
+if [ -z "$VGA" ]
+then
+    bspc monitor -n LVDS-1 -d I II III IV V VI VII VIII IX
+    bspc monitor -n VGA-1 -d I II III IV V VI VII VIII IX
+else
+    bspc monitor -n LVDS-1 -d I II III IV V VI VII VIII IX
+fi
 
 bspc config border_width         	2
 bspc config window_gap           	10

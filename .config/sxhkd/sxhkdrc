@@ -28,7 +28,7 @@ super + shift + g
 
 # reload sxhkd & bspwm
 super + shift + Escape
-	pkill -USR1 -x sxhkd && source ~/.source/bspwm/bspwmrc
+	pkill -USR1 -x sxhkd && source ~/.config/bspwm/bspwmrc
 
 # quit bspwm normally
 super Escape
