@@ -70,3 +70,7 @@ backupall(){
 backup-stats(){
     duplicity collection-status file:///mnt/hdd/backup/$1
 }
+
+wubba(){
+    head -$((${RANDOM} % `wc -l < ~/.rickandmorty.txt` + 1)) ~/.rickandmorty.txt | tail -1
+}
