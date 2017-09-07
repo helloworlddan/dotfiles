@@ -24,22 +24,22 @@ super + r
 super + g
 	google-chrome-stable
 super + shift + g
-	google-chrome-stable --incognito 
+	google-chrome-stable --incognito
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+# reload sxhkd & bspwm
+super + shift + Escape
+	pkill -USR1 -x sxhkd && source ~/.source/bspwm/bspwmrc
 
 # quit bspwm normally
-super + shift + Escape
+super Escape
 	killall /usr/bin/bash && bspc quit
 
 # close and kill
-super + q 
+super + q
 	bspc node -{c,k}
 
 # monocle current node
-super + space 
+super + space
 	bspc desktop -l next
 
 # biggest node!

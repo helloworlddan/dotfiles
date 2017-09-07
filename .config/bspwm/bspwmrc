@@ -1,13 +1,9 @@
 #! /bin/sh
 
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+bspc monitor  -d web dev eml trm trm trm trm trm trm
+#bspc monitor LVDS-1 -d web dev eml trm trm trm trm trm trm
+#bspc monitor VGA-1 -d web dev eml trm trm trm trm trm trm
 
-feh --bg-scale ~/Pictures/Wallpapers/Alejandra/_MG_6140.jpg &
-setxkbmap de
-
-sxhkd &
-
-bspc monitor -d web dev eml trm trm trm trm trm trm
 bspc config border_width         	2
 bspc config window_gap           	10
 bspc config split_ratio          	0.5
@@ -15,5 +11,3 @@ bspc config borderless_monocle   	true
 
 bspc config gapless_monocle      	true
 bspc config focus_follows_pointer 	true
-
-limones | lemonbar -B "#ff272822" -F "#fff8f8f2" -f "hack-9" -a "0" -p
