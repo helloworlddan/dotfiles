@@ -74,3 +74,7 @@ backup-stats(){
 wubba(){
     head -$((${RANDOM} % `wc -l < ~/.rickandmorty.txt` + 1)) ~/.rickandmorty.txt | tail -1
 }
+
+trek(){
+    play -n -c1 synth whitenoise band -n 100 20 band -n 50 20 gain +30 fade h 1 86400 1
+}
