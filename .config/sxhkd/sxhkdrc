@@ -21,10 +21,10 @@ super + r
 	dmenu_run -i -q -fn 'Hack-9' -nb "#272822" -sb "#272822" -nf "#f8f8f2" -p " ) "
 
 # program launcher
-super + g
-	google-chrome-stable
-super + shift + g
-	google-chrome-stable --incognito
+super + f
+	firefox
+super + shift + f
+	firefox --private-window
 
 # reload sxhkd & bspwm
 super + shift + Escape
