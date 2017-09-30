@@ -21,9 +21,9 @@ super + r
 	dmenu_run -i -q -fn 'Hack-9' -nb "#272822" -sb "#272822" -nf "#f8f8f2" -p " ) "
 
 # program launcher
-super + f
+super + b
 	firefox
-super + shift + f
+super + shift + b
 	firefox --private-window
 
 # reload sxhkd & bspwm
