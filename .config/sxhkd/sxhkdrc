@@ -32,7 +32,7 @@ super + shift + Escape
 
 # quit bspwm normally
 super Escape
-	killall /usr/bin/bash && bspc quit
+	bspc quit
 
 # close and kill
 super + q
