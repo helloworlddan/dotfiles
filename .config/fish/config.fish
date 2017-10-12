@@ -4,21 +4,48 @@ if status --is-login
     set PATH $PATH /usr/bin /sbin
 end
 
-# Power up SSH agent and add keys
-if [ ! -S ~/.ssh/ssh_auth_sock ]
-  eval (ssh-agent -c)
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-end
-
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add > /dev/null ^ /dev/null
-
 set GPG_TTY '(tty)'
 set GPGKEY 9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
 set PINENTRY_USER_DATA 'USE_CURSES=1'
 set EDITOR vim
 set GOPATH "$HOME/Development/Go"
 set PATH $PATH "$GOPATH/bin"
+
+setenv SSH_ENV $HOME/.ssh/environment
+
+function start_agent
+	if [ -n "$SSH_AGENT_PID" ]
+    		ps -ef | grep $SSH_AGENT_PID | grep ssh-agent > /dev/null
+    		if [ $status -eq 0 ]
+        		test_identities
+    		end
+	else
+    		if [ -f $SSH_ENV ]
+        		. $SSH_ENV > /dev/null
+    		end
+    	ps -ef | grep $SSH_AGENT_PID | grep -v grep | grep ssh-agent > /dev/null
+    	if [ $status -eq 0 ]
+        	test_identities
+    	else
+    		echo "Initializing new SSH agent ..."
+	        ssh-agent -c | sed 's/^echo/#echo/' > $SSH_ENV
+    		echo "succeeded"
+		chmod 600 $SSH_ENV
+		. $SSH_ENV > /dev/null
+    		ssh-add
+	end
+	end
+end
+
+function test_identities
+    ssh-add -l | grep "The agent has no identities" > /dev/null
+    if [ $status -eq 0 ]
+        ssh-add
+        if [ $status -eq 2 ]
+            start_agent
+        end
+    end
+end
 
 function weather
     curl wttr.in/Berlin
@@ -33,7 +60,7 @@ function nls
 end
 
 function gitup
-    for d in */ ; do
+    for d in */
         cd  $d
         git pull --all
         cd ..
@@ -61,7 +88,7 @@ function backup
 end
 
 function backupall
-    for d in */ ; do
+    for d in */
         echo BACKING UP $d
         backup $d
     end
@@ -78,3 +105,5 @@ end
 function noise
     play -n synth brownnoise synth pinknoise mix synth sine amod 0 10
 end
+
+start_agent
