@@ -51,14 +51,6 @@ function weather
     curl wttr.in/Berlin
 end
 
-function n
-    $EDITOR ~/Notes/$argv
-end
-
-function nls
-    ls -c ~/Notes/ | grep $argv
-end
-
 function gitup
     for d in */
         cd  $d
