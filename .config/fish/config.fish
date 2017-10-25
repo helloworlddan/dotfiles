@@ -46,6 +46,10 @@ function test_identities
     end
 end
 
+function mutt
+    neomutt
+end
+
 function weather
     curl wttr.in/Berlin
 end
