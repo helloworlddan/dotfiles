@@ -1,7 +1,8 @@
 set fish_greeting
 
 if status --is-login
-    set PATH $PATH /usr/bin /sbin
+    set PATH $PATH /usr/bin /sbin /usr/lib/neomutt
+    gpg-agent
 end
 
 set GPGKEY 9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
@@ -26,9 +27,7 @@ function start_agent
     	if [ $status -eq 0 ]
         	test_identities
     	else
-    		echo "Initializing new SSH agent ..."
 	        ssh-agent -c | sed 's/^echo/#echo/' > $SSH_ENV
-    		echo "succeeded"
 		chmod 600 $SSH_ENV
 		. $SSH_ENV > /dev/null
     		ssh-add
