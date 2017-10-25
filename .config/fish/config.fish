@@ -4,9 +4,8 @@ if status --is-login
     set PATH $PATH /usr/bin /sbin
 end
 
-set GPG_TTY '(tty)'
 set GPGKEY 9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
-set PINENTRY_USER_DATA 'USE_CURSES=1'
+set PINENTRY_USER_DATA "USE_CURSES=1"
 set EDITOR vim
 set GOPATH "$HOME/Development/Go"
 set PATH $PATH "$GOPATH/bin"
@@ -96,6 +95,10 @@ end
 
 function noise
     play -n synth brownnoise synth pinknoise mix synth sine amod 0 10
+end
+
+function ratemirrors
+    sudo reflector --verbose --country 'Germany' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 end
 
 start_agent
