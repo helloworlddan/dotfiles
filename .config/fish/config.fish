@@ -2,9 +2,9 @@ set fish_greeting
 
 if status --is-login
     set PATH $PATH /usr/bin /sbin /usr/lib/neomutt
-    gpg-agent
 end
 
+set GPG_TTY (tty)
 set GPGKEY 9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
 set PINENTRY_USER_DATA "USE_CURSES=1"
 set EDITOR vim
