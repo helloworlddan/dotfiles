@@ -73,6 +73,18 @@ function pass
     cd ~
 end
 
+function passcr
+    cd ~/Documents/Passwords
+    rm -f cloudreach.yaml.gpg.back
+    cp cloudreach.yaml.gpg cloudreach.yaml.gpg.back
+    gpg -d cloudreach.yaml.gpg > cloudreach.yaml
+    vim cloudreach.yaml
+    rm -f cloudreach.yaml.gpg
+    gpg -e -r daniel@stamer.info cloudreach.yaml
+    rm -f cloudreach.yaml
+    cd ~
+end
+
 function lan
     sudo netctl stop-all; and sudo netctl start $argv
 end
