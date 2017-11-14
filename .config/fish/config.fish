@@ -85,6 +85,10 @@ function passcr
     cd ~
 end
 
+function xq
+    source-highlight -s xml -f esc
+end
+
 function lan
     sudo netctl stop-all; and sudo netctl start $argv
 end
