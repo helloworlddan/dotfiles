@@ -20,6 +20,7 @@ limones | lemonbar -B "#ff272822" -F "#fff8f8f2" -f "hack-9" -a "0" -p &
 unclutter -idle 1 -jitter 2 -root &
 
 bspc config border_width         	2
+bspc config focused_border_color    "#ffffff"
 bspc config window_gap           	10
 bspc config split_ratio          	0.5
 bspc config borderless_monocle   	true
