@@ -20,7 +20,7 @@ super + Return
 super + r
 	dmenu_run -i -q -fn 'Hack-9' -nb "#272822" -sb "#272822" -nf "#f8f8f2" -p " ➜ "
 
-# program launcher
+# launchers
 super + w
 	firefox-beta --new-window
 	#firefox --new-window
@@ -28,6 +28,9 @@ super + w
 super + shift + w
 	firefox-beta --private-window
 	#firefox --private-window
+
+super + c
+    code
 
 # reload sxhkd & bspwm
 super + shift + Escape
