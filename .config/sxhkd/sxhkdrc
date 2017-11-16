@@ -22,12 +22,10 @@ super + r
 
 # launchers
 super + w
-	firefox-beta --new-window
-	#firefox --new-window
+	firefox --new-window
 
 super + shift + w
-	firefox-beta --private-window
-	#firefox --private-window
+	firefox --private-window
 
 super + c
     code
