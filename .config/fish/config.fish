@@ -1,7 +1,7 @@
 set fish_greeting
 
 if status --is-login
-    set PATH $PATH /usr/bin /sbin /usr/lib/neomutt
+    set PATH $PATH /usr/bin /sbin
 end
 
 set -x GPG_TTY (tty)
@@ -46,7 +46,7 @@ function test_identities
 end
 
 function mutt
-    neomutt
+    /usr/lib/neomutt
 end
 
 function weather
