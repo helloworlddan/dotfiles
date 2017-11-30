@@ -2,7 +2,12 @@ syntax on
 syntax enable
 filetype plugin on
 filetype indent on
-colorscheme base16-monokai
+
+try
+	colorscheme base16-monokai
+catch
+endtry
+
 set background=dark
 set ruler
 set number
