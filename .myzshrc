@@ -1,5 +1,49 @@
 #!/bin/zsh
 
+
+# Power up SSH agent and add keys
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l | grep "The agent has no identities" && ssh-add
+
+export GPG_TTY=$(tty)
+export GPGKEY=9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
+export PINENTRY_USER_DATA="USE_CURSES=1"
+export EDITOR=vim
+export GOPATH="$HOME/Code/Go"
+export PATH="$GOPATH/bin:$PATH"
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
-source /usr/local/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_PYTHON=$(which python)
+
+source /usr/local/bin/virtualenvwrapper.sh
+
+weather(){
+    curl wttr.in/Berlin
+}
+
+pass () {
+    cd ~/Documents/Passwords
+    rm -f pass.yaml.gpg.back
+    cp pass.yaml.gpg pass.yaml.gpg.back
+    gpg -d pass.yaml.gpg > pass.yaml
+    vim pass.yaml
+    rm -f pass.yaml.gpg
+    gpg -e -r daniel@stamer.info pass.yaml
+    rm -f pass.yaml
+    cd ~
+}
+
+passcr () {
+    cd ~/Documents/Passwords
+    rm -f cloudreach.yaml.gpg.back
+    cp cloudreach.yaml.gpg cloudreach.yaml.gpg.back
+    gpg -d cloudreach.yaml.gpg > cloudreach.yaml
+    vim cloudreach.yaml
+    rm -f cloudreach.yaml.gpg
+    gpg -e -r daniel@stamer.info cloudreach.yaml
+    rm -f cloudreach.yaml
+    cd ~
+}
