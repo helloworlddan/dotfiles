@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+ZSH_THEME="ys"
 
 # Power up SSH agent and add keys
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
