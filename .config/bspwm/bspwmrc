@@ -14,7 +14,7 @@ else
 fi
 
 setxkbmap de
-feh --bg-fill ~/Pictures/Wallpapers/mountains.jpg &
+feh --bg-fill ~/Pictures/Shoots/Alejandra\ Harley/_MG_6045.jpg &
 sxhkd &
 limones | lemonbar -B "#ff272822" -F "#fff8f8f2" -f "hack-9" -a "0" -p &
 unclutter -idle 1 -jitter 2 -root &
