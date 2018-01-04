@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 VGA=$(xrandr | grep "VGA1 disconnected")
 
