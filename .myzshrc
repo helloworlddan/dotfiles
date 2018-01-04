@@ -21,12 +21,16 @@ export VIRTUALENVWRAPPER_PYTHON=$(which python)
 
 source /usr/local/bin/virtualenvwrapper.sh
 
+if [ -f $HOME/.bash-insulter/src/bash.command-not-found ]; then
+	source $HOME/.bash-insulter/src/bash.command-not-found
+fi
+
 weather(){
     curl wttr.in/Berlin
 }
 
 pass () {
-    cd ~/Documents/Passwords
+    cd ~/Passwords
     rm -f pass.yaml.gpg.back
     cp pass.yaml.gpg pass.yaml.gpg.back
     gpg -d pass.yaml.gpg > pass.yaml
@@ -38,7 +42,7 @@ pass () {
 }
 
 passcr () {
-    cd ~/Documents/Passwords
+    cd ~/Passwords
     rm -f cloudreach.yaml.gpg.back
     cp cloudreach.yaml.gpg cloudreach.yaml.gpg.back
     gpg -d cloudreach.yaml.gpg > cloudreach.yaml
