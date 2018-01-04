@@ -7,6 +7,7 @@ if [ ! -S ~/.ssh/ssh_auth_sock ]; then
   eval `ssh-agent`
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
+
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 ssh-add -l | grep "The agent has no identities" && ssh-add
 
@@ -19,7 +20,9 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
 export VIRTUALENVWRAPPER_PYTHON=$(which python)
 
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 if [ -f $HOME/.bash-insulter/src/bash.command-not-found ]; then
 	source $HOME/.bash-insulter/src/bash.command-not-found

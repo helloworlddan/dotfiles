@@ -4,7 +4,6 @@ if status --is-login
     set PATH $PATH /usr/bin /sbin
 end
 
-set -x PATH $HOME/.bin $PATH
 set -x GPG_TTY (tty)
 set -x GPGKEY 9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
 set -x PINENTRY_USER_DATA "USE_CURSES=1"
