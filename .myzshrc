@@ -1,6 +1,16 @@
 #!/bin/zsh
 
-ZSH_THEME="dieter"
+ # short
+ZSH_THEME="gallois"
+# multi line
+ZSH_THEME="gnzh"
+ZSH_THEME="candy"
+ZSH_THEME="mortalscumbag"
+ZSH_THEME="smt"
+ZSH_THEME="wedisagree"
+
+# current
+ZSH_THEME="mh"
 
 # Power up SSH agent and add keys
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
