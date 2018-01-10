@@ -16,6 +16,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
+plugins=(
+	git brew aws docker virtualenvwrapper vagrant python
+)
+
 export GPG_TTY=$(tty)
 export GPGKEY=9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
 export PINENTRY_USER_DATA="USE_CURSES=1"
