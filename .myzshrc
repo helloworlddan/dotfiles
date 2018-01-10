@@ -17,7 +17,7 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 plugins=(
-	git brew aws docker virtualenvwrapper vagrant python
+	git brew aws docker vagrant python
 )
 
 export GPG_TTY=$(tty)
