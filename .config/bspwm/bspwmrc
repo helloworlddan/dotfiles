@@ -14,7 +14,7 @@ else
 fi
 
 setxkbmap de
-feh --bg-fill ~/Wallpapers/backdrop.jpg &
+xsetroot -solid '#272822'
 sxhkd &
 limones | lemonbar -B "#ff272822" -F "#fff8f8f2" -f "hack-9" -a "0" -p &
 unclutter -idle 1 -jitter 2 -root &
