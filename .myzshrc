@@ -12,14 +12,9 @@ ZSH_THEME="wedisagree"
 # current
 ZSH_THEME="mh"
 
-# Power up SSH agent and add keys
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent`
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l | grep "The agent has no identities" && ssh-add
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
 
 export GPG_TTY=$(tty)
 export GPGKEY=9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
@@ -29,18 +24,15 @@ export GOPATH="$HOME/Code/Go"
 export PATH="$GOPATH/bin:$PATH"
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
 export VIRTUALENVWRAPPER_PYTHON=$(which python)
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
+[ ! -S ~/.ssh/ssh_auth_sock ] && eval `ssh-agent` && ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 
-if [ -f $HOME/.bash-insulter/src/bash.command-not-found ]; then
-	source $HOME/.bash-insulter/src/bash.command-not-found
-fi
+ssh-add -l | grep "The agent has no identities" && ssh-add
 
-weather(){
-    curl wttr.in/Berlin
-}
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
+
+[ -f $HOME/.bash-insulter/src/bash.command-not-found ] && source $HOME/.bash-insulter/src/bash.command-not-found
 
 pass () {
     cd ~/Passwords
