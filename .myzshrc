@@ -1,23 +1,12 @@
 #!/bin/zsh
 
- # short
-ZSH_THEME="gallois"
-# multi line
-ZSH_THEME="gnzh"
-ZSH_THEME="candy"
-ZSH_THEME="mortalscumbag"
-ZSH_THEME="smt"
-ZSH_THEME="wedisagree"
-
-# current
 ZSH_THEME="mh"
-
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 plugins=(
-	git brew aws docker vagrant python
+    git brew aws docker vagrant python
 )
 
 export GPG_TTY=$(tty)
@@ -26,17 +15,29 @@ export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR=vim
 export GOPATH="$HOME/Code/Go"
 export PATH="$GOPATH/bin:$PATH"
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
-export VIRTUALENVWRAPPER_PYTHON=$(which python)
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 [ ! -S ~/.ssh/ssh_auth_sock ] && eval `ssh-agent` && ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-
 ssh-add -l | grep "The agent has no identities" && ssh-add
 
-[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
+if [ "$(hostname)" = "skylake"  ]; then
+    export VIRTUALENVWRAPPER_PYTHON=$(which python)
+    export PATH=/usr/local/opt/python/libexec/bin:$PATH
+    [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
+    [ -f $HOME/.bash-insulter/src/bash.command-not-found ] && source $HOME/.bash-insulter/src/bash.command-not-found
+fi
 
-[ -f $HOME/.bash-insulter/src/bash.command-not-found ] && source $HOME/.bash-insulter/src/bash.command-not-found
+if [ "$(hostname)" = "nehalem"  ]; then
+    echo "I dont give 2 fucks about python."
+fi
+
+if [ "$(hostname)" = "arc"  ]; then
+    alias python=python2
+    alias pip=pip2
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+    [ -f /usr/bin/virtualenvwrapper.sh ] && source /usr/bin/virtualenvwrapper.sh
+fi
 
 pass () {
     cd ~/Passwords
