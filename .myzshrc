@@ -20,18 +20,18 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 [ ! -S ~/.ssh/ssh_auth_sock ] && eval `ssh-agent` && ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 ssh-add -l | grep "The agent has no identities" && ssh-add
 
-if [ "$(hostname)" = "skylake"  ]; then
+if [ "$(hostname -s)" = "skylake"  ]; then
     export VIRTUALENVWRAPPER_PYTHON=$(which python)
     export PATH=/usr/local/opt/python/libexec/bin:$PATH
     [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
     [ -f $HOME/.bash-insulter/src/bash.command-not-found ] && source $HOME/.bash-insulter/src/bash.command-not-found
 fi
 
-if [ "$(hostname)" = "nehalem"  ]; then
+if [ "$(hostname -s)" = "nehalem"  ]; then
     echo "I dont give 2 fucks about python."
 fi
 
-if [ "$(hostname)" = "arc"  ]; then
+if [ "$(hostname -s)" = "arc"  ]; then
     alias python=python2
     alias pip=pip2
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
