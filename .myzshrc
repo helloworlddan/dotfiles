@@ -25,12 +25,11 @@ ssh-add -l | grep "The agent has no identities" && ssh-add
 if [ "$(hostname -s)" = "skylake"  ]; then
     export PATH=/usr/local/opt/python/libexec/bin:$PATH
     export VIRTUALENVWRAPPER_PYTHON=$(which python)
-
     [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ] && source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 
 if [ "$(hostname -s)" = "nehalem"  ]; then
-    echo "I dont give 2 fucks about python."
+    alias mutt=neomutt
 fi
 
 if [ "$(hostname -s)" = "arc"  ]; then
@@ -40,6 +39,8 @@ if [ "$(hostname -s)" = "arc"  ]; then
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
     [ -f /usr/bin/virtualenvwrapper_lazy.sh ] && source /usr/bin/virtualenvwrapper_lazy.sh
 fi
+
+alias weather="curl wttr.in/Berlin"
 
 pass () {
     cd ~/Passwords
