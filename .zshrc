@@ -1,4 +1,4 @@
-export ZSH=/Users/danielstamer/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 [ -f $HOME/.myzshrc ] && source $HOME/.myzshrc
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
