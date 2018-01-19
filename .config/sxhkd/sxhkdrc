@@ -1,91 +1,91 @@
 # audio control
 XF86AudioMute
-	amixer set Master 1+ toggle
+    amixer set Master 1+ toggle
 
 XF86AudioLowerVolume
-	amixer set Master 3%-
+    amixer set Master 3%-
 
 XF86AudioRaiseVolume
-	amixer set Master 3%+
+    amixer set Master 3%+
 
 # lock
 XF86Launch1
-	slock
+    slock
 
 # terminal emulator
 super + Return
-	termite
+    termite
 
 # program launcher
 super + r
-	dmenu_run -i -q -h 18 -fn 'Hack-9' -nb "#272822" -sb "#272822" -nf "#f8f8f2" -sf "#a6e22e" -p " ➜ "
+    dmenu_run -i -q -h 18 -fn 'Hack-9' -nb "#272822" -sb "#272822" -nf "#f8f8f2" -sf "#a6e22e" -p " ➜ "
 
 # launchers
 super + w
-	firefox --new-window
+    firefox --new-window
 
 super + shift + w
-	firefox --private-window
+    firefox --private-window
 
 super + c
     code
 
 # reload sxhkd & bspwm
 super + shift + Escape
-	pkill -USR1 -x sxhkd && source ~/.config/bspwm/bspwmrc
+    pkill -USR1 -x sxhkd && source ~/.config/bspwm/bspwmrc
 
 # quit bspwm normally
 super Escape
-	bspc quit
+    bspc quit
 
 # close and kill
 super + q
-	bspc node -{c,k}
+    bspc node -{c,k}
 
 # monocle current node
 super + space
-	bspc desktop -l next
+    bspc desktop -l next
 
 # biggest node!
 super + b
-	bspc node -s biggest
+    bspc node -s biggest
 
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+    bspc node -{f,s} {west,south,north,east}
 
 # focus the next/previous node
 super + {_,shift + }Tab
-	bspc node -f {next,prev}
+    bspc node -f {next,prev}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} '^{1-9,10}'
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+    bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+    bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + ctrl + space
-	bspc node -p cancel
+    bspc node -p cancel
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
