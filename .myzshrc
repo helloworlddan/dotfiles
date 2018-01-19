@@ -23,6 +23,7 @@ ssh-add -l | grep "The agent has no identities" && ssh-add
 [ -f $HOME/.bash-insulter/src/bash.command-not-found ] && source $HOME/.bash-insulter/src/bash.command-not-found
 
 if [ "$(hostname -s)" = "skylake"  ]; then
+    alias assume="source ~/Code/VWFS/mps-config-service/credentials/assume.sh"
     export PATH=/usr/local/opt/python/libexec/bin:$PATH
     export VIRTUALENVWRAPPER_PYTHON=$(which python)
     [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ] && source /usr/local/bin/virtualenvwrapper_lazy.sh
@@ -33,6 +34,7 @@ if [ "$(hostname -s)" = "nehalem"  ]; then
 fi
 
 if [ "$(hostname -s)" = "arc"  ]; then
+    alias assume="source ~/Code/VWFS/mps-config-service/credentials/assume.sh"
     alias python=python2
     alias pip=pip2
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
