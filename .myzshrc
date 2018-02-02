@@ -12,7 +12,7 @@ plugins=(
 export GPG_TTY=$(tty)
 export GPGKEY=9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
 export PINENTRY_USER_DATA="USE_CURSES=1"
-export EDITOR=vim
+export EDITOR=nvim
 export GOPATH="$HOME/Code/Go"
 export PATH="$GOPATH/bin:$PATH"
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
@@ -23,6 +23,7 @@ ssh-add -l | grep "The agent has no identities" && ssh-add
 [ -f $HOME/.bash-insulter/src/bash.command-not-found ] && source $HOME/.bash-insulter/src/bash.command-not-found
 
 if [ "$(hostname -s)" = "skylake"  ]; then
+    alias vim=nvim
     export PATH=/usr/local/opt/python/libexec/bin:$PATH
     export VIRTUALENVWRAPPER_PYTHON=$(which python)
     [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ] && source /usr/local/bin/virtualenvwrapper_lazy.sh
