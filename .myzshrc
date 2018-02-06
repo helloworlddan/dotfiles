@@ -34,14 +34,6 @@ if [ "$(hostname -s)" = "nehalem"  ]; then
     alias mutt=neomutt
 fi
 
-if [ "$(hostname -s)" = "arc"  ]; then
-    alias python=python2
-    alias pip=pip2
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
-    [ -f /usr/bin/virtualenvwrapper_lazy.sh ] && source /usr/bin/virtualenvwrapper_lazy.sh
-fi
-
 alias weather="curl wttr.in/Berlin"
 
 pass () {
