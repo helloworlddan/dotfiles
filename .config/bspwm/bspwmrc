@@ -13,21 +13,13 @@ else
     bspc monitor -n LVDS-1 -d I II III IV V VI VII VIII IX
 fi
 
-xsetroot -solid '#272822'
+xsetroot -solid '#282828'
 unclutter -idle 1 -jitter 2 -root &
 
 if [ "$(hostname)" = "nehalem" ]; then
     # Load thinkpad metal config
     sxhkd &
     setxkbmap de
-    limones | lemonbar -B "#ff272822" -F "#fff8f8f2" -f "hack-9" -a "0" -p &
-fi
-
-if [ "$(hostname)" = "arc" ]; then
-    # Load vbox config on mac
-    sxhkd -c .config/sxhkd/sxhkdrc.mac &
-    setxkbmap us
-    VBoxClient --display --seamless --clipboard -d
 fi
 
 bspc config border_width            2

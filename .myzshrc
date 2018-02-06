@@ -31,6 +31,7 @@ if [ "$(hostname -s)" = "skylake"  ]; then
 fi
 
 if [ "$(hostname -s)" = "nehalem"  ]; then
+    alias vim=nvim
     alias mutt=neomutt
 fi
 
