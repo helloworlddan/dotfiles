@@ -17,7 +17,7 @@ export GPGKEY=9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
 export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR=nvim
 export GOPATH="$HOME/Code/Go"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME.cargo/bin:$GOPATH/bin:$PATH:/usr/local/opt/python@2/bin"
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 [ ! -S ~/.ssh/ssh_auth_sock ] && eval `ssh-agent` && ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
