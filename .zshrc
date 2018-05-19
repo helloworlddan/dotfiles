@@ -63,14 +63,6 @@ passcr () {
     cd ~
 }
 
-gitup () {
-  for dir in `ls`; do
-    pushd $dir
-      git pull --all
-    popd
-  done
-}
-
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

@@ -2,41 +2,24 @@
 font = Hack 9
 
 [colors]
-
-# special
-foreground      = #ebdbb2
-foreground_bold = #ebdbb2
-cursor          = #ebdbb2
-background      = #282828
-
-# black
-color0  = #282828
-color8  = #928374
-
-# red
-color1  = #fb4934
-color9  = #fb4934
-
-# green
-color2  = #b8bb26
-color10 = #b8bb26
-
-# yellow
-color3  = #fabd2f
-color11 = #fabd2f
-
-# blue
-color4  = #83a598
-color12 = #83a598
-
-# magenta
-color5  = #d3869b
-color13 = #d3869b
-
-# cyan
-color6  = #8ec07c
-color14 = #8ec07c
-
-# white
-color7  = #ebdbb2
-color15 = #ebdbb2
+background= #101010
+foreground= #d0d0d0
+#foreground= #66ff66
+#highlight = #505050
+cursor = #66ff66
+color0= #101010
+color1= #960050
+color2= #66aa11
+color3= #c47f2c
+color4= #30309b
+color5= #7e40a5
+color6= #3579a8
+color7= #9999aa
+color8= #303030
+color9= #ff0090
+color10= #80ff00
+color11= #ffba68
+color12= #5f5fee
+color13= #bb88dd
+color14= #4eb4fa
+color15= #d0d0d0
