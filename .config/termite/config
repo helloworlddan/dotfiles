@@ -5,9 +5,9 @@ font = Hack 9
 foreground      = #f8f8f2
 foreground_bold = #f5f4f1
 cursor          = #f5f4f1
-background      = #272822
+background      = #1b1d1e
 
-color0  = #272822
+color0  = #1b1d1e
 color8  = #75715e
 color7  = #f8f8f2
 color15 = #f9f8f5

@@ -33,35 +33,15 @@ if [ "$(hostname -s)" = "skylake"  ]; then
 fi
 
 if [ "$(hostname -s)" = "nehalem"  ]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/bin/virtualenvwrapper_lazy.sh
     alias vim=nvim
     alias mutt=neomutt
 fi
 
 alias weather="curl wttr.in/Berlin"
-
-pass () {
-    cd ~/Passwords
-    rm -f pass.yaml.gpg.back
-    cp pass.yaml.gpg pass.yaml.gpg.back
-    gpg -d pass.yaml.gpg > pass.yaml
-    vim pass.yaml
-    rm -f pass.yaml.gpg
-    gpg -e -r daniel@stamer.info pass.yaml
-    rm -f pass.yaml
-    cd ~
-}
-
-passcr () {
-    cd ~/Passwords
-    rm -f cloudreach.yaml.gpg.back
-    cp cloudreach.yaml.gpg cloudreach.yaml.gpg.back
-    gpg -d cloudreach.yaml.gpg > cloudreach.yaml
-    vim cloudreach.yaml
-    rm -f cloudreach.yaml.gpg
-    gpg -e -r daniel@stamer.info cloudreach.yaml
-    rm -f cloudreach.yaml
-    cd ~
-}
 
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
