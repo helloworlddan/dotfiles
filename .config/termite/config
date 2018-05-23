@@ -1,5 +1,5 @@
 [options]
-font = Hack 9
+font = Hack Nerd Font Mono 9
 
 [colors]
 foreground      = #f8f8f2
