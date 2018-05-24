@@ -8,6 +8,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+
 plugins=(
     git brew aws docker vagrant python
 )
