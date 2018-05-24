@@ -16,13 +16,14 @@ XF86Launch1
 super + Return
     termite
 
-# program launcher
+# program launcher #f92672
 super + r
-    dmenu_run -i -q -h 18 -fn 'Hack-9' -nb "#272822" -sb "#272822" -nf "#f8f8f2" -sf "#a6e22e" -p " ➜ "
+    dmenu_run -i -q -h 18 -fn 'Hack-9' -nb "#1b1d1e" -sb "#1b1d1e" -sf "#f92672" -nf "#f8f8f2" -p " $ "
 
 # launchers
 super + w
-    firefox --new-window
+    google-chrome-stable
+    #firefox --new-window
 
 super + shift + w
     firefox --private-window

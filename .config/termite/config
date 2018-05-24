@@ -1,42 +1,46 @@
 [options]
-font = Hack 9
+font = Hack Nerd Font Mono 9
 
 [colors]
+foreground      = #f8f8f2
+foreground_bold = #f5f4f1
+cursor          = #f5f4f1
+background      = #1b1d1e
 
-# special
-foreground      = #ebdbb2
-foreground_bold = #ebdbb2
-cursor          = #ebdbb2
-background      = #282828
+color0  = #1b1d1e
+color8  = #75715e
+color7  = #f8f8f2
+color15 = #f9f8f5
 
-# black
-color0  = #282828
-color8  = #928374
+# Red
+color1  = #f92672
+color9  = #f92672
 
-# red
-color1  = #fb4934
-color9  = #fb4934
+# Green
+color2  = #a6e22e
+color10 = #a6e22e
 
-# green
-color2  = #b8bb26
-color10 = #b8bb26
+# Yellow
+color3  = #f4bf75
+color11 = #f4bf75
 
-# yellow
-color3  = #fabd2f
-color11 = #fabd2f
+# Blue
+color4  = #66d9ef
+color12 = #66d9ef
 
-# blue
-color4  = #83a598
-color12 = #83a598
+# Purple
+color5  = #ae81ff
+color13 = #ae81ff
 
-# magenta
-color5  = #d3869b
-color13 = #d3869b
+# Teal
+color6  = #a1efe4
+color14 = #a1efe4
 
-# cyan
-color6  = #8ec07c
-color14 = #8ec07c
+# Extra colors
+color16 = #fd971f
+color17 = #cc6633
+color18 = #383830
+color19 = #49483e
+color20 = #a59f85
+color21 = #f5f4f1
 
-# white
-color7  = #ebdbb2
-color15 = #ebdbb2
