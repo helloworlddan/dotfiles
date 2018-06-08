@@ -46,3 +46,17 @@ fi
 [ -f $HOME/.bash-insulter/src/bash.command-not-found ] && source $HOME/.bash-insulter/src/bash.command-not-found
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function backup_file() {
+  if [ -f $1 ]
+  then
+    local SOURCE=$(basename $1)
+    local TARGET="/tmp/bckp-${SOURCE}.$(date +%F).$$"
+    echo "bckp: ${SOURCE} \t -> \t ${TARGET}"
+    cp ${SOURCE} ${TARGET}
+    return 0
+  else
+    return 1
+  fi
+}
+
