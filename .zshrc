@@ -1,6 +1,43 @@
 #!/bin/zsh
 
+function backup_file() {
+  if [ -f ${1} ]
+  then
+    local SOURCE=$(basename ${1})
+    local TARGET="/tmp/bckp-${SOURCE}.$(date +%F).$$"
+    echo "bckp: ${SOURCE} \t -> \t ${TARGET}"
+    cp ${SOURCE} ${TARGET}
+    return 0
+  else
+    echo "error: couldn't backup file ${1}"
+    return 1
+  fi
+}
+
+function safe_source() {
+  if [ -f ${1} ]
+  then
+    source ${1}
+    return 0
+  else
+    echo "error: couldn't source file ${1}"
+    return 1
+  fi
+}
+
+alias vim=nvim
+alias mutt=neomutt
+alias weather="curl wttr.in/Berlin"
+
 export ZSH=~/.oh-my-zsh
+export GPG_TTY=$(tty)
+export GPGKEY=9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
+export PINENTRY_USER_DATA="USE_CURSES=1"
+export EDITOR=nvim
+export GOPATH="$HOME/Code/Go"
+export PATH="$HOME.cargo/bin:$GOPATH/bin:$PATH"
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+export WORKON_HOME=~/.virtualenvs
 
 ZSH_THEME="mh"
 ZSH_THEME="ys"
@@ -15,48 +52,23 @@ plugins=(
     git brew aws docker vagrant python
 )
 
-export GPG_TTY=$(tty)
-export GPGKEY=9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
-export PINENTRY_USER_DATA="USE_CURSES=1"
-export EDITOR=nvim
-export GOPATH="$HOME/Code/Go"
-export PATH="$HOME.cargo/bin:$GOPATH/bin:$PATH"
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-
-alias vim=nvim
-alias mutt=neomutt
-alias weather="curl wttr.in/Berlin"
-
 [ ! -S ~/.ssh/ssh_auth_sock ] && eval `ssh-agent` && ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 ssh-add -l | grep "The agent has no identities" && ssh-add
 
-if [ "$(hostname -s)" = "skylake"  ]; then
-    export PATH=/usr/local/opt/python/libexec/bin:$PATH
-    export VIRTUALENVWRAPPER_PYTHON=$(which python)
-    [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ] && source /usr/local/bin/virtualenvwrapper_lazy.sh
+safe_source $HOME/.bash-insulter/src/bash.command-not-found
+safe_source $ZSH/oh-my-zsh.sh
+safe_source ~/.fzf.zsh
+
+if [ "$(hostname -s)" = "skylake"  ];
+then
+  export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+  export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+  safe_source /usr/local/bin/virtualenvwrapper_lazy.sh
+elif [ "$(hostname -s)" = "nehalem"  ]
+then
+  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+  export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+  safe_source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 
-if [ "$(hostname -s)" = "nehalem"  ]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
-    export WORKON_HOME=~/.virtualenvs
-    source /usr/bin/virtualenvwrapper_lazy.sh
-fi
-
-[ -f $HOME/.bash-insulter/src/bash.command-not-found ] && source $HOME/.bash-insulter/src/bash.command-not-found
-[ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-function backup_file() {
-  if [ -f $1 ]
-  then
-    local SOURCE=$(basename $1)
-    local TARGET="/tmp/bckp-${SOURCE}.$(date +%F).$$"
-    echo "bckp: ${SOURCE} \t -> \t ${TARGET}"
-    cp ${SOURCE} ${TARGET}
-    return 0
-  else
-    return 1
-  fi
-}
-
+echo "\n $(fortune)"
