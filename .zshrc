@@ -59,16 +59,17 @@ safe_source $HOME/.bash-insulter/src/bash.command-not-found
 safe_source $ZSH/oh-my-zsh.sh
 safe_source ~/.fzf.zsh
 
-if [ "$(hostname -s)" = "skylake"  ];
-then
-  export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
-  export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-  safe_source /usr/local/bin/virtualenvwrapper_lazy.sh
-elif [ "$(hostname -s)" = "nehalem"  ]
-then
-  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
-  export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
-  safe_source /usr/bin/virtualenvwrapper_lazy.sh
-fi
+case "$(hostname -s)" in
+  "skylake")
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+    safe_source /usr/local/bin/virtualenvwrapper_lazy.sh
+    ;;
+  "nehalem")
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+    safe_source /usr/bin/virtualenvwrapper_lazy.sh
+    ;;
+esac
 
 echo "\n $(fortune)"
