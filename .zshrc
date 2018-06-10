@@ -9,7 +9,7 @@ function backup_file() {
     cp ${SOURCE} ${TARGET}
     return 0
   else
-    echo "error: couldn't backup file ${1}"
+    logger -s -t "zshrc" -p user.err "error: couldn't backup file ${1}"
     return 1
   fi
 }
@@ -20,7 +20,7 @@ function safe_source() {
     source ${1}
     return 0
   else
-    echo "error: couldn't source file ${1}"
+    logger -s -t "zshrc" -p user.err "error: couldn't source file ${1}"
     return 1
   fi
 }
@@ -71,7 +71,7 @@ case "$(hostname -s)" in
     safe_source /usr/bin/virtualenvwrapper_lazy.sh
     ;;
   "*")
-    echo "Unknown host: $(hostname -s)"
+    logger -s -t "zshrc" -p user.warn "unknown host: $(hostname -s)"
     ;;
 esac
 
