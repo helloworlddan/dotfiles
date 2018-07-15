@@ -26,6 +26,7 @@ function safe_source() {
 }
 
 alias vim="nvim"
+alias s2a="saml2aws-auto"
 alias mutt="neomutt"
 alias weather="curl wttr.in/Berlin"
 
@@ -64,6 +65,7 @@ case "$(hostname -s)" in
     export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
     safe_source /usr/local/bin/virtualenvwrapper_lazy.sh
+    defaults write co.zeit.hyper ApplePressAndHoldEnabled -bool false # HACK repeated keystrokes for hyper
     ;;
   "nehalem")
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
@@ -76,3 +78,11 @@ case "$(hostname -s)" in
 esac
 
 echo "\n$(fortune)"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
