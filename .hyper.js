@@ -6,17 +6,8 @@ module.exports = {
 
     windowSize: [1400, 800],
 
-    fontSize: 12,
+    fontSize: 13,
     fontFamily: 'Hack',
-
-    cursorColor: 'rgba(235,219,178,0.8)',
-    cursorShape: 'BLOCK',
-
-    cursorBlink: true,
-
-    foregroundColor: '#ebdbb2',
-    backgroundColor: '#282828',
-    borderColor: '#555',
 
     css: '',
     termCSS: '',
@@ -25,6 +16,14 @@ module.exports = {
     showWindowControls: '',
 
     padding: '8px 8px 8px 8px',
+
+    cursorBlink: true,
+    cursorShape: 'BLOCK',
+    cursorColor: '#ffffff',
+
+    foregroundColor: '#ebdbb2',
+    backgroundColor: '#282828',
+    borderColor: '#555',
 
     colors: {
       black: '#282828',
@@ -71,7 +70,6 @@ module.exports = {
     'hypercwd',
     'hyper-pane',
     'hyperlinks'
-    // 'hyper-bliss'
   ],
 
   localPlugins: [],
