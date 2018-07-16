@@ -71,6 +71,7 @@ module.exports = {
     'hypercwd',
     'hyper-pane',
     'hyperlinks'
+    // 'hyper-bliss'
   ],
 
   localPlugins: [],
