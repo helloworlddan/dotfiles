@@ -25,6 +25,21 @@ function safe_source() {
   fi
 }
 
+function tvm() {
+  onetoken create stamer
+  onetoken create cloudreach
+  onetoken create vwfs
+  onetoken refresh
+  saml2aws-auto refresh vwfs
+
+  SESSIONS="$(cat .aws/credentials | grep -e '\[[a-zA-Z0-9\-]*-session\]$' | sort)"
+  echo ""
+  echo "${SESSIONS}" | column
+
+  NUMSESS="$(echo "${SESSIONS}" | wc -l | grep -o -e '[^\s]*')"
+  echo "\n${NUMSESS} hot sessions found."
+}
+
 alias vim="nvim"
 alias s2a="saml2aws-auto"
 alias mutt="neomutt"
@@ -65,7 +80,7 @@ case "$(hostname -s)" in
     export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
     safe_source /usr/local/bin/virtualenvwrapper_lazy.sh
-    defaults write co.zeit.hyper ApplePressAndHoldEnabled -bool false # HACK repeated keystrokes for hyper
+    default write -g ApplePressAndHoldEnabled -bool false
     ;;
   "nehalem")
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
