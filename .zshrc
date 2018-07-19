@@ -40,6 +40,14 @@ function tvm() {
   echo "\n${NUMSESS} hot sessions found."
 }
 
+function fresh_coffee(){
+  brew upgrade
+  brew cleanup -s
+  brew cask cleanup
+  brew doctor
+}
+
+alias whaler="docker system prune -a"
 alias vim="nvim"
 alias s2a="saml2aws-auto"
 alias mutt="neomutt"
@@ -55,14 +63,10 @@ export PATH="${HOME}.cargo/bin:${GOPATH}/bin:${PATH}"
 export SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
 export WORKON_HOME="${HOME}/.virtualenvs"
 
-ZSH_THEME="mh"
 ZSH_THEME="ys"
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE="${HOME}/.zsh_history"
-
-bindkey "[D" backward-word
-bindkey "[C" forward-word
 
 plugins=(
     git brew aws docker vagrant python
@@ -100,4 +104,7 @@ echo "\n$(fortune)"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+bindkey "[D" backward-word
+bindkey "[C" forward-word
 

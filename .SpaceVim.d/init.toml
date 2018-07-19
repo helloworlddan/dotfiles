@@ -7,6 +7,8 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_display_mode = false
+    textwidth = 100
+    colorcolumn = 100
 
 # Enable autocomplete layer
 [[layers]]
