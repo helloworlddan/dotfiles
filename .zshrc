@@ -52,7 +52,9 @@ alias vim="nvim"
 alias s2a="saml2aws-auto"
 alias mutt="neomutt"
 alias weather="curl wttr.in/Berlin"
+alias sceptre='/usr/local/bin/sceptrefun -t'
 
+export AWS_HOME="${HOME}/.aws"
 export ZSH="${HOME}/.oh-my-zsh"
 export GPG_TTY="$(tty)"
 export GPGKEY="9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB"
