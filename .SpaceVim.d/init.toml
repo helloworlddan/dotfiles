@@ -1,7 +1,7 @@
 [options]
     colorscheme = "gruvbox"
     background = "dark"
-    enable_guicolors = true
+    enable_guicolors = false
     statusline_separator = "arrow"
     statusline_inactive_separator = "arrow"
     buffer_index_type = 4

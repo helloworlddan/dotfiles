@@ -47,13 +47,18 @@ function fresh_coffee(){
   brew doctor
 }
 
+function cheat(){
+  curl "cheat.sh/${1}"
+}
+
 alias whaler="docker system prune -a"
 alias vim="nvim"
 alias s2a="saml2aws-auto"
 alias mutt="neomutt"
 alias weather="curl wttr.in/Berlin"
-alias sceptre="/usr/local/bin/sceptrefun -t"
+alias sceptre="/usr/local/bin/sceptrefun"
 
+export SCEPTRE_THEME="terran"
 export AWS_HOME="${HOME}/.aws"
 export AWS_DEFAULT_REGION="eu-central-1"
 export AWS_DEFAULT_OUTPUT="json"

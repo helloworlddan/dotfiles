@@ -22,7 +22,7 @@
 [alias]
         cm = commit -asS
         co = checkout
-        df = diff --stat
+        df = difftool --stat
         st = status -sb
         tg = tag -s
         sh = show --show-signature
@@ -39,5 +39,8 @@
         gpgsign = true
 
 [credential "https://git-codecommit.eu-west-1.amazonaws.com"]
-    helper = !aws codecommit credential-helper $@
-    useHttpPath = true
+        helper = !aws codecommit credential-helper $@
+        useHttpPath = true
+
+[diff]
+        tool = vimdiff
