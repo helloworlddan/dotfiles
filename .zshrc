@@ -32,7 +32,7 @@ function tvm() {
   onetoken refresh
   saml2aws-auto refresh vwfs
 
-  SESSIONS="$(cat .aws/credentials | grep -e '\[[a-zA-Z0-9\-]*-session\]$' | sort)"
+  SESSIONS="$(cat ~/.aws/credentials | grep -e '\[[a-zA-Z0-9\-]*-session\]$' | sort)"
   echo ""
   echo "${SESSIONS}" | column
 
