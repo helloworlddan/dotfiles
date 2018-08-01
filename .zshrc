@@ -25,6 +25,12 @@ function safe_source() {
   fi
 }
 
+function aid() {
+  ACCOUNT="$(aws sts get-caller-identity | jq -r '.Account')"
+  echo -n "${ACCOUNT}" | pbcopy
+  echo "${ACCOUNT}"
+}
+
 function tvm() {
   onetoken create stamer
   onetoken create cloudreach
