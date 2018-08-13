@@ -31,6 +31,35 @@ function aid() {
   echo "${ACCOUNT}"
 }
 
+function pipe_assume(){
+  INPUT="$(cat /dev/stdin)"
+  KEY="$(echo ${INPUT} | jq -r '.Credentials.AccessKeyId')"
+  SECRET="$(echo ${INPUT} | jq -r '.Credentials.SecretAccessKey')"
+  TOKEN="$(echo ${INPUT} | jq -r '.Credentials.SessionToken')"
+  
+  export AWS_ACCESS_KEY_ID="${KEY}"
+  export AWS_SECRET_ACCESS_KEY="${SECRET}"
+  export AWS_SESSION_TOKEN="${TOKEN}"
+}
+
+function mpscat(){
+  echo "$(aws ssm get-parameter --with-decryption --name ${1} | jq -r '.Parameter.Value')"
+  if [ $? -ne 0 ]
+  then
+    echo "Not found in SSM"
+    return -1
+  fi
+}
+
+function mpssh(){
+  KEY_MATERIAL="$(mpscat ${1})"
+  TEMP="$(mktemp)"
+  echo "${KEY_MATERIAL}" > "${TEMP}"
+  chmod 400 "${TEMP}"
+  ssh -i "${TEMP}" "${@:2}"
+  rm "${TEMP}"
+}
+
 function tvm() {
   onetoken create stamer
   onetoken create cloudreach
@@ -46,7 +75,7 @@ function tvm() {
   echo "\n${NUMSESS} hot sessions found."
 }
 
-function fresh_coffee(){
+function fresh_beer(){
   brew upgrade
   brew cleanup -s
   brew cask cleanup
