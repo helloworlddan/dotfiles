@@ -42,6 +42,12 @@ function pipe_assume(){
   export AWS_SESSION_TOKEN="${TOKEN}"
 }
 
+function flush_dns() {
+  sudo killall -HUP mDNSResponder
+  sudo killall mDNSResponderHelper
+  sudo dscacheutil -flushcache
+}
+
 function mpscat(){
   echo "$(aws ssm get-parameter --with-decryption --name ${1} | jq -r '.Parameter.Value')"
   if [ $? -ne 0 ]

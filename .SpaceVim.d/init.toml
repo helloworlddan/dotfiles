@@ -31,6 +31,15 @@ name = 'fzf'
 name = 'VersionControl'
 
 [[layers]]
+name = 'git'
+
+[[layers]]
+name = 'tmux'
+
+[[layers]]
+name = 'vim-multiple-cursors'
+
+[[layers]]
 name = 'lang#c'
 
 [[layers]]
