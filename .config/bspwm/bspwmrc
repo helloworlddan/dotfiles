@@ -22,6 +22,7 @@ if [ "$(hostname)" = "nehalem" ]; then
     limones | lemonbar -B "#ff1b1d1e" -F "#fff8f8f2" -f "hack-9" -a "0" -p &
     unclutter -idle 1 -jitter 2 -root &
     setxkbmap de
+    xset r rate 200 30 
 fi
 
 bspc config border_width            0
