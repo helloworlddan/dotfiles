@@ -84,7 +84,6 @@ function tvm() {
 function fresh_beer(){
   brew upgrade
   brew cleanup -s
-  brew cask cleanup
   brew doctor
 }
 
