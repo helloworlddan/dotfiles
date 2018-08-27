@@ -18,15 +18,14 @@ super + Return
 
 # program launcher #f92672
 super + r
-    dmenu_run -i -q -h 18 -fn 'Hack-9' -nb "#1b1d1e" -sb "#1b1d1e" -sf "#f92672" -nf "#f8f8f2" -p " $ "
+    dmenu_run -i -q -h 18 -fn 'Hack-9' -nb "#282828" -sb "#282828" -sf "#d3869b" -nf "#ebdbb2" -p " $ "
 
 # launchers
 super + w
     google-chrome-stable
-    #firefox --new-window
 
 super + shift + w
-    firefox --private-window
+    google-chrome-stable --incognito
 
 super + c
     code
@@ -51,6 +50,7 @@ super + space
 super + b
     bspc node -s biggest
 
+    #firefox --new-window
 # set the window state
 super + {t,shift + t,s,f}
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
