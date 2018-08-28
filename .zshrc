@@ -81,8 +81,9 @@ function tvm() {
   echo "\n${NUMSESS} hot sessions found."
 }
 
-function fresh_beer(){
+function more_beer(){
   brew upgrade
+  brew cask upgrade
   brew cleanup -s
   brew doctor
 }
