@@ -98,7 +98,6 @@ alias s2a="saml2aws-auto"
 alias mutt="neomutt"
 alias weather="curl wttr.in/Berlin"
 alias sceptre="/usr/local/bin/sceptrefun"
-alias tmux="tmux new -s Terminal"
 
 export SCEPTRE_THEME="terran"
 export AWS_HOME="${HOME}/.aws"
