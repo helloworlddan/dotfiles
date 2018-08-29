@@ -13,13 +13,12 @@ else
     bspc monitor -n LVDS-1 -d I II III IV V VI VII VIII IX
 fi
 
-xsetroot -solid '#282828'
-unclutter -idle 1 -jitter 2 -root &
 
 if [ "$(hostname)" = "nehalem" ]; then
     # Load thinkpad metal config
     sxhkd &
     limones | lemonbar -B "#ff282828" -F "#ffebdbb2" -f "hack-9" -a "0" -p &
+    xsetroot -solid '#282828'
     unclutter -idle 1 -jitter 2 -root &
     setxkbmap de
     xset r rate 200 30 
