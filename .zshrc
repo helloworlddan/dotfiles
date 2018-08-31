@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source "${HOME}/Code/VWFS/mps-shell/mps-shell.sh"
+
 function backup_file() {
   if [ -f ${1} ]
   then
@@ -25,45 +27,10 @@ function safe_source() {
   fi
 }
 
-function aid() {
-  ACCOUNT="$(aws sts get-caller-identity | jq -r '.Account')"
-  echo -n "${ACCOUNT}" | pbcopy
-  echo "${ACCOUNT}"
-}
-
-function pipe_assume(){
-  INPUT="$(cat /dev/stdin)"
-  KEY="$(echo ${INPUT} | jq -r '.Credentials.AccessKeyId')"
-  SECRET="$(echo ${INPUT} | jq -r '.Credentials.SecretAccessKey')"
-  TOKEN="$(echo ${INPUT} | jq -r '.Credentials.SessionToken')"
-  
-  export AWS_ACCESS_KEY_ID="${KEY}"
-  export AWS_SECRET_ACCESS_KEY="${SECRET}"
-  export AWS_SESSION_TOKEN="${TOKEN}"
-}
-
 function flush_dns() {
   sudo killall -HUP mDNSResponder
   sudo killall mDNSResponderHelper
   sudo dscacheutil -flushcache
-}
-
-function mpscat(){
-  echo "$(aws ssm get-parameter --with-decryption --name ${1} | jq -r '.Parameter.Value')"
-  if [ $? -ne 0 ]
-  then
-    echo "Not found in SSM"
-    return -1
-  fi
-}
-
-function mpssh(){
-  KEY_MATERIAL="$(mpscat ${1})"
-  TEMP="$(mktemp)"
-  echo "${KEY_MATERIAL}" > "${TEMP}"
-  chmod 400 "${TEMP}"
-  ssh -i "${TEMP}" "${@:2}"
-  rm "${TEMP}"
 }
 
 function tvm() {
