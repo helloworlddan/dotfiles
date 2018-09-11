@@ -1,5 +1,5 @@
 [options]
-    colorscheme = "gruvbox"
+    colorscheme = "onedark"
     background = "dark"
     enable_guicolors = false
     statusline_separator = "arrow"
