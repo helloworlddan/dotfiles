@@ -66,6 +66,7 @@ alias mutt="neomutt"
 alias weather="curl wttr.in/Berlin"
 alias sceptre="/usr/local/bin/sceptrefun"
 alias render="note --no-editor"
+alias nuke_sound="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
 
 export SCEPTRE_THEME="terran"
 export AWS_HOME="${HOME}/.aws"
