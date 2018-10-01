@@ -48,7 +48,7 @@ function tvm() {
   echo "\n${NUMSESS} hot sessions found."
 }
 
-function more_beer(){
+function beerfest(){
   brew upgrade
   brew cask upgrade
   brew cleanup -s
@@ -68,6 +68,8 @@ alias sceptre="/usr/local/bin/sceptrefun"
 alias render="note --no-editor"
 alias nuke_sound="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
 
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 export SCEPTRE_THEME="terran"
 export AWS_HOME="${HOME}/.aws"
 export AWS_DEFAULT_REGION="eu-central-1"
