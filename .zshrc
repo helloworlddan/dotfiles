@@ -51,7 +51,7 @@ function tvm() {
 function beerfest(){
   brew upgrade
   brew cask upgrade
-  brew cleanup -s
+  brew cleanup -s --prune=0
   brew doctor
 }
 
@@ -68,6 +68,21 @@ alias sceptre="/usr/local/bin/sceptrefun"
 alias render="note --no-editor"
 alias nuke_sound="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
 
+alias vim.py="nvim - -c 'set syntax=python'"
+alias vim.rb="nvim - -c 'set syntax=ruby'"
+alias vim.go="nvim - -c 'set syntax=golang'"
+alias vim.sh="nvim - -c 'set syntax=bash'"
+alias vim.ts="nvim - -c 'set syntax=typescript'"
+alias vim.js="nvim - -c 'set syntax=javascript'"
+alias vim.hs="nvim - -c 'set syntax=haskell'"
+alias vim.c="nvim - -c 'set syntax=c'"
+alias vim.h="nvim - -c 'set syntax=c'"
+
+alias vim.html="nvim - -c 'set syntax=html'"
+alias vim.xml="nvim - -c 'set syntax=xml'"
+alias vim.json="nvim - -c 'set syntax=javascript'"
+alias vim.yaml="nvim - -c 'set syntax=yaml'"
+
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export SCEPTRE_THEME="terran"
@@ -80,7 +95,7 @@ export GPGKEY="9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB"
 export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR="nvim"
 export GOPATH="${HOME}/Code/Go"
-export PATH="${HOME}.cargo/bin:${GOPATH}/bin:${PATH}"
+export PATH="${HOME}/.cargo/bin:${GOPATH}/bin:${PATH}"
 export SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
 export WORKON_HOME="${HOME}/.virtualenvs"
 
@@ -100,20 +115,19 @@ safe_source "${ZSH}/oh-my-zsh.sh"
 safe_source "${HOME}/.fzf.zsh"
 
 case "$(hostname -s)" in
-  "skylake")
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-    safe_source /usr/local/bin/virtualenvwrapper_lazy.sh
-    safe_source "${HOME}/.bash-insulter/src/bash.command-not-found"
-    default write -g ApplePressAndHoldEnabled -bool false
-    ;;
   "nehalem")
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
     safe_source /usr/bin/virtualenvwrapper_lazy.sh
     ;;
-  "*")
-    logger -i -s -t "zshrc" -p user.warn "unknown host: $(hostname -s)"
+  *)
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+    export PATH="/usr/local/opt/ruby/bin:$PATH"
+    export PATH="$HOME/.bin:$PATH"
+    safe_source /usr/local/bin/virtualenvwrapper_lazy.sh
+    safe_source "${HOME}/.bash-insulter/src/bash.command-not-found"
+    default write -g ApplePressAndHoldEnabled -bool false
     ;;
 esac
 

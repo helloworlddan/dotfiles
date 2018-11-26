@@ -37,8 +37,9 @@ function asp {
 }
 
 function aws_profiles {
-  reply=($(grep session $AWS_HOME/credentials | grep -o -e '[a-zA-Z0-9\-]*-session'))
+  reply=($(grep -e '^\[' $AWS_HOME/credentials | sed -e 's/^\[\(.*\)\]$/\1/'))
 }
+
 compctl -K aws_profiles asp
 
 if which aws_zsh_completer.sh &>/dev/null; then
