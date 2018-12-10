@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-source "${HOME}/Code/VWFS/mps-shell/mps-shell.sh"
-
 function backup_file() {
   if [ -f ${1} ]
   then
@@ -36,7 +34,6 @@ function flush_dns() {
 function tvm() {
   onetoken create stamer
   onetoken create cloudreach
-  onetoken create vwfs
   onetoken refresh
   saml2aws-auto refresh vwfs
 
@@ -96,6 +93,7 @@ export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR="nvim"
 export GOPATH="${HOME}/Code/Go"
 export PATH="${HOME}/.cargo/bin:${GOPATH}/bin:${PATH}"
+export PATH="$PATH:$HOME/.rvm/bin"
 export SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
 export WORKON_HOME="${HOME}/.virtualenvs"
 
@@ -125,6 +123,8 @@ case "$(hostname -s)" in
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
     export PATH="/usr/local/opt/ruby/bin:$PATH"
     export PATH="$HOME/.bin:$PATH"
+    safe_source "${HOME}/Code/VWFS/mps-shell/mps-shell.sh"
+    safe_source /Users/danielstamer/.rvm/scripts/rvm
     safe_source /usr/local/bin/virtualenvwrapper_lazy.sh
     safe_source "${HOME}/.bash-insulter/src/bash.command-not-found"
     default write -g ApplePressAndHoldEnabled -bool false
@@ -137,4 +137,3 @@ esac
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
