@@ -23,7 +23,7 @@
     "vs-kubernetes.draft-path": "/Users/danielstamer/.vs-kubernetes/tools/draft/darwin-amd64/draft",
     "vs-kubernetes.helm-path": "/Users/danielstamer/.vs-kubernetes/tools/helm/darwin-amd64/helm"
   },
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "activityBar.background": "#1e1c3f",
