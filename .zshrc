@@ -94,6 +94,7 @@ export EDITOR="nvim"
 export GOPATH="${HOME}/Code/Go"
 export PATH="${HOME}/.cargo/bin:${GOPATH}/bin:${PATH}"
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.bin:$PATH"
 export SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
 export WORKON_HOME="${HOME}/.virtualenvs"
 
@@ -121,8 +122,6 @@ case "$(hostname -s)" in
   *)
     export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-    export PATH="/usr/local/opt/ruby/bin:$PATH"
-    export PATH="$HOME/.bin:$PATH"
     safe_source "${HOME}/Code/VWFS/mps-shell/mps-shell.sh"
     safe_source /Users/danielstamer/.rvm/scripts/rvm
     safe_source /usr/local/bin/virtualenvwrapper_lazy.sh

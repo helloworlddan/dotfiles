@@ -1,5 +1,5 @@
 [options]
-    colorscheme = "onedark"
+    colorscheme = "default"
     background = "dark"
     enable_guicolors = false
     statusline_separator = "arrow"
