@@ -52,6 +52,11 @@ function beerfest(){
   brew doctor
 }
 
+function beerbinge(){
+  beerfest
+  brew cask upgrade --greedy
+}
+
 function cheat(){
   curl "cheat.sh/${1}"
 }
