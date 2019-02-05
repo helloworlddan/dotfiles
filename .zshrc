@@ -53,8 +53,10 @@ function beerfest(){
 }
 
 function beerbinge(){
-  beerfest
+  brew upgrade
   brew cask upgrade --greedy
+  brew cleanup -s --prune=0
+  brew doctor
 }
 
 function cheat(){
