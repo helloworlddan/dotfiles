@@ -47,7 +47,6 @@ function tvm() {
 
 function beerfest(){
   brew upgrade
-  brew cask upgrade
   brew cleanup -s --prune=0
   brew doctor
 }
