@@ -3,6 +3,9 @@ window:
   dimensions:
     columns: 130
     lines: 35
+  padding:
+    x: 12
+    y: 12
 
 font:
   size: 13.0
