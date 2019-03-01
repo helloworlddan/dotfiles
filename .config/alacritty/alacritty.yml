@@ -1,4 +1,9 @@
 tabspaces: 2
+window:
+  dimensions:
+    columns: 130
+    lines: 35
+
 font:
   size: 13.0
   normal:
