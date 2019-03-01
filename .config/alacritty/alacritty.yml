@@ -14,25 +14,26 @@ colors:
   primary:
     background: "0x252525"
     foreground: "0xc6c6c6"
+
   normal:
-    black: "0x252525"
-    red: "0xD8608C"
+    green: "0x45F5CF"
+    yellow: "0xF1C56C"
     magenta: "0xAC71FC"
+    red: "0xD8608C"
+    blue: "0x569cd6"
+    cyan: "0x2BBAC5"
     white: "0xc6c6c6"
-    yellow: "0xD8985F"
-    blue: "0x5870B4"
-    green: "0x2BBAC5"
-    cyan: "0x7DA7FF"
+    black: "0x252525"
 
   bright:
-    black: "0x252525"
-    red: "0xFF6E9C"
-    magenta: "0xe591ff"
-    white: "0xc6c6c6"
-    green: "0x74FEE1"
+    blue: "0x7DA7FF"
     yellow: "0xFFDB7F"
     cyan: "0x71E4FE"
-    blue: "0x7DA7FF"
+    magenta: "0xe591ff"
+    black: "0x252525"
+    white: "0xc6c6c6"
+    red: "0xFF709E"
+    green: "0x6FFEE0"
 
 key_bindings:
   - { key: V, mods: Command, action: Paste }
