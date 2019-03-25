@@ -45,7 +45,6 @@ function beerbinge(){
   brew doctor
 }
 
-
 alias whaler="docker system prune -a"
 alias vim="nvim"
 alias s2a="saml2aws-auto"
@@ -55,7 +54,6 @@ alias nuke_sound="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{pri
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-export SCEPTRE_THEME="terran"
 export AWS_HOME="${HOME}/.aws"
 export AWS_DEFAULT_REGION="eu-central-1"
 export AWS_DEFAULT_OUTPUT="json"
@@ -63,49 +61,12 @@ export GPG_TTY="$(tty)"
 export GPGKEY="9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB"
 export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR="nvim"
-export GOPATH="${HOME}/Code/Go"
-export PATH="${HOME}/.cargo/bin:${GOPATH}/bin:${PATH}"
+export PATH="$PATH:$HOME/Code/Go/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$HOME/.bin:$PATH"
-export SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
-export WORKON_HOME="${HOME}/.virtualenvs"
-export ZSH="${HOME}/.oh-my-zsh"
+export PATH="$PATH:$HOME/.bin"
 
-ZSH_THEME="ys"
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE="${HOME}/.zsh_history"
+defaults write -g ApplePressAndHoldEnabled -bool false
 
-plugins=(
-    git brew aws docker vagrant python
-)
-
-[ ! -S ~/.ssh/ssh_auth_sock ] && eval "$(ssh-agent)" && ln -sf "${SSH_AUTH_SOCK}" ~/.ssh/ssh_auth_sock
-ssh-add -l | grep "The agent has no identities" && ssh-add
-
-safe_source "${ZSH}/oh-my-zsh.sh"
-safe_source "${HOME}/.fzf.zsh"
-
-case "$(hostname -s)" in
-  "nehalem")
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
-    safe_source /usr/bin/virtualenvwrapper_lazy.sh
-    ;;
-  *)
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-    safe_source "${HOME}/Code/VWFS/mps-shell/mps-shell.sh"
-    safe_source /Users/danielstamer/.rvm/scripts/rvm
-    safe_source /usr/local/bin/virtualenvwrapper_lazy.sh
-    safe_source "${HOME}/.bash-insulter/src/bash.command-not-found"
-    default write -g ApplePressAndHoldEnabled -bool false
-    ;;
-esac
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+safe_source "${HOME}/Code/VWFS/mps-shell/mps-shell.sh"
+safe_source "${HOME}/.rvm/scripts/rvm"
+safe_source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
