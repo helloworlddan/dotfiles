@@ -1,19 +1,5 @@
 #!/bin/zsh
 
-function backup_file() {
-  if [ -f ${1} ]
-  then
-    local SOURCE="$(basename ${1})"
-    local TARGET="/tmp/bckp-${SOURCE}.$(date +%F).$$"
-    echo "bckp: ${SOURCE} \t -> \t ${TARGET}"
-    cp ${SOURCE} ${TARGET}
-    return 0
-  else
-    logger -i -s -t "zshrc" -p user.err "error: couldn't backup file ${1}"
-    return 1
-  fi
-}
-
 function safe_source() {
   if [ -f ${1} ]
   then
@@ -59,33 +45,13 @@ function beerbinge(){
   brew doctor
 }
 
-function cheat(){
-  curl "cheat.sh/${1}"
-}
 
 alias whaler="docker system prune -a"
 alias vim="nvim"
 alias s2a="saml2aws-auto"
-alias mutt="neomutt"
-alias weather="curl wttr.in/Berlin"
 alias sceptre="/usr/local/bin/sceptrefun"
 alias render="note --no-editor"
 alias nuke_sound="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
-
-alias vim.py="nvim - -c 'set syntax=python'"
-alias vim.rb="nvim - -c 'set syntax=ruby'"
-alias vim.go="nvim - -c 'set syntax=golang'"
-alias vim.sh="nvim - -c 'set syntax=bash'"
-alias vim.ts="nvim - -c 'set syntax=typescript'"
-alias vim.js="nvim - -c 'set syntax=javascript'"
-alias vim.hs="nvim - -c 'set syntax=haskell'"
-alias vim.c="nvim - -c 'set syntax=c'"
-alias vim.h="nvim - -c 'set syntax=c'"
-
-alias vim.html="nvim - -c 'set syntax=html'"
-alias vim.xml="nvim - -c 'set syntax=xml'"
-alias vim.json="nvim - -c 'set syntax=javascript'"
-alias vim.yaml="nvim - -c 'set syntax=yaml'"
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
@@ -93,7 +59,6 @@ export SCEPTRE_THEME="terran"
 export AWS_HOME="${HOME}/.aws"
 export AWS_DEFAULT_REGION="eu-central-1"
 export AWS_DEFAULT_OUTPUT="json"
-export ZSH="${HOME}/.oh-my-zsh"
 export GPG_TTY="$(tty)"
 export GPGKEY="9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB"
 export PINENTRY_USER_DATA="USE_CURSES=1"
@@ -104,6 +69,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$HOME/.bin:$PATH"
 export SSH_AUTH_SOCK="${HOME}/.ssh/ssh_auth_sock"
 export WORKON_HOME="${HOME}/.virtualenvs"
+export ZSH="${HOME}/.oh-my-zsh"
 
 ZSH_THEME="ys"
 HISTSIZE=10000
