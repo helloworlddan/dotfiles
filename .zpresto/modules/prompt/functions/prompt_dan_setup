@@ -43,7 +43,7 @@ function prompt_dan_setup {
   if [[ -n "$1" ]]; then
     prefix="$1"
   else
-    prefix='↳'
+    prefix='$'
   fi
 
   # Assign colors.
@@ -59,16 +59,16 @@ function prompt_dan_setup {
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
-  zstyle ':prezto:module:git:info:dirty' format "%%B%F{white}]%f%%b %F{red}!%f"
+  zstyle ':prezto:module:git:info:dirty' format " %F{red}!%f%%B%F{white}]%f%%b"
   zstyle ':prezto:module:git:info:clean' format "%B%F{white}]%f%b"
-  zstyle ':prezto:module:git:info:branch' format "%%B%F{white}[%f%%b%%B%F{yellow}%b%f%%b"
+  zstyle ':prezto:module:git:info:branch' format "%%B%F{white}[%f%%b%%B%F{green}%b%f%%b"
   zstyle ':prezto:module:git:info:keys' format \
     'prompt' '%b%C%D' \
     'rprompt' ''
 
   # Define prompts.
-  PROMPT='%B%F{red}${prefix}%f%b  %B%F{cyan}$(prompt-pwd)%f%b ${git_info:+${(e)git_info[prompt]}} '
-  RPROMPT='%B%F{yellow}${AWS_DEFAULT_PROFILE}%f%b [%B%F{red}${?}%f%b]'
+  PROMPT='%B%F{red}${prefix}%f%b '
+  RPROMPT='%B%F{cyan}$(prompt-pwd)%f%b ${git_info:+${(e)git_info[prompt]}} [%B%F{yellow}${AWS_DEFAULT_PROFILE}%f%b] [%B%F{red}${?}%f%b]'
 }
 
 prompt_dan_setup "$@"
