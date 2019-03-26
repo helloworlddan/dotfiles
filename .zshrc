@@ -15,6 +15,10 @@ function asp(){
   export AWS_DEFAULT_PROFILE="${1}"
 }
 
+function aup(){
+  unset AWS_DEFAULT_PROFILE
+}
+
 function flush_dns() {
   sudo killall -HUP mDNSResponder
   sudo killall mDNSResponderHelper
@@ -22,6 +26,8 @@ function flush_dns() {
 }
 
 function tvm() {
+  aws-mfa --profile stamer
+  aws-mfa --profile cloudreach
   saml2aws-auto refresh vwfs
 
   SESSIONS="$(cat ~/.aws/credentials | grep -e '\[[a-zA-Z0-9\-]*\]$' | sort)"
