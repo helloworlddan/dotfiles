@@ -20,7 +20,7 @@ zstyle ':prezto:load' pmodule \
   'ssh' \
   'git'
 
-zstyle ':prezto:module:editor' key-bindings 'vi'
+zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:editor' dot-expansion 'yes'
 zstyle ':prezto:module:editor' ps-context 'yes'
 
@@ -28,7 +28,7 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 # zstyle ':prezto:module:pacman' frontend 'yaourt'
 
-zstyle ':prezto:module:prompt' theme 'pure'
+zstyle ':prezto:module:prompt' theme 'cloud' '>' 'red'
 zstyle ':prezto:module:prompt' pwd-length 'short'
 zstyle ':prezto:module:prompt' show-return-val 'yes'
 
