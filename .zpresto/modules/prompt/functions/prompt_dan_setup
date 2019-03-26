@@ -1,0 +1,84 @@
+pmodload 'helper'
+
+function prompt_dan_precmd {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+      git-info
+  fi
+}
+
+function prompt_dan_help {
+  cat <<EOT
+This prompt's prefix symbol and colors are customizable:
+
+  prompt dan [<symbol>] [<color1>] [<color2>]
+
+In ~/.zpreztorc:
+  zstyle ':prezto:module:prompt' theme 'dan' ['<symbol>'] ['<color1>'] ['<color2>']
+
+If these options are not provided, the symbol defaults to ☁ with colors cyan
+and green.
+EOT
+}
+
+function prompt_dan_preview {
+  if (( $# > 0 )); then
+    prompt_preview_theme 'dan' "$@"
+  else
+    prompt_preview_theme 'dan'
+    print
+    prompt_preview_theme 'dan' "✯"
+    print
+    prompt_preview_theme 'dan' ">" "yellow" "red"
+  fi
+}
+
+function prompt_dan_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent sp subst)
+
+  # Set the theme prefix to a cloud or to the user's given characters.
+  if [[ -n "$1" ]]; then
+    prefix="$1"
+  else
+    prefix='>'
+  fi
+
+  # Assign colors.
+  if [[ -n "$2" ]]; then
+    primary_color="$2"
+  else
+    primary_color='red'
+  fi
+
+  if [[ -n "$3" ]]; then
+    secondary_color="$3"
+  else
+    secondary_color='green'
+  fi
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+
+  # Add hook for calling git-info before each command.
+  add-zsh-hook precmd prompt_dan_precmd
+
+  # Set git-info parameters.
+  zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:dirty' format "%%B%F{$secondary_color}]%f%%b %F{yellow}|!%f"
+  zstyle ':prezto:module:git:info:clean' format "%B%F{$secondary_color}]%f%b"
+  zstyle ':prezto:module:git:info:branch' format "%%B%F{$secondary_color}[%f%%b%%B%F{$primary_color}%b%f%%b"
+  zstyle ':prezto:module:git:info:keys' format \
+    'prompt' '%b%C%D' \
+    'rprompt' ''
+
+  # Define prompts.
+  PROMPT='%B%F{$primary_color}${prefix}%f%b  %B%F{$secondary_color}%c%f%b ${git_info:+${(e)git_info[prompt]}} '
+  RPROMPT=''
+}
+
+prompt_dan_setup "$@"

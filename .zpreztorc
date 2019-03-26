@@ -28,7 +28,7 @@ zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 # zstyle ':prezto:module:pacman' frontend 'yaourt'
 
-zstyle ':prezto:module:prompt' theme 'cloud' '>' 'red'
+zstyle ':prezto:module:prompt' theme 'dan'
 zstyle ':prezto:module:prompt' pwd-length 'short'
 zstyle ':prezto:module:prompt' show-return-val 'yes'
 
