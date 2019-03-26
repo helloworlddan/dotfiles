@@ -14,13 +14,11 @@ function prompt_dan_help {
   cat <<EOT
 This prompt's prefix symbol and colors are customizable:
 
-  prompt dan [<symbol>] [<color1>] [<color2>]
+  prompt dan [<symbol>] [<color1>] [<color2>] [<color3>]
 
 In ~/.zpreztorc:
-  zstyle ':prezto:module:prompt' theme 'dan' ['<symbol>'] ['<color1>'] ['<color2>']
+  zstyle ':prezto:module:prompt' theme 'dan' ['<symbol>'] ['<color1>'] ['<color2>'] ['<color3>']
 
-If these options are not provided, the symbol defaults to ☁ with colors cyan
-and green.
 EOT
 }
 
@@ -49,17 +47,9 @@ function prompt_dan_setup {
   fi
 
   # Assign colors.
-  if [[ -n "$2" ]]; then
-    primary_color="$2"
-  else
-    primary_color='red'
-  fi
-
-  if [[ -n "$3" ]]; then
-    secondary_color="$3"
-  else
-    secondary_color='cyan'
-  fi
+  primary_color='red'
+  secondary_color='cyan'
+  tertiary_color='yellow'
 
   # Load required functions.
   autoload -Uz add-zsh-hook
@@ -69,16 +59,16 @@ function prompt_dan_setup {
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
-  zstyle ':prezto:module:git:info:dirty' format "%%B%F{$secondary_color}]%f%%b %F{yellow}|!%f"
-  zstyle ':prezto:module:git:info:clean' format "%B%F{$secondary_color}]%f%b"
-  zstyle ':prezto:module:git:info:branch' format "%%B%F{$secondary_color}[%f%%b%%B%F{$primary_color}%b%f%%b"
+  zstyle ':prezto:module:git:info:dirty' format "%%B%F{white}]%f%%b %F{red}!%f"
+  zstyle ':prezto:module:git:info:clean' format "%B%F{white}]%f%b"
+  zstyle ':prezto:module:git:info:branch' format "%%B%F{white}[%f%%b%%B%F{yellow}%b%f%%b"
   zstyle ':prezto:module:git:info:keys' format \
     'prompt' '%b%C%D' \
     'rprompt' ''
 
   # Define prompts.
-  PROMPT='%B%F{$primary_color}${prefix}%f%b  %B%F{$secondary_color}%c%f%b ${git_info:+${(e)git_info[prompt]}} '
-  RPROMPT='%B%F{$primary_color}${AWS_DEFAULT_PROFILE}'
+  PROMPT='%B%F{red}${prefix}%f%b  %B%F{cyan}$(prompt-pwd)%f%b ${git_info:+${(e)git_info[prompt]}} '
+  RPROMPT='%B%F{yellow}${AWS_DEFAULT_PROFILE}%f%b [%B%F{red}${?}%f%b]'
 }
 
 prompt_dan_setup "$@"
