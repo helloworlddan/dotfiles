@@ -45,7 +45,7 @@ function prompt_dan_setup {
   if [[ -n "$1" ]]; then
     prefix="$1"
   else
-    prefix='◎'
+    prefix='↳'
   fi
 
   # Assign colors.
