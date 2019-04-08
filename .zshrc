@@ -20,12 +20,13 @@ function aup(){
 }
 
 function flush_dns() {
+  sudo dscacheutil -flushcache
   sudo killall -HUP mDNSResponder
   sudo killall mDNSResponderHelper
-  sudo dscacheutil -flushcache
 }
 
 function tvm() {
+  aup
   aws-mfa --profile stamer
   aws-mfa --profile cloudreach
   saml2aws-auto refresh vwfs
