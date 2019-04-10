@@ -11,6 +11,10 @@ function safe_source() {
   fi
 }
 
+safe_source "${HOME}/.rvm/scripts/rvm"
+safe_source "${HOME}/Code/VWFS/mps-shell/mps-shell.sh"
+safe_source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
 function asp(){
   export AWS_DEFAULT_PROFILE="${1}"
 }
@@ -58,10 +62,6 @@ alias vim="nvim"
 alias s2a="saml2aws-auto"
 alias render="note --no-editor"
 alias nuke_sound="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
-
-safe_source "${HOME}/Code/VWFS/mps-shell/mps-shell.sh"
-safe_source "${HOME}/.rvm/scripts/rvm"
-safe_source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
