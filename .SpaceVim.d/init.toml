@@ -45,6 +45,9 @@ name = 'vim-multiple-cursors'
 name = 'lang#c'
 
 [[layers]]
+name = 'lang#graphviz'
+
+[[layers]]
 name = 'lang#haskell'
 
 [[layers]]
