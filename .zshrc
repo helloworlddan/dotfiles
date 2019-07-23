@@ -56,6 +56,13 @@ function beerbinge(){
   brew doctor
 }
 
+function gpg_unlock(){
+  touch gpg_unlock_payload
+  gpg -e -r daniel@stamer.info gpg_unlock_payload
+  gpg gpg_unlock_payload.gpg
+  rm -f gpg_unlock_payload gpg_unlock_payload.gpg
+}
+
 alias whaler="docker system prune -a"
 alias vim="nvim"
 alias render="note --no-editor"
