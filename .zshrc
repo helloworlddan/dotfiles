@@ -12,7 +12,6 @@ function safe_source() {
 }
 
 safe_source "${HOME}/.rvm/scripts/rvm"
-safe_source "${HOME}/Code/VWFS/mps-shell/mps-shell.sh"
 safe_source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 function asp(){
@@ -59,7 +58,6 @@ function beerbinge(){
 
 alias whaler="docker system prune -a"
 alias vim="nvim"
-alias s2a="saml2aws-auto"
 alias render="note --no-editor"
 alias nuke_sound="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{print $1}'`"
 
@@ -74,9 +72,7 @@ export GPGKEY="9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB"
 export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR="nvim"
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$PATH:$HOME/Code/Go/bin"
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
-export PATH="$PATH:$HOME/.bin"
 
 defaults write -g ApplePressAndHoldEnabled -bool false
 

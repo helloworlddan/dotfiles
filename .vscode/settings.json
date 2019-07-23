@@ -7,9 +7,8 @@
   "editor.renderWhitespace": "boundary",
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
   "editor.tabCompletion": "on",
-  "editor.tabSize": 2,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.autoSave": "onFocusChange",
@@ -23,9 +22,8 @@
     "vs-kubernetes.draft-path": "/Users/danielstamer/.vs-kubernetes/tools/draft/darwin-amd64/draft",
     "vs-kubernetes.helm-path": "/Users/danielstamer/.vs-kubernetes/tools/helm/darwin-amd64/helm"
   },
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Minima",
   "workbench.editor.showTabs": false,
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
@@ -48,5 +46,27 @@
     "!Split",
     "!Join"
   ],
-  "yaml.format.enable": true
+"yaml.format.enable": true,
+"editor.tabSize": 2,
+"workbench.colorTheme": "Minima",
+"liveshare.featureSet": "stable",
+"atlascode.jira.workingSite": {
+  "baseUrlSuffix": "atlassian.net"
+},
+"yaml.schemas": {
+  "file:///Users/danielstamer/.vscode/extensions/atlassian.atlascode-1.4.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+},
+"cloudcode.gke": {
+  "projectIds": [
+    "stamer",
+    "cr-lab-dstamer-0207192958"
+  ]
+},
+"atlascode.jira.workingProject": {
+  "id": "12720",
+  "name": "MPS - itchyPoopzkid -",
+  "key": "MPS"
+},
+"editor.largeFileOptimizations": false,
+"aws.samcli.location": "/usr/local/bin/sam"
 }
