@@ -38,9 +38,9 @@
 [commit]
         gpgsign = true
 
-[credential "https://git-codecommit.eu-west-1.amazonaws.com"]
-        helper = !aws codecommit credential-helper $@
-        useHttpPath = true
-
 [diff]
         tool = vimdiff
+
+[credential]
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true

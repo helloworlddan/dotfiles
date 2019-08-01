@@ -31,8 +31,7 @@ function flush_dns() {
 function tvm() {
   aup
   aws-mfa --profile stamer
-  aws-mfa --profile cloudreach
-  saml2aws-auto refresh vwfs
+  aws-mfa --profile veolia
 
   SESSIONS="$(cat ~/.aws/credentials | grep -e '\[[a-zA-Z0-9\-]*\]$' | sort)"
   echo ""
