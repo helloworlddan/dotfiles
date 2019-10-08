@@ -77,7 +77,7 @@ export GPG_TTY="$(tty)"
 export GPGKEY="9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB"
 export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR="nvim"
-export PATH="${PATH}:${HOME}/.rvm/bin"
+export PATH="${HOME}/.rvm/gems/ruby-2.6.5/bin:${PATH}"
 export PATH="${PATH}:${HOME}/Library/Python/3.7/bin"
 
 defaults write -g ApplePressAndHoldEnabled -bool false
