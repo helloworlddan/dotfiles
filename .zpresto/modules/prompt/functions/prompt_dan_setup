@@ -68,7 +68,7 @@ function prompt_dan_setup {
 
   # Define prompts.
   PROMPT='%B%F{red}${prefix}%f%b '
-  RPROMPT='%B%F{cyan}$(prompt-pwd)%f%b ${git_info:+${(e)git_info[prompt]}} [%B%F{yellow}${AWS_DEFAULT_PROFILE}%f%b$B%F{white}/%f%b%B%F{yellow}${AWS_DEFAULT_REGION}%f%b] [%B%F{red}${?}%f%b]'
+  RPROMPT='%B%F{cyan}$(prompt-pwd)%f%b ${git_info:+${(e)git_info[prompt]}} [%B%F{red}${?}%f%b]'
 }
 
 prompt_dan_setup "$@"

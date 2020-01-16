@@ -11,34 +11,12 @@ function safe_source() {
   fi
 }
 
-safe_source "${HOME}/.rvm/scripts/rvm"
 safe_source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
-function asp(){
-  export AWS_DEFAULT_PROFILE="${1}"
-}
-
-function aup(){
-  unset AWS_DEFAULT_PROFILE
-}
 
 function flush_dns() {
   sudo dscacheutil -flushcache
   sudo killall -HUP mDNSResponder
   sudo killall mDNSResponderHelper
-}
-
-function tvm() {
-  aup
-  aws-mfa --profile stamer
-  aws-mfa --profile veolia
-
-  SESSIONS="$(cat ~/.aws/credentials | grep -e '\[[a-zA-Z0-9\-]*\]$' | sort)"
-  echo ""
-  echo "${SESSIONS}" | column
-
-  NUMSESS="$(echo "${SESSIONS}" | wc -l | grep -o -e '[^\s]*')"
-  echo "\n${NUMSESS} hot sessions found."
 }
 
 function beerfest(){
@@ -57,7 +35,7 @@ function beerbinge(){
 
 function gpg_unlock(){
   touch gpg_unlock_payload
-  gpg -e -r daniel@stamer.info gpg_unlock_payload
+  gpg -e -r dan@hello-world.sh gpg_unlock_payload
   gpg gpg_unlock_payload.gpg
   rm -f gpg_unlock_payload gpg_unlock_payload.gpg
 }
@@ -69,16 +47,10 @@ alias nuke_sound="sudo kill `ps -ax | grep 'coreaudiod' | grep 'sbin' |awk '{pri
 
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-export AWS_HOME="${HOME}/.aws"
-export AWS_DEFAULT_REGION="eu-central-1"
-export AWS_DEFAULT_PROFILE="default"
-export AWS_DEFAULT_OUTPUT="json"
 export GPG_TTY="$(tty)"
 export GPGKEY="9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB"
 export PINENTRY_USER_DATA="USE_CURSES=1"
 export EDITOR="nvim"
-export PATH="${HOME}/.rvm/gems/ruby-2.6.5/bin:${PATH}"
-export PATH="${PATH}:${HOME}/Library/Python/3.7/bin"
 
 defaults write -g ApplePressAndHoldEnabled -bool false
 
