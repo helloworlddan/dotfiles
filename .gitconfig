@@ -1,46 +1,42 @@
-[user]
-        name = Daniel Stamer
-        email = dan@hello-world.sh
-        signingkey = 9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
-[color]
-        branch = auto
-        diff = auto
-        interactive = auto
-        pager = true
-        status = auto
-        ui = true
-[color "status"]
-        added = green
-        changed = yellow
-        untracked = red
-[push]
-        default = current
-[core]
-        autocrlf = input
-        pager = less -FRSX
-        editor = nvim
-[alias]
-        cm = commit -asS
-        co = checkout
-        df = difftool --stat
-        st = status -sb
-        tg = tag -s
-        sh = show --show-signature
-        mr = push origin --mirror
-        ps = push --all
-        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
-
-[filter "lfs"]
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
-        required = true
+[gpg]
+    program = gpg
 [commit]
-        gpgsign = true
-
+    gpgsign = true
+[user]
+    name = Daniel Stamer
+    email = dan@hello-world.sh
+    signingkey = 9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    pager = true
+    status = auto
+    ui = true
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+[push]
+    default = current
 [diff]
-        tool = vimdiff
-
-[credential]
-	helper = !aws codecommit credential-helper $@
-	UseHttpPath = true
+    tool = vimdiff
+[credential "https://source.developers.google.com"]
+    helper = gcloud.sh
+[credential "https://git-codecommit.eu-central-1.amazonaws.com"]
+    helper = !aws codecommit credential-helper $@
+    UseHttpPath = true
+[core]
+    autocrlf = input
+    pager = less -FRSX
+    editor = vim
+[alias]
+    cm = commit -asS
+    co = checkout
+    df = difftool --stat
+    st = status -sb
+    tg = tag -s
+    sh = show --show-signature
+    mr = push origin --mirror
+    ps = push --all
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
