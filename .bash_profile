@@ -16,14 +16,11 @@ case "$(uname)" in
 esac
 
 # Exports
-
-export PS1="\[\e[34m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\]:\[\e[33m\]\w\[\e[m\] $ "
+export PS1="\[\e[35m\]\! \[\e[32m\]\$(git branch 2>/dev/null | grep '*' | colrm 1 2) \[\e[33m\]\w \[\e[m\]\$ "
 export GOPATH="${HOME}/.go"
 export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="/usr/local/sbin:$PATH"
-
-# Additional functions
 
 beerfest(){
   brew upgrade
