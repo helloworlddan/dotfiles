@@ -1,0 +1,5 @@
+bucket: hwsh-tresor
+public_key: /Users/danielstamer/.gnupg/public_key.asc
+private_key: /Users/danielstamer/.gnupg/private_key.asc
+ascii_armor: false
+object_signing: false
