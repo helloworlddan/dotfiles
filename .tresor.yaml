@@ -1,5 +1,5 @@
-bucket: hwsh-tresor
+bucket: tresor_personal
 public_key: /Users/danielstamer/.gnupg/public_key.asc
 private_key: /Users/danielstamer/.gnupg/private_key.asc
-ascii_armor: false
+ascii_armor: true
 object_signing: false
