@@ -37,7 +37,6 @@
     st = status -sb
     tg = tag -s
     sh = show --show-signature
-    mr = push origin --mirror
     ps = push --all
     pl = pull --all
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all

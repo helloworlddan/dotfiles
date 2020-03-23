@@ -19,11 +19,10 @@ case "$(uname)" in
 esac
 
 # Exports
-export PS1="\[\e[35m\]\! \[\e[32m\]\$(git branch 2>/dev/null | grep '*' | colrm 1 2) \[\e[33m\]\w \[\e[m\]\$ "
+export PREPS1="$(date +%A | tr '[:upper:]' '[:lower:]')"
+export PS1="\[\e[31m\]\${PREPS1} \[\e[32m\]\$(git branch 2>/dev/null | grep '*' | colrm 1 2) \[\e[33m\]\w \[\e[m\]\$ "
 export GOPATH="${HOME}/.go"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
-export PATH="${HOME}/.local/bin:${PATH}"
-export PATH="/usr/local/sbin:$PATH"
+export PATH="${HOME}/.local/bin:${GOPATH}/bin:${GOROOT}/bin:/usr/local/sbin:${PATH}"
 export GPG_TTY=$(tty)
 
 # Additional functions
@@ -33,12 +32,9 @@ beerfest(){
   brew cleanup -s --prune=0
   brew doctor
 }
-gpg_unlock(){
-  file="$(mktemp)"
-  gpg -s "${file}"
-  rm -rf "${file}"
-  rm -rf "${file}.gpg"
-}
+
+# Aliases
+alias gcurl='curl -H "$(gcloud auth application-default print-access-token)" -H "Content-Type: application/json" '
 
 # Project specifics
 source "${HOME}/.local/project.sh"
