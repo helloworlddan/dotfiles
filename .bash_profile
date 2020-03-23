@@ -35,6 +35,7 @@ beerfest(){
 
 # Aliases
 alias gcurl='curl -H "$(gcloud auth application-default print-access-token)" -H "Content-Type: application/json" '
+alias gproject='gcloud config get-value core/project'
 
 # Project specifics
 source "${HOME}/.local/project.sh"
