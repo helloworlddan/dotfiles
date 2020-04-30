@@ -1,5 +1,5 @@
 bucket: tresor_personal
-public_key: /Users/danielstamer/.gnupg/public_key.asc
-private_key: /Users/danielstamer/.gnupg/private_key.asc
+public_key: /home/dan/.gnupg/public.asc
+private_key: /home/dan/.gnupg/private.asc
 ascii_armor: true
 object_signing: false
