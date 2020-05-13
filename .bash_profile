@@ -6,7 +6,7 @@ fi
 
 # Exports
 export PREPS1="$(date +%A | tr '[:upper:]' '[:lower:]')"
-export PS1="\[\e[31m\]\${PREPS1} \[\e[32m\]\$(git branch 2>/dev/null | grep '*' | colrm 1 2) \[\e[33m\]\w \[\e[m\]\$ "
+export PS1="\[\e[31m\]\${PREPS1} \[\e[32m\]\$(git branch 2>/dev/null | grep --color=never '*' | colrm 1 2) \[\e[33m\]\w \[\e[m\]\$ "
 export GOPATH="${HOME}/.go"
 export GPG_TTY=$(tty)
 # Exports to extend PATH
@@ -18,3 +18,4 @@ export PATH="${HOME}/.local/bin:${PATH}"
 alias gcurl='curl -H "$(gcloud auth application-default print-access-token)" -H "Content-Type: application/json" '
 alias gproject='gcloud config get-value core/project'
 alias ls="ls --color"
+alias grep="grep --color=always"
