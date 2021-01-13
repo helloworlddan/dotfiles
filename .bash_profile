@@ -6,7 +6,7 @@ fi
 
 # Exports
 export PREPS1="$(date +%A | tr '[:upper:]' '[:lower:]')"
-export PS1="\[\e[31m\]\${PREPS1} \[\e[32m\]\$(git branch 2>/dev/null | grep --color=never '*' | colrm 1 2) \[\e[33m\]\w \[\e[m\]\$ "
+export PS1="\[\e[31m\]\${PREPS1} \[\e[34m\]\$(git branch 2>/dev/null | grep --color=never '*' | colrm 1 2) \[\e[92m\]\w \[\e[m\]\$ "
 export GOPATH="${HOME}/.go"
 export GPG_TTY=$(tty)
 # Exports to extend PATH
