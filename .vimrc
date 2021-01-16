@@ -20,7 +20,7 @@ set background=dark
 set ruler
 set relativenumber
 set nu
-:hi CursorLineNr ctermfg=Blue
+:hi CursorLineNr ctermfg=White
 
 filetype indent on
 syntax enable
