@@ -19,3 +19,4 @@ alias gcurl='curl -H "$(gcloud auth application-default print-access-token)" -H 
 alias gproject='gcloud config get-value core/project'
 alias ls="ls --color"
 alias grep="grep --color=always"
+
