@@ -33,7 +33,7 @@ augroup gitstatusline
     autocmd TabEnter,BufEnter,FocusGained,BufWritePost *
         \ let b:git_branch = substitute(system("git rev-parse --abbrev-ref HEAD 2>/dev/null"), "\n", " ", "g")
     autocmd TabEnter,BufEnter,FocusGained,BufWritePost *
-        \ if !empty(expand('%')) | let b:git_diff = substitute(system("git diff --stat " . expand('%') . " 2>/dev/null"), "\n", " ", "g") | endif
+        \ if !empty(expand('%')) | let b:git_diff = substitute(substitute(system("git diff --stat " . expand('%') . " 2>/dev/null | sed 's/^.*|//'"), "\n", " |", ""), "\n", "", "" ) | endif
 augroup end
 
 function! GitBranch()
