@@ -29,7 +29,7 @@ set laststatus=2
 augroup gitstatusline
     au!
     let b:git_branch = "- "
-    let b:git_diff = "tree clean "
+    let b:git_diff = "- "
     autocmd TabEnter,BufEnter,FocusGained,BufWritePost *
         \ let b:git_branch = substitute(system("git rev-parse --abbrev-ref HEAD 2>/dev/null"), "\n", " ", "g")
     autocmd TabEnter,BufEnter,FocusGained,BufWritePost *
