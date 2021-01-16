@@ -20,39 +20,45 @@ set background=dark
 set ruler
 set relativenumber
 set nu
+:hi CursorLineNr ctermfg=Blue
 
 filetype indent on
 syntax enable
 
 set laststatus=2
+augroup gitstatusline
+    au!
+    let b:git_branch = "- "
+    let b:git_diff = "- "
+    autocmd TabEnter,BufEnter,FocusGained,BufWritePost *
+        \ let b:git_branch = substitute(system("git rev-parse --abbrev-ref HEAD 2>/dev/null"), "\n", " ", "g")
+    autocmd TabEnter,BufEnter,FocusGained,BufWritePost *
+        \ if !empty(expand('%')) | let b:git_diff = substitute(system("git diff --stat " . expand('%') . " 2>/dev/null"), "\n", " ", "g") | endif
+augroup end
+
 function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+  return get(b:, "git_branch", "")
 endfunction
-function! StatuslineGitBranch()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
+
 function! GitDiff()
-  return system("git diff --stat .vimrc | tr -d '\n'")
+  return get(b:, "git_diff", "")
 endfunction
-function! StatuslineGitDiff()
-  let l:diffstat = GitDiff()
-  return strlen(l:diffstat) > 0?'  '.l:diffstat.' ':''
-endfunction
+
+:hi PmenuSel ctermfg=White
 set statusline=
 set statusline+=%#StatusLineTermNC#
-set statusline+=%{StatuslineGitBranch()}
+set statusline+=\ %{GitBranch()}
 set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGitDiff()}
-set statusline+=%#LineNr#
+set statusline+=\ %{GitDiff()}
 set statusline+=%m
 set statusline+=%=
-set statusline+=%#Todo#
+set statusline+=%#LineNr#
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
+set statusline+=\ %{&fileformat}
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
+set statusline+=\ 
 
 set showtabline=2
 map <C-t><C-t> :tabs<cr>
@@ -61,7 +67,7 @@ map <C-t><left> :tabprevious<cr>
 map <C-t><up> :tabnew<cr>
 map <C-t><down> :tabclose<cr>
 :hi TabLineFill ctermfg=Black ctermbg=Black
-:hi TabLine ctermfg=White ctermbg=Grey
+:hi TabLine ctermfg=Black ctermbg=Grey 
 :hi TabLineSel ctermfg=White ctermbg=DarkRed
 
 highlight VertSplit cterm=None
