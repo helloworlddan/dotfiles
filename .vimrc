@@ -64,7 +64,7 @@ set showtabline=2
 map <C-t><C-t> :tabs<cr>
 map <C-t><right> :tabnext<cr>
 map <C-t><left> :tabprevious<cr>
-map <C-t><up> :tabnew<cr>
+map <C-t><up> :Te<cr>
 map <C-t><down> :tabclose<cr>
 :hi TabLineFill ctermfg=Black ctermbg=Black
 :hi TabLine ctermfg=Black ctermbg=Grey 
