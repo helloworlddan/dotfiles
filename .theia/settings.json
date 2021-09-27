@@ -1,0 +1,27 @@
+{
+    "go.useLanguageServer": true,
+    "go.useGoProxyToCheckForToolUpdates": false,
+    "editor.autoSave": "on",
+    "python.autoUpdateLanguageServer": false,
+    "workbench.colorTheme": "GitHub Light",
+    "workbench.iconTheme": "vs-seti",
+    "workspace.preserveWindow": true,
+    "files.watcherExclude": {
+        "**/.cache/**": true,
+        "**/.git/**": true,
+        "**/node_modules/**": true
+    },
+    "csharp.suppressDotnetRestoreNotification": true,
+    "gettingstarted.showOnStartup": false,
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "off",
+    "files.associations": {},
+    "editor.cursorStyle": "block-outline",
+    "editor.codeLens": true,
+    "files.trimTrailingWhitespace": true,
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useLanguageServer": true,
+    "ruby.useBundler": false
+}
