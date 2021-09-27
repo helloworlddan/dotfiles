@@ -1,0 +1,11 @@
+#!/bin/sh
+
+dest="/google/devshell/editor/theia/plugins"
+for src in /home/dan/.plugins/*; do
+  plugin="$(basename $src)" 
+  file="${dest}/${plugin}"
+  if [ ! -f "${file}" ]; then
+    ln -s "${src}" "${file}"
+  fi
+done
+
