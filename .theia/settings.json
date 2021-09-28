@@ -16,7 +16,6 @@
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "off",
     "files.associations": {},
-    "editor.cursorStyle": "block-outline",
     "editor.codeLens": true,
     "files.trimTrailingWhitespace": true,
     "ruby.codeCompletion": "rcodetools",

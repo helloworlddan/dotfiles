@@ -4,8 +4,19 @@ if [ -f "${HOME}/README-cloudshell.txt" ]; then
   rm "${HOME}/README-cloudshell.txt"
 fi
 
+# Functions
+greeting() {
+    date +%A | tr '[:upper:]' '[:lower:]'
+}
+project_name(){
+    cat ~/.config/gcloud/configurations/config_default | grep -oP "^project = \K.*"
+}
+branch_name() {
+    git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
+}
+
 # Exports
-export PS1="\[\e[31m\]\$(date +%A | tr '[:upper:]' '[:lower:]') \[\e[34m\]\$(git branch 2>/dev/null | grep --color=never '*' | colrm 1 2) \[\e[92m\]\w \[\e[m\]\$ "
+export PS1="\[\e[31m\]\$(greeting) \[\e[34m\]\$(project_name) \[\e[33m\]\$(branch_name) \[\e[92m\]\w \[\e[m\]\$ "
 export GOPATH="${HOME}/.go"
 export GPG_TTY=$(tty)
 export EDITOR="vim"
