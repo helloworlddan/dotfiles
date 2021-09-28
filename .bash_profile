@@ -5,24 +5,28 @@ if [ -f "${HOME}/README-cloudshell.txt" ]; then
 fi
 
 # Functions
-greeting() {
-    date +%A | tr '[:upper:]' '[:lower:]'
+clock() {
+    TZ="Europe/Berlin" date +"%H%M"
 }
-project_name(){
+project_name() {
     cat ~/.config/gcloud/configurations/config_default | grep -oP "^project = \K.*"
 }
 branch_name() {
     git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
 }
+path_name() {
+    if [ $HOME == $PWD ];
+    then
+       echo "~" && exit 0
+    fi
+    echo "$(pwd | sed -e "s/\/home\/${USER}/~/g" | sed -r 's|/(.)[^/]*|/\1|g' | sed -E 's/.?$//g')$(basename ${PWD})"
+}
 
 # Exports
-export PS1="\[\e[31m\]\$(greeting) \[\e[34m\]\$(project_name) \[\e[33m\]\$(branch_name) \[\e[92m\]\w \[\e[m\]\$ "
-export GOPATH="${HOME}/.go"
+export PS1="\[\e[34m\]\$(clock) \[\e[31m\]\$(project_name) \[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
+#export GOPATH="${HOME}/.go"
 export GPG_TTY=$(tty)
 export EDITOR="vim"
-# Exports to extend PATH
-export PATH="${GOROOT}/bin:${PATH}"
-export PATH="${GOPATH}/bin:${PATH}"
 export PATH="${HOME}/.local/bin:${PATH}"
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -37,7 +41,7 @@ export LESS_TERMCAP_us=$'\E[01;36m'
 alias gcurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
 alias gproject='gcloud config get-value core/project'
 alias gnumber='$(gcloud projects describe $(gcloud config get-value core/project) --format "value(projectNumber)")'
-alias gbuilds='gcloud builds list --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.BRANCH_NAME,substitutions.TRIGGER_NAME)"'
+alias gbuilds='gcloud builds list --limit 10 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.BRANCH_NAME,substitutions.TRIGGER_NAME)"'
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") || echo "no active builds"'
 alias gwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth print-access-token)"'
 alias ls="ls -hF --color=auto"
