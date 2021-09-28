@@ -1,11 +1,14 @@
 #!/bin/sh
 
+# Linking theia plugins
 dest="/google/devshell/editor/theia/plugins"
+current="$(pwd)"
 for src in .plugins/*; do
-  plugin="$(basename $src)" 
-  file="${dest}/${plugin}"
-  if [ ! -f "${file}" ]; then
-    ln -s "${src}" "${file}"
+  plugin="$(basename $src)"
+  from_file="${current}/.plugins/${plugin}"
+  to_file="${dest}/${plugin}"
+  if [ ! -L $to_file ]; then
+    ln -s "${from_file}" "${to_file}"
   fi
 done
 
