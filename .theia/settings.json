@@ -3,7 +3,7 @@
     "go.useGoProxyToCheckForToolUpdates": false,
     "editor.autoSave": "on",
     "python.autoUpdateLanguageServer": false,
-    "workbench.colorTheme": "Gruvbox Dark Soft",
+    "workbench.colorTheme": "GitHub Light",
     "workbench.iconTheme": "vs-seti",
     "workspace.preserveWindow": true,
     "files.watcherExclude": {
