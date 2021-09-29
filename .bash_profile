@@ -15,11 +15,14 @@ branch_name() {
     git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
 }
 path_name() {
-    if [ $HOME == $PWD ];
-    then
-       echo "~" && exit 0
+    if [ $PWD == $HOME ]; then echo "~"
+    elif [ $PWD == "/" ]; then echo "/"
+    else
+        echo "${PWD/#$HOME/\~}" \
+          | sed -r 's|/(.)[^/]*|/\1|g' \
+          | sed -E 's/.?$//g' \
+          | sed "s/$/$(basename ${PWD})/"
     fi
-    echo "$(pwd | sed -e "s/\/home\/${USER}/~/g" | sed -r 's|/(.)[^/]*|/\1|g' | sed -E 's/.?$//g')$(basename ${PWD})"
 }
 
 # Exports
