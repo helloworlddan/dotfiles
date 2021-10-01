@@ -22,5 +22,6 @@
     "ruby.format": "rubocop",
     "ruby.intellisense": "rubyLocate",
     "ruby.useLanguageServer": true,
-    "ruby.useBundler": false
+    "ruby.useBundler": false,
+    "editor.fontFamily": "'JetBrains Mono', 'Inconsolata', 'monospace'"
 }
