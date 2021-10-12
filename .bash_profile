@@ -52,3 +52,18 @@ alias grep="grep --color=always"
 
 # Shell Options
 shopt -s histappend
+
+
+cat << EOF
+Hey Dan!
+
+Hows things? I hope you're good.
+You know I've been trying to get hold of you.. Did you drop off the face of the earth!??
+
+I'm coming to Berlin for a few weeks in October, I was wondering if you'd be up for a beer or something?
+
+Don't let your wingman down!
+
+Mav
+EOF
+
