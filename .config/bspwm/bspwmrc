@@ -1,8 +1,8 @@
 #! /bin/sh
 
-bspc monitor -d I II III IV
+bspc monitor -d I II III IV V VI
 
-setxkbmap de
+setxkbmap us
 xsetroot -solid "#a89984"
 sxhkd &
 

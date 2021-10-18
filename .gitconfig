@@ -1,10 +1,10 @@
 [gpg]
     program = gpg
 [commit]
-    gpgsign = true
+    gpgsign = false
 [user]
     name = Daniel Stamer
-    email = dan@hello-world.sh
+    email = stamer@google.com
     signingkey = 9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
 [color]
     branch = auto
@@ -31,7 +31,7 @@
     pager = less -FRSX
     editor = vim
 [alias]
-    cm = commit -asS
+    cm = commit -as
     co = checkout
     df = difftool --stat
     st = status -sb
