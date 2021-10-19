@@ -3,7 +3,7 @@ alt + Return
 	gnome-terminal
 
 alt + r
-	dmenu_run -i -q -h 18 -nb "#272822" -sb "#272822" -nf "#f8f8f2" -sf "#a6e22e" -p " ➜ "
+	xfce4-appfinder
 
 alt + c
 	code
