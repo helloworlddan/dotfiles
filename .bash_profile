@@ -5,8 +5,8 @@ if [ -f "${HOME}/README-cloudshell.txt" ]; then
 fi
 
 # Functions
-clock() {
-    TZ="Europe/Berlin" date +"%H%M"
+user_domain() {
+    cat ~/.config/gcloud/configurations/config_default | grep -oP "^account = .*@\K.*"
 }
 project_name() {
     cat ~/.config/gcloud/configurations/config_default | grep -oP "^project = \K.*"
@@ -26,7 +26,7 @@ path_name() {
 }
 
 # Exports
-export PS1="\[\e[34m\]\$(clock) \[\e[31m\]\$(project_name) \[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
+export PS1="\[\e[34m\]\$(user_domain)\[\e[m\]:\[\e[31m\]\$(project_name) \[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
 #export GOPATH="${HOME}/.go"
 export GPG_TTY=$(tty)
 export EDITOR="vim"
