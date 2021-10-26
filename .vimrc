@@ -1,3 +1,5 @@
+set noswapfile
+set autoread
 set autoindent
 set expandtab
 set shiftround
@@ -61,13 +63,13 @@ set statusline+=\ %l:%c
 set statusline+=\ 
 
 set showtabline=2
-map <C-t><C-t> :tabs<cr>
-map <C-t><right> :tabnext<cr>
-map <C-t><left> :tabprevious<cr>
-map <C-t><up> :Te<cr>
-map <C-t><down> :tabclose<cr>
+map <C-t> :tabs<cr>
+map <right> :tabnext<cr>
+map <left> :tabprevious<cr>
+map <up> :Te<cr>
+map <down> :tabclose<cr>
 :hi TabLineFill ctermfg=Black ctermbg=Black
-:hi TabLine ctermfg=Black ctermbg=Grey 
-:hi TabLineSel ctermfg=White ctermbg=DarkRed
+:hi TabLine ctermfg=White ctermbg=DarkGrey 
+:hi TabLineSel ctermfg=White ctermbg=DarkBlue
 
 highlight VertSplit cterm=None
