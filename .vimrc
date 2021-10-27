@@ -7,6 +7,9 @@ set shiftwidth=2
 set smarttab
 set tabstop=2
 
+set mouse=
+set ttymouse=
+
 set hlsearch
 set incsearch
 set smartcase
