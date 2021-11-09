@@ -1,9 +1,6 @@
 # apps
 alt + Return
-	gnome-terminal
-
-alt + r
-	xfce4-appfinder
+	kitty
 
 alt + c
 	code
