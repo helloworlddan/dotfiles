@@ -73,6 +73,6 @@ map <up> :Te<cr>
 map <down> :tabclose<cr>
 :hi TabLineFill ctermfg=Black ctermbg=Black
 :hi TabLine ctermfg=White ctermbg=DarkGrey 
-:hi TabLineSel ctermfg=White ctermbg=DarkBlue
+:hi TabLineSel ctermfg=Black ctermbg=DarkRed
 
 highlight VertSplit cterm=None
