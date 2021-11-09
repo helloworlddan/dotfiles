@@ -8,13 +8,11 @@ alt + r
 alt + c
 	code
 
-alt + w
+alt + b
 	google-chrome
 
-alt + shift + w
+alt + shift + b
 	google-chrome --incognito
-
-
 
 # reload sxhkd & bspwm
 alt + shift + Escape
@@ -24,17 +22,17 @@ alt + shift + Escape
 alt Escape
 	bspc quit
 
-# close and kill
+# close
+alt + w
+	bspc node -{c}
+
+# kill
 alt + q
-	bspc node -{c,k}
+	bspc node -{k}
 
 # monocle current node
 alt + space
 	bspc desktop -l next
-
-# biggest node!
-alt + b
-	bspc node -s biggest
 
 # set the window state
 alt + {t,shift + t,s,f}
