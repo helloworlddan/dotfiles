@@ -75,4 +75,6 @@ map <down> :tabclose<cr>
 :hi TabLine ctermfg=White ctermbg=DarkGrey 
 :hi TabLineSel ctermfg=Black ctermbg=DarkRed
 
+command! -nargs=* Wrap set wrap linebreak nolist
+
 highlight VertSplit cterm=None
