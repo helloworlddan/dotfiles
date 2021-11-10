@@ -1,0 +1,39 @@
+cursor            #F8F9FA
+
+background        #202124
+foreground        #F8F9FA
+
+selection_background    #E8EAED
+selection_foreground    #3C4043
+
+# black
+color0    #202124
+color8    #3C4043
+
+# red
+color1    #EA4335
+color9    #EE675C
+
+# green
+color2    #34A853
+color10   #5BB974
+
+# yellow
+color3    #FBBC04
+color11   #FCC934
+
+# blue
+color4    #4285F4
+color12   #669DF6
+
+# magenta
+color5    #a142f4
+color13   #af5cf7
+
+# cyan
+color6    #24c1e0
+color14   #4ecde6
+
+# white
+color7    #DADCE0
+color15   #E8EAED
