@@ -6,10 +6,10 @@ alt + c
 	code
 
 alt + b
-	google-chrome
+	google-chrome || google-chrome-stable
 
 alt + shift + b
-	google-chrome --incognito
+	google-chrome --incognito  || google-chrome-stable --incognito
 
 # reload sxhkd & bspwm
 alt + shift + Escape

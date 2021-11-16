@@ -6,10 +6,10 @@ fi
 
 # Functions
 user_domain() {
-    cat ~/.config/gcloud/configurations/config_default | grep -oP "^account = .*@\K.*"
+    cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -oP "^account = .*@\K.*" || date +%H
 }
 project_name() {
-    cat ~/.config/gcloud/configurations/config_default | grep -oP "^project = \K.*"
+    cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -oP "^project = \K.*" || date +%M
 }
 branch_name() {
     git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
@@ -19,8 +19,6 @@ path_name() {
 }
 
 # Exports
-export PS1="\[\e[34m\]\$(user_domain)\[\e[m\]:\[\e[31m\]\$(project_name) \[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
-#export GOPATH="${HOME}/.go"
 export GPG_TTY=$(tty)
 export EDITOR="vim"
 export PATH="${HOME}/.local/bin:${PATH}"
@@ -32,6 +30,7 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;42;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
+export PS1="\[\e[34m\]\$(user_domain)\[\e[m\]:\[\e[31m\]\$(project_name) \[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
 
 # Aliases
 alias gcurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
