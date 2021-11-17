@@ -42,6 +42,7 @@ alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --
 alias gwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth print-access-token)"'
 alias ls="ls -hF --color=auto"
 alias grep="grep --color=always"
+alias vpn="sudo openvpn /etc/openvpn/client/client.conf"
 
 # Shell Options
 shopt -s histappend
