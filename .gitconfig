@@ -4,7 +4,7 @@
     gpgsign = true
 [user]
     name = Daniel Stamer
-    email = stamer@google.com
+    email = dan@hello-world.sh
     signingkey = 9AECBF60B37C3708C1EC1FF1EDAC0E3FCB1B3FEB
 [color]
     branch = auto
