@@ -42,7 +42,7 @@ alt + space
 	bspc desktop -l next
 
 # quit bspwm normally
-alt Escape
+alt + Escape
 	bspc quit
 
 # reload sxhkd & bspwm
@@ -68,10 +68,6 @@ alt + {_,shift + }{1-9,0}
 # preselect the direction
 alt + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-alt + ctrl + {1-9}
-	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 alt + ctrl + space
