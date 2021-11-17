@@ -11,13 +11,23 @@ alt + b
 alt + shift + b
 	google-chrome --incognito  || google-chrome-stable --incognito
 
-# reload sxhkd & bspwm
-alt + shift + Escape
-	pkill -USR1 -x sxhkd && source ~/.config/bspwm/bspwmrc
+alt + m
+  google-chrome --app=https://mail.google.com || google-chrome-stable --app=https://mail.google.com
 
-# quit bspwm normally
-alt Escape
-	bspc quit
+alt + p
+  google-chrome --app=https://console.cloud.google.com || google-chrome-stable --app=https://console.cloud.google.com
+
+alt + d
+  google-chrome --app=https://drive.google.com || google-chrome-stable --app=https://drive.google.com
+
+alt + s
+  google-chrome --app=https://open.spotify.com || google-chrome-stable --app=https://open.spotify.com
+
+alt + y
+  google-chrome --app=https://youtube.com || google-chrome-stable --app=https://youtube.com
+
+alt + n
+  google-chrome --app=https://netflix.com || google-chrome-stable --app=https://netflix.com
 
 # close
 alt + w
@@ -27,13 +37,21 @@ alt + w
 alt + q
 	bspc node -{k}
 
-# monocle current node
+# toggle monocle
 alt + space
 	bspc desktop -l next
 
+# quit bspwm normally
+alt Escape
+	bspc quit
+
+# reload sxhkd & bspwm
+alt + shift + Escape
+	pkill -USR1 -x sxhkd && source ~/.config/bspwm/bspwmrc
+
 # set the window state
-alt + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+alt + {t,shift + t,f,shift + f}
+	bspc node -t {tiled,pseudo_tiled,fullscreen,floating}
 
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l}
