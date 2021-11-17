@@ -1,7 +1,7 @@
 [gpg]
     program = gpg
 [commit]
-    gpgsign = false
+    gpgsign = true
 [user]
     name = Daniel Stamer
     email = stamer@google.com
@@ -31,7 +31,7 @@
     pager = less -FRSX
     editor = vim
 [alias]
-    cm = commit -as
+    cm = commit -asS
     co = checkout
     df = difftool --stat
     st = status -sb

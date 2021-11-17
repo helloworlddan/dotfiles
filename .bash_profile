@@ -22,6 +22,7 @@ path_name() {
 export GPG_TTY=$(tty)
 export EDITOR="vim"
 export PATH="${HOME}/.local/bin:${PATH}"
+export GOPATH="${HOME}/.go/"
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;33m'
