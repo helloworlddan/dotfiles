@@ -40,9 +40,10 @@ alias gnumber='echo $(gcloud projects describe $(gcloud config get-value core/pr
 alias gbuilds='gcloud builds list --limit 10 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.BRANCH_NAME,substitutions.TRIGGER_NAME)"'
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias gwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth print-access-token)"'
-alias ls="ls -hF --color=auto"
-alias grep="grep --color=always"
-alias vpn="sudo openvpn /etc/openvpn/client/client.conf"
+alias ls='ls -hF --color=auto'
+alias grep='grep --color=always'
+alias vpn='sudo openvpn /etc/openvpn/client/client.conf'
+alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
 
 # Shell Options
 shopt -s histappend
