@@ -20,6 +20,9 @@ alt + p
 alt + d
   google-chrome --app=https://drive.google.com || google-chrome-stable --app=https://drive.google.com
 
+alt + g
+  google-chrome --app=https://github.com || google-chrome-stable --app=https://github.com
+
 alt + s
   google-chrome --app=https://open.spotify.com || google-chrome-stable --app=https://open.spotify.com
 
