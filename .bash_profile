@@ -34,16 +34,31 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 
 # Aliases
+alias ls='ls -hF --color=auto'
+alias grep='grep --color=always'
+alias vpn='sudo openvpn /etc/openvpn/client/client.conf'
+alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
 alias gcurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
 alias gproject='gcloud config get-value core/project'
 alias gnumber='echo $(gcloud projects describe $(gcloud config get-value core/project) --format "value(projectNumber)")'
 alias gbuilds='gcloud builds list --limit 10 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.BRANCH_NAME,substitutions.TRIGGER_NAME)"'
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias gwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth print-access-token)"'
-alias ls='ls -hF --color=auto'
-alias grep='grep --color=always'
-alias vpn='sudo openvpn /etc/openvpn/client/client.conf'
-alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
+
+# Functions
+grunlogs () {
+  gcloud logging read \
+    --format "value(textPayload)" \
+    --limit 20 \
+    "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null severity>=DEFAULT logName = \"projects/$(gcloud config get-value project)/logs/run.googleapis.com%2Fstderr\"" | tac
+}
+
+grunlogstream () {
+  export CLOUDSDK_PYTHON_SITEPACKAGES=1
+  gcloud alpha logging tail \
+    --format "value(textPayload)" \
+    "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null severity>=DEFAULT logName = \"projects/$(gcloud config get-value project)/logs/run.googleapis.com%2Fstderr\""
+}
 
 # Shell Options
 shopt -s histappend
