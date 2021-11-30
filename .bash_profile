@@ -36,6 +36,7 @@ export LESS_TERMCAP_us=$'\E[01;36m'
 # Aliases
 alias ls='ls -hF --color=auto'
 alias grep='grep --color=always'
+alias tree='tree -C'
 alias vpn='sudo openvpn /etc/openvpn/client/client.conf'
 alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
 alias gcurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
