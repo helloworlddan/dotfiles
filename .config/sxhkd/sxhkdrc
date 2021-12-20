@@ -36,23 +36,19 @@ alt + x
   edex-ui
 
 # close
-alt + w
+alt + Escape
 	bspc node -{c}
-
-# kill
-alt + q
-	bspc node -{k}
 
 # toggle monocle
 alt + space
 	bspc desktop -l next
 
 # quit bspwm normally
-alt + Escape
+alt + shift + Escape
 	bspc quit
 
 # reload sxhkd & bspwm
-alt + shift + Escape
+alt + shift + r
 	pkill -USR1 -x sxhkd && source ~/.config/bspwm/bspwmrc
 
 # set the window state
