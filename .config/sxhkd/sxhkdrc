@@ -14,9 +14,6 @@ alt + shift + b
 alt + m
   google-chrome --app=https://mail.google.com || google-chrome-stable --app=https://mail.google.com
 
-alt + p
-  google-chrome --app=https://console.cloud.google.com || google-chrome-stable --app=https://console.cloud.google.com
-
 alt + d
   google-chrome --app=https://drive.google.com || google-chrome-stable --app=https://drive.google.com
 
