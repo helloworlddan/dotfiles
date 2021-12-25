@@ -22,10 +22,8 @@ path_name() {
 export GPG_TTY=$(tty)
 export EDITOR="vim"
 export GOPATH="${HOME}/.go"
-export OPS_DIR="$HOME/.ops"
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="${GOPATH}/bin:${PATH}"
-export PATH="$HOME/.ops/bin:$PATH"
 export PATH="${HOME}/.ghcup/bin:${PATH}"
 export PATH="${HOME}/.cabal/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
