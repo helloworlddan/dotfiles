@@ -26,6 +26,9 @@ export OPS_DIR="$HOME/.ops"
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="${GOPATH}/bin:${PATH}"
 export PATH="$HOME/.ops/bin:$PATH"
+export PATH="${HOME}/.ghcup/bin:${PATH}"
+export PATH="${HOME}/.cabal/bin:${PATH}"
+export GOPATH="${HOME}/.go/"
 export PS1="\[\e[34m\]\$(user_domain)\[\e[m\]:\[\e[31m\]\$(project_name) \[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
