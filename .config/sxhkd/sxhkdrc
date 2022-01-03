@@ -32,6 +32,12 @@ alt + y
 alt + n
   google-chrome --app=https://netflix.com || google-chrome-stable --app=https://netflix.com
 
+alt + Home
+  bspc config top_padding 35 && yabar
+
+alt + shift + Home
+  bspc config top_padding 0 && pkill -USR1 -x yabar
+
 alt + x
   edex-ui
 
