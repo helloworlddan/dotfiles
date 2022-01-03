@@ -2,7 +2,7 @@
 alt + Return
 	kitty
 
-alt + c
+alt + v
 	code
 
 alt + b
@@ -13,6 +13,9 @@ alt + shift + b
 
 alt + m
   google-chrome --app=https://mail.google.com || google-chrome-stable --app=https://mail.google.com
+
+alt + c
+  google-chrome --app=https://calendar.google.com || google-chrome-stable --app=https://calendar.google.com
 
 alt + d
   google-chrome --app=https://drive.google.com || google-chrome-stable --app=https://drive.google.com
