@@ -5,12 +5,6 @@ if [ -f "${HOME}/README-cloudshell.txt" ]; then
 fi
 
 # Functions
-user_domain() {
-    cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -oP "^account = .*@\K.*" || date +%H
-}
-project_name() {
-    cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -oP "^project = \K.*" || date +%M
-}
 branch_name() {
     git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
 }
@@ -27,7 +21,7 @@ export PATH="${GOPATH}/bin:${PATH}"
 export PATH="${HOME}/.ghcup/bin:${PATH}"
 export PATH="${HOME}/.cabal/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
-export PS1="\[\e[34m\]\$(user_domain)\[\e[m\]:\[\e[31m\]\$(project_name) \[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
+export PS1="\[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;33m'
@@ -43,7 +37,8 @@ alias grep='grep --color=always'
 alias tree='tree -C'
 alias vpn='sudo openvpn /etc/openvpn/client/client.conf'
 alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
-alias gcurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
+alias gicurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
+alias gacurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
 alias gproject='gcloud config get-value core/project'
 alias gnumber='echo $(gcloud projects describe $(gcloud config get-value core/project) --format "value(projectNumber)")'
 alias gbuilds='gcloud builds list --limit 10 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.BRANCH_NAME,substitutions.TRIGGER_NAME)"'
