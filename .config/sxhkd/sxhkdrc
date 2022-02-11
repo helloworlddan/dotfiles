@@ -32,6 +32,9 @@ alt + y
 alt + n
   google-chrome --app=https://netflix.com || google-chrome-stable --app=https://netflix.com
 
+alt + Print
+  scrot -s
+
 alt + Home
   bspc config top_padding 40 && yabar
 
