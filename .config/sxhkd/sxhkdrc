@@ -32,6 +32,9 @@ alt + y
 alt + n
   google-chrome --app=https://netflix.com || google-chrome-stable --app=https://netflix.com
 
+alt + p
+  google-chrome --app=http://go/companion || google-chrome-stable --app=http://go/companion
+
 alt + Print
   scrot -s
 
