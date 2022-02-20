@@ -1,0 +1,126 @@
+bar-list: ["top"];
+
+top: {
+    font: "JetBrains Mono Medium 11";
+    position: "top";
+    gap-horizontal: 12;
+    gap-vertical: 12;
+    height: 25;
+    slack-size: 5;
+    border-size: 2;
+    border-color-rgb: 0x848484;
+    background-color-rgb: 0x282828;
+    foreground-color-rgb: 0xfbf1c7;
+
+    block-list: ["pads", "space", "pads", "user", "padat", "domain", "padc", "project", "padar", "region", "date", "app", "padsr", "layout", "padsr"];
+    padc: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xfbf1c7;
+      type: "persist";
+      align: "left";
+      variable-size: true;
+      exec: "echo ':'";
+    }
+    pads: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xfbf1c7;
+      type: "persist";
+      align: "left";
+      variable-size: true;
+      exec: "echo ' '";
+    }
+    padat: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xfbf1c7;
+      type: "persist";
+      align: "left";
+      variable-size: true;
+      exec: "echo '@'";
+    }
+    padar: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xfbf1c7;
+      type: "persist";
+      align: "left";
+      variable-size: true;
+      exec: "echo '->'";
+    }
+    padsr: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xfbf1c7;
+      type: "persist";
+      align: "right";
+      variable-size: true;
+      exec: "echo ' '";
+    }
+    space: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xfbf1c7;
+      type: "periodic";
+      interval: 1;
+      align: "left";
+      variable-size: true;
+      exec: "bspc query -D -d focused --names";
+    }
+    user: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xd79921;
+      type: "periodic";
+      interval: 5;
+      align: "left";
+      variable-size: true;
+      exec: "cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^account = (.*)@'";
+    }
+    domain: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0x458588;
+      type: "periodic";
+      interval: 5;
+      align: "left";
+      variable-size: true;
+      exec: "cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^account = .*@(.*)'";
+    }
+    project: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xcc241d;
+      type: "periodic";
+      interval: 5;
+      align: "left";
+      variable-size: true;
+      exec: "cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^project = (.*)'";
+    }
+    region: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0x98971a;
+      type: "periodic";
+      interval: 5;
+      align: "left";
+      variable-size: true;
+      exec: "cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^region = (.*)'";
+    }
+    date: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xfbf1c7;
+      type: "periodic";
+      interval: 5;
+      variable-size: true;
+      exec: "TZ=Europe/Berlin date +%H:%M\ -\ %a\ %e\ %b\ \'%y";
+    }
+    app: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0x689d6a;
+      align: "right";
+      justify: "right";
+      variable-size: true;
+      exec: "YABAR_TITLE";
+    }
+    layout: {
+      background-color-rgb: 0x282828;
+      foreground-color-rgb: 0xb16286;
+      align: "right";
+      type: "periodic";
+      interval: 5;
+      variable-size: true;
+      exec: "setxkbmap -query | pcregrep -o1 '^layout:     (.*)'";
+    }
+}
