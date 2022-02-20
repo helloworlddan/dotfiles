@@ -10,12 +10,12 @@ top: {
     border-size: 2;
     border-color-rgb: 0x848484;
     background-color-rgb: 0x33302f;
-    foreground-color-rgb: 0x93a1a1;
+    foreground-color-rgb: 0xd3d0d0;
 
     block-list: ["pads", "space", "pads", "user", "padat", "domain", "padc", "project", "padar", "region", "date", "app", "padsr", "layout", "padsr"];
     padc: {
       background-color-rgb: 0x33302f;
-      foreground-color-rgb: 0x93a1a1;
+      foreground-color-rgb: 0xd3d0d0;
       type: "persist";
       align: "left";
       variable-size: true;
@@ -23,7 +23,7 @@ top: {
     }
     pads: {
       background-color-rgb: 0x33302f;
-      foreground-color-rgb: 0x93a1a1;
+      foreground-color-rgb: 0xd3d0d0;
       type: "persist";
       align: "left";
       variable-size: true;
@@ -31,7 +31,7 @@ top: {
     }
     padat: {
       background-color-rgb: 0x33302f;
-      foreground-color-rgb: 0x93a1a1;
+      foreground-color-rgb: 0xd3d0d0;
       type: "persist";
       align: "left";
       variable-size: true;
@@ -39,7 +39,7 @@ top: {
     }
     padar: {
       background-color-rgb: 0x33302f;
-      foreground-color-rgb: 0x93a1a1;
+      foreground-color-rgb: 0xd3d0d0;
       type: "persist";
       align: "left";
       variable-size: true;
@@ -47,7 +47,7 @@ top: {
     }
     padsr: {
       background-color-rgb: 0x33302f;
-      foreground-color-rgb: 0x93a1a1;
+      foreground-color-rgb: 0xd3d0d0;
       type: "persist";
       align: "right";
       variable-size: true;
@@ -55,7 +55,7 @@ top: {
     }
     space: {
       background-color-rgb: 0x33302f;
-      foreground-color-rgb: 0x93a1a1;
+      foreground-color-rgb: 0xd3d0d0;
       type: "periodic";
       interval: 1;
       align: "left";
@@ -100,7 +100,7 @@ top: {
     }
     date: {
       background-color-rgb: 0x33302f;
-      foreground-color-rgb: 0x93a1a1;
+      foreground-color-rgb: 0xd3d0d0;
       type: "periodic";
       interval: 5;
       variable-size: true;
