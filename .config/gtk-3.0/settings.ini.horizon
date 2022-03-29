@@ -1,8 +1,7 @@
 [Settings]
 gtk-theme-name=horizon-theme
-gtk-font-name=Sans Regular 10
+gtk-font-name=JetBrains Mono Regular 10
 gtk-monospace-font-name=JetBrains Mono Regular 11
-
 gtk-application-prefer-dark-theme=true
 gtk-button-images=1
 gtk-cursor-theme-size=0
