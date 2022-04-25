@@ -28,6 +28,7 @@ set nu
 :hi CursorLineNr ctermfg=White
 
 filetype indent on
+filetype plugin on
 syntax enable
 
 set laststatus=2
