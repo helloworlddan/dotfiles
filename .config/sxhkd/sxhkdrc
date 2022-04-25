@@ -24,13 +24,16 @@ alt + g
   google-chrome --app=https://github.com || google-chrome-stable --app=https://github.com
 
 alt + s
-  google-chrome --app=https://open.spotify.com || google-chrome-stable --app=https://open.spotify.com
+  slack
 
 alt + y
   google-chrome --app=https://youtube.com || google-chrome-stable --app=https://youtube.com
 
 alt + n
   google-chrome --app=https://netflix.com || google-chrome-stable --app=https://netflix.com
+
+alt + a
+  google-chrome --app=http://go/nucleus:lac || google-chrome-stable --app=http://go/nucleus:lac
 
 alt + p
   google-chrome --app=http://go/companion || google-chrome-stable --app=http://go/companion
