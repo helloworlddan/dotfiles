@@ -18,8 +18,6 @@ export EDITOR="vim"
 export GOPATH="${HOME}/.go"
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="${GOPATH}/bin:${PATH}"
-export PATH="${HOME}/.ghcup/bin:${PATH}"
-export PATH="${HOME}/.cabal/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
 export PS1="\[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
 # Exports for colored Man-Pages
