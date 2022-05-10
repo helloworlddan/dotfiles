@@ -6,24 +6,20 @@ fi
 
 # Functions
 branch_name() {
-    git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
+  git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
 }
 path_name() {
   pwd | sed -e "s:$HOME:~:" -e "s:\(.\)[^/]*/:\1/:g"
 }
-
 user_name (){
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^account = (.*)@'
 }
-
 user_domain() {
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^account = .*@(.*)'
 }
-
 project_name() {
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^project = (.*)'
 }
-
 run_region() {
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^region = (.*)'
 }
