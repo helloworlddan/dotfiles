@@ -62,3 +62,8 @@ grunlogstream () {
 # Shell Options
 shopt -s histappend
 
+# Source local overrides, if available
+if [ -f "${HOME}/.bash_profile.local" ]; then
+  source "${HOME}/.bash_profile.local"
+fi
+
