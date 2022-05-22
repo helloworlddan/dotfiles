@@ -1,0 +1,42 @@
+cursor                  #9699a3
+cursor_text_color       background
+
+background              #d5d6db
+foreground              #343b58
+
+# black
+color0                  #0f0f14
+color8                  #0f0f14
+
+# red
+color1                  #8c4351
+color9                  #8c4351
+
+# green
+color2                  #33635c
+color10                 #33635c
+
+# yellow
+color3                  #8f5e15
+color11                 #8f5e15
+
+# blue
+color4                  #34548a
+color12                 #34548a
+
+# magenta
+color5                  #5a4a78
+color13                 #5a4a78
+
+# cyan
+color6                  #0f4b6e
+color14                 #0f4b6e
+
+# white
+color7                  #343b58
+color15                 #343b58
+
+
+
+selection_background    #6C6F93
+selection_foreground    #2E303E
