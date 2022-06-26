@@ -5,6 +5,9 @@ alt + Return
 alt + v
 	code
 
+alt + BackSpace
+  thunar
+
 alt + b
 	google-chrome || google-chrome-stable
 
