@@ -45,10 +45,10 @@ alt + Print
   scrot -s
 
 alt + Home
-  bspc config top_padding 40 && yabar
+  bspc config top_padding 40 && polybar
 
 alt + shift + Home
-  bspc config top_padding 0 && pkill -USR1 -x yabar
+  bspc config top_padding 0 && killall polybar
 
 alt + x
   edex-ui
