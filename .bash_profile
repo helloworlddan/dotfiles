@@ -32,6 +32,8 @@ export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="${GOPATH}/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
 export PS1="\[\e[33m\]\$(branch_name) \[\e[92m\]\$(path_name) \[\e[m\]\$ "
+export SCREEN_WIDTH="$(xrandr | pcregrep -o1 '^screen connected (\d+)x')"
+export BAR_WIDTH=$(($SCREEN_WIDTH - 20))
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;33m'
