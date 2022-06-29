@@ -45,7 +45,7 @@ alt + comma
   scrot -s
 
 alt + period
-  export BAR_WIDTH="$(($(xrandr | pcregrep -o1 '^screen connected (\d+)x') - 20))" && bspc config top_padding 40 && polybar
+  export BAR_WIDTH="$(($(xrandr | pcregrep -o1 'connected (\d+)x') - 20))" && bspc config top_padding 40 && polybar
 
 alt + shift + period
   bspc config top_padding 0 && killall polybar
