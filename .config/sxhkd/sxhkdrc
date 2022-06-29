@@ -41,13 +41,13 @@ alt + a
 alt + p
   google-chrome --app=http://go/companion || google-chrome-stable --app=http://go/companion
 
-alt + Print
+alt + comma
   scrot -s
 
-alt + Home
+alt + period
   export BAR_WIDTH="$(($(xrandr | pcregrep -o1 '^screen connected (\d+)x') - 20))" && bspc config top_padding 40 && polybar
 
-alt + shift + Home
+alt + shift + period
   bspc config top_padding 0 && killall polybar
 
 alt + x
