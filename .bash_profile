@@ -12,16 +12,16 @@ path_name() {
   pwd | sed -e "s:$HOME:~:" -e "s:\(.\)[^/]*/:\1/:g"
 }
 user_name (){
-  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^account = (.*)@'
+  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^account = \K(\w+)'
 }
 user_domain() {
-  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^account = .*@(.*)'
+  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^account = \w+@\K(.+)$'
 }
 project_name() {
-  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^project = (.*)'
+  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^project = \K(.*)$'
 }
 run_region() {
-  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | pcregrep -o1 '^region = (.*)'
+  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Pom 1 '^region = \K(.*)$'
 }
 
 # Exports
