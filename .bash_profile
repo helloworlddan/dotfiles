@@ -31,8 +31,8 @@ export GOPATH="${HOME}/.go"
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="${GOPATH}/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
-export PS1="\[\e[0m\] ⚛ \[\e[33m\]\$(user_name)\[\e[0m\] @ \[\e[32m\]\$(user_domain)\[\e[0m\] : \[\e[31m\]\$(project_name)\[\e[0m\] -> \[\e[34m\]\$(run_region)
-\[\e[0m\] 🢰 \[\e[35m\]\$(branch_name) \[\e[36m\]\$(path_name) \[\e[m\]\$ "
+export PS1="\[\e[0m\]\[\e[33m\]\$(user_name)\[\e[0m\] @ \[\e[32m\]\$(user_domain)\[\e[0m\] -> \[\e[31m\]\$(project_name)\[\e[0m\] : \[\e[34m\]\$(run_region)
+ \[\e[36m\]\$(path_name) \[\e[0m\]\[\e[35m\]\$(branch_name) \[\e[m\]\$ "
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;33m'
