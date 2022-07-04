@@ -56,6 +56,10 @@ alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --
 alias gwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth print-access-token)"'
 
 # Functions
+gmeta () {
+  curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
+}
+
 grunlogs () {
   gcloud logging read \
     --format "value(textPayload)" \
