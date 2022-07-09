@@ -1,0 +1,26 @@
+configuration {
+	modi: "run";
+  font: "JetBrains Mono 11";
+	location: 6;
+	yoffset: -10;
+	xoffset: 0;
+	fixed-num-lines: true;
+	terminal: "kitty";
+
+
+/*	sort: false;*/
+/*	sorting-method: "normal";*/
+
+/*	eh: 1;*/
+/*	auto-select: false;*/
+/*	m: "-5";*/
+/*	filter: ;*/
+/*	dpi: -1;*/
+/*	scroll-method: 0;*/
+
+/*	normalize-match: false;*/
+/*	steal-focus: false;*/
+
+}
+
+@theme "horizon"
