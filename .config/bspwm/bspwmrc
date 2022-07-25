@@ -6,6 +6,9 @@ setxkbmap de
 xsetroot -solid "#6C6F93"
 sxhkd &
 
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 bspc config border_width         	2
 bspc config normal_border_color   "#848484"
 bspc config focused_border_color  "#d5d8da"
