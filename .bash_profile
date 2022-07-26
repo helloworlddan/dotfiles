@@ -24,13 +24,13 @@ run_region() {
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Pom 1 '^region = \K(.*)$'
 }
 encdir() {
- tar -c -f "${1%"/"}.tar.lzma" --lzma "${1%"/"}"  
- gpg -er "dan@hello-world.sh" "${1%"/"}.tar.lzma" 
- rm "${1%"/"}.tar.lzma"
+ tar -cf - "${1%"/"}" | lz4 > "${1%"/"}.tar.lz4"   
+ gpg -er "dan@hello-world.sh" "${1%"/"}.tar.lz4" 
+ rm "${1%"/"}.tar.lz4"
 }
 decdir() {
  gpg "${1}" 
- tar -x --lzma -f ${1%".gpg"}
+ lz4 -cd ${1%".gpg"} | tar -xf -
  rm ${1%".gpg"}
 }
 
