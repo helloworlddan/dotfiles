@@ -23,6 +23,16 @@ project_name() {
 run_region() {
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Pom 1 '^region = \K(.*)$'
 }
+encdir() {
+ tar -c -f "${1%"/"}.tar.lzma" --lzma "${1%"/"}"  
+ gpg -er "dan@hello-world.sh" "${1%"/"}.tar.lzma" 
+ rm "${1%"/"}.tar.lzma"
+}
+decdir() {
+ gpg "${1}" 
+ tar -x --lzma -f ${1%".gpg"}
+ rm ${1%".gpg"}
+}
 
 # Exports
 export GPG_TTY=$(tty)
@@ -55,18 +65,16 @@ alias gbuilds='gcloud builds list --limit 10 --format "table[box,title=\"Running
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias gwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth print-access-token)"'
 
-# Functions
+# Cloud Functions
 gmeta () {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
 }
-
 grunlogs () {
   gcloud logging read \
     --format "value(textPayload)" \
     --limit 20 \
     "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null severity>=DEFAULT logName = \"projects/$(gcloud config get-value project)/logs/run.googleapis.com%2Fstderr\"" | tac
 }
-
 grunlogstream () {
   export CLOUDSDK_PYTHON_SITEPACKAGES=1
   gcloud alpha logging tail \
