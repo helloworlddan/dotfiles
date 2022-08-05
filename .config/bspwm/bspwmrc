@@ -3,7 +3,7 @@
 bspc monitor -d web mail cal slack term code demo misc collider comp
 
 setxkbmap de
-feh --bg-fill "$HOME/.wallpaper/face_large.png"
+xsetroot -solid "#6C6F93"
 sxhkd &
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
