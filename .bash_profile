@@ -69,6 +69,12 @@ alias gwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token
 gmeta () {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
 }
+gregion () {
+  gcloud config set run/region ${1}
+  gcloud config set deploy/region ${1}
+  gcloud config set compute/region ${1}
+  gcloud config set artifacts/location ${1}
+}
 grunlogs () {
   gcloud logging read \
     --format "value(textPayload)" \
