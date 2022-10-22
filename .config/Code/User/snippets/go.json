@@ -1,0 +1,29 @@
+{
+	"Go web server": {
+		"prefix": "web",
+		"body": [
+			"package main",
+			"",
+			"import (",
+			"\t\"fmt\"",
+			"\t\"net/http\"",
+			"\t\"os\"",
+			")",
+			"",
+			"func main() {",
+			"\thttp.HandleFunc(\"/\", func(w http.ResponseWriter, r *http.Request) {",
+			"\t\tfmt.Fprintf(w, \"I a web server, weee$1!\")",
+			"\t})",
+			"",
+			"\tport := os.Getenv(\"PORT\")",
+			"\tif port == \"\" {",
+			"\t\tport = \"8080\"",
+			"\t}",
+			"",
+			"\thttp.ListenAndServe(fmt.Sprintf(\":%s\", port), nil)",
+			"}",
+			""
+		],
+		"description": "Create a golang web server from template"
+	}
+}

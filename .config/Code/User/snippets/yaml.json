@@ -1,0 +1,86 @@
+{
+	"Docker on Cloud Build": {
+		"prefix": "docker",
+		"body": [
+			"steps:",
+			"- name: 'gcr.io/cloud-builders/docker'",
+			"\targs: [ 'build', '-t', 'us-central1-docker.pkg.dev/$$PROJECT_ID/${1:repo}/${2:image}', '.' ]",
+			"- name: 'gcr.io/cloud-builders/docker'",
+			"\targs: [ 'push', 'us-central1-docker.pkg.dev/$$PROJECT_ID/${1:repo}/${2:image}']",
+			"images: ['us-central1-docker.pkg.dev/$$PROJECT_ID/${1:repo}/${2:image}']",
+			""
+		],
+		"description": "Create a docker build on Cloud Build from template"
+	},
+	"KNative for Cloud Run": {
+		"prefix": "knative",
+		"body": [
+			"apiVersion: serving.knative.dev/v1",
+			"kind: Service",
+			"metadata:",
+			"\tname: my-service-$0",
+			"spec:",
+			"\ttemplate:",
+			"\t\tspec:",
+			"\t\t\tcontainers:",
+			"\t\t\t- image: my-image",
+			""
+		],
+		"description": "Create a KNative service definition from template"
+	},
+	"Skaffold for Cloud Run": {
+		"prefix": "skaffold",
+		"body": [
+			"apiVersion: skaffold/v3alpha1",
+			"kind: Config",
+			"metadata: ",
+			"\tname: my-service",
+			"profiles:",
+			"- name: ${1:env}",
+			"\tmanifests:",
+			"\t\trawYaml:",
+			"\t\t- service.${1:env}.yaml",
+			"- name: ${2:env}",
+			"\tmanifests:",
+			"\t\trawYaml:",
+			"\t\t- service.${2:env}.yaml",
+			"deploy:",
+			"\tcloudrun: {}",
+			""
+		],
+		"description": "Create a skaffold definition to Deploy Cloud Run from template"
+	},
+	"Pipeline for Cloud Run": {
+		"prefix": "pipeline",
+		"body": [
+			"apiVersion: deploy.cloud.google.com/v1",
+			"kind: DeliveryPipeline",
+			"metadata:",
+			"\tname: my-service",
+			"serialPipeline:",
+			"\tstages:",
+			"\t- targetId: ${1:env}",
+			"\t\tprofiles: [${1:env}]",
+			"\t- targetId: ${2:env}",
+			"\t\tprofiles: [${2:env}]",
+			"---",
+			"apiVersion: deploy.cloud.google.com/v1",
+			"kind: Target",
+			"metadata:",
+			"\tname: ${1:env}",
+			"run:",
+			"\tlocation: projects/${3:project}/locations/us-central1",
+			"---",
+			"apiVersion: deploy.cloud.google.com/v1",
+			"kind: Target",
+			"metadata:",
+			"\tname: ${2:env}",
+			"requireApproval: true",
+			"run:",
+			"\tlocation: projects/${3:project}/locations/us-central1",
+			""
+			
+		],
+		"description": "Create a Cloud Deploy pipeline from template"
+	},
+}
