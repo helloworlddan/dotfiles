@@ -33,6 +33,9 @@ decdir() {
  lz4 -cd ${1%".gpg"} | tar -xf -
  rm ${1%".gpg"}
 }
+nested(){
+  startx -- /usr/bin/Xephyr -resizeable :2
+}
 
 # Exports
 export GPG_TTY=$(tty)

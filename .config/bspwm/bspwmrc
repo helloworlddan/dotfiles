@@ -3,8 +3,8 @@
 bspc monitor -d web mail cal slack term code demo misc collider comp
 
 setxkbmap de
-xsetroot -solid "#6C6F93"
 xsetroot -cursor_name left_ptr
+nitrogen --restore &
 sxhkd &
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
