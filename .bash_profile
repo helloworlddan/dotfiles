@@ -34,7 +34,7 @@ decdir() {
  rm ${1%".gpg"}
 }
 nested(){
-  startx -- /usr/bin/Xephyr -resizeable :2
+  startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
 
 # Exports
