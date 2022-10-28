@@ -33,6 +33,9 @@ decdir() {
  lz4 -cd ${1%".gpg"} | tar -xf -
  rm ${1%".gpg"}
 }
+nested(){
+  startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
+}
 
 # Exports
 export GPG_TTY=$(tty)
@@ -41,7 +44,7 @@ export GOPATH="${HOME}/.go"
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="${GOPATH}/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
-export PS1="\[\e[0m\]\[\e[33m\]\$(user_name)\[\e[0m\] @ \[\e[32m\]\$(user_domain)\[\e[0m\] -> \[\e[31m\]\$(project_name)\[\e[0m\] : \[\e[34m\]\$(run_region)
+export PS1="\[\e[0m\] \[\e[33m\]\$(user_name)\[\e[0m\] @ \[\e[32m\]\$(user_domain)\[\e[0m\] -> \[\e[31m\]\$(project_name)\[\e[0m\] : \[\e[34m\]\$(run_region)
  \[\e[36m\]\$(path_name) \[\e[0m\]\[\e[35m\]\$(branch_name) \[\e[m\]\$ "
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -68,6 +71,12 @@ alias gwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token
 # Cloud Functions
 gmeta () {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
+}
+gregion () {
+  gcloud config set run/region ${1}
+  gcloud config set deploy/region ${1}
+  gcloud config set compute/region ${1}
+  gcloud config set artifacts/location ${1}
 }
 grunlogs () {
   gcloud logging read \
