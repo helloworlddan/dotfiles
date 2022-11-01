@@ -1,7 +1,7 @@
 # DO NOT EDIT! This file will be overwritten by LXAppearance.
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
-gtk-theme-name="horizon-theme"
+gtk-theme-name="default"
 gtk-icon-theme-name="gnome-noble"
 gtk-font-name="JetBrains Mono Regular 10"
 gtk-monospace-font-name="JetBrains Mono Regular 11"
