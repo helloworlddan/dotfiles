@@ -39,7 +39,3 @@
     ps = push --all
     pl = pull --all
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
-[url "https://builder:1c5345544b1059d16f591e52f51c1d446829d55b@github.com"]
-	insteadOf = https://github.com
-[url "https://:@github.com"]
-	insteadOf = https://github.com
