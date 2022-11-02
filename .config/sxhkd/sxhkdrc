@@ -30,7 +30,7 @@ alt + g
   google-chrome --app=https://github.com || google-chrome-stable --app=https://github.com
 
 alt + s
-  slack
+  google-chrome --app=https://app.slack.com/client/ || google-chrome-stable --app=https://app.slack.com/client/
 
 alt + y
   google-chrome --app=https://youtube.com || google-chrome-stable --app=https://youtube.com
