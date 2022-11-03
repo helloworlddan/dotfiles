@@ -25,5 +25,17 @@
 			""
 		],
 		"description": "Create a golang web server from template"
-	}
+	},
+	"Go Redis client": {
+		"prefix": "redis",
+		"body": [
+			"rdb := redis.NewClient(&redis.Options{",
+			"\tAddr:     fmt.Sprintf(\"%s:%s\", os.Getenv(\"REDISHOST\"), os.Getenv(\"REDISPORT\")),",
+			"\tPassword: \"\", // no password set",
+			"\tDB:       0,  // use default DB",
+			"})",
+			""
+		],
+		"description": "Create a golang redis client from template"
+	},
 }
