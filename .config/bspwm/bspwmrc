@@ -23,4 +23,4 @@ bspc config pointer_action2       resize_corner
 
 bspc rule -a *:*:"meet.google.com is sharing your screen." hidden=on
 
-source "${HOME}/.themes/default/bspwm.theme"
+sh "${HOME}/.themes/default/bspwm.theme"
