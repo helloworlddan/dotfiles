@@ -1,13 +1,11 @@
 cursor                  #ebdbb2
 cursor_text_color       background
 
-background              #3c3836
+background              #282828
 foreground              #ebdbb2
 
-selection_background    #282828
+selection_background    #504945
 selection_foreground    #ebdbb2
-
-
 
 ! black
 color0                  #282828
