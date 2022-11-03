@@ -1,0 +1,29 @@
+[color]
+
+bg           = #3c3836
+fg           = #d5c4a1
+
+black        = #46522a
+black-alt    = #748c6c
+
+red          = #e05190
+red-alt      = #fb90a2
+
+green        = #b9c543
+green-alt    = #cbe082
+
+yellow       = #e09e43
+yellow-alt   = #fbb082
+
+blue         = #a551cb
+blue-alt     = #b790e6
+
+magenta      = #cc51a3
+magenta-alt  = #e390ba
+
+cyan         = #7cc1a3
+cyan-alt     = #9bd8ba
+
+white        = #8d7c59
+white-alt    = #c0ae8b
+
