@@ -1,16 +1,16 @@
 
 * {
   bg:           #3c3836;
-  fg:           #d5c4a1;
-  grey:         #748c6c;
-  black:        #46522a;
-  red:          #e05190;
-  green:        #b9c543;
-  yellow:       #e09e43;
-  blue:         #a551cb;
-  magenta:      #cc51a3;
-  cyan:         #7cc1a3;
-  white:        #8d7c59;
+  fg:           #ebdbb2;
+  grey:         #928374;
+  black:        #282828;
+  red:          #cc241d;
+  green:        #98971a;
+  yellow:       #d79921;
+  blue:         #458588;
+  magenta:      #b16286;
+  cyan:         #689d6a;
+  white:        #a89984;
 
 
   backdrop:     #282828;

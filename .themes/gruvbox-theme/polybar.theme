@@ -1,29 +1,29 @@
 [color]
 
 bg           = #3c3836
-fg           = #d5c4a1
+fg           = #ebdbb2
 
-black        = #46522a
-black-alt    = #748c6c
+black        = #282828
+black-alt    = #928374
 
-red          = #e05190
-red-alt      = #fb90a2
+red          = #cc241d
+red-alt      = #fb4934
 
-green        = #b9c543
-green-alt    = #cbe082
+green        = #98971a
+green-alt    = #b8bb26
 
-yellow       = #e09e43
-yellow-alt   = #fbb082
+yellow       = #d79921
+yellow-alt   = #fabd2f
 
-blue         = #a551cb
-blue-alt     = #b790e6
+blue         = #458588
+blue-alt     = #83a598
 
-magenta      = #cc51a3
-magenta-alt  = #e390ba
+magenta      = #b16286
+magenta-alt  = #d3869b
 
-cyan         = #7cc1a3
-cyan-alt     = #9bd8ba
+cyan         = #689d6a
+cyan-alt     = #8ec07c
 
-white        = #8d7c59
-white-alt    = #c0ae8b
+white        = #a89984
+white-alt    = #ebdbb2
 
