@@ -24,7 +24,7 @@
     "ruby.useBundler": true,
     "ruby.useLanguageServer": true,
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Tokyo Night Storm Frameless",
     "workbench.startupEditor": "none",
 
     ////// Presenter settings //////
