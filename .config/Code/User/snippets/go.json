@@ -12,7 +12,7 @@
 			"",
 			"func main() {",
 			"\thttp.HandleFunc(\"/\", func(w http.ResponseWriter, r *http.Request) {",
-			"\t\tfmt.Fprintf(w, \"I a web server, weee$1!\")",
+			"\t\tfmt.Fprintf(w, \"I am a web server, $1!\")",
 			"\t})",
 			"",
 			"\tport := os.Getenv(\"PORT\")",
