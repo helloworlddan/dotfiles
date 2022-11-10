@@ -44,6 +44,12 @@ alt + a
 alt + p
   google-chrome --app=http://go/companion || google-chrome-stable --app=http://go/companion
 
+alt + minus
+  pactl -- set-sink-volume 0 -10%
+
+alt + equal
+  pactl -- set-sink-volume 0 +10%
+
 alt + comma
   scrot -s
 
