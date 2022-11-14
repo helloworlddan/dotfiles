@@ -40,10 +40,10 @@ chrome-app(){
   google-chrome --app="https://${1}" || google-chrome-stable --app="https://${1}"
 }
 playing_song(){
-  spotify s 2>&1 | head -n 1 | tr -d '[:cntrl:]' | tr -cd '[:print:]' | tail -c +4  && echo
+  spotify s 2>&1 1>/dev/null | head -n 1 | tr -d '[:cntrl:]' | tr -cd '[:print:]ÄäÖöÜü' | tail -c +4 && echo
 }
 playing_artist(){
-  spotify s 2>&1 | head -n 2 | tail -n 1 | tr -d '[:cntrl:]' | tr -cd '[:print:]' | tail -c +4  && echo
+  spotify s 2>&1 1>/dev/null | head -n 2 | tail -n 1 | tr -d '[:cntrl:]' | tr -cd '[:print:]ÄäÖöÜü' | tail -c +4 && echo
 }
 
 
