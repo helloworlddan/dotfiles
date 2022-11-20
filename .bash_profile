@@ -46,7 +46,6 @@ playing_artist(){
   spotify s 2>&1 1>/dev/null | head -n 2 | tail -n 1 | tr -d '[:cntrl:]' | tr -cd '[:print:]ÄäÖöÜü' | tail -c +4 && echo
 }
 
-
 # Exports
 export GPG_TTY=$(tty)
 export EDITOR="vim"

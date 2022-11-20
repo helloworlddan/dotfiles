@@ -105,8 +105,8 @@ alt + super + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 alt + Up
-  pactl -- set-sink-volume 0 +10%
+  pactl -- set-sink-volume @DEFAULT_SINK@ +10%
 
 alt + Down
-  pactl -- set-sink-volume 0 -10%
+  pactl -- set-sink-volume @DEFAULT_SINK@ -10%
 
