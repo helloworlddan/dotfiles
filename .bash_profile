@@ -36,7 +36,7 @@ decdir() {
 nested(){
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
-chrome-app(){
+chrome_app(){
   google-chrome --app="https://${1}" || google-chrome-stable --app="https://${1}"
 }
 playing_song(){
