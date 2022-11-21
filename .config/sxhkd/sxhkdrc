@@ -48,7 +48,7 @@ alt + comma
   scrot -s
 
 alt + period
-  export BAR_WIDTH="$(($(xrandr | grep --color=never -Po 'connected \K(\d+)') - 20))" && bspc config -m '^1' top_padding 40 && polybar
+  export BAR_WIDTH="$(($(xrandr | grep --color=never -Po 'connected (primary)* \K(\d+)') - 20))" && bspc config -m '^1' top_padding 40 && polybar
 
 alt + shift + period
   bspc config top_padding 0 && killall polybar
