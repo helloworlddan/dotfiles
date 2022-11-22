@@ -51,6 +51,7 @@ export GPG_TTY=$(tty)
 export EDITOR="vim"
 export GOPATH="${HOME}/.go"
 export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="/usr/games:${PATH}"
 export PATH="${GOPATH}/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
 export PS1="\[\e[0m\] \[\e[33m\]\$(user_name)\[\e[0m\] @ \[\e[32m\]\$(user_domain)\[\e[0m\] -> \[\e[31m\]\$(project_name)\[\e[0m\] : \[\e[34m\]\$(run_region)
