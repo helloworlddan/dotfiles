@@ -20,6 +20,9 @@ alt + shift + b
 alt + m
   google-chrome --app=https://mail.google.com || google-chrome-stable --app=https://mail.google.com
 
+alt + shift + m
+  google-chrome --app=https://mail.google.com/mail/?view=cm&fs=1&tf=1 || google-chrome-stable --app=https://mail.google.com/mail/?view=cm&fs=1&tf=1
+
 alt + c
   google-chrome --app=https://calendar.google.com || google-chrome-stable --app=https://calendar.google.com
 
