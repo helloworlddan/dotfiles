@@ -91,6 +91,10 @@ alt + {_,shift + }Tab
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# focus or send to the given desktop
+alt + shift + d
+	bspc node -m next
+
 # preselect the direction
 alt + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
