@@ -26,9 +26,6 @@ alt + shift + m
 alt + c
   google-chrome --app=https://calendar.google.com || google-chrome-stable --app=https://calendar.google.com
 
-alt + d
-  google-chrome --app=https://drive.google.com || google-chrome-stable --app=https://drive.google.com
-
 alt + g
   google-chrome --app=https://github.com || google-chrome-stable --app=https://github.com
 
@@ -51,7 +48,7 @@ alt + comma
   scrot -s
 
 alt + period
-  export BAR_WIDTH="$(($(xrandr | grep --color=never -Po 'connected( primary)* \K(\d+)') - 20))" && bspc config -m '^1' top_padding 40 && polybar
+  export BAR_WIDTH="$(($(xrandr |head | grep --color=never -Po 'connected( primary)* \K(\d+)') - 20))" && bspc config -m '^1' top_padding 40 && polybar
 
 alt + shift + period
   bspc config top_padding 0 && killall polybar
@@ -90,6 +87,10 @@ alt + {_,shift + }Tab
 # focus or send to the given desktop
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# focus next monitor
+alt + d
+	bspc monitor --focus next
 
 # send to next monitor
 alt + shift + d
