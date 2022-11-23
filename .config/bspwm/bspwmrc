@@ -6,9 +6,6 @@ setxkbmap gb
 xsetroot -cursor_name left_ptr
 sxhkd &
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-
 bspc config border_width          2
 bspc config top_padding           0
 bspc config window_gap            10
