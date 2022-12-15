@@ -79,6 +79,7 @@ alias gbuilds='gcloud builds list --limit 10 --format "table[box,title=\"Running
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias gawhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth print-access-token)"'
 alias giwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?id_token=$(gcloud auth print-identity-token)"'
+alias legit='git commit -asS'
 
 # Cloud Functions
 gmeta () {
@@ -110,4 +111,6 @@ shopt -s histappend
 if [ -f "${HOME}/.bash_profile.local" ]; then
   source "${HOME}/.bash_profile.local"
 fi
+
+tortune
 
