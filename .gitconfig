@@ -38,5 +38,6 @@
     sh = show --show-signature
     ps = push --all
     pl = pull --all
+    shit = pull --all
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 
