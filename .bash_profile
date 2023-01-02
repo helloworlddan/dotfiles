@@ -45,6 +45,11 @@ playing_song(){
 playing_artist(){
   spotify s 2>&1 1>/dev/null | head -n 2 | tail -n 1 | tr -d '[:cntrl:]' | tr -cd '[:print:]ÄäÖöÜü' | tail -c +4 && echo
 }
+ssh_key_add(){
+  unset CHROME_REMOTE_DESKTOP_SESSION
+  eval $(ssh-agent -s)
+  ssh-add
+}
 
 # Exports
 export GPG_TTY=$(tty)
