@@ -88,6 +88,10 @@ alt + {_,shift + }Tab
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# do the same with the personal desktop
+alt + {_,shift + }equal
+	bspc {desktop -f,node -d} '^11'
+
 # focus next monitor
 alt + d
 	bspc monitor --focus next

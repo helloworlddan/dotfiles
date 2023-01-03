@@ -1,6 +1,6 @@
 #!/bin/sh
 
-bspc monitor -d web mail cal slack term code demo misc lac meet
+bspc monitor -d web mail cal slack term code demo misc lac meet pers
 
 setxkbmap gb
 xsetroot -cursor_name left_ptr
