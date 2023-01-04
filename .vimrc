@@ -9,6 +9,7 @@ set tabstop=2
 
 set mouse=
 set ttymouse=
+set clipboard=unnamedplus
 
 set hlsearch
 set incsearch
