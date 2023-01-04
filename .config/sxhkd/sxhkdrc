@@ -8,9 +8,6 @@ alt + r
 alt + v
 	code
 
-alt + BackSpace
-  thunar
-
 alt + b
 	google-chrome || google-chrome-stable
 
@@ -89,7 +86,7 @@ alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # do the same with the personal desktop
-alt + {_,shift + }grave
+alt + {_,shift + }BackSpace
 	bspc {desktop -f,node -d} '^11'
 
 # focus next monitor
