@@ -42,10 +42,10 @@ alt + a
   google-chrome --app=http://go/nucleus:lac || google-chrome-stable --app=http://go/nucleus:lac
 
 alt + p
-  google-chrome --app=http://go/companion || google-chrome-stable --app=http://go/companion
+  google-chrome --app=https://meet.google.com/?companion=1 || google-chrome-stable --app=https://meet.google.com/?companion=1
 
 alt + comma
-  scrot -s
+  scrot -s -z - | xclip -selection clipboard -t image/png
 
 alt + period
   export BAR_WIDTH="$(($(xrandr |head | grep --color=never -Po 'connected( primary)* \K(\d+)') - 20))" && bspc config -m '^1' top_padding 40 && polybar
@@ -89,7 +89,7 @@ alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # do the same with the personal desktop
-alt + {_,shift + }equal
+alt + {_,shift + }grave
 	bspc {desktop -f,node -d} '^11'
 
 # focus next monitor
