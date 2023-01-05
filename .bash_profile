@@ -50,6 +50,11 @@ ssh_key_add(){
   eval $(ssh-agent -s)
   ssh-add
 }
+goto(){
+  target=$1
+  [[ $target != go/* ]] && target="go/${target}"
+  google-chrome --app="http://${target}" || google-chrome-stable --app="http://${target}"
+}
 
 # Exports
 export GPG_TTY=$(tty)

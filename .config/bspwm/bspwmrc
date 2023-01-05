@@ -22,5 +22,3 @@ bspc rule -a *:*:"meet.google.com is sharing your screen." hidden=on
 
 sh "${HOME}/.themes/default/bspwm.theme"
 
-source "${HOME}/.bash_profile"
-
