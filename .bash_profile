@@ -36,9 +36,6 @@ decdir() {
 nested(){
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
-chrome_app(){
-  google-chrome --app="https://${1}" || google-chrome-stable --app="https://${1}"
-}
 playing_song(){
   spotify s 2>&1 1>/dev/null | head -n 1 | tr -d '[:cntrl:]' | tr -cd '[:print:]ÄäÖöÜü' | tail -c +4 && echo
 }
@@ -49,11 +46,6 @@ ssh_key_add(){
   unset CHROME_REMOTE_DESKTOP_SESSION
   eval $(ssh-agent -s)
   ssh-add
-}
-goto(){
-  target=$1
-  [[ $target != go/* ]] && target="go/${target}"
-  google-chrome --app="http://${target}" || google-chrome-stable --app="http://${target}"
 }
 
 # Exports
