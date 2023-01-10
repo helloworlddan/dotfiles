@@ -111,6 +111,10 @@ alt + ctrl + {h,j,k,l}
 alt + ctrl + space
 	bspc node -p cancel
 
+# Rotate tree
+alt + ctrl + shift + {h,l}
+    bspc node @/ -C {forward,backward}
+
 # expand a window by moving one of its side outward
 alt + super + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
