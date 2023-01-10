@@ -36,11 +36,11 @@ decdir() {
 nested(){
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
-playing_song(){
-  spotify s 2>&1 1>/dev/null | head -n 1 | tr -d '[:cntrl:]' | tr -cd '[:print:]ÄäÖöÜü' | tail -c +4 && echo
-}
 playing_artist(){
-  spotify s 2>&1 1>/dev/null | head -n 2 | tail -n 1 | tr -d '[:cntrl:]' | tr -cd '[:print:]ÄäÖöÜü' | tail -c +4 && echo
+  baton status | grep -Po '^Artist: \K(.*)$'
+}
+playing_song(){
+  baton status | grep -Po '^Track: \K(.*)$'
 }
 ssh_key_add(){
   unset CHROME_REMOTE_DESKTOP_SESSION
