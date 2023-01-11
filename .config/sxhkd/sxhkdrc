@@ -67,6 +67,10 @@ alt + Escape
 alt + space
 	bspc desktop -l next
 
+# toggle desktop stickyness
+ctrl + alt + space
+	bspc node -g sticky
+
 # quit bspwm normally
 alt + shift + Escape
 	bspc quit
@@ -108,7 +112,7 @@ alt + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
 # cancel the preselection for the focused node
-alt + ctrl + space
+alt + ctrl + Escape
 	bspc node -p cancel
 
 # Rotate tree
