@@ -36,12 +36,6 @@ decdir() {
 nested(){
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
-playing_artist(){
-  baton status | grep -Po '^Artist: \K(.*)$'
-}
-playing_song(){
-  baton status | grep -Po '^Track: \K(.*)$'
-}
 ssh_key_add(){
   unset CHROME_REMOTE_DESKTOP_SESSION
   eval $(ssh-agent -s)
@@ -73,25 +67,47 @@ alias grep='grep --color=always'
 alias tree='tree -C'
 alias noise='play -n synth brownnoise'
 alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
+alias legit='git commit -asS'
+
 alias gicurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
 alias gacurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
-alias gproject='gcloud config get-value core/project'
+alias gawhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth print-access-token)"'
+alias giwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?id_token=$(gcloud auth print-identity-token)"'
+
 alias gnumber='echo $(gcloud projects describe $(gcloud config get-value core/project) --format "value(projectNumber)")'
 alias gbuilds='gcloud builds list --limit 10 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.BRANCH_NAME,substitutions.TRIGGER_NAME)"'
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
-alias gawhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=$(gcloud auth print-access-token)"'
-alias giwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?id_token=$(gcloud auth print-identity-token)"'
-alias legit='git commit -asS'
 
 # Cloud Functions
 gmeta () {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
 }
+guser () {
+  if [ -z ${1} ]
+  then
+    gcloud config get-value core/account
+  else
+    gcloud config set account ${1}
+  fi
+}
+gproject () {
+  if [ -z ${1} ]
+  then
+    gcloud config get-value core/project
+  else
+    gcloud config set project ${1}
+  fi
+}
 gregion () {
-  gcloud config set run/region ${1}
-  gcloud config set deploy/region ${1}
-  gcloud config set compute/region ${1}
-  gcloud config set artifacts/location ${1}
+  if [ -z ${1} ]
+  then
+    gcloud config get-value run/region
+  else
+    gcloud config set run/region ${1}
+    gcloud config set deploy/region ${1}
+    gcloud config set compute/region ${1}
+    gcloud config set artifacts/location ${1}
+  fi
 }
 grunlogs () {
   gcloud logging read \
@@ -105,6 +121,7 @@ grunlogstream () {
     --format "value(textPayload)" \
     "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null severity>=DEFAULT logName = \"projects/$(gcloud config get-value project)/logs/run.googleapis.com%2Fstderr\""
 }
+
 
 # Shell Options
 shopt -s histappend
