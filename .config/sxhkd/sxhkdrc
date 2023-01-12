@@ -129,10 +129,10 @@ alt + super + shift + {h,j,k,l}
 
 # media controls
 alt + XF86AudioRaiseVolume
-  pactl -- set-sink-volume @DEFAULT_SINK@ +05%
+  pactl -- set-sink-volume @DEFAULT_SINK@ +02%
 
 alt + XF86AudioLowerVolume
-  pactl -- set-sink-volume @DEFAULT_SINK@ -05%
+  pactl -- set-sink-volume @DEFAULT_SINK@ -02%
 
 alt + XF86AudioPlay
   baton pause
