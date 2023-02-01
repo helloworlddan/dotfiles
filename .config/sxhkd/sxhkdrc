@@ -50,6 +50,9 @@ alt + p
 alt + comma
   scrot -s -z - | xclip -selection clipboard -t image/png
 
+alt + shift + comma
+  scrot -s
+
 alt + period
   export BAR_WIDTH="$(($(xrandr |head | grep --color=never -Po 'connected( primary)* \K(\d+)') - 20))" && bspc config -m '^1' top_padding 40 && polybar
 
