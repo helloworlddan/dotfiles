@@ -26,6 +26,9 @@
     "window.menuBarVisibility": "toggle",
     "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.startupEditor": "none",
+    "[python]": {
+        "editor.formatOnType": true
+    },
 
     ////// Presenter settings //////
     
