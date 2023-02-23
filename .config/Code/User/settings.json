@@ -29,6 +29,9 @@
     "[python]": {
         "editor.formatOnType": true
     },
+    "cSpell.userWords": [
+        "hyperparameters"
+    ],
 
     ////// Presenter settings //////
     
