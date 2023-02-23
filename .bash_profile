@@ -8,6 +8,15 @@ fi
 branch_name() {
   git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
 }
+commit_info(){
+  echo "\`\`\`"
+  git show --quiet --show-signature HEAD
+  echo "\`\`\`"
+  echo "remote reference: $(gh browse -c -n)"
+}
+commit_copy(){
+  commit_info | xclip -selection clipboard
+}
 path_name() {
   pwd | sed -e "s:$HOME:~:" -e "s:\(.\)[^/]*/:\1/:g"
 }
