@@ -12,7 +12,7 @@ commit_info(){
   echo "\`\`\`"
   git show --quiet --show-signature HEAD
   echo "\`\`\`"
-  echo "remote reference: $(gh browse -c -n)"
+  echo "remote reference: $(gh browse -c -n | sed 's/\/tree\//\/commit\//')"
 }
 commit_copy(){
   commit_info | xclip -selection clipboard
