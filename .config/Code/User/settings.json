@@ -3,7 +3,6 @@
     "editor.experimental.pasteActions.enabled": true,
     "editor.fontFamily": "'JetBrains Mono', 'Inconsolata'",
     "editor.fontLigatures": true,
-    "editor.minimap.enabled": false,
     "editor.tabCompletion": "on",
     "explorer.confirmDelete": false,
     "files.autoSave": "afterDelay",

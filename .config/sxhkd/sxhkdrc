@@ -32,6 +32,9 @@ alt + c
 alt + g
   google-chrome --app=https://github.com || google-chrome-stable --app=https://github.com
 
+alt + shift + s
+  google-chrome --app=https://open.spotify.com/ || google-chrome-stable --app=https://open.spotify.com/
+
 alt + s
   google-chrome --app=https://app.slack.com/client/ || google-chrome-stable --app=https://app.slack.com/client/
 
@@ -98,9 +101,9 @@ alt + {_,shift + }Tab
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-# do the same with the personal desktop
-alt + {_,shift + }BackSpace
-	bspc {desktop -f,node -d} '^11'
+# focus or send to the given desktop
+alt + ctrl + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{11,12,13,14,15,16,17,18,19,20}'
 
 # focus next monitor
 alt + d
