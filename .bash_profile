@@ -130,6 +130,23 @@ grunlogstream () {
     "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null severity>=DEFAULT logName = \"projects/$(gcloud config get-value project)/logs/run.googleapis.com%2Fstderr\""
 }
 
+setdesktop () {
+  sleep 2 && bspc desktop -f '^1' && goto -p 1
+  sleep 2 && bspc desktop -f '^2' && goto -p 1 -g mail
+  sleep 2 && bspc desktop -f '^3' && goto -p 1 -g calendar
+  sleep 2 && bspc desktop -f '^4' && goto -p 1 -u app.slack.com/client/
+  sleep 2 && bspc desktop -f '^7' && goto -p 3
+  sleep 2 && bspc desktop -f '^9' && goto -p 1 nucleus:lac
+  sleep 2 && bspc desktop -f '^10' && goto -p 1 companion
+  
+  sleep 2 && bspc desktop -f '^11' && goto -p 4
+  sleep 2 && bspc desktop -f '^12' && goto -p 4 -g mail
+  sleep 2 && bspc desktop -f '^13' && goto -p 4 -g calendar
+  sleep 2 && bspc desktop -f '^14' && goto -p 4 -u web.whatsapp.com
+  sleep 2 && bspc desktop -f '^17' && goto -p 4 -u open.spotify.com
+  sleep 2 && bspc desktop -f '^18' && goto -p 4 -u youtube.com
+  sleep 2 && bspc desktop -f '^19' && goto -p 4 -g maps
+}
 
 # Shell Options
 shopt -s histappend
