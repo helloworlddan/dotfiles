@@ -4,12 +4,12 @@ cursor_text_color       background
 background              #FDF0ED
 foreground              #1a1c23
 
-selection_background    #6C6F93
-selection_foreground    #2E303E
+selection_background    #F9CEC3
+selection_foreground    #1a1c23
 
 # black
-color0                  #FDF0ED
-color8                  #1A1C23
+color0                  #1A1C23
+color8                  #757575
 
 # red
 color1                  #EC6A88
