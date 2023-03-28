@@ -2,12 +2,12 @@
 bg           = #FDF0ED
 fg           = #1a1c23
 black        = #FDF0ED
-black-alt    = #1c1e26
-red          = #E84A72
+black-alt    = #1A1C23
+red          = #EC6A88
 red-alt      = #e95678
-green        = #29d398
+green        = #3FDAA4
 green-alt    = #29d398
-yellow       = #fab795
+yellow       = #FBC3A7
 yellow-alt   = #fab795
 blue         = #3FC6DE
 blue-alt     = #26bbd9
