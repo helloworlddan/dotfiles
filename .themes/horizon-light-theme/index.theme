@@ -1,12 +1,11 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=oomox-horizon_zodd__-dark-compact
-Comment=A Material Design theme
+Name=oomox-horizon-light-daniel
+Comment=A partially sexual act; when a female (of any species; mostly humanoids) rubs the ears/lobes of a male Ferengi, creating sensual emotions and chemical reactions in the male (and sometimes in the female).
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=oomox-horizon_zodd__-dark-compact
-MetacityTheme=oomox-horizon_zodd__-dark-compact
-IconTheme=Adwaita
-CursorTheme=Adwaita
-CursorSize=24
+Name=oomox-horizon-light-daniel
+GtkTheme=oomox-horizon-light-daniel
+IconTheme=oomox-horizon-light-daniel
+MetacityTheme=oomox-horizon-light-daniel
