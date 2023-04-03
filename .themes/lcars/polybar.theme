@@ -1,0 +1,20 @@
+[color]
+bg           = #000000
+fg           = #cc9966
+black        = #000000
+black-alt    = #666699
+red          = #cc6666
+red-alt      = #ff3300
+green        = #ff9966
+green-alt    = #ff9900
+yellow       = #cc9966
+yellow-alt   = #ffcc66
+blue         = #9966ff
+blue-alt     = #9999ff
+magenta      = #cc6699
+magenta-alt  = #cc99cc
+cyan         = #9999cc
+cyan-alt     = #99ccff
+white        = #99ccff
+white-alt    = #99669f
+

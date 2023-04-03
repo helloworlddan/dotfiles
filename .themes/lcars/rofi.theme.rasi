@@ -1,0 +1,21 @@
+
+* {
+  bg:           #000000;
+  fg:           #cc9966;
+  grey:         #666699;
+  black:        #000000;
+  red:          #cc6666;
+  green:        #ff9966;
+  yellow:       #cc9966;
+  blue:         #9966ff;
+  magenta:      #cc6699;
+  cyan:         #9999cc;
+  white:        #99ccff;
+
+  backdrop:     #6C6F93;
+
+  spacing: 0;
+  background-color: @bg;
+  text-color: @fg;
+}
+

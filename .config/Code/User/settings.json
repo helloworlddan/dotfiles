@@ -23,7 +23,7 @@
     "ruby.useBundler": true,
     "ruby.useLanguageServer": true,
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Horizon",
+    "workbench.colorTheme": "LCARS",
     "workbench.startupEditor": "none",
     "[python]": {
         "editor.formatOnType": true
