@@ -1,6 +1,6 @@
 #!/bin/sh
 
-bspc monitor -d web mail cal chat term code demo misc lac meet *web *mail *cal *chat *term *code *glam *film *map *misc 
+bspc monitor -d web mail cal chat term code demo misc lac meet pers
 
 setxkbmap gb
 xsetroot -cursor_name left_ptr
