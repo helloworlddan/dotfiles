@@ -23,7 +23,7 @@
     "ruby.useBundler": true,
     "ruby.useLanguageServer": true,
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Gruvbox Light Medium",
     "workbench.startupEditor": "none",
     "[python]": {
         "editor.formatOnType": true
