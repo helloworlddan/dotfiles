@@ -2,7 +2,7 @@ configuration {
 	modi: "run";
   font: "JetBrains Mono 11";
 	location: 6;
-	yoffset: -10;
+	yoffset: -5;
 	xoffset: 0;
 	fixed-num-lines: true;
 	terminal: "kitty";
