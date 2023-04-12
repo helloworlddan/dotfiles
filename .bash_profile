@@ -53,7 +53,7 @@ ssh_key_add(){
 
 # Exports
 export GPG_TTY=$(tty)
-export EDITOR="vim"
+export EDITOR="nvim"
 export GOPATH="${HOME}/.go"
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="/usr/games:${PATH}"
@@ -70,6 +70,7 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 
 # Aliases
+alias vim='nvim'
 alias ls='ls -hF --color=auto'
 alias grep='grep --color=always'
 alias tree='tree -C'

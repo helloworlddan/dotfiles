@@ -47,7 +47,7 @@ alt + n
 alt + a
   google-chrome --app=http://go/nucleus:lac || google-chrome-stable --app=http://go/nucleus:lac
 
-alt + p
+alt + shift + p
   google-chrome --app=https://meet.google.com/?companion=1 || google-chrome-stable --app=https://meet.google.com/?companion=1
 
 alt + comma
