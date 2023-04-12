@@ -59,7 +59,7 @@ export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="/usr/games:${PATH}"
 export PATH="${GOPATH}/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
-export PS1=" \[\e[36m\]\$(path_name) \[\e[0m\]\[\e[35m\]\$(branch_name) \[\e[m\]\$ "
+export PS1=" \[\e[1;33m\]\$(path_name) \[\e[0m\]\[\e[1;34m\]\$(branch_name) \[\e[m\]\$ "
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;33m'
