@@ -71,6 +71,7 @@ export LESS_TERMCAP_us=$'\E[01;36m'
 
 # Aliases
 alias vim='nvim'
+alias vimdiff='nvim -d'
 alias ls='ls -hF --color=auto'
 alias grep='grep --color=always'
 alias tree='tree -C'
