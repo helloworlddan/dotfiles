@@ -19,7 +19,7 @@
 [push]
     default = current
 [diff]
-    tool = vimdiff
+    tool = nvim -d
 [credential "https://source.developers.google.com"]
     helper = gcloud.sh
 [credential "https://git-codecommit.eu-central-1.amazonaws.com"]
@@ -28,7 +28,7 @@
 [core]
     autocrlf = input
     pager = less -FRSX
-    editor = vim
+    editor = nvim
 [alias]
     cm = commit -asS
     co = checkout
