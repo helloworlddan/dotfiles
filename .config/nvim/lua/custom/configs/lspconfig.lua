@@ -2,7 +2,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "gopls", "ruby_ls" ,"dockerls", "cssls", "jsonnet_ls", "terraform_lsp", "yamlls"}
+local servers = { "html", "gopls", "ruby_ls" ,"dockerls", "cssls", "jsonnet_ls", "terraform_lsp", "yamlls", "jsonls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {

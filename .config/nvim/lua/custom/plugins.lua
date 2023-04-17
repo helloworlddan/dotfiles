@@ -37,6 +37,8 @@ local plugins = {
         "yaml-language-server",
         "yamlfmt",
 
+        "json-lsp",
+
         "terraform-ls",
         "tflint",
 
