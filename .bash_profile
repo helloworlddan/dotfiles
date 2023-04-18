@@ -122,9 +122,17 @@ gregion () {
 grunlogs () {
   gcloud logging read \
     --format "value(textPayload)" \
-    --limit 20 \
-    "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null severity>=DEFAULT logName = \"projects/$(gcloud config get-value project)/logs/run.googleapis.com%2Fstderr\"" | tac
+    --limit 40 \
+    "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null " | tac
 }
+
+grunjlogs () {
+  gcloud logging read \
+    --format "value(textPayload)" \
+    --limit 40 \
+    "resource.type = \"cloud_run_job\" resource.labels.job_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null " | tac
+}
+
 grunlogstream () {
   export CLOUDSDK_PYTHON_SITEPACKAGES=1
   gcloud alpha logging tail \
