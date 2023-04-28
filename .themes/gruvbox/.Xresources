@@ -27,3 +27,6 @@
 ! white
 *.color7:                  #a89984
 *.color15:                 #ebdbb2
+
+URxvt.font: xft:JetBrainsMono Nerd Font Mono:size=11:antialias=true
+URxvt.scrollBar: false
