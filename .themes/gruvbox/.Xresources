@@ -4,7 +4,7 @@
 *.foreground:              #ebdbb2
 
 ! black
-*.color0:                  #282828
+.color0:                  #282828
 *.color8:                  #928374
 ! red
 *.color1:                  #cc241d
@@ -28,5 +28,18 @@
 *.color7:                  #a89984
 *.color15:                 #ebdbb2
 
+URxvt.perl-ext-common: default,matcher
+
 URxvt.font: xft:JetBrainsMono Nerd Font Mono:size=11:antialias=true
+
 URxvt.scrollBar: false
+
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+URxvt.print-pipe: "cat > /dev/null"
+

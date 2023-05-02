@@ -5,6 +5,7 @@ bspc monitor -d web mail cal chat term code demo misc lac meet pers
 setxkbmap gb
 xsetroot -cursor_name left_ptr
 sxhkd &
+urxvtd -q &
 
 bspc config border_width          2
 bspc config top_padding           0

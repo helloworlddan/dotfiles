@@ -1,5 +1,8 @@
 # apps
 alt + Return
+	urxvtc
+
+alt + shift + Return
 	kitty
 
 alt + r
