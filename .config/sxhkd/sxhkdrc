@@ -68,6 +68,9 @@ alt + shift + period
 alt + x
   edex-ui
 
+alt + shift + x
+  cool-retro-term
+
 # close
 alt + Escape
 	bspc node -{c}
