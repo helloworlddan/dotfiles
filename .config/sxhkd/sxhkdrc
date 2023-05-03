@@ -69,7 +69,7 @@ alt + x
   edex-ui
 
 alt + shift + x
-  cool-retro-term
+  cool-retro-term --fullscreen
 
 # close
 alt + Escape
