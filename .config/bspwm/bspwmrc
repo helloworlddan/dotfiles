@@ -4,6 +4,11 @@ bspc monitor -d web mail cal chat term code demo misc lac meet pers
 
 setxkbmap gb
 xsetroot -cursor_name left_ptr
+xrdb -load ~/.Xresources
+
+autocutsel -fork &
+autocutsel -selection PRIMARY &
+autocutsel -selection CLIPBOARD &
 sxhkd &
 urxvtd -q &
 

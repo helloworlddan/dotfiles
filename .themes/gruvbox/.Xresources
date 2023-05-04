@@ -28,18 +28,13 @@
 *.color7:                  #a89984
 *.color15:                 #ebdbb2
 
-URxvt.perl-ext-common: default,matcher
-
-URxvt.font: xft:JetBrainsMono Nerd Font Mono:size=11:antialias=true
-
-URxvt.scrollBar: false
-
-URxvt.clipboard.autocopy: true
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-
-URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
-
-URxvt.print-pipe: "cat > /dev/null"
-
+*.perl-ext-common: default,matcher
+*.font: xft:JetBrainsMono Nerd Font Mono:size=11:antialias=true
+*.scrollBar: false
+*.clipboard.autocopy: true
+*.keysym.M-c: perl:clipboard:copy
+*.keysym.M-v: perl:clipboard:paste
+*.url-launcher: /usr/bin/xdg-open
+*.matcher.button: 1
+*.print-pipe: "cat > /dev/null"
+*.selectToClipboard: true
