@@ -1,6 +1,6 @@
 # apps
 alt + Return
-	urxvtc
+	/usr/bin/xterm
 
 alt + shift + Return
 	kitty

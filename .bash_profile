@@ -142,13 +142,11 @@ grunlogstream () {
 
 setdesktop () {
   sleep 2 && bspc desktop -f '^1' && goto -p 1
-  sleep 2 && bspc desktop -f '^2' && goto -p 1 -g mail
-  sleep 2 && bspc desktop -f '^3' && goto -p 1 -g calendar
-  sleep 2 && bspc desktop -f '^4' && goto -p 1 -u app.slack.com/client/
-  sleep 2 && bspc desktop -f '^7' && goto -p 3
-  sleep 2 && bspc desktop -f '^9' && goto -p 1 nucleus:lac
+  sleep 2 && bspc desktop -f '^5' && goto -p 3
+  sleep 2 && bspc desktop -f '^7' && goto -p 1 nucleus:lac
+  sleep 2 && bspc desktop -f '^8' && goto -p 1 -g mail
+  sleep 2 && bspc desktop -f '^9' && goto -p 1 -g calendar
   sleep 2 && bspc desktop -f '^10' && goto -p 1 companion
-  
   sleep 2 && bspc desktop -f '^11' && goto -p 4
 }
 
