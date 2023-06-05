@@ -32,9 +32,11 @@
 *.font: xft:JetBrainsMono Nerd Font Mono:size=11:antialias=true
 *.scrollBar: false
 *.clipboard.autocopy: true
-*.keysym.M-c: perl:clipboard:copy
-*.keysym.M-v: perl:clipboard:paste
+*.selectToClipboard: true
 *.url-launcher: /usr/bin/xdg-open
 *.matcher.button: 1
 *.print-pipe: "cat > /dev/null"
-*.selectToClipboard: true
+
+*.VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
