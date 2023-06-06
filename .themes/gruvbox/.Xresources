@@ -28,15 +28,22 @@
 *.color7:                  #a89984
 *.color15:                 #ebdbb2
 
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xcursor.size: 11
+
+*.font: xft:JetBrainsMono Nerd Font Mono:size=11
 *.perl-ext-common: default,matcher
-*.font: xft:JetBrainsMono Nerd Font Mono:size=11:antialias=true
 *.scrollBar: false
 *.clipboard.autocopy: true
 *.selectToClipboard: true
 *.url-launcher: /usr/bin/xdg-open
 *.matcher.button: 1
 *.print-pipe: "cat > /dev/null"
-
 *.VT100.Translations: #override \
                  Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
                  Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
