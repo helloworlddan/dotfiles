@@ -1,11 +1,11 @@
 configuration {
 	modi: "run";
-  font: "JetBrains Mono 11";
+  font: "JetBrains Mono 16";
 	location: 6;
 	yoffset: -5;
 	xoffset: 0;
 	fixed-num-lines: true;
-	terminal: "kitty";
+	terminal: "xterm";
 
 
 /*	sort: false;*/
@@ -28,7 +28,7 @@ configuration {
 window {
   border: 2 2;
   border-color: @fg;
-  height: 150px;
+  height: 100px;
 }
 
 inputbar {

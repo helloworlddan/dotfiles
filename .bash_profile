@@ -45,11 +45,6 @@ decdir() {
 nested(){
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
-ssh_key_add(){
-  unset CHROME_REMOTE_DESKTOP_SESSION
-  eval $(ssh-agent -s)
-  ssh-add
-}
 
 # Exports
 export GPG_TTY=$(tty)
@@ -61,6 +56,8 @@ export PATH="${GOPATH}/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
 export PS1=" \[\e[1;36m\]\u \[\e[0m\]@ \[\e[1;35m\]\H
  \[\e[1;33m\]\$(path_name) \[\e[0m\]\[\e[1;34m\]\$(branch_name) \[\e[m\]\$ "
+export XCURSOR_SIZE=50
+export GDK_DPI_SCALE=1.5
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;33m'
@@ -143,13 +140,13 @@ grunlogstream () {
 
 setdesktop () {
   sleep 2 && bspc desktop -f '^1' && goto -p 1
-  sleep 2 && bspc desktop -f '^5' && goto -p 3
+  sleep 2 && bspc desktop -f '^5' && goto -p 2
   sleep 2 && bspc desktop -f '^6' && goto -p 1 dn-workspace
   sleep 2 && bspc desktop -f '^7' && goto -p 1 nucleus:lac
   sleep 2 && bspc desktop -f '^8' && goto -p 1 -g mail
   sleep 2 && bspc desktop -f '^9' && goto -p 1 -g calendar
   sleep 2 && bspc desktop -f '^10' && goto -p 1 companion
-  sleep 2 && bspc desktop -f '^11' && goto -p 4
+  sleep 2 && bspc desktop -f '^11' && goto -p 3
 }
 
 # Shell Options
