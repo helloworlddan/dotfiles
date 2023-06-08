@@ -30,5 +30,3 @@ bspc rule -a *:*:"zoom.us is sharing your screen." hidden=on
 
 sh "${HOME}/.themes/default/bspwm.theme"
 
-google-chrome --force-device-scale-factor=1.5 --high-dpi-support=1 --profile-directory='Profile 1' --no-startup-window &
-

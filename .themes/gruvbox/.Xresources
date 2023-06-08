@@ -36,9 +36,8 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 Xcursor.theme: default
-Xcursor.size: 32
 
-*.font: xft:JetBrainsMono Nerd Font Mono:size=16
+*.font: xft:JetBrainsMono Nerd Font Mono:size=10:weight=medium
 *.perl-ext-common: default,matcher
 *.scrollBar: false
 *.clipboard.autocopy: true

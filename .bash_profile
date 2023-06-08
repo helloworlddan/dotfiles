@@ -56,8 +56,6 @@ export PATH="${GOPATH}/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
 export PS1=" \[\e[1;36m\]\u \[\e[0m\]@ \[\e[1;35m\]\H
  \[\e[1;33m\]\$(path_name) \[\e[0m\]\[\e[1;34m\]\$(branch_name) \[\e[m\]\$ "
-export XCURSOR_SIZE=50
-export GDK_DPI_SCALE=1.5
 # Exports for colored Man-Pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;33m'
