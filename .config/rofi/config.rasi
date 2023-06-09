@@ -28,7 +28,7 @@ configuration {
 window {
   border: 2 2;
   border-color: @fg;
-  height: 100px;
+  height: 75px;
 }
 
 inputbar {
