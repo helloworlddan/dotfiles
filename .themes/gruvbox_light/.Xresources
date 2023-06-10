@@ -33,16 +33,21 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+
 Xcursor.theme: default
 
-*.font: xft:JetBrainsMono Nerd Font Mono:size=10:weight=medium
+*.cursorBlink: true
 *.perl-ext-common: default,matcher
 *.scrollBar: false
+*.highlightSelection: true
+
+*.font: xft:JetBrainsMono Nerd Font Mono:size=10:weight=medium
 *.clipboard.autocopy: true
 *.selectToClipboard: true
 *.url-launcher: /usr/bin/xdg-open
 *.matcher.button: 1
 *.print-pipe: "cat > /dev/null"
+*.vt100.bellIsUrgent: true
 *.VT100.Translations: #override \
-                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
-                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
+    Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
