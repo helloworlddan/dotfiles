@@ -11,6 +11,8 @@ opt.scrolloff = 10
 opt.relativenumber = true
 opt.wrap = false
 
+vim.g.vscode_snippets_path = vim.fn.stdpath "config" .. "/snippets"
+
 autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
