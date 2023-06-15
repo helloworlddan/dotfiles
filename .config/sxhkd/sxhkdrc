@@ -53,6 +53,9 @@ alt + a
 alt + shift + p
   google-chrome --app=https://meet.google.com/?companion=1 || google-chrome-stable --app=https://meet.google.com/?companion=1
 
+alt + shift + e
+  google-chrome --app=https://emojikitchen.dev || google-chrome-stable --app=https://emojikitchen.dev
+
 alt + comma
   scrot -s -z - | xclip -selection clipboard -t image/png
 
