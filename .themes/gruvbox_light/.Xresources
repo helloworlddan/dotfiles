@@ -47,7 +47,8 @@ Xcursor.theme: default
 *.url-launcher: /usr/bin/xdg-open
 *.matcher.button: 1
 *.print-pipe: "cat > /dev/null"
-*.vt100.bellIsUrgent: true
+*.VT100.saveLines: 4096
+*.VT100.bellIsUrgent: true
 *.VT100.Translations: #override \
     Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
