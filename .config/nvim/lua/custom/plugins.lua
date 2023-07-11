@@ -43,6 +43,12 @@ local plugins = {
 
         "css-lsp",
 
+        "cmake",
+
+        "marksman",
+
+        "sqlls",
+
         "lua-language-server",
         "html-lsp",
         "prettier",

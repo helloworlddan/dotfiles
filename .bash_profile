@@ -118,6 +118,7 @@ gregion () {
     gcloud config set run/region ${1}
     gcloud config set deploy/region ${1}
     gcloud config set compute/region ${1}
+    gcloud config set compute/zone ${1}-a
     gcloud config set artifacts/location ${1}
   fi
 }
@@ -158,6 +159,7 @@ project_name() {
 run_region() {
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Pom 1 '^region = \K(.*)$'
 }
+
 
 # Source local overrides, if available
 if [ -f "${HOME}/.bash_profile.local" ]; then
