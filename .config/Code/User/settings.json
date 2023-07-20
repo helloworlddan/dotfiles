@@ -1,16 +1,21 @@
 {
     "cloudcode.autoDependencies": "off",
+    "cloudcode.beta.enableAICompanion": true,
+    "cloudcode.updateChannel": "trusted-testers",
+    "cloudcode.duetAI.project": "ai-dev-preview-external",
+
     "editor.experimental.pasteActions.enabled": true,
     "editor.fontFamily": "'JetBrains Mono', 'Inconsolata'",
     "editor.fontLigatures": true,
     "editor.tabCompletion": "on",
+    "editor.fontSize": 13.5,
+
     "explorer.confirmDelete": false,
+
     "files.autoSave": "afterDelay",
-    "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:mm",
-    "gitlens.defaultDateLocale": null,
-    "gitlens.defaultDateShortFormat": "DD/MM/YYYY",
-    "gitlens.defaultTimeFormat": "HH:mm",
+
     "go.toolsManagement.autoUpdate": true,
+
     "ruby.format": "rubocop",
     "ruby.lint": {
         "rubocop": {
@@ -22,8 +27,10 @@
     },
     "ruby.useBundler": true,
     "ruby.useLanguageServer": true,
+
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+
+    "workbench.colorTheme": "Gruvbox Light Medium",
     "workbench.startupEditor": "none",
     "[python]": {
         "editor.formatOnType": true
@@ -31,7 +38,7 @@
     "cSpell.userWords": [
         "hyperparameters"
     ],
-    "editor.fontSize": 13.5,
+    
 
     ////// Presenter settings //////
     
