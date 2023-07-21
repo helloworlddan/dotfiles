@@ -144,6 +144,15 @@ grunlogstream () {
     "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null "
 }
 
+gkilldrs(){
+  gcloud org-policies reset constraints/iam.allowedPolicyMemberDomains \
+    --project $(gcloud config get-value project)
+}
+gkillbinauthz(){
+  gcloud org-policies reset constraints/run.allowedBinaryAuthorizationPolicies \
+    --project $(gcloud config get-value project)
+}
+
 user_name (){
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^account = \K(\w+)'
 }
