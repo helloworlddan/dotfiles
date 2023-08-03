@@ -1,7 +1,7 @@
 local M = {}
 M.ui = {
   changed_themes = {
-    gruvbox_light = {
+    gruvbox = {
       base_16 = {
         base00 = "#fbf1c7",
         base01 = "#ebdbb2",
@@ -42,7 +42,7 @@ M.ui = {
       },
     },
   },
-  theme = 'gruvbox_light',
+  theme = 'gruvbox',
 }
 
 M.plugins = "custom.plugins"
