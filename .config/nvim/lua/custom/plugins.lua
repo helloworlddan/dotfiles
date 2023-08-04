@@ -43,8 +43,6 @@ local plugins = {
 
         "css-lsp",
 
-        "cmake",
-
         "marksman",
 
         "sqlls",
