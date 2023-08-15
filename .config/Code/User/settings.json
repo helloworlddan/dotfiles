@@ -30,7 +30,7 @@
 
     "window.menuBarVisibility": "toggle",
 
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.startupEditor": "none",
     "[python]": {
         "editor.formatOnType": true
@@ -38,6 +38,7 @@
     "cSpell.userWords": [
         "hyperparameters"
     ],
+    "cloudcode.project": "serverless-journey",
     
 
     ////// Presenter settings //////

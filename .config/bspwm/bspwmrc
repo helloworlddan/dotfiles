@@ -7,9 +7,6 @@ setxkbmap gb
 xsetroot -cursor_name left_ptr
 xrdb -load ~/.Xresources
 
-autocutsel -fork &
-autocutsel -selection PRIMARY &
-autocutsel -selection CLIPBOARD &
 sxhkd &
 
 bspc config border_width          2
