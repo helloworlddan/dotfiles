@@ -115,7 +115,7 @@ ctrl + alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{11,12,13,14,15,16,17,18,19,20}'
 
 # focus or send to the personal desktop
-alt + {_,shift + } BackSpace
+ctrl + alt + {_,shift + } BackSpace
 	bspc {desktop -f,node -d} '^{21}'
 
 # focus next monitor

@@ -4,11 +4,10 @@
 #          |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 # alt      | trm | dev | dmo | doc | gvc |     |     |     |     |     |
 #          |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-# ctrl+alt | web | com | cal | doc | gvc | bug | lac | eat |     |     | pers
+# ctrl+alt | web | com | cal | doc | gvc | bug | pxl | lac |     | eat | pers
 #          |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 
-#               1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21
-bspc monitor -d trm dev dmo doc gvc nil nil nil nil nil web com cal doc gvc bug lac eat nil nil pers
+bspc monitor -d "trm" "dev" "dmo" "doc" "gvc" "nil" "nil" "nil" "nil" "nil"  "●  web" "●  com" "●  cal" "●  doc" "●  gvc" "●  bug" "●  plx" "●  lac" "●  nil" "●  eat" "●  pers"  
 
 setxkbmap us
 xsetroot -cursor_name left_ptr

@@ -99,11 +99,14 @@ deckdesk () {
   goto -p 1 -g docs &
   sleep 2 && bspc desktop -f '^15'
   goto -p 1 companion &
+
   sleep 2 && bspc desktop -f '^16'
   goto -p 1 dn-workspace &
   sleep 2 && bspc desktop -f '^17'
-  goto -p 1 nucleus:lac &
+  goto -p 1 pxl &
   sleep 2 && bspc desktop -f '^18'
+  goto -p 1 nucleus:lac &
+  sleep 2 && bspc desktop -f '^20'
   goto -p 1 nucleus:lac &
 
   sleep 2 && bspc desktop -f '^2'
