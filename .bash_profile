@@ -109,8 +109,6 @@ deckdesk () {
   sleep 2 && bspc desktop -f '^20'
   goto -p 1 nucleus:lac &
 
-  sleep 2 && bspc desktop -f '^2'
-  xterm -hold -e nvim &
   sleep 2 && bspc desktop -f '^1'
 
   disown -a
