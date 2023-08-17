@@ -2,7 +2,7 @@
     "cloudcode.autoDependencies": "off",
     "cloudcode.beta.enableAICompanion": true,
     "cloudcode.updateChannel": "trusted-testers",
-    "cloudcode.duetAI.project": "ai-dev-preview-external",
+    "cloudcode.duetAI.project": "serverless-journey",
 
     "editor.experimental.pasteActions.enabled": true,
     "editor.fontFamily": "'JetBrains Mono', 'Inconsolata'",
@@ -38,7 +38,7 @@
     "cSpell.userWords": [
         "hyperparameters"
     ],
-    "cloudcode.project": "serverless-journey",
+    "cloudcode.project": "butthole-of-the-internet",
     
 
     ////// Presenter settings //////

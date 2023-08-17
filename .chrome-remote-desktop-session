@@ -1,4 +1,2 @@
-killall pulseaudio
-/usr/bin/pulseaudio --start --exit-idle-time=-1
 exec /etc/X11/Xsession /usr/bin/bspwm
 

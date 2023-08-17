@@ -76,15 +76,41 @@ nested(){
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
 
-setdesktop () {
-  sleep 2 && bspc desktop -f '^1' && goto -p 1
-  sleep 2 && bspc desktop -f '^5' && goto -p 2
-  sleep 2 && bspc desktop -f '^6' && goto -p 1 dn-workspace
-  sleep 2 && bspc desktop -f '^7' && goto -p 1 nucleus:lac
-  sleep 2 && bspc desktop -f '^8' && goto -p 1 -g mail
-  sleep 2 && bspc desktop -f '^9' && goto -p 1 -g calendar
-  sleep 2 && bspc desktop -f '^10' && goto -p 1 companion
-  sleep 2 && bspc desktop -f '^11' && goto -p 3
+deckdesk () {
+  sleep 2 && bspc desktop -f '^11'
+  goto -p 1 &
+  sleep 2 && bspc desktop -f '^3'
+  goto -p 2 &
+  sleep 2 && bspc desktop -f '^21'
+  goto -p 3 &
+
+  sleep 2 && bspc desktop -f '^4'
+  goto -p 1 -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
+  sleep 2 && bspc desktop -f '^4'
+  goto -p 1 -u pkg.go.dev &
+  sleep 2 && bspc desktop -f '^5'
+  goto -p 1 companion &
+
+  sleep 2 && bspc desktop -f '^12'
+  goto -p 1 -g mail &
+  sleep 2 && bspc desktop -f '^13'
+  goto -p 1 -g calendar &
+  sleep 2 && bspc desktop -f '^14'
+  goto -p 1 -g docs &
+  sleep 2 && bspc desktop -f '^15'
+  goto -p 1 companion &
+  sleep 2 && bspc desktop -f '^16'
+  goto -p 1 dn-workspace &
+  sleep 2 && bspc desktop -f '^17'
+  goto -p 1 nucleus:lac &
+  sleep 2 && bspc desktop -f '^18'
+  goto -p 1 nucleus:lac &
+
+  sleep 2 && bspc desktop -f '^2'
+  xterm -hold -e nvim &
+  sleep 2 && bspc desktop -f '^1'
+
+  disown -a
 }
 
 # Cloud Functions

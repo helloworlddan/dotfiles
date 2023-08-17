@@ -1,9 +1,16 @@
 #!/bin/sh
 
-#               1   2   3   4   5   6   7   8   9   0   BkSp
-bspc monitor -d web trm trm trm dmo bug lac com cal gvc pers
+#          | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 0   | BkSp
+#          |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+# alt      | trm | dev | dmo | doc | gvc |     |     |     |     |     |
+#          |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+# ctrl+alt | web | com | cal | doc | gvc | bug | lac | eat |     |     | pers
+#          |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 
-setxkbmap gb
+#               1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21
+bspc monitor -d trm dev dmo doc gvc nil nil nil nil nil web com cal doc gvc bug lac eat nil nil pers
+
+setxkbmap us
 xsetroot -cursor_name left_ptr
 xrdb -load ~/.Xresources
 

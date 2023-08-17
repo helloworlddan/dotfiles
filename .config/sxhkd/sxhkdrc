@@ -108,11 +108,15 @@ alt + {_,shift + }Tab
 
 # focus or send to the given desktop
 alt + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,10}'
+
+# focus or send to the given desktop
+ctrl + alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{11,12,13,14,15,16,17,18,19,20}'
 
 # focus or send to the personal desktop
 alt + {_,shift + } BackSpace
-	bspc {desktop -f,node -d} '^{11}'
+	bspc {desktop -f,node -d} '^{21}'
 
 # focus next monitor
 alt + d
