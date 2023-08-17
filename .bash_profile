@@ -79,14 +79,14 @@ nested(){
 deckdesk () {
   sleep 2 && bspc desktop -f '^11'
   goto -p 1 &
-  sleep 2 && bspc desktop -f '^3'
+  sleep 2 && bspc desktop -f '^4'
   goto -p 2 &
   sleep 2 && bspc desktop -f '^21'
   goto -p 3 &
 
-  sleep 2 && bspc desktop -f '^4'
+  sleep 2 && bspc desktop -f '^3'
   goto -p 1 -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
-  sleep 2 && bspc desktop -f '^4'
+  sleep 2 && bspc desktop -f '^3'
   goto -p 1 -u pkg.go.dev &
   sleep 2 && bspc desktop -f '^5'
   goto -p 1 companion &
@@ -96,7 +96,7 @@ deckdesk () {
   sleep 2 && bspc desktop -f '^13'
   goto -p 1 -g calendar &
   sleep 2 && bspc desktop -f '^14'
-  goto -p 1 -g docs &
+  goto -p 1 -u drive.google.com/scary/drive/recent &
   sleep 2 && bspc desktop -f '^15'
   goto -p 1 companion &
 
@@ -107,11 +107,14 @@ deckdesk () {
   sleep 2 && bspc desktop -f '^18'
   goto -p 1 nucleus:lac &
   sleep 2 && bspc desktop -f '^20'
-  goto -p 1 nucleus:lac &
+  goto -p 1 eat &
 
+  sleep 2 && bspc desktop -f '^2'
+  xterm &
   sleep 2 && bspc desktop -f '^1'
 
   disown -a
+  clear
 }
 
 # Cloud Functions
