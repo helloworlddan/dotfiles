@@ -146,10 +146,13 @@ gregion () {
     gcloud config get-value run/region
   else
     gcloud config set run/region ${1}
+    gcloud config set functions/region ${1}
     gcloud config set deploy/region ${1}
     gcloud config set compute/region ${1}
     gcloud config set compute/zone ${1}-a
     gcloud config set artifacts/location ${1}
+    gcloud config set memcache/region ${1}
+    gcloud config set redis/region ${1}
   fi
 }
 

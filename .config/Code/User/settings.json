@@ -39,6 +39,8 @@
         "hyperparameters"
     ],
     "cloudcode.project": "butthole-of-the-internet",
+    "codesnap.backgroundColor": "#4c4d4f",
+    "codesnap.showWindowControls": false,
     
 
     ////// Presenter settings //////
