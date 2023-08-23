@@ -39,6 +39,8 @@ alias giwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?id_token=$(
 alias gnumber='echo $(gcloud projects describe $(gcloud config get-value core/project) --format "value(projectNumber)")'
 alias gbuilds='gcloud builds list --limit 10 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.BRANCH_NAME,substitutions.TRIGGER_NAME)"'
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
+alias balm='~/.go/bin/balm -g butthole-of-the-internet'
+alias batcomputer=" balm -p 'you are the bat computer, i am batman. call me master wayne.' -"
 
 # Functions
 branch_name() {
@@ -200,7 +202,16 @@ project_name() {
 
 run_region() {
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Pom 1 '^region = \K(.*)$'
-}
+} 
+
+gizmo () {
+  GIZMO_MESSAGE=$(cat)
+  curl \
+    -H "Authorization: Bearer $(gcloud auth print-identity-token)" \
+    -H "Content-Type: application/json" \
+    --data "{\"text\": \"${GIZMO_MESSAGE}\"}" \
+    https://gizmo.collider.nucleus-engineering.cloud/post
+  }
 
 
 # Source local overrides, if available
