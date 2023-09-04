@@ -213,6 +213,14 @@ gizmo () {
     https://gizmo.collider.nucleus-engineering.cloud/post
   }
 
+snippet () {
+  SNIPPET_MESSAGE=$(cat)
+  curl \
+    -H "Authorization: Bearer $(gcloud auth print-identity-token)" \
+    -H "Content-Type: application/json" \
+    --data "{\"author\": \"stamer@google.com\", \"type\": \"CHAT\", \"text\": \"${SNIPPET_MESSAGE}\"}" \
+    https://snippet.collider.nucleus-engineering.cloud/
+  }
 
 # Source local overrides, if available
 if [ -f "${HOME}/.bash_profile.local" ]; then
