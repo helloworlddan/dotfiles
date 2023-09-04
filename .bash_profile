@@ -218,7 +218,7 @@ snippet () {
   curl \
     -H "Authorization: Bearer $(gcloud auth print-identity-token)" \
     -H "Content-Type: application/json" \
-    --data "{\"author\": \"stamer@google.com\", \"type\": \"CHAT\", \"text\": \"${SNIPPET_MESSAGE}\"}" \
+    --data "{\"author\": \"stamer@google.com\", \"type\": \"CHAT\", \"time\": \"$(date -Iseconds)\", \"text\": \"${SNIPPET_MESSAGE}\"}" \
     https://snippet.collider.nucleus-engineering.cloud/
   }
 
