@@ -1,0 +1,62 @@
+! special
+*.foreground:   #1f2328
+*.background:   #ffffff
+*.cursorColor:  #1f2328
+
+! black
+*.color0:       #24292f
+*.color8:       #57606a
+
+! red
+*.color1:       #cf222e
+*.color9:       #a40e26
+
+! green
+*.color2:       #116329
+*.color10:      #1a7f37
+
+! yellow
+*.color3:       #4d2d00
+*.color11:      #633c01
+
+! blue
+*.color4:       #0969da
+*.color12:      #218bff
+
+! magenta
+*.color5:       #8250df
+*.color13:      #a475f9
+
+! cyan
+*.color6:       #1b7c83
+*.color14:      #3192aa
+
+! white
+*.color7:       #6e7781
+*.color15:      #8c959f
+
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+Xcursor.theme: default
+
+*.cursorBlink: true
+*.perl-ext-common: default,matcher
+*.scrollBar: false
+*.highlightSelection: true
+
+*.font: xft:JetBrainsMono Nerd Font:size=10
+*.clipboard.autocopy: true
+*.selectToClipboard: true
+*.url-launcher: /usr/bin/xdg-open
+*.matcher.button: 1
+*.print-pipe: "cat > /dev/null"
+*.VT100.saveLines: 4096
+*.VT100.bellIsUrgent: true
+*.VT100.Translations: #override \
+    Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)

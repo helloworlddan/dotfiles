@@ -30,7 +30,7 @@
 
     "window.menuBarVisibility": "toggle",
 
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "GitHub Light",
     "workbench.startupEditor": "none",
     "[python]": {
         "editor.formatOnType": true

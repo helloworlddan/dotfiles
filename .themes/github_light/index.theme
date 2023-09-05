@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=github_light
+Comment=No comment
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=github_light
+GtkTheme=github_light
+IconTheme=github_light
+MetacityTheme=github_light
