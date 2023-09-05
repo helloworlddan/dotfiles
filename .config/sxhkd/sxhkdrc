@@ -2,9 +2,6 @@
 alt + Return
 	/usr/bin/xterm
 
-alt + shift + Return
-	kitty
-
 alt + r
   rofi -show run
 
