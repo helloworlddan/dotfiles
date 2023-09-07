@@ -53,6 +53,15 @@ alt + shift + p
 alt + shift + e
   goto -p 1 -u emojikitchen.dev
 
+alt + slash
+  goto -p 1 -u google.com
+
+alt + shift + slash
+  goto -p 1 -c bard
+
+alt + Print
+  goto -p 3 -u play.google.com/books
+
 alt + x
   edex-ui
 
@@ -70,12 +79,6 @@ alt + period
 
 alt + shift + period
   bspc config top_padding 0 && killall polybar
-
-alt + slash
-  goto -p 1 -u google.com
-
-alt + shift + slash
-  goto -p 1 -c bard
 
 # close
 alt + Escape
