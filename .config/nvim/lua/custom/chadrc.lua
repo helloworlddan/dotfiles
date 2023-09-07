@@ -1,7 +1,7 @@
 local M = {}
 M.ui = {
   changed_themes = {
-    github_light = {
+    gruvbox_light = {
       base_16 = {
         base00 = "#fbf1c7",
         base01 = "#ebdbb2",
@@ -21,7 +21,7 @@ M.ui = {
         base0F = "#d65d0e",
       },
     },
-    github_light = {
+    gruvbox = {
       base_16 = {
         base00 = "#282828",
         base01 = "#3c3836",
