@@ -18,40 +18,46 @@ alt + v
 	code
 
 alt + shift + v
-  google-chrome --app=https://cider-v.corp.google.com || google-chrome-stable --app=https://cider-v.corp.google.com
+  goto -p 1 -c cider-v
 
 alt + m
-  google-chrome --app=https://mail.google.com || google-chrome-stable --app=https://mail.google.com
+  goto -p 1 -g mail
 
 alt + shift + m
-  google-chrome --app=https://mail.google.com/mail/?view=cm&fs=1&tf=1 || google-chrome-stable --app=https://mail.google.com/mail/?view=cm&fs=1&tf=1
+  goto -p 1 -u mail.google.com/mail/?view=cm&fs=1&tf=1
 
 alt + c
-  google-chrome --app=https://calendar.google.com || google-chrome-stable --app=https://calendar.google.com
+  goto -p 1 -g calendar
 
 alt + g
-  google-chrome --app=https://github.com || google-chrome-stable --app=https://github.com
-
-alt + shift + s
-  google-chrome --app=https://open.spotify.com/ || google-chrome-stable --app=https://open.spotify.com/
+  goto -p 1 -u github.com
 
 alt + s
-  google-chrome --app=https://app.slack.com/client/ || google-chrome-stable --app=https://app.slack.com/client/
+  goto -p 1 -u app.slack.com/client/
+
+alt + shift + s
+  goto -p 1 -u open.spotify.com
 
 alt + y
-  google-chrome --app=https://youtube.com || google-chrome-stable --app=https://youtube.com
+  goto -p 1 -u youtube.com
 
 alt + n
-  google-chrome --app=https://netflix.com || google-chrome-stable --app=https://netflix.com
+  goto -p 1 -u netflix.com
 
 alt + a
-  google-chrome --app=http://go/nucleus:lac || google-chrome-stable --app=http://go/nucleus:lac
+  goto -p 1 nucleus:lac
 
 alt + shift + p
-  google-chrome --app=https://meet.google.com/?companion=1 || google-chrome-stable --app=https://meet.google.com/?companion=1
+  goto -p 1 -u meet.google.com/?companion=1
 
 alt + shift + e
-  google-chrome --app=https://emojikitchen.dev || google-chrome-stable --app=https://emojikitchen.dev
+  goto -p 1 -u emojikitchen.dev
+
+alt + x
+  edex-ui
+
+alt + shift + x
+  cool-retro-term --fullscreen
 
 alt + comma
   scrot -s -z - | xclip -selection clipboard -t image/png
@@ -65,11 +71,11 @@ alt + period
 alt + shift + period
   bspc config top_padding 0 && killall polybar
 
-alt + x
-  edex-ui
+alt + slash
+  goto -p 1 -u google.com
 
-alt + shift + x
-  cool-retro-term --fullscreen
+alt + shift + slash
+  goto -p 1 -c bard
 
 # close
 alt + Escape
