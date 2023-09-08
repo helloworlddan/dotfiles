@@ -41,6 +41,11 @@ M.ui = {
         base0F = "#d65d0e",
       },
     },
+    github_light = {
+      base_16 = {
+        base00 = "#ffffff",
+      },
+    },
   },
   theme = 'github_light',
 }

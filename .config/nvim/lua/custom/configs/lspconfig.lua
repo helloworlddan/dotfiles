@@ -38,3 +38,4 @@ lspconfig.ruby_ls.setup{
   root_dir = util.root_pattern("Gemfile", ".git"),
   settings = {},
 }
+
