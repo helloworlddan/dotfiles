@@ -7,7 +7,7 @@
 # ctrl+alt | web | com | cal | drv | gvc | bug | pxl | lac | app | eat | pers
 #          |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 
-bspc monitor -d "trm" "dev" "doc" "dmo" "gvc" "nil" "nil" "nil" "nil" "nil"  "●  web" "●  com" "●  cal" "●  drv" "●  gvc" "●  bug" "●  plx" "●  lac" "●  app" "●  eat" "●  pers"  
+bspc monitor -d "trm" "dev" "doc" "dmo" "gvc" "nil" "nil" "nil" "nil" "nil"  "●  web" "●  com" "●  cal" "●  pan" "●  gvc" "●  bug" "●  plx" "●  lac" "●  app" "●  eat" "●  pers"  
 
 setxkbmap us
 xsetroot -cursor_name left_ptr

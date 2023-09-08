@@ -99,7 +99,7 @@ deckdesk () {
   sleep 2 && bspc desktop -f '^13'
   goto -p 1 -g calendar &
   sleep 2 && bspc desktop -f '^14'
-  goto -p 1 -u drive.google.com/scary/drive/recent &
+  goto -p 1 -c pantheon &
   sleep 2 && bspc desktop -f '^15'
   goto -p 1 companion &
 
