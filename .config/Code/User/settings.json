@@ -38,9 +38,10 @@
     "cSpell.userWords": [
         "hyperparameters"
     ],
-    "cloudcode.project": "serverless-is-more",
+    "cloudcode.project": "stamer-showcase",
     "codesnap.backgroundColor": "#4c4d4f",
     "codesnap.showWindowControls": false,
+    "editor.stickyScroll.enabled": true,
     
 
     ////// Presenter settings //////

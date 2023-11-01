@@ -35,9 +35,6 @@ alt + g
 alt + s
   goto -p 1 -u app.slack.com/client/
 
-alt + d
-  goto -p 1 -u discord.com/channels/1009525727504384150/1030523179778707507 
-
 alt + shift + s
   goto -p 1 -u open.spotify.com
 
