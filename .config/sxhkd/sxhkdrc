@@ -57,7 +57,7 @@ alt + slash
   goto -p 1 -u google.com
 
 alt + shift + slash
-  goto -p 1 -c bard
+  goto -p 1 -c moma
 
 alt + Print
   goto -p 3 -u play.google.com/books
