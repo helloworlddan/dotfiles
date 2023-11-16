@@ -44,6 +44,10 @@ alias batcomputer="balm -p 'you are the bat computer, i am batman. call me maste
 alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
 
 # Functions
+path_name() {
+  pwd | sed -e "s:$HOME:~:" -e "s:\(.\)[^/]*/:\1/:g"
+}
+
 branch_name() {
   git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
 }
@@ -55,12 +59,34 @@ commit_info(){
   echo "remote reference: $(gh browse -c -n | sed 's/\/tree\//\/commit\//')"
 }
 
-path_name() {
-  pwd | sed -e "s:$HOME:~:" -e "s:\(.\)[^/]*/:\1/:g"
-}
-
 commit_copy(){
   commit_info | xclip -selection clipboard
+}
+
+clone_all(){
+  if [ -z ${1} ]
+  then
+    echo "no gh owner supplied"
+  else
+    REPOS=$( gh repo list NucleusEngineering -L 500 --json name | jq -r '.[].name' )
+    echo "Found $(echo ${REPOS} | wc -w) repos in ${1}"
+    for REPO in ${REPOS}
+    do 
+      if [ -d ${HOME}/Code/github.com/${1}/${REPO} ]
+      then
+        echo "Pulling updates for ${REPO} from origin remote"
+        (
+          cd ${HOME}/Code/github.com/${1}/${REPO}
+          git branch --set-upstream-to origin/main main
+          git branch --set-upstream-to origin/master master
+          git pull --all
+        )
+      else
+        echo "Cloning ${REPO}"
+        gh repo clone ${1}/${REPO} ${HOME}/Code/github.com/${1}/${REPO}
+      fi
+    done
+  fi
 }
 
 encdir() {
@@ -232,3 +258,4 @@ fi
 
 tortune
 
+. "$HOME/.cargo/env"
