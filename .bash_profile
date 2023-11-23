@@ -258,4 +258,3 @@ fi
 
 tortune
 
-. "$HOME/.cargo/env"
