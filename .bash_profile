@@ -4,6 +4,7 @@
 shopt -s histappend
 
 # Exports
+export TERM=xterm-256color
 export GPG_TTY=$(tty)
 export EDITOR="nvim"
 export GOPATH="${HOME}/.go"
@@ -111,7 +112,7 @@ deckdesk () {
   sleep 2 && bspc desktop -f '^4'
   goto -p 2 &
   sleep 2 && bspc desktop -f '^21'
-  goto -p 4 &
+  goto -p 3 &
 
   sleep 2 && bspc desktop -f '^3'
   goto -p 1 -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
