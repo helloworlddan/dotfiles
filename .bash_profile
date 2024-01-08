@@ -41,7 +41,6 @@ alias gnumber='echo $(gcloud projects describe $(gcloud config get-value core/pr
 alias gbuilds='gcloud builds list --limit 10 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.BRANCH_NAME,substitutions.TRIGGER_NAME)"'
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias balm='~/.go/bin/balm -g butthole-of-the-internet'
-alias batcomputer="balm -p 'you are the bat computer, i am batman. call me master wayne.' -"
 alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
 
 # Functions
