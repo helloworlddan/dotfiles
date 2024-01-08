@@ -47,7 +47,7 @@ M.ui = {
       },
     },
   },
-  theme = 'gruvbox',
+  theme = 'github_light',
 }
 
 M.plugins = "custom.plugins"
