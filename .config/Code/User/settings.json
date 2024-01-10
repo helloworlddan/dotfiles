@@ -30,7 +30,7 @@
 
     "window.menuBarVisibility": "toggle",
 
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "GitHub Light",
     "workbench.startupEditor": "none",
     "[python]": {
         "editor.formatOnType": true
@@ -42,6 +42,7 @@
     "codesnap.backgroundColor": "#4c4d4f",
     "codesnap.showWindowControls": false,
     "editor.stickyScroll.enabled": true,
+    "window.zoomLevel": 1,
     
 
     ////// Presenter settings //////

@@ -68,7 +68,7 @@ clone_all(){
   then
     echo "no gh owner supplied"
   else
-    REPOS=$( gh repo list NucleusEngineering -L 500 --json name | jq -r '.[].name' )
+    REPOS=$( gh repo list ${1} -L 500 --json name | jq -r '.[].name' )
     echo "Found $(echo ${REPOS} | wc -w) repos in ${1}"
     for REPO in ${REPOS}
     do 

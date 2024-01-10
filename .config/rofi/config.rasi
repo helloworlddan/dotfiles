@@ -1,6 +1,6 @@
 configuration {
 	modi: "run";
-  font: "JetBrains Mono 12";
+  font: "JetBrains Mono 13";
 	location: 6;
 	yoffset: -5;
 	xoffset: 0;

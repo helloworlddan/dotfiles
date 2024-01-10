@@ -9,7 +9,7 @@ alt + e
   thunar
 
 alt + b
-	google-chrome || google-chrome-stable
+	google-chrome --new-window google.com || google-chrome-stable --new-window google.com
 
 alt + shift + b
 	google-chrome --incognito  || google-chrome-stable --incognito
@@ -79,6 +79,12 @@ alt + period
 
 alt + shift + period
   bspc config top_padding 0 && killall polybar
+
+alt + shift + Up
+  bspc config window_gap $(($(bspc config window_gap) + 5))
+
+alt + shift + Down
+  bspc config window_gap $(($(bspc config window_gap) - 5))
 
 # close
 alt + Escape
