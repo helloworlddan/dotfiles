@@ -44,6 +44,15 @@ M.ui = {
     github_light = {
       base_16 = {
         base00 = "#ffffff",
+        -- The folowing override for polypao
+        base08 = "#C05589",
+        base09 = "#A9D65F",
+        base0A = "#FF6400",
+        base0B = "#429484",
+        base0C = "#933362",
+        base0D = "#744527",
+        base0E = "#D9006A",
+        base0F = "#00AF8D",
       },
     },
   },
