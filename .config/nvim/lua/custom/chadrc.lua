@@ -44,7 +44,7 @@ M.ui = {
     github_light = {
       base_16 = {
         base00 = "#ffffff",
-        -- The folowing override for polypao
+        -- The following override for polypao_light
         base08 = "#C05589",
         base09 = "#A9D65F",
         base0A = "#FF6400",
@@ -55,8 +55,25 @@ M.ui = {
         base0F = "#00AF8D",
       },
     },
+    github_dark = {
+      base_30 = {
+        folder_bg = "#F4A792",
+      },
+      base_16 = {
+        base00 = "#1f2328",
+        -- The following override for polypao
+        base08 = "#DB8DB3",
+        base09 = "#ACE5B3",
+        base0A = "#85DDD9",
+        base0B = "#9E96ED",
+        base0C = "#F4A792",
+        base0D = "#48C1B8",
+        base0E = "#EFAFD1",
+        base0F = "#C6C5FC",
+      },
+    },
   },
-  theme = 'github_light',
+  theme = 'github_dark',
 }
 
 M.plugins = "custom.plugins"
