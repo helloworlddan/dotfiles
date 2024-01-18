@@ -6,15 +6,17 @@
 
 # TODO: This could really look nicer
 style "gimp_spin_scale" {
+
   # Spin background
   bg[NORMAL] = @base_color
 
   engine "pixmap" {
+
     image {
       function        = BOX
       state           = NORMAL
       detail          = "spinbutton_up"
-      overlay_file    = "assets/pan-up-alt.png"
+      overlay_file    = "assets/spin-up.png"
       overlay_stretch = FALSE
     }
 
@@ -22,7 +24,7 @@ style "gimp_spin_scale" {
       function        = BOX
       state           = PRELIGHT
       detail          = "spinbutton_up"
-      overlay_file    = "assets/pan-up.png"
+      overlay_file    = "assets/spin-up.png"
       overlay_stretch = FALSE
     }
 
@@ -30,7 +32,7 @@ style "gimp_spin_scale" {
       function        = BOX
       state           = ACTIVE
       detail          = "spinbutton_up"
-      overlay_file    = "assets/pan-up.png"
+      overlay_file    = "assets/spin-up.png"
       overlay_stretch = FALSE
     }
 
@@ -38,7 +40,7 @@ style "gimp_spin_scale" {
       function        = BOX
       state           = INSENSITIVE
       detail          = "spinbutton_up"
-      overlay_file    = "assets/pan-up-alt-disabled.png"
+      overlay_file    = "assets/spin-up-insensitive.png"
       overlay_stretch = FALSE
     }
 
@@ -46,7 +48,7 @@ style "gimp_spin_scale" {
       function        = BOX
       state           = NORMAL
       detail          = "spinbutton_down"
-      overlay_file    = "assets/pan-down-alt.png"
+      overlay_file    = "assets/spin-down.png"
       overlay_stretch = FALSE
     }
 
@@ -54,7 +56,7 @@ style "gimp_spin_scale" {
       function        = BOX
       state           = PRELIGHT
       detail          = "spinbutton_down"
-      overlay_file    = "assets/pan-down.png"
+      overlay_file    = "assets/spin-down.png"
       overlay_stretch = FALSE
     }
 
@@ -62,7 +64,7 @@ style "gimp_spin_scale" {
       function        = BOX
       state           = ACTIVE
       detail          = "spinbutton_down"
-      overlay_file    = "assets/pan-down.png"
+      overlay_file    = "assets/spin-down.png"
       overlay_stretch = FALSE
     }
 
@@ -70,19 +72,24 @@ style "gimp_spin_scale" {
       function        = BOX
       state           = INSENSITIVE
       detail          = "spinbutton_down"
-      overlay_file    = "assets/pan-down-alt-disabled.png"
+      overlay_file    = "assets/spin-down-insensitive.png"
       overlay_stretch = FALSE
     }
-  }
+
+ }
+
 }
 
 style "chrome_gtk_frame" {
-  ChromeGtkFrame::frame-color                    = @titlebar_bg_color
-  ChromeGtkFrame::inactive-frame-color           = @titlebar_bg_color
-  ChromeGtkFrame::incognito-frame-color          = @titlebar_bg_color
-  ChromeGtkFrame::incognito-inactive-frame-color = @titlebar_bg_color
 
-  ChromeGtkFrame::frame-gradient-size = 0
+  ChromeGtkFrame::frame-color          = @window_color
+  ChromeGtkFrame::frame-gradient-color = @window_color
+  ChromeGtkFrame::inactive-frame-color = @bg_color
+
+  ChromeGtkFrame::incognito-frame-color          = "#cbd2d9"
+  ChromeGtkFrame::incognito-frame-gradient-color = "#cbd2d9"
+  ChromeGtkFrame::incognito-inactive-frame-color = mix (0.5, @bg_color, "#cbd2d9")
+
 }
 
 # Disable spin button assets for GimpSpinScale

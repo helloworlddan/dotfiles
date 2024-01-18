@@ -60,7 +60,7 @@ M.ui = {
         folder_bg = "#F4A792",
       },
       base_16 = {
-        base00 = "#1f2328",
+        base00 = "#292a2d",
         -- The following override for polypao
         base08 = "#DB8DB3",
         base09 = "#ACE5B3",
