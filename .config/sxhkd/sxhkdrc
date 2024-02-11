@@ -1,9 +1,4 @@
 # apps
-alt + Return
-	/usr/bin/xterm
-
-alt + r
-  rofi -show run
 
 alt + e
   thunar
@@ -68,25 +63,48 @@ alt + x
 alt + shift + x
   cool-retro-term --fullscreen
 
+
+##################################
+####    ESSENTIAL CONTROLS    ####
+##################################
+
+# set the window state
+alt + {t,shift + t,f,shift + f}
+	bspc node -t {tiled,pseudo_tiled,fullscreen,floating}
+
+# launch terminal
+alt + Return
+	/usr/bin/xterm
+
+# launch command runner
+alt + r
+  rofi -show run
+
+# select screenshot to clipboard
 alt + comma
   scrot -s -z - | xclip -selection clipboard -t image/png
 
+# select screenshot to file
 alt + shift + comma
   scrot -s
 
+# show top bar
 alt + period
-  export BAR_WIDTH="$(($(xrandr |head | grep --color=never -Po 'connected( primary)* \K(\d+)') - 10))" && bspc config -m '^1' top_padding 40 && polybar
+  export BAR_WIDTH="$(($(xrandr | head | grep --color=never -Po 'connected( primary)* \K(\d+)') - 10))" && bspc config -m '^1' top_padding 40 && polybar
 
+# hide top bar
 alt + shift + period
   bspc config top_padding 0 && killall polybar
 
+# increase window gap
 alt + shift + Up
-  bspc config window_gap $(($(bspc config window_gap) + 5))
-
-alt + shift + Down
   bspc config window_gap $(($(bspc config window_gap) - 5))
 
-# close
+# decrease window gap
+alt + shift + Down
+  bspc config window_gap $(($(bspc config window_gap) + 5))
+
+# close node
 alt + Escape
 	bspc node -{c}
 
@@ -106,37 +124,29 @@ alt + shift + Escape
 alt + shift + r
 	pkill -USR1 -x sxhkd && source ~/.config/bspwm/bspwmrc
 
-# set the window state
-alt + {t,shift + t,f,shift + f}
-	bspc node -t {tiled,pseudo_tiled,fullscreen,floating}
+# focus or move to the given desktop
+alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,10}'
+
+# focus or move to the given desktop
+alt + ctrl + {_,shift + }{1-9,0}
+	bspc {desktop -f, node -d} '^{11,12,13,14,15,16,17,18,19,20}'
+
+# focus or move to the personal desktop
+alt + super + {_,shift + }{1-9,0}
+	bspc {desktop -f, node -d} '^{21,22,23,24,25,26,27,28,29,30}'
+
+# focus next monitor
+alt + Tab
+	bspc monitor --focus next
+
+# move to next monitor
+alt + shift + Tab
+  bspc node -m next
 
 # focus the node in the given direction
 alt + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
-
-# focus the next/previous node
-alt + {_,shift + }Tab
-	bspc node -f {next,prev}
-
-# focus or send to the given desktop
-alt + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,10}'
-
-# focus or send to the given desktop
-ctrl + alt + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{11,12,13,14,15,16,17,18,19,20}'
-
-# focus or send to the personal desktop
-ctrl + alt + {_,shift + } BackSpace
-	bspc {desktop -f,node -d} '^{21}'
-
-# focus next monitor
-alt + d
-	bspc monitor --focus next
-
-# send to next monitor
-alt + shift + d
-	bspc node -m next
 
 # preselect the direction
 alt + ctrl + {h,j,k,l}
@@ -145,10 +155,6 @@ alt + ctrl + {h,j,k,l}
 # cancel the preselection for the focused node
 alt + ctrl + Escape
 	bspc node -p cancel
-
-# Rotate tree
-alt + ctrl + shift + {h,l}
-    bspc node @/ -C {forward,backward}
 
 # expand a window by moving one of its side outward
 alt + super + {h,j,k,l}
@@ -167,4 +173,3 @@ alt + XF86AudioLowerVolume
 
 alt + XF86AudioPlay
   baton pause
-
