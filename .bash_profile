@@ -132,7 +132,7 @@ deckdesk () {
   sleep 2 && bspc desktop -f '^18'
   goto -p 1 -g script &
   sleep 2 && bspc desktop -f '^19'
-  goto -p 1 eat &
+  goto -p 1 stamer:notes &
   sleep 2 && bspc desktop -f '^20'
   goto -p 1 companion &
 

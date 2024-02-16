@@ -5,14 +5,14 @@
 #           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 # alt       | trm | dev | doc | gcp | nil | nil | nil | nil | nil | nil |
 #           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-# alt+ctrl  | web | com | cal | gcp | bug | pxl | lac | gas | eat | gvc |
+# alt+ctrl  | web | com | cal | gcp | bug | pxl | lac | gas | not | gvc |
 #           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 # alt+super | web | com | cal | gcp | txt | img | map | ytb | spt | nil |
 #           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 
 bspc monitor -d \
   "trm"  "dev"  "doc"  "gcp"  "nil"  "nil"  "nil"  "nil"  "nil"  "nil" \
-  "web²" "com²" "cal²" "gcp²" "bug²" "plx²" "lac²" "gas²" "eat²" "gvc²" \
+  "web²" "com²" "cal²" "gcp²" "bug²" "plx²" "lac²" "gas²" "not²" "gvc²" \
   "web³" "com³" "cal³" "gcp³" "txt³" "img³" "map³" "ytb³" "spt³" "nil³"
 
 bspc config border_width             2
