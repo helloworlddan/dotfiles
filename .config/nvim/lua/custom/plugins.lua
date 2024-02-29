@@ -1,5 +1,61 @@
 local plugins = {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      auto_install = true,
+      ensure_installed = {
+        "awk",
+        "bash",
+        "c",
+        "cpp",
+        "c_sharp",
+        "css",
+        "csv",
+        "diff",
+        "dockerfile",
+        "dot",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
+        "gitcommit",
+        "gitignore",
+        "go",
+        "gomod",
+        "gosum",
+        "gpg",
+        "graphql",
+        "haskell",
+        "hcl",
+        "html",
+        "http",
+        "java",
+        "javascript",
+        "jq",
+        "json",
+        "jsonnet",
+        "lua",
+        "make",
+        "markdown",
+        "nix",
+        "passwd",
+        "promql",
+        "proto",
+        "python",
+        "regex",
+        "ruby",
+        "rust",
+        "sql",
+        "terraform",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "xml",
+        "yaml",
+      },
+    },
+  },
+  {
     "ray-x/go.nvim",
     dependencies = {  -- optional packages
       "ray-x/guihua.lua",
@@ -56,10 +112,10 @@ local plugins = {
   },
   {
     "neovim/nvim-lspconfig",
-     config = function()
-        require "plugins.configs.lspconfig"
-        require "custom.configs.lspconfig"
-     end,
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
