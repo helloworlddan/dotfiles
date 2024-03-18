@@ -196,6 +196,7 @@ gregion () {
     gcloud config set compute/region ${1}
     gcloud config set compute/zone ${1}-a
     gcloud config set artifacts/location ${1}
+    gcloud config set eventarc/location ${1}
     gcloud config set memcache/region ${1}
     gcloud config set redis/region ${1}
   fi
