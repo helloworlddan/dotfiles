@@ -52,15 +52,27 @@ branch_name() {
   git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
 }
 
+codewrap() {
+  echo "\`\`\`"
+  cat
+  echo "\`\`\`"
+}
+
+textcopy() {
+  xclip -selection clipboard
+}
+
+codecopy() {
+  codewrap | textcopy
+}
+
 commit_info(){
-  echo "\`\`\`"
-  git show --quiet --show-signature HEAD
-  echo "\`\`\`"
+  git show --quiet --show-signature HEAD | codewrap
   echo "remote reference: $(gh browse -c -n | sed 's/\/tree\//\/commit\//')"
 }
 
 commit_copy(){
-  commit_info | xclip -selection clipboard
+  commit_info  | textcopy
 }
 
 clone_all(){
