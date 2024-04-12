@@ -54,6 +54,24 @@ M.ui = {
         base0E = "#D9006A",
         base0F = "#00AF8D",
       },
+      base_30 = {
+        -- The following override for polypao
+        folder_bg = "#F4A792",
+        nord_blue = "#85ddd9",
+        blue = "#afefea",
+        red = "#DB8DB3", -- StatusBar (username)
+        green = "#A9D65F", -- StatusBar (file percentage)
+        vibrant_green = "#ace5b3",
+        orange = "#f4a792",
+        yellow = "#f4bcae",
+        sun = "#f4a792",
+        baby_pink = "#efafd1",
+        pink = "#db8db3",
+        purple = "#c6c5fc",
+        dark_purple = "#9e96ed",
+        teal = "#75e0d5",
+        cyan = "#48c1b8",
+      },
     },
     github_dark = {
       base_16 = {
@@ -92,7 +110,7 @@ M.ui = {
       },
     },
   },
-  theme = 'github_dark',
+  theme = 'github_light',
 }
 
 M.plugins = "custom.plugins"
