@@ -56,14 +56,17 @@ M.ui = {
       },
       base_30 = {
         -- The following override for polypao
-        folder_bg = "#F4A792",
-        nord_blue = "#85ddd9",
-        blue = "#afefea",
-        red = "#DB8DB3", -- StatusBar (username)
+        folder_bg = "#C05589",
+        statusline_bg = "#ffffff",
+        darker_black = "#ffffff",
+        one_bg2 = "#dedede", -- StatusBar (filename)
+        nord_blue = "#00AF8D",
+        blue = "#00AF8D",
+        red = "#D9006A", -- StatusBar (username)
         green = "#A9D65F", -- StatusBar (file percentage)
-        vibrant_green = "#ace5b3",
-        orange = "#f4a792",
-        yellow = "#f4bcae",
+        vibrant_green = "#93EE00", -- StatusBar (file percentage)
+        orange = "#FF6400",
+        yellow = "#E89867",
         sun = "#f4a792",
         baby_pink = "#efafd1",
         pink = "#db8db3",
