@@ -12,8 +12,8 @@ export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="/usr/games:${PATH}"
 export PATH="${GOPATH}/bin:${PATH}"
 export GOPATH="${HOME}/.go/"
-export PS1="🧉 \[\e[1;31m\]\u \[\e[0m\]@ \[\e[1;36m\]\H
- \[\e[1;33m\]\$(path_name) \[\e[0m\]\[\e[1;34m\]\$(branch_name) \[\e[m\]\$ "
+export PS1="🧉 \[\e[1;33m\]\u \[\e[0m\]@ \[\e[1;35m\]\H
+ \[\e[1;34m\]\$(path_name) \[\e[0m\]\[\e[1;36m\]\$(branch_name) \[\e[m\]\$ "
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;33m'
 export LESS_TERMCAP_me=$'\E[0m'
