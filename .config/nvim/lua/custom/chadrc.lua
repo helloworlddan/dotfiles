@@ -46,7 +46,7 @@ M.ui = {
         base00 = "#ffffff",
         -- The following override for polypao_light
         base08 = "#C05589",
-        base09 = "#A9D65F",
+        base09 = "#48c1b8",
         base0A = "#FF6400",
         base0B = "#429484",
         base0C = "#933362",
@@ -56,15 +56,15 @@ M.ui = {
       },
       base_30 = {
         -- The following override for polypao
-        folder_bg = "#494949",
+        folder_bg = "#919191",
         statusline_bg = "#ffffff",
         darker_black = "#ffffff",
-        one_bg2 = "#dedede", -- StatusBar (filename)
-        nord_blue = "#00AF8D",
-        blue = "#00AF8D",
-        red = "#D9006A", -- StatusBar (username)
-        green = "#744527", -- StatusBar (file percentage)
-        vibrant_green = "#744527",
+        one_bg2 = "#e0e0e0", -- StatusBar (filename)
+        nord_blue = "#48c1b8",
+        blue = "#48c1b8",
+        red = "#D9006a", -- StatusBar (file percentage)
+        green = "#00AF8D",
+        vibrant_green = "#00AF8D",
         orange = "#FF6400",
         yellow = "#E89867",
         sun = "#f4a792",
@@ -72,7 +72,7 @@ M.ui = {
         pink = "#db8db3",
         purple = "#9e96ed",
         dark_purple = "#9e96ed",
-        teal = "#75e0d5",
+        teal = "#48c1b8",
         cyan = "#48c1b8",
       },
     },
