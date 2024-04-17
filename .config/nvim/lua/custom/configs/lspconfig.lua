@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
-local servers = { "html", "gopls", "ruby_ls", "dockerls", "cssls", "jsonnet_ls", "terraform_lsp", "yamlls", "jsonls", "marksman", "cmake", "sqlls" }
+local servers = { "html", "gopls", "ruby_lsp", "dockerls", "cssls", "jsonnet_ls", "terraform_lsp", "yamlls", "jsonls", "marksman", "cmake", "sqlls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -30,7 +30,7 @@ lspconfig.gopls.setup {
   },
 }
 
-lspconfig.ruby_ls.setup{
+lspconfig.ruby_lsp.setup{
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = { "bundle", "exec", "ruby-lsp" },

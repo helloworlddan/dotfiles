@@ -174,6 +174,17 @@ deckdesk () {
   clear
 }
 
+gmachine () {
+  sudo dmidecode | grep -A9 '^System Information'
+  printf "Machine Type \t "
+  gmeta instance/machine-type
+  printf "\nCPU Platform \t "
+  gmeta instance/cpu-platform
+  printf "\nLocation \t "
+  gmeta instance/zone
+  echo
+}
+
 # Cloud Functions
 gmeta () {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
