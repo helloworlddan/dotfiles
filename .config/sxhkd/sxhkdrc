@@ -58,6 +58,9 @@ alt + Print
   goto -p 3 -u play.google.com/books
 
 alt + x
+  goto -p 1 -u excalidraw.com
+
+alt + shift + x
   edex-ui
 
 alt + shift + x
