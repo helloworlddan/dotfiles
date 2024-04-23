@@ -63,9 +63,6 @@ alt + x
 alt + shift + x
   edex-ui
 
-alt + shift + x
-  cool-retro-term --fullscreen
-
 
 ##################################
 ####    ESSENTIAL CONTROLS    ####
@@ -108,8 +105,8 @@ alt + shift + Down
   bspc config window_gap $(($(bspc config window_gap) + 5))
 
 # close node
-alt + Escape
-	bspc node -{c}
+alt + shift + q
+	bspc node -c
 
 # toggle monocle
 alt + space
