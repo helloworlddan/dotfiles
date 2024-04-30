@@ -7,6 +7,12 @@ return {
         "gomod",
         "gowork",
         "gosum",
+        "dockerfile",
+        "json",
+        "json5",
+        "jsonc",
+        "markdown",
+        "markdown_inline",
       })
     end,
   },
