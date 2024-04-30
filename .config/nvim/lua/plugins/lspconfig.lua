@@ -63,6 +63,8 @@ return {
           },
         },
         marksman = {},
+        terraformls = {},
+        solargraph = {},
       },
       setup = {
         gopls = function(_, opts)

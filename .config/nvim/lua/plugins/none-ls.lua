@@ -20,6 +20,8 @@ return {
         nls.builtins.formatting.gofumpt,
         nls.builtins.diagnostics.hadolint,
         nls.builtins.diagnostics.markdownlint,
+        nls.builtins.formatting.terraform_fmt,
+        nls.builtins.diagnostics.terraform_validate,
       })
     end,
   },

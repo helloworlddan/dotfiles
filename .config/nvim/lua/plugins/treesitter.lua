@@ -13,6 +13,10 @@ return {
         "jsonc",
         "markdown",
         "markdown_inline",
+        "yaml",
+        "ruby",
+        "terraform",
+        "hcl",
       })
     end,
   },

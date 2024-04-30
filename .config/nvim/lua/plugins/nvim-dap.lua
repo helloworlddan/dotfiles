@@ -13,6 +13,12 @@ return {
         "leoluz/nvim-dap-go",
         config = true,
       },
+      {
+        "suketa/nvim-dap-ruby",
+        config = function()
+          require("dap-ruby").setup()
+        end,
+      },
     },
   },
 }
