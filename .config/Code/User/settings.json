@@ -30,7 +30,7 @@
 
     "window.menuBarVisibility": "toggle",
 
-    "workbench.colorTheme": "Horizon",
+    "workbench.colorTheme": "GitHub Light",
     "workbench.startupEditor": "none",
     "[python]": {
         "editor.formatOnType": true
@@ -43,6 +43,15 @@
     "codesnap.showWindowControls": false,
     "editor.stickyScroll.enabled": true,
     "window.zoomLevel": 1,
+    "cloudcode.apigee.gemini.options": {
+
+        "enterpriseContext": {
+            "enabled": true,
+            "includeMetadata": true,
+            "includeSecurity": true,
+            "includeSchema": true
+        }
+    },
     
 
     ////// Presenter settings //////
