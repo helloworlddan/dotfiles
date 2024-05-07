@@ -1,0 +1,5 @@
+return {
+  {
+    "olimorris/neotest-rspec",
+  },
+}
