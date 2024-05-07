@@ -1,6 +1,0 @@
-return {
-  {
-    "helloworlddan/polypao",
-    opts = {},
-  },
-}
