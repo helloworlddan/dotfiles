@@ -67,7 +67,7 @@ return {
         solargraph = {},
       },
       setup = {
-        gopls = function(_, opts)
+        gopls = function(_, _)
           -- workaround for gopls not supporting semanticTokensProvider
           -- https://github.com/golang/go/issues/54531#issuecomment-1464982242
           LazyVim.lsp.on_attach(function(client, _)
