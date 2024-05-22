@@ -56,6 +56,7 @@ Xcursor.theme: default
 *.url-launcher: /usr/bin/xdg-open
 *.matcher.button: 1
 *.print-pipe: "cat > /dev/null"
+*.VT100.geometry: 160x40
 *.VT100.saveLines: 4096
 *.VT100.bellIsUrgent: true
 *.VT100.Translations: #override \
