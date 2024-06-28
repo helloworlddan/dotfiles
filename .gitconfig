@@ -18,6 +18,7 @@
     untracked = red
 [push]
     default = current
+    autoSetupRemote = true
 [diff]
     tool = nvim -d
 [credential "https://source.developers.google.com"]
