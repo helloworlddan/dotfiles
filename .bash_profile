@@ -45,247 +45,247 @@ alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
 
 # Functions
 path_name() {
-	pwd | sed -e "s:$HOME:~:" -e "s:\(.\)[^/]*/:\1/:g"
+  pwd | sed -e "s:$HOME:~:" -e "s:\(.\)[^/]*/:\1/:g"
 }
 
 branch_name() {
-	git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
+  git branch 2>/dev/null | grep --color=never '*' | colrm 1 2
 }
 
 codewrap() {
-	echo "\`\`\`"
-	cat
-	echo "\`\`\`"
+  echo "\`\`\`"
+  cat
+  echo "\`\`\`"
 }
 
 textcopy() {
-	xclip -selection clipboard
+  xclip -selection clipboard
 }
 
 codecopy() {
-	codewrap | textcopy
+  codewrap | textcopy
 }
 
 commit_info() {
-	git show --quiet --show-signature HEAD | codewrap
-	echo "remote reference: $(gh browse -c -n | sed 's/\/tree\//\/commit\//')"
+  git show --quiet --show-signature HEAD | codewrap
+  echo "remote reference: $(gh browse -c -n | sed 's/\/tree\//\/commit\//')"
 }
 
 commit_copy() {
-	commit_info | textcopy
+  commit_info | textcopy
 }
 
 clone_all() {
-	if [ -z ${1} ]; then
-		echo "no gh owner supplied"
-	else
-		REPOS=$(gh repo list ${1} -L 500 --json name | jq -r '.[].name')
-		echo "Found $(echo ${REPOS} | wc -w) repos in ${1}"
-		for REPO in ${REPOS}; do
-			if [ -d ${HOME}/Code/github.com/${1}/${REPO} ]; then
-				echo "Pulling updates for ${REPO} from origin remote"
-				(
-					cd ${HOME}/Code/github.com/${1}/${REPO}
-					git branch --set-upstream-to origin/main main
-					git branch --set-upstream-to origin/master master
-					git pull --all
-				)
-			else
-				echo "Cloning ${REPO}"
-				gh repo clone ${1}/${REPO} ${HOME}/Code/github.com/${1}/${REPO}
-			fi
-		done
-	fi
+  if [ -z ${1} ]; then
+    echo "no gh owner supplied"
+  else
+    REPOS=$(gh repo list ${1} -L 500 --json name | jq -r '.[].name')
+    echo "Found $(echo ${REPOS} | wc -w) repos in ${1}"
+    for REPO in ${REPOS}; do
+      if [ -d ${HOME}/Code/github.com/${1}/${REPO} ]; then
+        echo "Pulling updates for ${REPO} from origin remote"
+        (
+          cd ${HOME}/Code/github.com/${1}/${REPO}
+          git branch --set-upstream-to origin/main main
+          git branch --set-upstream-to origin/master master
+          git pull --all
+        )
+      else
+        echo "Cloning ${REPO}"
+        gh repo clone ${1}/${REPO} ${HOME}/Code/github.com/${1}/${REPO}
+      fi
+    done
+  fi
 }
 
 encdir() {
-	tar -cf - "${1%"/"}" | lz4 >"${1%"/"}.tar.lz4"
-	gpg -er "dan@hello-world.sh" "${1%"/"}.tar.lz4"
-	rm "${1%"/"}.tar.lz4"
+  tar -cf - "${1%"/"}" | lz4 >"${1%"/"}.tar.lz4"
+  gpg -er "dan@hello-world.sh" "${1%"/"}.tar.lz4"
+  rm "${1%"/"}.tar.lz4"
 }
 
 decdir() {
-	gpg "${1}"
-	lz4 -cd ${1%".gpg"} | tar -xf -
-	rm ${1%".gpg"}
+  gpg "${1}"
+  lz4 -cd ${1%".gpg"} | tar -xf -
+  rm ${1%".gpg"}
 }
 
 nested() {
-	startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
+  startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
 
 deckdesk() {
-	sleep 2 && bspc desktop -f '^2'
-	xterm &
-	sleep 2 && bspc desktop -f '^3'
-	goto -p 1 -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
-	sleep 2 && bspc desktop -f '^3'
-	goto -p 1 -u pkg.go.dev &
-	sleep 2 && bspc desktop -f '^4'
-	goto -p 2 -g console.cloud &
+  sleep 2 && bspc desktop -f '^2'
+  xterm &
+  sleep 2 && bspc desktop -f '^3'
+  goto -p 1 -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
+  sleep 2 && bspc desktop -f '^3'
+  goto -p 1 -u pkg.go.dev &
+  sleep 2 && bspc desktop -f '^4'
+  goto -p 2 -g console.cloud &
 
-	sleep 2 && bspc desktop -f '^11'
-	goto -p 1 &
-	sleep 2 && bspc desktop -f '^12'
-	goto -p 1 -g mail &
-	sleep 2 && bspc desktop -f '^13'
-	goto -p 1 -g calendar &
-	sleep 2 && bspc desktop -f '^14'
-	goto -p 1 -g console.cloud &
-	sleep 2 && bspc desktop -f '^15'
-	goto -p 1 dn-workspace &
-	sleep 2 && bspc desktop -f '^16'
-	goto -p 1 pxl &
-	sleep 2 && bspc desktop -f '^17'
-	goto -p 1 nucleus:lac &
-	sleep 2 && bspc desktop -f '^18'
-	goto -p 1 -g script &
-	sleep 2 && bspc desktop -f '^19'
-	goto -p 1 stamer:notes &
-	sleep 2 && bspc desktop -f '^20'
-	goto -p 1 companion &
+  sleep 2 && bspc desktop -f '^11'
+  goto -p 1 &
+  sleep 2 && bspc desktop -f '^12'
+  goto -p 1 -g mail &
+  sleep 2 && bspc desktop -f '^13'
+  goto -p 1 -g calendar &
+  sleep 2 && bspc desktop -f '^14'
+  goto -p 1 -g console.cloud &
+  sleep 2 && bspc desktop -f '^15'
+  goto -p 1 dn-workspace &
+  sleep 2 && bspc desktop -f '^16'
+  goto -p 1 pxl &
+  sleep 2 && bspc desktop -f '^17'
+  goto -p 1 nucleus:lac &
+  sleep 2 && bspc desktop -f '^18'
+  goto -p 1 -g script &
+  sleep 2 && bspc desktop -f '^19'
+  goto -p 1 stamer:notes &
+  sleep 2 && bspc desktop -f '^20'
+  goto -p 1 companion &
 
-	sleep 2 && bspc desktop -f '^21'
-	goto -p 3 &
-	sleep 2 && bspc desktop -f '^22'
-	goto -p 3 -g mail &
-	sleep 2 && bspc desktop -f '^23'
-	goto -p 3 -g calendar &
-	sleep 2 && bspc desktop -f '^24'
-	goto -p 3 -g console.cloud &
-	sleep 2 && bspc desktop -f '^25'
-	goto -p 3 -u messages.google.com/web/conversations &
-	goto -p 3 -u web.whatsapp.com &
-	sleep 2 && bspc desktop -f '^26'
-	goto -p 3 -g photos &
-	sleep 2 && bspc desktop -f '^27'
-	goto -p 3 -g maps &
-	sleep 2 && bspc desktop -f '^28'
-	goto -p 3 -u youtube.com &
-	sleep 2 && bspc desktop -f '^29'
-	goto -p 3 -u open.spotify.com &
+  sleep 2 && bspc desktop -f '^21'
+  goto -p 3 &
+  sleep 2 && bspc desktop -f '^22'
+  goto -p 3 -g mail &
+  sleep 2 && bspc desktop -f '^23'
+  goto -p 3 -g calendar &
+  sleep 2 && bspc desktop -f '^24'
+  goto -p 3 -g console.cloud &
+  sleep 2 && bspc desktop -f '^25'
+  goto -p 3 -u messages.google.com/web/conversations &
+  goto -p 3 -u web.whatsapp.com &
+  sleep 2 && bspc desktop -f '^26'
+  goto -p 3 -g photos &
+  sleep 2 && bspc desktop -f '^27'
+  goto -p 3 -g maps &
+  sleep 2 && bspc desktop -f '^28'
+  goto -p 3 -u youtube.com &
+  sleep 2 && bspc desktop -f '^29'
+  goto -p 3 -u open.spotify.com &
 
-	sleep 2 && bspc desktop -f '^1'
+  sleep 2 && bspc desktop -f '^1'
 
-	disown -a
-	clear
+  disown -a
+  clear
 }
 
 # Cloud Functions
 gmeta() {
-	curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
+  curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
 }
 
 gmachine() {
-	sudo dmidecode | grep -A9 '^System Information'
-	printf "Machine Type \t "
-	gmeta instance/machine-type
-	printf "\nCPU Platform \t "
-	gmeta instance/cpu-platform
-	printf "\nLocation \t "
-	gmeta instance/zone
-	echo
+  sudo dmidecode | grep -A9 '^System Information'
+  printf "Machine Type \t "
+  gmeta instance/machine-type
+  printf "\nCPU Platform \t "
+  gmeta instance/cpu-platform
+  printf "\nLocation \t "
+  gmeta instance/zone
+  echo
 }
 
 guser() {
-	if [ -z ${1} ]; then
-		gcloud config get-value core/account
-	else
-		gcloud config set account ${1}
-	fi
+  if [ -z ${1} ]; then
+    gcloud config get-value core/account
+  else
+    gcloud config set account ${1}
+  fi
 }
 
 gproject() {
-	if [ -z ${1} ]; then
-		gcloud config get-value core/project
-	else
-		gcloud config set project ${1}
-	fi
+  if [ -z ${1} ]; then
+    gcloud config get-value core/project
+  else
+    gcloud config set project ${1}
+  fi
 }
 
 gregion() {
-	if [ -z ${1} ]; then
-		gcloud config get-value run/region
-	else
-		gcloud config set run/region ${1}
-		gcloud config set functions/region ${1}
-		gcloud config set deploy/region ${1}
-		gcloud config set compute/region ${1}
-		gcloud config set compute/zone ${1}-a
-		gcloud config set artifacts/location ${1}
-		gcloud config set eventarc/location ${1}
-		gcloud config set memcache/region ${1}
-		gcloud config set redis/region ${1}
-	fi
+  if [ -z ${1} ]; then
+    gcloud config get-value run/region
+  else
+    gcloud config set run/region ${1}
+    gcloud config set functions/region ${1}
+    gcloud config set deploy/region ${1}
+    gcloud config set compute/region ${1}
+    gcloud config set compute/zone ${1}-a
+    gcloud config set artifacts/location ${1}
+    gcloud config set eventarc/location ${1}
+    gcloud config set memcache/region ${1}
+    gcloud config set redis/region ${1}
+  fi
 }
 
 grunlogs() {
-	gcloud logging read \
-		--format "value(textPayload)" \
-		--limit 40 \
-		"resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null " | tac
+  gcloud logging read \
+    --format "value(textPayload)" \
+    --limit 40 \
+    "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null " | tac
 }
 
 grunjlogs() {
-	gcloud logging read \
-		--format "value(textPayload)" \
-		--limit 40 \
-		"resource.type = \"cloud_run_job\" resource.labels.job_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null " | tac
+  gcloud logging read \
+    --format "value(textPayload)" \
+    --limit 40 \
+    "resource.type = \"cloud_run_job\" resource.labels.job_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null " | tac
 }
 
 grunlogstream() {
-	export CLOUDSDK_PYTHON_SITEPACKAGES=1
-	gcloud alpha logging tail \
-		--format "value(textPayload)" \
-		"resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null "
+  export CLOUDSDK_PYTHON_SITEPACKAGES=1
+  gcloud alpha logging tail \
+    --format "value(textPayload)" \
+    "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null "
 }
 
 gkilldrs() {
-	gcloud org-policies reset constraints/iam.allowedPolicyMemberDomains \
-		--project $(gcloud config get-value project)
+  gcloud org-policies reset constraints/iam.allowedPolicyMemberDomains \
+    --project $(gcloud config get-value project)
 }
 gkillbinauthz() {
-	gcloud org-policies reset constraints/run.allowedBinaryAuthorizationPolicies \
-		--project $(gcloud config get-value project)
+  gcloud org-policies reset constraints/run.allowedBinaryAuthorizationPolicies \
+    --project $(gcloud config get-value project)
 }
 
 user_name() {
-	cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^account = \K(\w+)'
+  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^account = \K(\w+)'
 }
 
 user_domain() {
-	cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^account = \w+@\K(.+)$'
+  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^account = \w+@\K(.+)$'
 }
 
 project_name() {
-	cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^project = \K(.*)$'
+  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Po '^project = \K(.*)$'
 }
 
 run_region() {
-	cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Pom 1 '^region = \K(.*)$'
+  cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Pom 1 '^region = \K(.*)$'
 }
 
 gizmo() {
-	GIZMO_MESSAGE=$(cat)
-	curl \
-		-H "Authorization: Bearer $(gcloud auth print-identity-token)" \
-		-H "Content-Type: application/json" \
-		--data "{\"text\": \"${GIZMO_MESSAGE}\"}" \
-		https://gizmo.collider.nucleus-engineering.cloud/post
+  GIZMO_MESSAGE=$(cat)
+  curl \
+    -H "Authorization: Bearer $(gcloud auth print-identity-token)" \
+    -H "Content-Type: application/json" \
+    --data "{\"text\": \"${GIZMO_MESSAGE}\"}" \
+    https://gizmo.collider.hello-world.sh/post
 }
 
 snippet() {
-	SNIPPET_MESSAGE=$(cat)
-	curl \
-		-H "Authorization: Bearer $(gcloud auth print-identity-token)" \
-		-H "Content-Type: application/json" \
-		--data "{\"author\": \"stamer@google.com\", \"type\": \"CHAT\", \"time\": \"$(date -Iseconds)\", \"text\": \"${SNIPPET_MESSAGE}\"}" \
-		https://snippet.collider.nucleus-engineering.cloud/
+  SNIPPET_MESSAGE=$(cat)
+  curl \
+    -H "Authorization: Bearer $(gcloud auth print-identity-token)" \
+    -H "Content-Type: application/json" \
+    --data "{\"author\": \"stamer@google.com\", \"type\": \"CHAT\", \"time\": \"$(date -Iseconds)\", \"text\": \"${SNIPPET_MESSAGE}\"}" \
+    https://snippet.collider.hello-world.sh/
 }
 
 # Source local overrides, if available
 if [ -f "${HOME}/.bash_profile.local" ]; then
-	source "${HOME}/.bash_profile.local"
+  source "${HOME}/.bash_profile.local"
 fi
 
 tortune
