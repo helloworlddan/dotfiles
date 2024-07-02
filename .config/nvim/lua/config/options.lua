@@ -3,3 +3,7 @@
 -- Add any additional options here
 
 vim.opt.textwidth = 80
+vim.opt.colorcolumn = "+1"
+vim.opt.scrolloff = 999
+vim.keymap.set("n", "j", "jzz")
+vim.keymap.set("n", "k", "kzz")
