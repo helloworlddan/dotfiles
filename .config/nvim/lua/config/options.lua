@@ -7,3 +7,4 @@ vim.opt.colorcolumn = "+1"
 vim.opt.scrolloff = 999
 vim.keymap.set("n", "j", "jzz")
 vim.keymap.set("n", "k", "kzz")
+vim.opt.ignorecase = false
