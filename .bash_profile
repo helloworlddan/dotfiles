@@ -4,6 +4,7 @@
 shopt -s histappend
 
 # Exports
+export XDG_CONFIG_HOME="${HOME}/.config/"
 export TERM=xterm-256color
 export GPG_TTY=$(tty)
 export EDITOR="nvim"
