@@ -10,11 +10,11 @@ return {
 				underline = true,
 				bold = true,
 				italic = {
-					strings = true,
+					strings = false,
 					emphasis = true,
 					comments = true,
 					operators = false,
-					folds = true,
+					folds = false,
 				},
 				strikethrough = true,
 				invert_selection = false,
