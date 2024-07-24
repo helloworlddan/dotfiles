@@ -292,7 +292,7 @@ fi
 tortune
 
 # Initializers
+test -r collider && source <(collider completion bash)
 test -r /home/dan/.opam/opam-init/init.sh && . /home/dan/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
 eval $(opam env)
-source <(collider completion bash)
 
