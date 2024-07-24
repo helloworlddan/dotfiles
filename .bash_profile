@@ -154,8 +154,9 @@ deckdesk() {
   sleep 2 && bspc desktop -f '^24'
   goto -p 3 -g console.cloud &
   sleep 2 && bspc desktop -f '^25'
-  goto -p 3 -u messages.google.com/web/conversations &
   goto -p 3 -u web.whatsapp.com &
+  goto -p 3 -u messages.google.com/web/conversations &
+  goto -p 3 -u web.telegram.org &
   sleep 2 && bspc desktop -f '^26'
   goto -p 3 -g photos &
   sleep 2 && bspc desktop -f '^27'
