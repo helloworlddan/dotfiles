@@ -90,7 +90,7 @@ alt + shift + comma
 
 # show top bar
 alt + period
-  export BAR_WIDTH="$(($(xrandr | head | grep --color=never -Po 'connected( primary)* \K(\d+)') - 10))" && bspc config -m '^1' top_padding 40 && polybar
+  export BAR_WIDTH="$(($(xrandr | head | grep --color=never -Po 'connected( primary)* \K(\d+)') - 10))" && bspc config -m '^1' top_padding 45 && polybar
 
 # hide top bar
 alt + shift + period
@@ -112,7 +112,7 @@ alt + shift + q
 alt + space
 	bspc desktop -l next
 
-# toggle window stickyness
+# toggle window stickiness
 ctrl + alt + space
 	bspc node -g sticky
 
