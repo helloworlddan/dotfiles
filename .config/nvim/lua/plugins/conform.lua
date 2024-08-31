@@ -4,7 +4,7 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        go = { "goimports", "gofumpt", "gofmt" },
+        go = { "goimports", "gofumpt", "gofmt", "golines" },
         lua = { "stylua" },
         javascript = { { "prettierd", "prettier" } },
         terraform = { "terraform_fmt" },
