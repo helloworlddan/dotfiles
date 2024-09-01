@@ -1,31 +1,25 @@
 #!/bin/sh
 
-#           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-#           | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 0   |
-#           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-# alt       | trm | dev | doc | gcp | nil | nil | nil | nil | nil | nil |
-#           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-# alt+ctrl  | web | com | cal | gcp | bug | pxl | lac | gas | not | gvc |
-#           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-# alt+super | web | com | cal | gcp | txt | img | map | ytb | spt | nil |
-#           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+#           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|------|
+#           | 1 b | 2 v | 3 d | 4 g | 5   | 6 w | 7 m | 8 c | 9 n | 0   | p    |
+#           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|------|
+# alt       | bsh | vim | doc | gcp | msc | web | com | cal | not | gvc | pers |
+#           |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|------|
 
 bspc monitor -d \
-  "trm"  "dev"  "doc"  "gcp"  "nil"  "nil"  "nil"  "nil"  "nil"  "nil" \
-  "web²" "com²" "cal²" "gcp²" "bug²" "plx²" "lac²" "gas²" "not²" "gvc²" \
-  "web³" "com³" "cal³" "gcp³" "txt³" "img³" "map³" "ytb³" "spt³" "nil³"
+  "bsh" "dev" "doc" "gcp" "msc" "web" "com" "cal" "not" "gvc" "pers"
 
-bspc config border_width             2
-bspc config top_padding              0
-bspc config window_gap               5
-bspc config split_ratio              0.5
-bspc config borderless_monocle       false
-bspc config gapless_monocle          false
-bspc config focus_follows_pointer    true
-bspc config automatic_scheme         longest_side
-bspc config pointer_modifier         mod1
-bspc config pointer_action1          move
-bspc config pointer_action2          resize_corner
+bspc config border_width 2
+bspc config top_padding 0
+bspc config window_gap 5
+bspc config split_ratio 0.5
+bspc config borderless_monocle false
+bspc config gapless_monocle false
+bspc config focus_follows_pointer true
+bspc config automatic_scheme longest_side
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_corner
 
 bspc rule -a *:*:"meet.google.com is sharing your screen." hidden=on
 bspc rule -a *:*:"teams.microsoft.com is sharing your screen." hidden=on
@@ -38,4 +32,3 @@ xrdb -load ~/.Xresources
 sxhkd &
 
 sh "${HOME}/.themes/default/bspwm.theme"
-

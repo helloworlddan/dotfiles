@@ -1,84 +1,27 @@
 # apps
 
+alt + Return
+	/usr/bin/xterm
+
+alt + r
+  rofi -show run
+
 alt + e
   thunar
-
-alt + b
-	google-chrome --new-window google.com || google-chrome-stable --new-window google.com
-
-alt + shift + b
-	google-chrome --incognito  || google-chrome-stable --incognito
-
-alt + v
-	code
-
-alt + shift + v
-  goto -p 1 -c cider-v
-
-alt + m
-  goto -p 1 -g mail
 
 alt + shift + m
   goto -p 1 -u mail.google.com/mail/?view=cm&fs=1&tf=1
 
-alt + c
-  goto -p 1 -g calendar
-
-alt + g
-  goto -p 3 -u github.com
-
 alt + s
   goto -p 1 -u app.slack.com/client/
 
-alt + shift + s
-  goto -p 1 -u open.spotify.com
-
-alt + y
-  goto -p 1 -u youtube.com
-
-alt + n
-  goto -p 1 -u netflix.com
-
-alt + a
-  goto -p 1 nucleus:lac
-
-alt + shift + p
-  goto -p 1 -u meet.google.com/?companion=1
-
-alt + shift + e
-  goto -p 1 -u emojikitchen.dev
-
-alt + slash
-  goto -p 1 -u google.com
-
-alt + shift + slash
-  goto -p 1 -c moma
-
-alt + Print
-  goto -p 3 -u play.google.com/books
-
 alt + x
   goto -p 1 -u excalidraw.com
-
-alt + shift + x
-  edex-ui
 
 
 ##################################
 ####    ESSENTIAL CONTROLS    ####
 ##################################
-
-# set the window state
-alt + {t,shift + t,f,shift + f}
-	bspc node -t {tiled,pseudo_tiled,fullscreen,floating}
-
-# launch terminal
-alt + Return
-	/usr/bin/xterm
-
-# launch command runner
-alt + r
-  rofi -show run
 
 # select screenshot to clipboard
 alt + comma
@@ -95,6 +38,10 @@ alt + period
 # hide top bar
 alt + shift + period
   bspc config top_padding 0 && killall polybar
+
+# set the window state
+alt + {t,shift + t,f,shift + f}
+	bspc node -t {tiled,pseudo_tiled,fullscreen,floating}
 
 # increase window gap
 alt + shift + Up
@@ -128,13 +75,14 @@ alt + shift + r
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,10}'
 
-# focus or move to the given desktop
-alt + ctrl + {_,shift + }{1-9,0}
-	bspc {desktop -f, node -d} '^{11,12,13,14,15,16,17,18,19,20}'
+alt + {_,shift + }{b,v,d,g}
+	bspc {desktop -f,node -d} '^{1,2,3,4}'
 
-# focus or move to the personal desktop
-alt + super + {_,shift + }{1-9,0}
-	bspc {desktop -f, node -d} '^{21,22,23,24,25,26,27,28,29,30}'
+alt + {_,shift + }{w,m,c,n}
+	bspc {desktop -f,node -d} '^{6,7,8,9}'
+
+alt + {_,shift + }{p}
+	bspc {desktop -f,node -d} '^{11}'
 
 # focus next monitor
 alt + Tab

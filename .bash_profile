@@ -116,55 +116,31 @@ nested() {
 
 deckdesk() {
   sleep 2 && bspc desktop -f '^2'
-  xterm &
+  xterm -e nvim &
   sleep 2 && bspc desktop -f '^3'
   goto -p 1 -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
   sleep 2 && bspc desktop -f '^3'
   goto -p 1 -u pkg.go.dev &
   sleep 2 && bspc desktop -f '^4'
   goto -p 2 -g console.cloud &
-
-  sleep 2 && bspc desktop -f '^11'
+  sleep 2 && bspc desktop -f '^6'
   goto -p 1 &
-  sleep 2 && bspc desktop -f '^12'
+  sleep 2 && bspc desktop -f '^7'
   goto -p 1 -g mail &
-  sleep 2 && bspc desktop -f '^13'
+  sleep 2 && bspc desktop -f '^8'
   goto -p 1 -g calendar &
-  sleep 2 && bspc desktop -f '^14'
-  goto -p 1 -g console.cloud &
-  sleep 2 && bspc desktop -f '^15'
-  goto -p 1 dn-workspace &
-  sleep 2 && bspc desktop -f '^16'
-  goto -p 1 pxl &
-  sleep 2 && bspc desktop -f '^17'
-  goto -p 1 nucleus:lac &
-  sleep 2 && bspc desktop -f '^18'
-  goto -p 1 -g script &
-  sleep 2 && bspc desktop -f '^19'
+  sleep 2 && bspc desktop -f '^9'
   goto -p 1 stamer:notes &
-  sleep 2 && bspc desktop -f '^20'
+  sleep 2 && bspc desktop -f '^0'
   goto -p 1 companion &
 
-  sleep 2 && bspc desktop -f '^21'
+  sleep 2 && bspc desktop -f '^11'
   goto -p 3 &
-  sleep 2 && bspc desktop -f '^22'
-  goto -p 3 -g mail &
-  sleep 2 && bspc desktop -f '^23'
-  goto -p 3 -g calendar &
-  sleep 2 && bspc desktop -f '^24'
-  goto -p 3 -g console.cloud &
-  sleep 2 && bspc desktop -f '^25'
-  goto -p 3 -u web.whatsapp.com &
-  goto -p 3 -u messages.google.com/web/conversations &
-  goto -p 3 -u web.telegram.org &
-  sleep 2 && bspc desktop -f '^26'
-  goto -p 3 -g photos &
-  sleep 2 && bspc desktop -f '^27'
-  goto -p 3 -g maps &
-  sleep 2 && bspc desktop -f '^28'
-  goto -p 3 -u youtube.com &
-  sleep 2 && bspc desktop -f '^29'
-  goto -p 3 -u open.spotify.com &
+  google-chrome mail.google.com &
+  google-chrome calendar.google.com &
+  google-chrome web.whatsapp.com &
+  google-chrome messages.google.com/web/conversations &
+  google-chrome web.telegram.org &
 
   sleep 2 && bspc desktop -f '^1'
 
