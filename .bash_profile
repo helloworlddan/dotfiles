@@ -131,7 +131,7 @@ deckdesk() {
   goto -p 1 -g calendar &
   sleep 2 && bspc desktop -f '^9'
   goto -p 1 stamer:notes &
-  sleep 2 && bspc desktop -f '^0'
+  sleep 2 && bspc desktop -f '^10'
   goto -p 1 companion &
 
   sleep 2 && bspc desktop -f '^11'
