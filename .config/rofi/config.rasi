@@ -1,26 +1,11 @@
 configuration {
-	modi: "run";
+  modi: "run";
   font: "JetBrains Mono 14.5";
-	location: 6;
-	yoffset: -5;
-	xoffset: 0;
-	fixed-num-lines: true;
-	terminal: "xterm";
-
-
-/*	sort: false;*/
-/*	sorting-method: "normal";*/
-
-/*	eh: 1;*/
-/*	auto-select: false;*/
-/*	m: "-5";*/
-/*	filter: ;*/
-/*	dpi: -1;*/
-/*	scroll-method: 0;*/
-
-/*	normalize-match: false;*/
-/*	steal-focus: false;*/
-
+  location: 2;
+  yoffset: 47;
+  xoffset: 0;
+  fixed-num-lines: true;
+  terminal: "xterm";
 }
 
 @theme "~/.themes/default/rofi.theme"
@@ -29,6 +14,7 @@ window {
   border: 2 2;
   border-color: @fg;
   height: 100px;
+  width: 666px;
 }
 
 inputbar {

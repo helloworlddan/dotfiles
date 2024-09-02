@@ -1,13 +1,26 @@
 #!/bin/sh
 
-#           |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
-#           |  1 b  |  2 v  |  3 d  |  4 g  |  5 a  |  6 w  |  7 m  |  8 c  |  9 n  |  0 z  |  p     |
-#           |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
-# alt       |  bsh |  vim | 󱔗 doc |  gcp |  add |  web | 󰺻 com | 󰃰 cal |  not |  gvc |  pers |
-#           |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
+# Set keyboard layout
+setxkbmap us
 
+# Configure X cursor
+xsetroot -cursor_name left_ptr
+
+# Load .Xresources for terminal theme and X11 apps
+xrdb -load ~/.Xresources
+
+#  Virtual desktop layout
+#
+#  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
+#  |  1 b  |  2 v  |  3 d  |  4 g  |  5 a  |  6 w  |  7 m  |  8 c  |  9 n  |  0 z  |  p     |
+#  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
+#  |  bsh |  vim | 󱔗 doc |  gcp |  add |  web | 󰺻 com | 󰃰 cal |  not |  gvc |  pers |
+#  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
+
+# Configure virtual desktops
 bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
 
+# Configure behavior and look
 bspc config border_width 2
 bspc config top_padding 0
 bspc config window_gap 5
@@ -20,14 +33,13 @@ bspc config pointer_modifier mod1
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_corner
 
+# Rules for Chrome's "XXX is sharing your screen" windows.
 bspc rule -a *:*:"meet.google.com is sharing your screen." hidden=on
 bspc rule -a *:*:"teams.microsoft.com is sharing your screen." hidden=on
 bspc rule -a *:*:"zoom.us is sharing your screen." hidden=on
 
-setxkbmap us
-xsetroot -cursor_name left_ptr
-xrdb -load ~/.Xresources
-
+# Launch hotkey daemon
 sxhkd &
 
+# Load theme
 sh "${HOME}/.themes/default/bspwm.theme"

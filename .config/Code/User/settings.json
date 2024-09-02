@@ -7,7 +7,7 @@
   "editor.fontFamily": "'JetBrains Mono', 'Inconsolata'",
   "editor.fontLigatures": true,
   "editor.tabCompletion": "on",
-  "editor.fontSize": 13.5,
+  "editor.fontSize": 14,
   "explorer.confirmDelete": false,
   "files.autoSave": "afterDelay",
   "go.toolsManagement.autoUpdate": true,
