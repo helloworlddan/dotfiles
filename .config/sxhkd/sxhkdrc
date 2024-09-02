@@ -23,6 +23,20 @@ alt + x
 ####    ESSENTIAL CONTROLS    ####
 ##################################
 
+# focus or move to the given desktop
+alt + {_,shift + }{b,v,d,g,a}
+	bspc {desktop -f,node -d} '^{1,2,3,4,5}'
+
+alt + {_,shift + }{w,m,c,n,z}
+	bspc {desktop -f,node -d} '^{6,7,8,9,10}'
+
+alt + {_,shift + }{p}
+	bspc {desktop -f,node -d} '^{11}'
+
+alt + {_,shift + }{1-9,0}
+  echo "noop"
+# 	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,10}'
+
 # select screenshot to clipboard
 alt + comma
   scrot -s -z - | xclip -selection clipboard -t image/png
@@ -70,19 +84,6 @@ alt + shift + Escape
 # reload sxhkd & bspwm
 alt + shift + r
 	pkill -USR1 -x sxhkd && source ~/.config/bspwm/bspwmrc
-
-# focus or move to the given desktop
-alt + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,10}'
-
-alt + {_,shift + }{b,v,d,g,a}
-	bspc {desktop -f,node -d} '^{1,2,3,4,5}'
-
-alt + {_,shift + }{w,m,c,n,z}
-	bspc {desktop -f,node -d} '^{6,7,8,9,10}'
-
-alt + {_,shift + }{p}
-	bspc {desktop -f,node -d} '^{11}'
 
 # focus next monitor
 alt + Tab
