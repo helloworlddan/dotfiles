@@ -38,7 +38,7 @@ alias gawhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?access_toke
 alias giwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?id_token=$(gcloud auth print-identity-token)"'
 
 alias gnumber='echo $(gcloud projects describe $(gcloud config get-value core/project) --format "value(projectNumber)")'
-alias gbuilds='gcloud builds list --limit 15 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.BRANCH_NAME,substitutions.TRIGGER_NAME)"'
+alias gbuilds='gcloud builds list --limit 15 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.TRIGGER_NAME)"'
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias balm='~/.go/bin/balm -g butthole-of-the-internet'
 alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
