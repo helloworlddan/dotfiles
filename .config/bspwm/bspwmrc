@@ -6,8 +6,7 @@
 # alt       |  bsh |  vim | 󱔗 doc |  gcp |  add |  web | 󰺻 com | 󰃰 cal |  not |  gvc |  pers |
 #           |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
 
-bspc monitor -d \
-  " bsh" " vim" "󱔗 doc" " gcp" " add" " web" "󰺻 com" "󰃰 cal" " not" " gvc" " pers"
+bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
 
 bspc config border_width 2
 bspc config top_padding 0
