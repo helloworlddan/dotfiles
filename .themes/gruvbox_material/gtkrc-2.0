@@ -3,8 +3,8 @@
 
 gtk-theme-name="default"
 gtk-icon-theme-name="gnome-dust"
-gtk-font-name="JetBrains Mono Regular 13"
-gtk-monospace-font-name="JetBrains Mono Regular 13"
+gtk-font-name="JetBrains Mono Regular 14"
+gtk-monospace-font-name="JetBrains Mono Regular 14"
 gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
 gtk-button-images=1

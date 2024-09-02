@@ -49,7 +49,7 @@ Xcursor.theme: default
 *.scrollBar: false
 *.highlightSelection: true
 
-*.font: xft:JetBrainsMono Nerd Font:size=15
+*.font: xft:JetBrainsMono Nerd Font:size=16
 *.clipboard.autocopy: true
 *.selectToClipboard: true
 *.url-launcher: /usr/bin/xdg-open
