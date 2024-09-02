@@ -1,6 +1,6 @@
 configuration {
 	modi: "run";
-  font: "JetBrains Mono 11";
+  font: "JetBrains Mono 14";
 	location: 6;
 	yoffset: -5;
 	xoffset: 0;
@@ -28,7 +28,7 @@ configuration {
 window {
   border: 2 2;
   border-color: @fg;
-  height: 75px;
+  height: 90px;
 }
 
 inputbar {
