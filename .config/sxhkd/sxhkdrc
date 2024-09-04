@@ -11,7 +11,7 @@ alt + r
 alt + e
   thunar
 
-alt + shift + m
+alt + super + m
   goto -p 1 -u mail.google.com/mail/?view=cm&fs=1&tf=1
 
 alt + s
