@@ -40,7 +40,6 @@ alias giwhoami='curl "https://www.googleapis.com/oauth2/v1/tokeninfo?id_token=$(
 alias gnumber='echo $(gcloud projects describe $(gcloud config get-value core/project) --format "value(projectNumber)")'
 alias gbuilds='gcloud builds list --limit 15 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.TRIGGER_NAME)"'
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
-alias balm='~/.go/bin/balm -g butthole-of-the-internet'
 alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
 
 # Functions
@@ -136,11 +135,6 @@ deckdesk() {
 
   sleep 2 && bspc desktop -f '^11'
   goto -p 3 &
-  google-chrome mail.google.com &
-  google-chrome calendar.google.com &
-  google-chrome web.whatsapp.com &
-  google-chrome messages.google.com/web/conversations &
-  google-chrome web.telegram.org &
 
   sleep 2 && bspc desktop -f '^1'
 
