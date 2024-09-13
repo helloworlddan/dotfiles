@@ -245,9 +245,9 @@ if [ -f "${HOME}/.bash_profile.local" ]; then
 fi
 
 # Initializers
-test -r ${HOME}.opam/opam-init/init.sh && . ${HOME}/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
+test -r ${HOME}/.opam/opam-init/init.sh && . ${HOME}/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
 test -r opam && eval $(opam env)
+test -r ${HOME}/.ghcup/env && source ${HOME}/.ghcup/env
 test -r collider && source <(collider completion bash)
-
 # MOTD
 test -r tortune && tortune
