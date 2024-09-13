@@ -30,7 +30,6 @@ alt + {_,shift + }{b,v,d,g,a,w,m,c,n,z,p}
 
 alt + {_,shift + }{1-9,0}
   echo "no op"
-# 	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,10}'
 
 # select screenshot to clipboard
 alt + comma

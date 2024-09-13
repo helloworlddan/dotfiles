@@ -114,30 +114,13 @@ nested() {
 }
 
 deckdesk() {
-  sleep 2 && bspc desktop -f '^2'
-  xterm -e nvim &
-  sleep 2 && bspc desktop -f '^3'
-  goto -p 1 -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
-  sleep 2 && bspc desktop -f '^3'
-  goto -p 1 -u pkg.go.dev &
-  sleep 2 && bspc desktop -f '^4'
-  goto -p 2 -g console.cloud &
-  sleep 2 && bspc desktop -f '^6'
-  goto -p 1 &
-  sleep 2 && bspc desktop -f '^7'
-  goto -p 1 -g mail &
-  sleep 2 && bspc desktop -f '^8'
-  goto -p 1 -g calendar &
-  sleep 2 && bspc desktop -f '^9'
-  goto -p 1 stamer:notes &
-  sleep 2 && bspc desktop -f '^10'
-  goto -p 1 companion &
+  for monitor in bsh vim doc gcp add web com cal not gvc pers
+  do
+    sleep 2 && sh <(semnodes $monitor)
+    sh <(semnodes -l $monitor)
+  done
 
-  sleep 2 && bspc desktop -f '^11'
-  goto -p 3 &
-
-  sleep 2 && bspc desktop -f '^1'
-
+  sleep 2 && sh <(semnodes bsh)
   disown -a
   clear
 }
@@ -215,6 +198,7 @@ gkilldrs() {
   gcloud org-policies reset constraints/iam.allowedPolicyMemberDomains \
     --project $(gcloud config get-value project)
 }
+
 gkillbinauthz() {
   gcloud org-policies reset constraints/run.allowedBinaryAuthorizationPolicies \
     --project $(gcloud config get-value project)
@@ -236,6 +220,7 @@ run_region() {
   cat ~/.config/gcloud/configurations/config_default 2>/dev/null | grep -Pom 1 '^region = \K(.*)$'
 }
 
+# Collider Functions
 gizmo() {
   GIZMO_MESSAGE=$(cat)
   curl \
@@ -259,10 +244,10 @@ if [ -f "${HOME}/.bash_profile.local" ]; then
   source "${HOME}/.bash_profile.local"
 fi
 
-tortune
-
 # Initializers
+test -r ${HOME}.opam/opam-init/init.sh && . ${HOME}/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
+test -r opam && eval $(opam env)
 test -r collider && source <(collider completion bash)
-test -r /home/dan/.opam/opam-init/init.sh && . /home/dan/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
-eval $(opam env)
 
+# MOTD
+test -r tortune && tortune
