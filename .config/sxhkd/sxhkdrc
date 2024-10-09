@@ -116,3 +116,7 @@ alt + XF86AudioLowerVolume
 
 alt + XF86AudioPlay
   baton pause
+
+alt + XF86AudioMute
+  pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+ 
