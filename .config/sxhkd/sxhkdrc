@@ -3,7 +3,7 @@
 #############################
 
 alt + Return
-	/usr/bin/xterm
+	/usr/bin/xterm -si -sk
 
 alt + r
   rofi -show run
