@@ -249,5 +249,6 @@ test -r ${HOME}/.opam/opam-init/init.sh && . ${HOME}/.opam/opam-init/init.sh >/d
 test -r opam && eval $(opam env)
 test -r ${HOME}/.ghcup/env && source ${HOME}/.ghcup/env
 test -r collider && source <(collider completion bash)
+
 # MOTD
-test -r tortune && tortune
+test -x tortune && tortune
