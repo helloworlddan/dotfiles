@@ -121,6 +121,22 @@ editor_session() {
   tmux attach-session -t Editor || tmux new -s Editor
 }
 
+trepo() {
+  if [ -z ${1} ]; then
+    echo "no repo named"
+  else
+    tmux new-window -n ${1} -c ~/Code/github.com/${1}
+  fi
+}
+
+twin() {
+  if [ -z ${1} ]; then
+    echo "no name given"
+  else
+    tmux new-window -n ${1}
+  fi
+}
+
 deckdesk() {
   for monitor in bsh vim doc gcp add web com cal not gvc pers
   do
