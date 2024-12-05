@@ -5,7 +5,7 @@ shopt -s histappend
 
 # Exports
 export XDG_CONFIG_HOME="${HOME}/.config/"
-export TERM=xterm-256color
+export TERM=tmux-256color
 export GPG_TTY=$(tty)
 export EDITOR="nvim"
 export GOPATH="${HOME}/.go"
@@ -133,7 +133,7 @@ twin() {
   if [ -z ${1} ]; then
     echo "no name given"
   else
-    tmux new-window -n ${1}
+    tmux new-window -n ${1} -c "#{pane_current_path}"
   fi
 }
 
