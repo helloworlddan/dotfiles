@@ -113,6 +113,14 @@ nested() {
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
 
+terminal_session() {
+  tmux attach-session -t Terminal || tmux new -s Terminal
+}
+
+editor_session() {
+  tmux attach-session -t Editor || tmux new -s Editor
+}
+
 deckdesk() {
   for monitor in bsh vim doc gcp add web com cal not gvc pers
   do
