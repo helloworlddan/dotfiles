@@ -113,20 +113,20 @@ nested() {
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
 
-terminal_session() {
-  tmux attach-session -t Terminal || tmux new -s Terminal
-}
-
-editor_session() {
-  tmux attach-session -t Editor || tmux new -s Editor
-}
-
-trepo() {
+tsesh() {
   if [ -z ${1} ]; then
-    echo "no repo named"
+    echo "no name given"
   else
-    tmux new-window -n ${1} -c ~/Code/github.com/${1}
+  tmux attach-session -t ${1} || tmux new -s ${1}
   fi
+}
+
+terminal_session(){
+  tsesh Terminal
+}
+
+editor_session(){
+  tsesh Editor
 }
 
 twin() {
@@ -134,6 +134,14 @@ twin() {
     echo "no name given"
   else
     tmux new-window -n ${1} -c "#{pane_current_path}"
+  fi
+}
+
+trepo() {
+  if [ -z ${1} ]; then
+    echo "no repo named"
+  else
+    tmux new-window -n ${1} -c ~/Code/github.com/${1}
   fi
 }
 
