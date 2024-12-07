@@ -4,6 +4,8 @@
 shopt -s histappend
 
 # Exports
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export XDG_CONFIG_HOME="${HOME}/.config/"
 export TERM=tmux-256color
 export GPG_TTY=$(tty)
@@ -25,12 +27,14 @@ export LESS_TERMCAP_us=$'\E[01;36m'
 # Aliases
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias ls='ls -hF --color=auto'
 alias grep='grep --color=always'
-alias tree='tree -C'
 alias noise='play -n synth brownnoise'
 alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
 alias legit='git commit -asS'
+alias ls="eza --icons"
+alias la="ls -la"
+alias tree="ls --tree"
+alias tls="tmux ls"
 
 alias gicurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
 alias gacurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
