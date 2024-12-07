@@ -5,15 +5,15 @@ shopt -s histappend
 
 # Exports
 export XDG_CONFIG_HOME="${HOME}/.config/"
-export TERM=xterm-256color
+export TERM=tmux-256color
 export GPG_TTY=$(tty)
 export EDITOR="nvim"
 export GOPATH="${HOME}/.go"
 export PATH="${GOPATH}/bin:${PATH}"
 export PATH="${HOME}/.local/bin:${PATH}"
 export PATH="/usr/games:${PATH}"
-export PS1="🧉 \[\e[1;33m\]\u \[\e[0m\]@ \[\e[1;31m\]\H
- \[\e[1;34m\]\$(path_name) \[\e[0m\]\[\e[1;36m\]\$(branch_name) \[\e[m\]\$ "
+export PS1=" \[\e[1;35m\]\$(path_name) \[\e[0m\]\[\e[1;36m\]\$(branch_name) 
+ \[\e[m\]\$ "
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;33m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -111,6 +111,38 @@ decdir() {
 
 nested() {
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
+}
+
+tsesh() {
+  if [ -z ${1} ]; then
+    echo "no name given"
+  else
+  tmux attach-session -t ${1} || tmux new -s ${1}
+  fi
+}
+
+terminal_session(){
+  tsesh Terminal
+}
+
+editor_session(){
+  tsesh Editor
+}
+
+twin() {
+  if [ -z ${1} ]; then
+    echo "no name given"
+  else
+    tmux new-window -n ${1} -c "#{pane_current_path}"
+  fi
+}
+
+trepo() {
+  if [ -z ${1} ]; then
+    echo "no repo named"
+  else
+    tmux new-window -n ${1} -c ~/Code/github.com/${1}
+  fi
 }
 
 deckdesk() {
