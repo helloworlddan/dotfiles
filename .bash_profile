@@ -35,6 +35,7 @@ alias ls="eza --icons"
 alias la="ls -la"
 alias tree="ls --tree"
 alias tls="tmux ls"
+alias trename="tmux rename-window"
 alias pdf='zathura'
 
 alias gicurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
@@ -118,20 +119,20 @@ nested() {
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
 
-tsesh() {
-  if [ -z ${1} ]; then
-    echo "no name given"
-  else
-  tmux attach-session -t ${1} || tmux new -s ${1}
-  fi
-}
-
 terminal_session(){
   tsesh Terminal
 }
 
 editor_session(){
   tsesh Editor
+}
+
+tsesh() {
+  if [ -z ${1} ]; then
+    echo "no name given"
+  else
+  tmux attach-session -t ${1} || tmux new -s ${1}
+  fi
 }
 
 twin() {
