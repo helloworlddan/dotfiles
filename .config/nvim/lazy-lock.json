@@ -19,7 +19,7 @@
   "google-comments": { "branch": "main", "commit": "ad50cd3c71a7553c92a966dba6a03232a81e3812" },
   "googlepaths.nvim": { "branch": "main", "commit": "53439c17178049096809b4fb963e75440b86ad78" },
   "grug-far.nvim": { "branch": "main", "commit": "3707c4fb6ac982a1ca013c1b3bffa8e396f775cc" },
-  "gruvbox-material": { "branch": "master", "commit": "170148af9350f578f3623f810e54698fa1e5bdbf" },
+  "gruvbox.nvim": { "branch": "main", "commit": "68c3460a5d1d1a362318960035c9f3466d5011f5" },
   "haskell-snippets.nvim": { "branch": "master", "commit": "bd893770dd7a0c1a473601c3c919e61670745b36" },
   "haskell-tools.nvim": { "branch": "master", "commit": "65d6993eba1a56bbd5211ef13a100d26ce3e644a" },
   "indent-blankline.nvim": { "branch": "master", "commit": "259357fa4097e232730341fa60988087d189193a" },
