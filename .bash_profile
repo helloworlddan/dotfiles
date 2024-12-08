@@ -35,6 +35,7 @@ alias ls="eza --icons"
 alias la="ls -la"
 alias tree="ls --tree"
 alias tls="tmux ls"
+alias pdf='zathura'
 
 alias gicurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
 alias gacurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
