@@ -6,6 +6,9 @@ setxkbmap us
 # Configure X cursor
 xsetroot -cursor_name left_ptr
 
+# Configure key repeat delay
+xset r rate 220
+
 # Load .Xresources for terminal theme and X11 apps
 xrdb -load ~/.Xresources
 
