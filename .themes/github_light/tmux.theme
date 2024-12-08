@@ -1,0 +1,14 @@
+# Gruvbox Material
+
+set -g status-style 'bg=#ffffff,fg=#1f2328'
+set-option -g status-left '#[bg=default,fg=default,bold]  #[bg=default,fg=#default,bold] #S '
+set-option -g status-right ' #[bg=default,fg=default,bold]  #[bg=default,fg=#633c01,bold] #(whoami) #[bg=default,fg=default,bold]  #[bg=default,fg=#1a7f37,bold] #(hostname -s) '
+
+set -g window-status-format "#[bg=default,fg=default]  #[fg=default,fg=#218bff] #I #W"
+set -g window-status-current-format "#[bg=default,fg=default,bold]  #[bg=default,fg=#a40e26,bold] #I #W"
+
+set -g message-style bg=#a475f9,fg=#ffffff,bold
+set -g message-command-style bg=#a475f9,fg=#ffffff,bold
+
+set -g pane-active-border-style fg=#6e7781
+set -g pane-border-style fg=#6e7781
