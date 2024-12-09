@@ -10,5 +10,5 @@ set -g window-status-current-format "#[bg=default,fg=default,bold]  #[bg=defa
 set -g message-style bg=#d3869b,fg=#282828,bold
 set -g message-command-style bg=#d3869b,fg=#282828,bold
 
-set -g pane-active-border-style fg=#7c6764
-set -g pane-border-style fg=#7c6764
+set -g pane-active-border-style bg=#282828,fg=#7c6764
+set -g pane-border-style bg=#282828,fg=#7c6764
