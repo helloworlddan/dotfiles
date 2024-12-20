@@ -21,5 +21,6 @@
   "window.zoomLevel": 1,
   "makefile.configureOnOpen": false,
   "cloudcode.duetAI.codeGenerationPaneViewEnabled": true,
-  "diffEditor.codeLens": true
+  "diffEditor.codeLens": true,
+  "geminicodeassist.updateChannel": "Insiders"
 }
