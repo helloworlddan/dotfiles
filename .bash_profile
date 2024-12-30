@@ -13,6 +13,7 @@ export EDITOR="nvim"
 export GOPATH="${HOME}/.go"
 export PATH="${GOPATH}/bin:${PATH}"
 export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="${HOME}/.zig:${PATH}"
 export PATH="/usr/games:${PATH}"
 export PS1=" \[\e[1;35m\]\$(path_name) \[\e[0m\]\[\e[1;36m\]\$(branch_name) 
  \[\e[m\]\$ "
