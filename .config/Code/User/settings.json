@@ -2,9 +2,8 @@
   "cloudcode.autoDependencies": "off",
   "cloudcode.beta.enableAICompanion": true,
   "cloudcode.updateChannel": "Insiders",
-  "cloudcode.duetAI.project": "nucleus-team",
   "editor.experimental.pasteActions.enabled": true,
-  "editor.fontFamily": "'JetBrains Mono', 'Inconsolata'",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Inconsolata'",
   "editor.fontLigatures": true,
   "editor.tabCompletion": "on",
   "editor.fontSize": 14,
@@ -14,13 +13,14 @@
   "window.menuBarVisibility": "toggle",
   "workbench.colorTheme": "Gruvbox Material Dark",
   "workbench.startupEditor": "none",
-  "cloudcode.project": "nucleus-team",
+  "cloudcode.project": "stamer-showcase",
   "codesnap.backgroundColor": "#4c4d4f",
   "codesnap.showWindowControls": false,
   "editor.stickyScroll.enabled": true,
   "window.zoomLevel": 1,
   "makefile.configureOnOpen": false,
-  "cloudcode.duetAI.codeGenerationPaneViewEnabled": true,
   "diffEditor.codeLens": true,
-  "geminicodeassist.updateChannel": "Insiders"
+  "geminicodeassist.updateChannel": "Insiders",
+  "geminicodeassist.codeGenerationPaneViewEnabled": true,
+  "geminicodeassist.project": "stamer-showcase"
 }
