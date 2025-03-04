@@ -215,7 +215,7 @@ gregion() {
 
 grunlogs() {
   gcloud logging read \
-    --format "value(textPayload)" \
+    --format "value(severity,timestamp,http_request.status,http_request.request_method,http_request.url,textPayload)" \
     --limit 40 \
     "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null " | tac
 }
@@ -230,7 +230,7 @@ grunjlogs() {
 grunlogstream() {
   export CLOUDSDK_PYTHON_SITEPACKAGES=1
   gcloud alpha logging tail \
-    --format "value(textPayload)" \
+    --format "value(severity,timestamp,http_request.status,http_request.request_method,http_request.url,textPayload)" \
     "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null "
 }
 
