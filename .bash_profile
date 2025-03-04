@@ -230,7 +230,7 @@ grunjlogs() {
 grunlogstream() {
   export CLOUDSDK_PYTHON_SITEPACKAGES=1
   gcloud alpha logging tail \
-    --format "value(severity,timestamp,http_request.status,http_request.request_method,http_request.url,textPayload)" \
+    --format "value(http_request.status,http_request.request_method,http_request.request_url,jsonPayload.message)" \
     "resource.type = \"cloud_run_revision\" resource.labels.service_name = \"$1\" resource.labels.location = \"$(gcloud config get-value run/region)\" textPayload != null "
 }
 
