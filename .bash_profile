@@ -24,6 +24,7 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;42;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
+export LINK_DIR=Links
 
 # Aliases
 alias vim='nvim'
@@ -80,6 +81,22 @@ commit_info() {
 
 commit_copy() {
   commit_info | textcopy
+}
+
+ml() {
+  if [ -z ${1} ]; then
+    echo "no link name supplied"
+  else
+    ln -s $(realpath ${1}) ${LINK_DIR}/$(basename ${1})
+  fi
+}
+
+cl() {
+  if [ -z ${1} ]; then
+    echo "no link name supplied"
+  else
+    cd -P ${LINK_DIR}/$(basename ${1})
+  fi
 }
 
 clone_all() {
