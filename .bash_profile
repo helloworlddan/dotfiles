@@ -85,9 +85,13 @@ commit_copy() {
 
 ml() {
   if [ -z ${1} ]; then
-    echo "no link name supplied"
+    echo "no path name supplied"
   else
-    ln -s $(realpath ${1}) ${LINK_DIR}/$(basename ${1})
+    if [ -z ${1} ]; then
+      ln -s $(realpath ${1}) ~/${LINK_DIR}/$(basename ${1})
+    else
+      ln -s $(realpath ${1}) ~/${LINK_DIR}/${2}
+    fi
   fi
 }
 
@@ -95,9 +99,22 @@ cl() {
   if [ -z ${1} ]; then
     echo "no link name supplied"
   else
-    cd -P ${LINK_DIR}/$(basename ${1})
+    cd -P ~/${LINK_DIR}/${1}
   fi
 }
+
+lsl(){
+  ll ~/${LINK_DIR}
+}
+
+rml() {
+  if [ -z ${1} ]; then
+    echo "no link name supplied"
+  else
+    rm ~/${LINK_DIR}/${1}
+  fi
+}
+
 
 clone_all() {
   if [ -z ${1} ]; then
