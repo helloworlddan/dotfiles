@@ -30,7 +30,7 @@ return {
           root_dir = function(fname)
             return require("lspconfig.util").root_pattern(
               "*.opam",
-              "esy.json",
+              "easy.json",
               "package.json",
               ".git",
               "dune-project",
