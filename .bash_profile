@@ -24,8 +24,13 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;42;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
-export GEMINI_API_KEY=$(<~/.gemini-api-key)
 export LINK_DIR=Links
+
+# Load API Keys
+for key in $HOME/.keys/* ; do
+  name=$(basename $key)
+  export $name=$(cat $key)
+done
 
 # Aliases
 alias vim='nvim'
@@ -116,7 +121,6 @@ rml() {
   fi
 }
 
-
 clone_all() {
   if [ -z ${1} ]; then
     echo "no gh owner supplied"
@@ -198,6 +202,16 @@ deckdesk() {
   sleep 2 && sh <(semnodes bsh)
   disown -a
   clear
+}
+
+birds() {
+  if [ -z ${1} ]; then
+    echo "no regions supplied"
+  else
+    curl -s \
+         -H "X-eBirdApiToken: ${EBIRD_API_KEY}" \
+         -X GET "https://api.ebird.org/v2/data/obs/${1}/recent" | jq
+  fi
 }
 
 # Cloud Functions

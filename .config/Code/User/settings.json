@@ -13,7 +13,7 @@
   "window.menuBarVisibility": "toggle",
   "workbench.colorTheme": "Gruvbox Material Dark",
   "workbench.startupEditor": "none",
-  "cloudcode.project": "stamer-showcase",
+  "cloudcode.project": "siteground-aife",
   "codesnap.backgroundColor": "#4c4d4f",
   "codesnap.showWindowControls": false,
   "editor.stickyScroll.enabled": true,
@@ -22,5 +22,5 @@
   "diffEditor.codeLens": true,
   "geminicodeassist.updateChannel": "Insiders",
   "geminicodeassist.codeGenerationPaneViewEnabled": true,
-  "geminicodeassist.project": "stamer-showcase"
+  "geminicodeassist.project": "siteground-aife"
 }
