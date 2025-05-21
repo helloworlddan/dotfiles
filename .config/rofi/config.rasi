@@ -1,8 +1,8 @@
 configuration {
   modi: "run";
-  font: "JetBrains Mono 14.5";
+  font: "JetBrains Mono 12";
   location: 2;
-  yoffset: 47;
+  yoffset: 45;
   xoffset: 0;
   fixed-num-lines: true;
   terminal: "xterm";
