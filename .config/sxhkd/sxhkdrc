@@ -107,16 +107,26 @@ alt + super + {h,j,k,l}
 alt + super + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
+# Lock screen
+alt + Escape
+  gdmflexiserver
+
 # media controls
-alt + XF86AudioRaiseVolume
+XF86AudioRaiseVolume
   pactl -- set-sink-volume @DEFAULT_SINK@ +02%
 
-alt + XF86AudioLowerVolume
+XF86AudioLowerVolume
   pactl -- set-sink-volume @DEFAULT_SINK@ -02%
 
-alt + XF86AudioPlay
+XF86AudioPlay
   baton pause
 
-alt + XF86AudioMute
+XF86AudioMute
   pactl -- set-sink-mute @DEFAULT_SINK@ toggle
- 
+
+XF86MonBrightnessUp
+  brightnessctl set +10%
+
+XF86MonBrightnessDown
+  brightnessctl set 10%-
+
