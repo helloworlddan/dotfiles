@@ -20,6 +20,9 @@ xrdb -load ~/.Xresources
 #  |  bsh |  vim | 󱔗 doc |  gcp |  add |  web | 󰺻 com | 󰃰 cal |  not |  gvc |  pers |
 #  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
 
+# Force DUMMY0 or ePD-1 to be primary
+bspc monitor DUMMY0 -s '^1' || bspc monitor eDP-1 -s '^1'
+
 # Configure virtual desktops
 bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
 
