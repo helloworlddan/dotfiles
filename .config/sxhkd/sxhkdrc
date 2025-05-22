@@ -109,7 +109,7 @@ alt + super + shift + {h,j,k,l}
 
 # Lock screen
 alt + Escape
-  gdmflexiserver
+  slock
 
 # media controls
 XF86AudioRaiseVolume
