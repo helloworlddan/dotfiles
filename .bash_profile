@@ -46,6 +46,7 @@ alias tree="ls --tree"
 alias tls="tmux ls"
 alias trename="tmux rename-window"
 alias pdf='zathura'
+alias terraform='tofu'
 
 alias gicurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
 alias gacurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
