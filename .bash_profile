@@ -48,6 +48,7 @@ alias trename="tmux rename-window"
 alias pdf='zathura'
 alias terraform='tofu'
 alias gemini='npx @google/gemini-cli'
+alias highlight='highlight -O ansi'
 
 alias gicurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
 alias gacurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'

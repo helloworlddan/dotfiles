@@ -1,7 +1,7 @@
 ! special
-*.cursorColor:             #ebdbb2
-*.background:              #282828
-*.foreground:              #ebdbb2
+*.cursorColor: #ebdbb2
+*.background:  #282828
+*.foreground:  #ebdbb2
 
 ! Black + DarkGrey
 *color0:  #7c6764
