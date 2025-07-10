@@ -1,39 +1,39 @@
 ! special
-*.cursorColor: #3c3836
-*.background:  #fbf1c7
-*.foreground:  #3c3836
+*.foreground:   #3c3836
+*.background:   #fbf1c7
+*.cursorColor:  #3c3836
 
-! Black + DarkGrey
-*.color0:  #ebdbb2
-*.color8:  #d5c4a1
+! black
+*.color0:       #ebdbb2
+*.color8:       #d5c4a1
 
-! DarkRed + Red
-*.color1:  #cc241d
-*.color9:  #9d0006
+! red
+*.color1:       #cc241d
+*.color9:       #9d0006
 
-! DarkGreen + Green
-*.color2:  #98971a
-*.color10: #79740e
+! green
+*.color2:       #98971a
+*.color10:      #79740e
 
-! DarkYellow + Yellow
-*.color3:  #d79921
-*.color11: #b57614
+! yellow
+*.color3:       #d79921
+*.color11:      #b57614
 
-! DarkBlue + Blue
-*.color4:  #458588
-*.color12: #076678
+! blue
+*.color4:       #458588
+*.color12:      #076678
 
-! DarkMagenta + Magenta
-*.color5:  #b16286
-*.color13: #8f3f71
+! magenta
+*.color5:       #b16286
+*.color13:      #8f3f71
 
-! DarkCyan + Cyan
-*.color6:  #689d6a
-*.color14: #427b58
+! cyan
+*.color6:       #689d6a
+*.color14:      #427b58
 
-! LightGrey + White
-*.color7:  #7c6f64
-*.color15: #282828
+! white
+*.color7:       #7c6f64
+*.color15:      #282828
 
 Xft.antialias: true
 Xft.hinting: true
