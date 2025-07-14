@@ -41,7 +41,7 @@ alt + shift + comma
 
 # show top bar
 alt + period
-  export BAR_WIDTH="$(($(xrandr | head | grep --color=never -Po 'connected( primary)* \K(\d+)') - 10))" && bspc config -m '^1' top_padding 48 && polybar
+  export BAR_WIDTH="$(($(xrandr | grep --color=never -Po 'connected\ primary* \K(\d+)') - 10))" && bspc config -m '^1' top_padding 48 && polybar
 
 # hide top bar
 alt + shift + period

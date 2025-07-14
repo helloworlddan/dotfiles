@@ -160,6 +160,11 @@ decdir() {
   rm ${1%".gpg"}
 }
 
+monitor(){
+  xrandr --output ${1} --primary
+  bspc monitor ${1} -s '^1'
+}
+
 nested() {
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
