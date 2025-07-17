@@ -109,7 +109,8 @@ alt + super + shift + {h,j,k,l}
 
 # Lock screen
 alt + Escape
-  xsecurelock
+  slock
+  # xsecurelock
 
 # media controls
 XF86AudioRaiseVolume
