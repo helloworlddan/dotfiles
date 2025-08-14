@@ -20,11 +20,13 @@ xrdb -load ~/.Xresources
 #  |  bsh |  vim | 󱔗 doc |  gcp |  add |  web | 󰺻 com | 󰃰 cal |  not |  gvc |  pers |
 #  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
 
-# Force DUMMY0 or ePD-1 to be primary
-bspc monitor eDP-1 -s '^1' || bspc monitor DUMMY0 -s '^1'
-
-# Configure virtual desktops
-bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+if [[ $(hostname) == "battlestation" ]]; then
+  bspc monitor DUMMY0 -s '^1'
+  bspc monitor DUMMY0 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+else
+  bspc monitor eDP-1 -s '^1'
+  bspc monitor eDP-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+fi
 
 # Configure behavior and look
 bspc config border_width 2
