@@ -72,7 +72,7 @@ ctrl + alt + space
 	bspc node -g sticky
 
 # quit bspwm normally
-alt + shift + Escape
+alt + super + shift + Escape
 	bspc quit
 
 # reload sxhkd & bspwm
