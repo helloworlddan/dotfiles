@@ -107,11 +107,15 @@ alt + super + {h,j,k,l}
 alt + super + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# Lock screen
+# Lock screen with screenshot
 alt + Escape
   i3lock -k -c 504945
   # slock
   # xsecurelock
+  
+# Lock screen with screenshot
+alt + shift + Escape
+  scrot -F $HOME/.lock.png && i3lock -k -i $HOME/.lock.png && rm $HOME/.lock.png
 
 # media controls
 XF86AudioRaiseVolume
