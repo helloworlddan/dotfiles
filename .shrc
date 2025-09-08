@@ -11,10 +11,11 @@ export TERM=tmux-256color
 export GPG_TTY=$(tty)
 export EDITOR="nvim"
 export GOPATH="${HOME}/.go"
-export PATH="${GOPATH}/bin:${PATH}"
-export PATH="${HOME}/.local/bin:${PATH}"
-export PATH="${HOME}/.zig:${PATH}"
-export PATH="/usr/games:${PATH}"
+export PATH="${PATH}:${GOPATH}/bin:"
+export PATH="${PATH}:${HOME}/.local/bin"
+export PATH="${PATH}:${HOME}/.zig"
+export PATH="${PATH}:${HOME}/.pulumi/bin"
+export PATH="${PATH}:/usr/games"
 export PS1=" \[\e[1;35m\]\$(path_name) \[\e[0m\]\[\e[1;36m\]\$(branch_name) 
  \[\e[m\]\$ "
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -26,12 +27,6 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LINK_DIR=Links
 
-# Load API Keys
-for key in $HOME/.keys/* ; do
-  name=$(basename $key)
-  export $name=$(cat $key)
-done
-
 # Aliases
 alias vim='nvim'
 alias vimdiff='nvim -d'
@@ -41,10 +36,14 @@ alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
 alias legit='git commit -asS'
 alias ls="eza --icons"
 alias la="ls -lah"
-alias ll="ls -lh"
-alias tree="ls --tree"
-alias tls="tmux ls"
+alias ll='ls -alF'
+alias l='ls -CF'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias diff='diff --color=auto'
 alias trename="tmux rename-window"
+alias tls="tmux ls"
 alias pdf='zathura'
 alias terraform='tofu'
 alias gemini='npx @google/gemini-cli'
@@ -60,6 +59,12 @@ alias gnumber='echo $(gcloud projects describe $(gcloud config get-value core/pr
 alias gbuilds='gcloud builds list --limit 15 --format "table[box,title=\"Running Builds\"](createTime:sort=1,status,substitutions.REPO_NAME,substitutions.TRIGGER_NAME)"'
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
+
+# Load API Keys
+for key in $HOME/.keys/* ; do
+  name=$(basename $key)
+  export $name=$(cat $key)
+done
 
 # Functions
 path_name() {
@@ -337,16 +342,9 @@ snippet() {
     https://snippet.collider.hello-world.sh/
 }
 
-# Source local overrides, if available
-if [ -f "${HOME}/.bash_profile.local" ]; then
-  source "${HOME}/.bash_profile.local"
-fi
-
 # Initializers
 test -r ${HOME}/.opam/opam-init/init.sh && . ${HOME}/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
 test -r opam && eval $(opam env)
 test -r ${HOME}/.ghcup/env && source ${HOME}/.ghcup/env
 test -r collider && source <(collider completion bash)
 
-# MOTD
-test -x tortune && tortune
