@@ -20,19 +20,22 @@ xrdb -load ~/.Xresources
 #  |  bsh |  vim | 󱔗 doc |  gcp |  add |  web | 󰺻 com | 󰃰 cal |  not |  gvc |  pers |
 #  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
 
+# Configure primary screen
 if [ $(hostname) == "battlestation" || $(hostname) == "top" ]; then
+  xrandr --output DUMMY0 --primary
   bspc monitor DUMMY0 -s '^1'
-  bspc monitor DUMMY0 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
 elif [ $(hostname) == "box" ]; then
   xrandr --output HDMI-1 --primary
   bspc monitor HDMI-1 -s '^1'
-  bspc monitor HDMI-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
 elif [ $(hostname) == "stamer" ]; then
   bspc monitor eDP-1 -s '^1'
-  bspc monitor eDP-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+  bspc monitor eDP-1 -s '^1'
 else
-  bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+  echo "on default"
 fi
+
+# Configure workspace names
+bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
 
 # Configure behavior and look
 bspc config border_width 2
