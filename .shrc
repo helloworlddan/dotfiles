@@ -33,8 +33,8 @@ alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
 alias legit='git commit -asS'
 alias ls="eza --icons"
 alias la="ls -lah"
-alias ll='ls -alF'
-alias l='ls -CF'
+alias ll='ls -al'
+alias l='ls'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -214,9 +214,9 @@ deckdesk() {
     PRIVATE_PROFILE=3
   fi
 
-  bspc desktop -f '^1'
-  xterm &
-  sleep 2
+  # bspc desktop -f '^1'
+  # xterm &
+  # sleep 2
   bspc desktop -f '^2'
   xterm -e nvim &
   sleep 2
@@ -383,5 +383,5 @@ snippet() {
 # Initializers
 test -r ${HOME}/.opam/opam-init/init.sh && . ${HOME}/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
 test -r opam && eval $(opam env)
-test -r ${HOME}/.ghcup/env && sh ${HOME}/.ghcup/env
+test -r ${HOME}/.ghcup/env && . ${HOME}/.ghcup/env
 
