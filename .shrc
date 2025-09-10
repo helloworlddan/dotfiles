@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Shell Options
-shopt -s histappend
-
 # Exports
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -18,13 +15,13 @@ export PATH="${PATH}:${HOME}/.pulumi/bin"
 export PATH="${PATH}:/usr/games"
 export PS1=" \[\e[1;35m\]\$(path_name) \[\e[0m\]\[\e[1;36m\]\$(branch_name) 
  \[\e[m\]\$ "
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;33m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;42;30m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;36m'
+export LESS_TERMCAP_mb="$'\E[01;31m'"
+export LESS_TERMCAP_md="$'\E[01;33m'"
+export LESS_TERMCAP_me="$'\E[0m'"
+export LESS_TERMCAP_se="$'\E[0m'"
+export LESS_TERMCAP_so="$'\E[01;42;30m'"
+export LESS_TERMCAP_ue="$'\E[0m'"
+export LESS_TERMCAP_us="$'\E[01;36m'"
 export LINK_DIR=Links
 
 # Aliases
@@ -207,13 +204,50 @@ trepo() {
 }
 
 deckdesk() {
-  for monitor in bsh vim doc gcp add web com cal not gvc pers
-  do
-    sleep 2 && sh <(semnodes $monitor)
-    sh <(semnodes -l $monitor)
-  done
+  MAIN_PROFILE=1
+  DEMO_PROFILE=1
+  PRIVATE_PROFILE=1
 
-  sleep 2 && sh <(semnodes bsh)
+  if [ $(hostname) == "stamer" ]; then
+    MAIN_PROFILE=1
+    DEMO_PROFILE=2
+    PRIVATE_PROFILE=3
+  fi
+
+  bspc desktop -f '^1'
+  xterm -e tmux attach-session -t Terminal || tmux new -s Terminal || xterm &
+  sleep 2
+  bspc desktop -f '^2'
+  xterm -e tmux attach-session -t Editor || tmux new -s Editor || xterm -e nvim &
+  sleep 2
+  bspc desktop -f '^3'
+  goto -p ${MAIN_PROFILE} -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
+  goto -p ${MAIN_PROFILE} -u pkg.go.dev &
+  sleep 2
+  bspc desktop -f '^4'
+  goto -p ${DEMO_PROFILE} -g console.cloud &
+  sleep 2
+  # bspc desktop -f '^5'
+  # sleep 2
+  bspc desktop -f '^6'
+  goto -p ${MAIN_PROFILE} &
+  sleep 2
+  bspc desktop -f '^7'
+  goto -p ${MAIN_PROFILE} -g mail &
+  sleep 2
+  bspc desktop -f '^8'
+  goto -p ${MAIN_PROFILE} -g calendar &
+  sleep 2
+  bspc desktop -f '^9'
+  goto -p ${MAIN_PROFILE} stamer:notes &
+  sleep 2
+  bspc desktop -f '^10'
+  goto -p ${MAIN_PROFILE} -g meet &
+  sleep 2
+  bspc desktop -f '^11'
+  goto -p ${PRIVATE_PROFILE} &
+  sleep 2
+  bspc desktop -f '^1'
   disown -a
   clear
 }
@@ -345,6 +379,5 @@ snippet() {
 # Initializers
 test -r ${HOME}/.opam/opam-init/init.sh && . ${HOME}/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
 test -r opam && eval $(opam env)
-test -r ${HOME}/.ghcup/env && source ${HOME}/.ghcup/env
-test -r collider && source <(collider completion bash)
+test -r ${HOME}/.ghcup/env && sh ${HOME}/.ghcup/env
 

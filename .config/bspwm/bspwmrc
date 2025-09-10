@@ -23,6 +23,10 @@ xrdb -load ~/.Xresources
 if [[ $(hostname) == "battlestation" ]]; then
   bspc monitor DUMMY0 -s '^1'
   bspc monitor DUMMY0 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+elif [[ $(hostname) == "box" ]]; then
+  xrandr --output HDMI-1 --primary
+  bspc monitor HDMI-1 -s '^1'
+  bspc monitor HDMI-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
 else
   bspc monitor eDP-1 -s '^1'
   bspc monitor eDP-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""

@@ -3,7 +3,7 @@
 #############################
 
 alt + Return
-	/usr/bin/xterm -si -sk
+	xterm -si -sk
 
 alt + r
   rofi -show run
@@ -41,7 +41,7 @@ alt + shift + comma
 
 # show top bar
 alt + period
-  export BAR_WIDTH="$(($(xrandr | grep --color=never -Po 'connected\ primary* \K(\d+)') - 10))" && bspc config -m '^1' top_padding 48 && polybar
+  export BAR_WIDTH="$(($(xwininfo -root | awk '/Width:/{print $2}') - 10))" && bspc config -m '^1' top_padding 48 && polybar
 
 # hide top bar
 alt + shift + period
