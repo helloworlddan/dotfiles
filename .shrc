@@ -208,17 +208,17 @@ deckdesk() {
   DEMO_PROFILE=1
   PRIVATE_PROFILE=1
 
-  if [ $(hostname) == "stamer" ]; then
+  if [ $(hostname) == "stamer" ||  $(hostname) == "battlestation" ]; then
     MAIN_PROFILE=1
     DEMO_PROFILE=2
     PRIVATE_PROFILE=3
   fi
 
   bspc desktop -f '^1'
-  xterm -e tmux attach-session -t Terminal || tmux new -s Terminal || xterm &
+  xterm &
   sleep 2
   bspc desktop -f '^2'
-  xterm -e tmux attach-session -t Editor || tmux new -s Editor || xterm -e nvim &
+  xterm -e nvim &
   sleep 2
   bspc desktop -f '^3'
   goto -p ${MAIN_PROFILE} -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
@@ -239,7 +239,11 @@ deckdesk() {
   goto -p ${MAIN_PROFILE} -g calendar &
   sleep 2
   bspc desktop -f '^9'
-  goto -p ${MAIN_PROFILE} stamer:notes &
+  if [ $(hostname) == "stamer" ||  $(hostname) == "battlestation" ]; then
+    goto -p ${MAIN_PROFILE} stamer:notes &
+  else
+    goto -p ${MAIN_PROFILE} -g keep &
+  fi
   sleep 2
   bspc desktop -f '^10'
   goto -p ${MAIN_PROFILE} -g meet &
