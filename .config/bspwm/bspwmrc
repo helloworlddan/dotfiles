@@ -20,10 +20,10 @@ xrdb -load ~/.Xresources
 #  |  bsh |  vim | 󱔗 doc |  gcp |  add |  web | 󰺻 com | 󰃰 cal |  not |  gvc |  pers |
 #  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
 
-if [[ $(hostname) == "battlestation" ]]; then
+if [ $(hostname) == "battlestation" ]; then
   bspc monitor DUMMY0 -s '^1'
   bspc monitor DUMMY0 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
-elif [[ $(hostname) == "box" ]]; then
+elif [ $(hostname) == "box" ]; then
   xrandr --output HDMI-1 --primary
   bspc monitor HDMI-1 -s '^1'
   bspc monitor HDMI-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
