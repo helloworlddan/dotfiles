@@ -41,7 +41,7 @@ alt + shift + comma
 
 # show top bar
 alt + period
-  export BAR_WIDTH="$(($(xwininfo -root | xwininfo -root | grep Width | cut -d ':' -f 2) - 10))" && bspc config -m '^1' top_padding 48 && polybar
+  export BAR_WIDTH="$(($(xrandr | grep " primary" | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f1) - 10))" && bspc config -m '^1' top_padding 48 && polybar
 
 # hide top bar
 alt + shift + period
