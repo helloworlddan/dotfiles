@@ -1,11 +1,9 @@
 return {
   {
-    "kiddos/gemini.nvim",
+    "jonroosevelt/gemini-cli.nvim",
     config = function()
       require("gemini").setup({
-        completion = {
-          insert_result_key = "<S-space>",
-        },
+        split_direction = "vertical",
       })
     end,
   },

@@ -43,7 +43,6 @@ alias trename="tmux rename-window"
 alias tls="tmux ls"
 alias pdf='zathura'
 alias terraform='tofu'
-alias gemini='npx @google/gemini-cli'
 alias highlight='highlight -O ansi'
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
 
@@ -58,7 +57,7 @@ alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --
 alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
 
 # Load API Keys
-for key in $HOME/.keys/* ; do
+for key in $HOME/.keys/*; do
   name=$(basename $key)
   export $name=$(cat $key)
 done
@@ -115,7 +114,7 @@ cl() {
   fi
 }
 
-lsl(){
+lsl() {
   ll ~/${LINK_DIR}
 }
 
@@ -162,7 +161,7 @@ decdir() {
   rm ${1%".gpg"}
 }
 
-monitor(){
+monitor() {
   xrandr --output ${1} --primary
   bspc monitor ${1} -s '^1'
 }
@@ -171,11 +170,11 @@ nested() {
   startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
 }
 
-terminal_session(){
+terminal_session() {
   tsesh Terminal
 }
 
-editor_session(){
+editor_session() {
   tsesh Editor
 }
 
@@ -183,7 +182,7 @@ tsesh() {
   if [ -z ${1} ]; then
     echo "no name given"
   else
-  tmux attach-session -t ${1} || tmux new -s ${1}
+    tmux attach-session -t ${1} || tmux new -s ${1}
   fi
 }
 
@@ -208,7 +207,7 @@ deckdesk() {
   DEMO_PROFILE=1
   PRIVATE_PROFILE=1
 
-  if [ $(hostname) == "stamer" ||  $(hostname) == "battlestation" ]; then
+  if [ $(hostname) == "stamer" || $(hostname) == "battlestation" ]; then
     MAIN_PROFILE=1
     DEMO_PROFILE=2
     PRIVATE_PROFILE=3
@@ -239,7 +238,7 @@ deckdesk() {
   goto -p ${MAIN_PROFILE} -g calendar &
   sleep 2
   bspc desktop -f '^9'
-  if [ $(hostname) == "stamer" ||  $(hostname) == "battlestation" ]; then
+  if [ $(hostname) == "stamer" || $(hostname) == "battlestation" ]; then
     goto -p ${MAIN_PROFILE} stamer:notes &
   else
     goto -p ${MAIN_PROFILE} -g keep &
@@ -261,8 +260,8 @@ birds() {
     echo "no regions supplied"
   else
     curl -s \
-         -H "X-eBirdApiToken: ${EBIRD_API_KEY}" \
-         -X GET "https://api.ebird.org/v2/data/obs/${1}/recent" | jq
+      -H "X-eBirdApiToken: ${EBIRD_API_KEY}" \
+      -X GET "https://api.ebird.org/v2/data/obs/${1}/recent" | jq
   fi
 }
 
@@ -384,4 +383,3 @@ snippet() {
 test -r ${HOME}/.opam/opam-init/init.sh && . ${HOME}/.opam/opam-init/init.sh >/dev/null 2>/dev/null || true
 test -r opam && eval $(opam env)
 test -r ${HOME}/.ghcup/env && . ${HOME}/.ghcup/env
-
