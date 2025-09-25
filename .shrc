@@ -265,6 +265,23 @@ birds() {
   fi
 }
 
+switchtheme() {
+  if [ -z ${1} ]; then
+    echo "no theme supplied"
+  else
+    (
+      cd $HOME/.themes
+      rm default
+      ln -s $1 default
+    )
+    (
+      cd $HOME/.themes
+      rm default
+      ln -s $1 default
+    )
+  fi
+}
+
 # Cloud Functions
 gmeta() {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
