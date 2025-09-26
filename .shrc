@@ -217,7 +217,7 @@ deckdesk() {
   # xterm &
   # sleep 2
   bspc desktop -f '^2'
-  xterm -e nvim &
+  xterm -e "bash && nvim" &
   sleep 2
   bspc desktop -f '^3'
   goto -p ${MAIN_PROFILE} -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
