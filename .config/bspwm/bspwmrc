@@ -21,7 +21,7 @@ xrdb -load ~/.Xresources
 #  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
 
 # Configure primary screen
-if [ $(hostname) == "battlestation" || $(hostname) == "top" ]; then
+if [ $(hostname) == "battlestation" ] || [ $(hostname) == "top" ]; then
   xrandr --output DUMMY0 --primary
   bspc monitor DUMMY0 -s '^1'
 elif [ $(hostname) == "box" ]; then

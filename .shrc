@@ -207,7 +207,7 @@ deckdesk() {
   DEMO_PROFILE=1
   PRIVATE_PROFILE=1
 
-  if [ $(hostname) == "stamer" || $(hostname) == "battlestation" ]; then
+  if [ "$(hostname)" == "stamer" ] || [ "$(hostname)" == "battlestation" ]; then
     MAIN_PROFILE=1
     DEMO_PROFILE=2
     PRIVATE_PROFILE=3
