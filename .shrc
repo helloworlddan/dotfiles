@@ -275,7 +275,7 @@ switchtheme() {
       ln -s $1 default
     )
     (
-      cd $HOME/.themes
+      cd $HOME/.icons
       rm default
       ln -s $1 default
     )
