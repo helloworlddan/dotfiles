@@ -26,12 +26,15 @@ xrdb -load ~/.Xresources
 # Configure primary screen
 if [ $(hostname) == "battlestation" ] || [ $(hostname) == "top" ]; then
   xrandr --output DUMMY0 --primary
+  bspc monitor DUMMY0 -n "main"
   bspc monitor DUMMY0 -s '^1' -n "main"
 elif [ $(hostname) == "box" ]; then
   xrandr --output HDMI-1 --primary
+  bspc monitor HDMI-1 -n "main"
   bspc monitor HDMI-1 -s '^1' -n "main"
 elif [ $(hostname) == "stamer" ]; then
   xrandr --output eDP-1 --primary
+  bspc monitor eDP-1 -n "main"
   bspc monitor eDP-1 -s '^1' -n "main"
 else
   echo "on default"
