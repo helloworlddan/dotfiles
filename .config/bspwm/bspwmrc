@@ -7,7 +7,7 @@ setxkbmap us
 xsetroot -cursor_name left_ptr
 
 # Autohide when idle
-unclutter -idle 1 &
+xbanish &
 
 # Configure key repeat delay
 xset r rate 220
