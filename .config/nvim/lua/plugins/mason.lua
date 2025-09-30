@@ -13,7 +13,6 @@ return {
         "gotests",
         "gotestsum",
       }) -- Go
-      vim.list_extend(opts.ensure_installed, { "ocamlformat" }) -- OCaml
       vim.list_extend(opts.ensure_installed, { "lua-language-server" }) -- Lua
       vim.list_extend(opts.ensure_installed, { "hadolint" }) -- Docker
       vim.list_extend(opts.ensure_installed, { "black" }) -- Python
