@@ -6,7 +6,7 @@ setxkbmap us
 # Configure X cursor
 xsetroot -cursor_name left_ptr
 
-# Autohide when idle
+# Autohide cursor when idle
 xbanish &
 
 # Configure key repeat delay
@@ -38,7 +38,9 @@ else
 fi
 
 # Configure workspace names
-bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+bspc monitor eDP-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+bspc monitor DP-1 -d ""
+bspc monitor HDMI-1 -d ""
 
 # Configure behavior and look
 bspc config border_width 2
@@ -52,6 +54,21 @@ bspc config automatic_scheme longest_side
 bspc config pointer_modifier mod1
 bspc config pointer_action1 move
 bspc config pointer_action2 resize_corner
+
+# Reset rules
+bspc rule -r '*'
+
+# Mnemonic rules
+bspc rule -a *:console.cloud.google.com desktop=""
+bspc rule -a *:cloud.google.com__go_docs_reference_cloud.google.com_go_latest desktop="󱔗"
+bspc rule -a *:pkg.go.dev desktop="󱔗"
+bspc rule -a *:console.cloud.google.com desktop=""
+bspc rule -a *:app.slack.com__client desktop=""
+bspc rule -a *:mail.google.com desktop="󰺻"
+bspc rule -a *:calendar.google.com desktop="󰃰"
+bspc rule -a *:keep.google.com desktop=""
+bspc rule -a *:drive.google.com desktop=""
+bspc rule -a *:meet.google.com desktop=""
 
 # Rules for Chrome's "XXX is sharing your screen" windows.
 bspc rule -a *:*:"meet.google.com is sharing your screen." hidden=on

@@ -238,7 +238,7 @@ deckdesk() {
   goto -p ${MAIN_PROFILE} -g calendar &
   sleep 2
   bspc desktop -f '^9'
-  if [ $(hostname) == "stamer" || $(hostname) == "battlestation" ]; then
+  if [ "$(hostname)" == "stamer" || "$(hostname)" == "battlestation" ]; then
     goto -p ${MAIN_PROFILE} stamer:notes &
   else
     goto -p ${MAIN_PROFILE} -g keep &
@@ -287,16 +287,16 @@ switchscreen() {
     echo "no monitor supplied"
   elif [ ${1} == "laptop" ]; then
     xrandr --output eDP-1 --primary
+    bspc config top_padding 0 && killall polybar
     bspc monitor eDP-1 -s '^1'
-    bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+    bspc monitor eDP-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+    bspc monitor DP-1 -d ""
   elif [ ${1} == "usbc" ]; then
     xrandr --output DP-1 --primary
+    bspc config top_padding 0 && killall polybar
     bspc monitor DP-1 -s '^1'
-    bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
-  elif [ ${1} == "hdmi" ]; then
-    xrandr --output HDMI-1 --primary
-    bspc monitor HDMI-1 -s '^1'
-    bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+    bspc monitor DP-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+    bspc monitor eDP-1 -d ""
   else
     echo "unknown port"
   fi
