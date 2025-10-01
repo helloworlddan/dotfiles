@@ -282,6 +282,26 @@ switchtheme() {
   fi
 }
 
+switchscreen() {
+  if [ -z ${1} ]; then
+    echo "no monitor supplied"
+  elif [ ${1} == "laptop" ]; then
+    xrandr --output eDP-1 --primary
+    bspc monitor eDP-1 -s '^1'
+    bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+  elif [ ${1} == "usbc" ]; then
+    xrandr --output DP-1 --primary
+    bspc monitor DP-1 -s '^1'
+    bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+  elif [ ${1} == "hdmi" ]; then
+    xrandr --output HDMI-1 --primary
+    bspc monitor HDMI-1 -s '^1'
+    bspc monitor -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
+  else
+    echo "unknown port"
+  fi
+}
+
 # Cloud Functions
 gmeta() {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
