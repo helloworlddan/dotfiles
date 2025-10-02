@@ -25,8 +25,72 @@ alt + x
 ##################################
 
 # focus or move to the given desktop
-alt + {_,shift + }{b,v,d,g,a,w,m,c,n,z,p}
-	bspc {desktop -f,node -d} '^{1,2,3,4,5,6,7,8,9,10,11}'
+alt + b
+  bspc desktop -f "" 
+
+alt + shift + 
+  bspc node -d "" 
+
+alt + v
+  bspc desktop -f "" 
+
+alt + shift + v 
+  bspc node -d "" 
+
+alt + d
+  bspc desktop -f "󱔗" 
+
+alt + shift + d 
+  bspc node -d "󱔗" 
+
+alt + g
+  bspc desktop -f "" 
+
+alt + shift + g
+  bspc node -d "" 
+
+alt + a
+  bspc desktop -f "" 
+
+alt + shift + a
+  bspc node -d "" 
+
+alt + w
+  bspc desktop -f "" 
+
+alt + shift + w
+  bspc node -d "" 
+
+alt + m
+  bspc desktop -f "󰺻" 
+
+alt + shift + m
+  bspc node -d "󰺻" 
+
+alt + c
+  bspc desktop -f "󰃰" 
+
+alt + shift + c
+  bspc node -d "󰃰" 
+
+alt + n
+  bspc desktop -f "" 
+
+alt + shift + n
+  bspc node -d "" 
+
+alt + z
+  bspc desktop -f ""
+
+alt + shift + z
+  bspc node -d ""
+
+alt + p
+  bspc desktop -f  ""
+
+alt + shift + p
+  bspc node -d  ""
+
 
 alt + {_,shift + }{1-9,0}
   echo "no op"
