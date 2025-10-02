@@ -4,9 +4,10 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export XDG_CONFIG_HOME="${HOME}/.config/"
-export TERM=tmux-256color
+export TERM=xterm-256color
 export GPG_TTY=$(tty)
 export EDITOR="nvim"
+export PAGER="most"
 export GOPATH="${HOME}/.go"
 export PATH="${PATH}:${GOPATH}/bin:"
 export PATH="${PATH}:${HOME}/.local/bin"
@@ -204,52 +205,33 @@ trepo() {
 
 deckdesk() {
   MAIN_PROFILE=1
-  DEMO_PROFILE=1
-  PRIVATE_PROFILE=1
 
-  if [ "$(hostname)" == "stamer" ] || [ "$(hostname)" == "battlestation" ]; then
-    MAIN_PROFILE=1
-    DEMO_PROFILE=2
-    PRIVATE_PROFILE=3
-  fi
-
-  # bspc desktop -f '^1'
-  # xterm &
-  # sleep 2
-  bspc desktop -f '^2'
-  xterm -e "bash && nvim" &
-  sleep 2
-  bspc desktop -f '^3'
-  goto -p ${MAIN_PROFILE} -u cloud.google.com/go/docs/reference/cloud.google.com/go/latest &
-  goto -p ${MAIN_PROFILE} -u pkg.go.dev &
-  sleep 2
-  bspc desktop -f '^4'
-  goto -p ${DEMO_PROFILE} -g console.cloud &
-  sleep 2
-  # bspc desktop -f '^5'
-  # sleep 2
+  # Full browser windows
   bspc desktop -f '^6'
   goto -p ${MAIN_PROFILE} &
-  sleep 2
-  bspc desktop -f '^7'
-  goto -p ${MAIN_PROFILE} -g mail &
-  sleep 2
-  bspc desktop -f '^8'
-  goto -p ${MAIN_PROFILE} -g calendar &
-  sleep 2
-  bspc desktop -f '^9'
-  if [ "$(hostname)" == "stamer" || "$(hostname)" == "battlestation" ]; then
+
+  # Work machine only
+  if [ "$(hostname)" == "stamer" ] || [ "$(hostname)" == "battlestation" ]; then
+    DEMO_PROFILE=2
+    PRIVATE_PROFILE=3
+
+    # Full private browser
+    sleep 2
+    bspc desktop -f '^11'
+    goto -p ${PRIVATE_PROFILE} &
+
     goto -p ${MAIN_PROFILE} stamer:notes &
-  else
-    goto -p ${MAIN_PROFILE} -g keep &
+    goto -p ${DEMO_PROFILE} -g console.cloud &
   fi
-  sleep 2
-  bspc desktop -f '^10'
+
+  # Chrome apps
+  goto -p ${MAIN_PROFILE} -u pkg.go.dev &
+  goto -p ${MAIN_PROFILE} -g console.cloud &
+  goto -p ${MAIN_PROFILE} -g mail &
+  goto -p ${MAIN_PROFILE} -g calendar &
   goto -p ${MAIN_PROFILE} -g meet &
-  sleep 2
-  bspc desktop -f '^11'
-  goto -p ${PRIVATE_PROFILE} &
-  sleep 2
+  goto -p ${MAIN_PROFILE} -g keep &
+
   bspc desktop -f '^1'
   disown -a
   clear
@@ -279,26 +261,6 @@ switchtheme() {
       rm default
       ln -s $1 default
     )
-  fi
-}
-
-switchscreen() {
-  if [ -z ${1} ]; then
-    echo "no monitor supplied"
-  elif [ ${1} == "laptop" ]; then
-    xrandr --output eDP-1 --primary
-    bspc config top_padding 0 && killall polybar
-    bspc monitor eDP-1 -s '^1'
-    bspc monitor eDP-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
-    bspc monitor DP-1 -d ""
-  elif [ ${1} == "usbc" ]; then
-    xrandr --output DP-1 --primary
-    bspc config top_padding 0 && killall polybar
-    bspc monitor DP-1 -s '^1'
-    bspc monitor DP-1 -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
-    bspc monitor eDP-1 -d ""
-  else
-    echo "unknown port"
   fi
 }
 
