@@ -264,6 +264,59 @@ switchtheme() {
   fi
 }
 
+switchscreen() {
+  if [ -z ${1} ]; then
+    echo "no monitor supplied"
+  elif [ ${1} == "external" ]; then
+    bspc config top_padding 0 && killall polybar
+    xrandr --output DP-1 --primary
+    bspc monitor DP-1 -n external
+    bspc monitor external -d ""
+
+    bspc desktop "" -m external
+    bspc desktop "" -m external
+    bspc desktop "󱔗" -m external
+    bspc desktop "" -m external
+    bspc desktop "" -m external
+    bspc desktop "" -m external
+    bspc desktop "" -m main
+    bspc desktop "󰺻" -m external
+    bspc desktop "󰃰" -m external
+    bspc desktop "" -m external
+    bspc desktop "" -m external
+    bspc desktop "" -m external
+
+    bspc monitor external -s '^1'
+    export BAR_WIDTH="$(($(xrandr | grep " primary" | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f1) - 10))" && bspc config -m '^1' top_padding 48 && polybar &
+    disown -a
+    clear
+  elif [ ${1} == "main" ]; then
+    bspc config top_padding 0 && killall polybar
+    xrandr --output eDP-1 --primary
+
+    bspc desktop "" -m main
+    bspc desktop "" -m main
+    bspc desktop "󱔗" -m main
+    bspc desktop "" -m main
+    bspc desktop "" -m main
+    bspc desktop "" -m main
+    bspc desktop "󰺻" -m main
+    bspc desktop "" -m external
+    bspc desktop "󰃰" -m main
+    bspc desktop "" -m main
+    bspc desktop "" -m main
+    bspc desktop "" -m main
+
+    bspc monitor main -s '^1'
+    export BAR_WIDTH="$(($(xrandr | grep " primary" | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f1) - 10))" && bspc config -m '^1' top_padding 48 && polybar &
+    disown -a
+    clear
+  else
+    echo "unknown monitor supplied: use main or external"
+  fi
+
+}
+
 # Cloud Functions
 gmeta() {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
