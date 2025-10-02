@@ -15,14 +15,6 @@ xset r rate 220
 # Load .Xresources for terminal theme and X11 apps
 xrdb -load ~/.Xresources
 
-#  Virtual desktop layout
-#
-#  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
-#  |  1 b  |  2 v  |  3 d  |  4 g  |  5 a  |  6 w  |  7 m  |  8 c  |  9 n  |  0 z  |  p     |
-#  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
-#  |  bsh |  vim | 󱔗 doc |  gcp |  add |  web | 󰺻 com | 󰃰 cal |  not |  gvc |  pers |
-#  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
-
 # Configure primary screen
 if [ $(hostname) == "battlestation" ] || [ $(hostname) == "top" ]; then
   xrandr --output DUMMY0 --primary
@@ -39,6 +31,14 @@ elif [ $(hostname) == "stamer" ]; then
 else
   echo "on default"
 fi
+
+#  Virtual desktop layout
+#
+#  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
+#  |   b   |   v   |   d   |   g   |   a   |   w   |   m   |   c   |   n   |   z   |   p    |
+#  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
+#  |  bsh |  vim | 󱔗 doc |  gcp |  add |  web | 󰺻 com | 󰃰 cal |  not |  gvc |  pers |
+#  |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
 
 # Configure workspace names
 bspc monitor main -d "" "" "󱔗" "" "" "" "󰺻" "󰃰" "" "" ""
