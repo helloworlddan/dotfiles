@@ -28,7 +28,7 @@ alt + x
 alt + b
   bspc desktop -f "" 
 
-alt + shift + 
+alt + shift + b
   bspc node -d "" 
 
 alt + v
