@@ -38,6 +38,7 @@ alias ls="eza --icons"
 alias la="ls -lah"
 alias ll='ls -al'
 alias l='ls'
+alias tree='ls -T'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
