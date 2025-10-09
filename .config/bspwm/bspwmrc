@@ -60,17 +60,17 @@ bspc config pointer_action2 resize_corner
 bspc rule -r '*'
 
 # Mnemonic rules
-bspc rule -a *:console.cloud.google.com monitor=main desktop=""
-bspc rule -a *:pkg.go.dev monitor=main desktop="󱔗"
-bspc rule -a *:console.cloud.google.com monitor=main desktop=""
-bspc rule -a *:app.slack.com__client monitor=main desktop=""
-bspc rule -a *:gimp monitor=main desktop=""
-bspc rule -a *:excalidraw.com monitor=main desktop=""
-bspc rule -a *:mail.google.com monitor=main desktop="󰺻"
-bspc rule -a *:calendar.google.com monitor=main desktop="󰃰"
-bspc rule -a *:keep.google.com monitor=main desktop=""
-bspc rule -a *:go__stamer_notes monitor=main desktop=""
-bspc rule -a *:meet.google.com monitor=main desktop=""
+bspc rule -a *:console.cloud.google.com desktop=""
+bspc rule -a *:pkg.go.dev desktop="󱔗"
+bspc rule -a *:console.cloud.google.com desktop=""
+bspc rule -a *:app.slack.com__client desktop=""
+bspc rule -a *:gimp desktop=""
+bspc rule -a *:excalidraw.com desktop=""
+bspc rule -a *:mail.google.com desktop="󰺻"
+bspc rule -a *:calendar.google.com desktop="󰃰"
+bspc rule -a *:keep.google.com desktop=""
+bspc rule -a *:go__stamer_notes desktop=""
+bspc rule -a *:meet.google.com desktop=""
 
 # Rules for Chrome's "XXX is sharing your screen" windows.
 bspc rule -a *:*:"meet.google.com is sharing your screen." hidden=on
