@@ -3,3 +3,4 @@ bspc config focused_border_color  "#d8c8b2"
 bspc config presel_feedback_color "#ebdbb2"
 xsetroot -solid "#504945"
 # feh --bg-fill ~/.themes/default/back.png
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
