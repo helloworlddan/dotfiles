@@ -1,0 +1,22 @@
+
+* {
+  bg:           #121212;
+  fg:           #f5f5f5;
+
+  grey:         #949494;
+  black:        #121212;
+  red:          #B14242;
+  green:        #D87C4A;
+  yellow:       #E49A44;
+  blue:         #4A8B8B;
+  magenta:      #a7a7a7;
+  cyan:         #b4b4b4;
+  white:        #d5d5d5;
+
+  backdrop:     #121212;
+
+  spacing: 0;
+  background-color: @bg;
+  text-color: @fg;
+}
+

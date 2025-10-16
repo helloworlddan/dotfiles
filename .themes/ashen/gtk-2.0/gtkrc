@@ -1,0 +1,81 @@
+# Ashen scheme
+# by 
+#
+# GTK 3.0 template 
+# by Jonn Mostovoy - https://github.com/manpages
+#
+# Generated
+#  by base16-builder - https://github.com/base16-builder/base16-builder
+
+style "default"
+{
+  engine "hcengine" {
+    edge_thickness = 2
+  }
+
+  xthickness = 2
+  ythickness = 2
+
+  EelEditableLabel::cursor_aspect_ratio = 0.1
+  EelEditableLabel::cursor_color    = "#D87C4A"
+
+  GtkEntry::cursor_color    = "#D87C4A"
+  GtkEntry::cursor_aspect_ratio = 0.1
+
+  GtkHSV::focus-line-pattern = "\0"
+
+  GtkRange::stepper-size = 20
+
+  GtkTextView::cursor_aspect_ratio = 0.1
+  GtkTextView::cursor_color    = "#D87C4A"
+
+  GtkTreeView::expander-size = 16
+
+  GtkWidget::focus-line-pattern = "\4\2"
+  GtkWidget::focus-line-width = 2
+  GtkWidget::focus-padding = 0
+  GtkWidget::interior_focus = 1
+  GtkWidget::link-color = "#D87C4A"
+  GtkWidget::visited-link-color = "#B14242"
+
+  # Nautilus
+  NautilusIconContainer::frame_text = 1
+
+  # Pidgin
+  GtkIMHtml::hyperlink-color = "#D87C4A"
+  GtkIMHtml::hyperlink-visited-color = "#B14242"
+  GtkIMHtml::hyperlink-prelight-color = "#d5d5d5"
+
+  # Evolution
+  GtkHTML::link_color = "#D87C4A"
+  GtkHTML::vlink_color = "#B14242"
+  GtkHTML::cite_color = "#d5d5d5"
+
+  fg[NORMAL]      = "#949494"
+  text[NORMAL]    = "#949494"
+  bg[NORMAL]      = "#121212"
+  base[NORMAL]    = "#121212"
+
+  fg[INSENSITIVE]      = "#949494"
+  bg[INSENSITIVE]      = "#191919"
+  text[INSENSITIVE]    = "#949494"
+  base[INSENSITIVE]    = "#191919"
+
+  fg[PRELIGHT]    = "#121212"
+  text[PRELIGHT]  = "#121212"
+  bg[PRELIGHT]    = "#949494"
+  base[PRELIGHT]  = "#949494"
+
+  fg[ACTIVE]      = "#a7a7a7"
+  text[ACTIVE]    = "#a7a7a7"
+  bg[ACTIVE]      = "#212121"
+  base[ACTIVE]    = "#212121"
+
+  fg[SELECTED]    = "#121212"
+  text[SELECTED]  = "#121212"
+  bg[SELECTED]    = "#949494"
+  base[SELECTED]  = "#d5d5d5"
+}
+
+class "GtkWidget" style "default"
+
