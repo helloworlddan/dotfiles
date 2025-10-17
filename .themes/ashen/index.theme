@@ -1,10 +1,11 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=gruvbox-dark
+Name=trollwut-orange-dark
+Comment=Nobody reads comments.
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-Name=gruvbox-dark
-GtkTheme=gruvbox-dark
-IconTheme=gruvbox-dark
-MetacityTheme=gruvbox-dark
+Name=trollwut-orange-dark
+GtkTheme=trollwut-orange-dark
+IconTheme=gnome-human
+MetacityTheme=trollwut-orange-dark
