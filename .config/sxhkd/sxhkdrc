@@ -174,7 +174,7 @@ alt + super + shift + {h,j,k,l}
 # Lock screen with screenshot
 alt + Escape
   i3lock -k -c 232323
-  
+ 
 # Lock screen with screenshot
 alt + shift + Escape
   scrot -F $HOME/.lock.png && i3lock -k -i $HOME/.lock.png && rm $HOME/.lock.png

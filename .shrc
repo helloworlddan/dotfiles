@@ -282,23 +282,22 @@ switchscreen() {
   elif [ ${1} == "external" ]; then
     bspc config top_padding 0 && killall polybar
     xrandr --output DP-1 --primary
-    bspc monitor DP-1 -n external
-    bspc monitor external -d ""
+    bspc monitor DP-1 -d ""
 
-    bspc desktop "" -m external
-    bspc desktop "" -m external
-    bspc desktop "󱔗" -m external
-    bspc desktop "" -m external
-    bspc desktop "" -m external
-    bspc desktop "" -m external
-    bspc desktop "" -m main
-    bspc desktop "󰺻" -m external
-    bspc desktop "󰃰" -m external
-    bspc desktop "" -m external
-    bspc desktop "" -m external
-    bspc desktop "" -m external
+    bspc desktop "" -m DP-1
+    bspc desktop "" -m DP-1
+    bspc desktop "󱔗" -m DP-1
+    bspc desktop "" -m DP-1
+    bspc desktop "" -m DP-1
+    bspc desktop "" -m eDP-1
+    bspc desktop "" -m DP-1
+    bspc desktop "󰺻" -m DP-1
+    bspc desktop "󰃰" -m DP-1
+    bspc desktop "" -m DP-1
+    bspc desktop "" -m DP-1
+    bspc desktop "" -m DP-1
 
-    bspc monitor external -s '^1'
+    bspc monitor DP-1 -s '^1'
     export BAR_WIDTH="$(($(xrandr | grep " primary" | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f1) - 10))" && bspc config -m '^1' top_padding 48 && polybar &
     disown -a
     clear
@@ -306,20 +305,20 @@ switchscreen() {
     bspc config top_padding 0 && killall polybar
     xrandr --output eDP-1 --primary
 
-    bspc desktop "" -m main
-    bspc desktop "" -m main
-    bspc desktop "󱔗" -m main
-    bspc desktop "" -m main
-    bspc desktop "" -m main
-    bspc desktop "" -m main
-    bspc desktop "󰺻" -m main
-    bspc desktop "" -m external
-    bspc desktop "󰃰" -m main
-    bspc desktop "" -m main
-    bspc desktop "" -m main
-    bspc desktop "" -m main
+    bspc desktop "" -m eDP-1
+    bspc desktop "" -m eDP-1
+    bspc desktop "󱔗" -m eDP-1
+    bspc desktop "" -m eDP-1
+    bspc desktop "" -m eDP-1
+    bspc desktop "" -m eDP-1
+    bspc desktop "󰺻" -m eDP-1
+    bspc desktop "" -m DP-1
+    bspc desktop "󰃰" -m eDP-1
+    bspc desktop "" -m eDP-1
+    bspc desktop "" -m eDP-1
+    bspc desktop "" -m eDP-1
 
-    bspc monitor main -s '^1'
+    bspc monitor eDP-1 -s '^1'
     export BAR_WIDTH="$(($(xrandr | grep " primary" | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f1) - 10))" && bspc config -m '^1' top_padding 48 && polybar &
     disown -a
     clear
