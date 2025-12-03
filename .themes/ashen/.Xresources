@@ -21,7 +21,7 @@
 *.color12:      #4A8B8B
 *.color13:      #a7a7a7
 *.color14:      #b4b4b4
-*.color15:      #d5d5d5!
+*.color15:      #d5d5d5
 
 Xft.antialias: true
 Xft.hinting: true
