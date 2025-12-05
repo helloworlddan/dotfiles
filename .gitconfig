@@ -28,7 +28,7 @@
     UseHttpPath = true
 [core]
     autocrlf = input
-    pager = less -FRSX
+    pager = most
     editor = nvim
 [alias]
     cm = commit -asS
