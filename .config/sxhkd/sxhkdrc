@@ -26,58 +26,58 @@ alt + x
 
 # focus or move to the given desktop
 alt + b
-  bspc desktop -f "" 
+  bspc desktop -f ""
 
 alt + shift + b
-  bspc node -d "" 
+  bspc node -d ""
 
 alt + v
-  bspc desktop -f "" 
+  bspc desktop -f ""
 
 alt + shift + v 
-  bspc node -d "" 
+  bspc node -d ""
 
 alt + d
-  bspc desktop -f "󱔗" 
+  bspc desktop -f "󱔗"
 
 alt + shift + d 
-  bspc node -d "󱔗" 
+  bspc node -d "󱔗"
 
 alt + g
-  bspc desktop -f "" 
+  bspc desktop -f ""
 
 alt + shift + g
-  bspc node -d "" 
+  bspc node -d ""
 
 alt + a
-  bspc desktop -f "" 
+  bspc desktop -f ""
 
 alt + shift + a
-  bspc node -d "" 
+  bspc node -d ""
 
 alt + w
-  bspc desktop -f "" 
+  bspc desktop -f ""
 
 alt + shift + w
-  bspc node -d "" 
+  bspc node -d ""
 
 alt + m
-  bspc desktop -f "󰺻" 
+  bspc desktop -f "󰺻"
 
 alt + shift + m
-  bspc node -d "󰺻" 
+  bspc node -d "󰺻"
 
 alt + c
-  bspc desktop -f "󰃰" 
+  bspc desktop -f "󰃰"
 
 alt + shift + c
-  bspc node -d "󰃰" 
+  bspc node -d "󰃰"
 
 alt + n
-  bspc desktop -f "" 
+  bspc desktop -f ""
 
 alt + shift + n
-  bspc node -d "" 
+  bspc node -d ""
 
 alt + z
   bspc desktop -f ""
@@ -170,6 +170,9 @@ alt + super + {h,j,k,l}
 # contract a window by moving one of its side inward
 alt + super + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+alt + BackSpace
+  bspc rule -a '*' -o state=floating && xterm -geometry 82x20  -hold -e 'cat ~/Code/github.com/helloworlddan/corne/layout.txt'
 
 # Lock screen with screenshot
 alt + Escape
