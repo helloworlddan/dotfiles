@@ -64,6 +64,7 @@ alias gbuilds='gcloud builds list --limit 15 --format "table[box,title=\"Running
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
 
+alias gemini="gproject && GOOGLE_CLOUD_LOCATION=us-central1 /google/bin/releases/gemini-cli/tools/gemini --proxy=false"
 alias chatgpt="gemini"
 alias claude="gemini"
 
@@ -354,15 +355,20 @@ guser() {
 
 gproject() {
   if [ -z ${1} ]; then
-    gcloud config get-value core/project
+    project="$(gcloud config get-value core/project)"
+    export GOOGLE_CLOUD_PROJECT="${project}"
+    echo "${project}"
   else
     gcloud config set project ${1}
+    export GOOGLE_CLOUD_PROJECT="${1}"
   fi
 }
 
 gregion() {
   if [ -z ${1} ]; then
-    gcloud config get-value run/region
+    region="$(gcloud config get-value run/region)"
+    export GOOGLE_CLOUD_LOCATION="${region}"
+    echo "${region}"
   else
     gcloud config set run/region ${1}
     gcloud config set functions/region ${1}
@@ -373,6 +379,7 @@ gregion() {
     gcloud config set eventarc/location ${1}
     gcloud config set memcache/region ${1}
     gcloud config set redis/region ${1}
+    export GOOGLE_CLOUD_LOCATION="${1}"
   fi
 }
 
