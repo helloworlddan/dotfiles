@@ -25,6 +25,10 @@ elif [ $(hostname) == "box" ]; then
 elif [ $(hostname) == "stamer" ]; then
   xrandr --output eDP-1 --primary
   bspc monitor eDP-1 -s '^1'
+  pactl set-sink-volume 1353 0%
+  pactl set-sink-volume 1354 0%
+  pactl set-sink-volume 1355 0%
+  pactl set-sink-volume 1356 0%
 else
   echo "on default"
 fi
