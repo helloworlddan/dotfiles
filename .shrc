@@ -97,13 +97,13 @@ codecopy() {
   codewrap | textcopy
 }
 
-commit_info() {
+commitinfo() {
   git show --quiet --show-signature HEAD | codewrap
   echo "remote reference: $(gh browse -c -n | sed 's/\/tree\//\/commit\//')"
 }
 
-commit_copy() {
-  commit_info | textcopy
+commitcopy() {
+  commitinfo | textcopy
 }
 
 ml() {
