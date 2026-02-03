@@ -176,8 +176,8 @@ alt + BackSpace
 
 # Lock screen with screenshot
 alt + Escape
-  gdmflexiserver
-  # i3lock -k -c 232323
+  i3lock -k -c 232323
+  # gdmflexiserver
  
 # Lock screen with screenshot
 alt + shift + Escape
