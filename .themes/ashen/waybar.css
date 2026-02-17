@@ -5,10 +5,40 @@
   color: #f5f5f5;
 }
 
-window#waybar {
+#waybar {
   border: 1px solid #f5f5f5;
 }
 
+#custom-clouddomain,
+#battery,
 #pulseaudio {
   color: #d87c4a;
+}
+
+#custom-cloudproject,
+#custom-fs,
+#temperature {
+  color: #b14242;
+}
+
+#custom-clouduser,
+#memory,
+#backlight {
+  color: #e49a44;
+}
+
+#custom-cloudregion,
+#custom-builds,
+#cpu,
+#network {
+  color: #4a8b8b;
+}
+
+#custom-weathercondition,
+#custom-timeutc,
+#custom-daylocal,
+#custom-track,
+#custom-icon_clock,
+#custom-layout {
+  color: #949494;
 }

@@ -8,7 +8,6 @@
     "spacing": 8,
     "margin": 5,
     "modules-left": [
-        "custom/offset",
         "hyprland/workspaces",
         "custom/offset",
         "custom/clouduser",
@@ -23,12 +22,14 @@
         "custom/track"
     ],
     "modules-center": [
+        "custom/offset",
         "custom/nettz",
         "custom/daylocal",
         "custom/datelocal",
         "custom/icon_clock",
         "custom/timelocal",
-        "custom/timeutc"
+        "custom/timeutc",
+        "custom/offset"
     ],
     "modules-right": [
         "custom/weathertemperature",
@@ -62,7 +63,7 @@
         "all-outputs": true,
         "active-only": true,
         "warp-on-scroll": false,
-        "format": "{icon}",
+        "format": " {icon}",
         "format-icons": {
             "1": "",
             "2": "",
