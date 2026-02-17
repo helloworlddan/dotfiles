@@ -5,7 +5,7 @@
     "position": "top",
     "height": 34,
     // "width": 1920, // Waybar width
-    "spacing": 6,
+    "spacing": 8,
     "margin": 5,
     "modules-left": [
         "hyprland/workspaces"
@@ -14,13 +14,25 @@
         "clock"
     ],
     "modules-right": [
+        "custom/weathertemperature",
+        "custom/weathercondition",
+        "custom/icon_builds",
+        "custom/builds",
+        "custom/icon_pulseaudio",
         "pulseaudio",
+        "custom/icon_backlight",
         "backlight",
+        "custom/icon_cpu",
         "cpu",
+        "custom/icon_memory",
         "memory",
+        "custom/icon_battery",
         "battery",
+        "custom/icon_temperature",
         "temperature",
+        "custom/icon_network",
         "network",
+        "custom/icon_keyboard",
         "custom/layout",
         "keyboard-state"
     ],
@@ -51,47 +63,87 @@
         "timezone": "Europe/Berlin",
         "format-alt": "{:%Y-%m-%d}"
     },
-    "cpu": {
-        "format": " {usage}",
-        "tooltip": false
+    "custom/weathertemperature": {
+        "interval": 600,
+        "exec": "curl -s 'wttr.in?format=%t'"
     },
-    "memory": {
-        "format": " {}"
+    "custom/weathercondition": {
+        "interval": 600,
+        "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'"
     },
-    "temperature": {
-        "critical-threshold": 80,
-        "format": " {temperatureC}"
+    "custom/icon_builds": {
+        "interval": "once",
+        "exec": "echo '󱇶 '"
     },
-    "backlight": {
-        "format": "󰚵 {percent}"
+    "custom/builds": {
+        "interval": 10,
+        "exec": "gcloud builds list --ongoing --format json | jq length"
     },
-    "battery": {
-        "states": {
-             "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}",
-        "format-full": " {capacity}",
-        "format-charging": " {capacity}",
-        "format-plugged": " {capacity}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        "format-wifi": " {signalStrength}",
-        "format-ethernet": "󰈀 ",
-        "format-disconnected": " "
+    "custom/icon_pulseaudio": {
+        "interval": "once",
+        "exec": "echo ''"
     },
     "pulseaudio": {
         "scroll-step": 1,
-        "format": "󰕾 {volume}",
-        "format-bluetooth": "󰂯 {volume}",
-        "format-muted": " "
+        "format": "{volume}"
     },
-  "custom/layout" : {
-
-
-  },
+    "custom/icon_backlight": {
+        "interval": "once",
+        "exec": "echo '󰚵'"
+    },
+    "backlight": {
+        "format": "{percent}"
+    },
+  // TODO: root FS
+    "custom/icon_cpu": {
+        "interval": "once",
+        "exec": "echo ' '"
+    },
+    "cpu": {
+        "format": "{usage}",
+        "tooltip": false
+    },
+    "custom/icon_memory": {
+        "interval": "once",
+        "exec": "echo ' '"
+    },
+    "memory": {
+        "format": "{}"
+    },
+    "custom/icon_battery": {
+        "interval": "once",
+        "exec": "echo ' '"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}"
+    },
+    "custom/icon_temperature": {
+        "interval": "once",
+        "exec": "echo ''"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}"
+    },
+    "custom/icon_network": {
+        "interval": "once",
+        "exec": "echo ' '"
+    },
+    "network": {
+        "format-wifi": "{signalStrength}"
+    },
+    "custom/icon_keyboard" : {
+        "interval": "once",
+        "exec": "echo ' '"
+    },
+    "custom/layout" : {
+        "exec": "echo us"
+    },
     "keyboard-state": {
         "capslock": true,
         "format": "{icon}",
