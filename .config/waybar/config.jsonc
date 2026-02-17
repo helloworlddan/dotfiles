@@ -1,0 +1,103 @@
+// -*- mode: jsonc -*-
+{
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    // "width": 1920, // Waybar width
+    "spacing": 6,
+    "margin": 5,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "cpu",
+        "memory",
+        "battery",
+        "temperature",
+        "network",
+        "custom/layout",
+        "keyboard-state"
+    ],
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "active-only": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "󱔗",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "󰺻",
+            "8": "󰃰",
+            "9": "",
+            "10": "",
+            "11": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "clock": {
+        "timezone": "Europe/Berlin",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": " {usage}",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": " {temperatureC}"
+    },
+    "backlight": {
+        "format": "󰚵 {percent}"
+    },
+    "battery": {
+        "states": {
+             "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}",
+        "format-full": " {capacity}",
+        "format-charging": " {capacity}",
+        "format-plugged": " {capacity}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": " {signalStrength}",
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": " "
+    },
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "󰕾 {volume}",
+        "format-bluetooth": "󰂯 {volume}",
+        "format-muted": " "
+    },
+  "custom/layout" : {
+
+
+  },
+    "keyboard-state": {
+        "capslock": true,
+        "format": "{icon}",
+        "format-icons": {
+            "locked": "caps",
+            "unlocked": ""
+        }
+    }
+}
