@@ -8,20 +8,29 @@
     "spacing": 8,
     "margin": 5,
     "modules-left": [
+        "custom/offset",
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "clock"
+        "custom/nettz",
+        "custom/daylocal",
+        "custom/datelocal",
+        "custom/icon_clock",
+        "custom/timelocal",
+        "custom/timeutc"
     ],
     "modules-right": [
         "custom/weathertemperature",
         "custom/weathercondition",
+        "custom/offset",
         "custom/icon_builds",
         "custom/builds",
-        "custom/icon_pulseaudio",
-        "pulseaudio",
         "custom/icon_backlight",
         "backlight",
+        "custom/icon_pulseaudio",
+        "pulseaudio",
+        "custom/icon_fs",
+        "custom/fs",
         "custom/icon_cpu",
         "cpu",
         "custom/icon_memory",
@@ -34,7 +43,8 @@
         "network",
         "custom/icon_keyboard",
         "custom/layout",
-        "keyboard-state"
+        "keyboard-state",
+        "custom/offset"
     ],
     "hyprland/workspaces": {
         "disable-scroll": false,
@@ -59,9 +69,30 @@
             "default": ""
         }
     },
-    "clock": {
-        "timezone": "Europe/Berlin",
-        "format-alt": "{:%Y-%m-%d}"
+
+    "custom/nettz": {
+        "interval": 600,
+        "exec": "curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq -r '.country'"
+    },
+    "custom/daylocal": {
+        "interval": 600,
+        "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%a'"
+    },
+    "custom/datelocal": {
+        "interval": 600,
+        "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%y-%m-%d'"
+    },
+    "custom/icon_clock": {
+        "interval": "once",
+        "exec": "echo '󱑌 '"
+    },
+    "custom/timelocal": {
+        "interval": 10,
+        "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%H:%M'"
+    },
+    "custom/timeutc": {
+        "interval": 10,
+        "exec": "TZ=UTC date +'%H:%M'"
     },
     "custom/weathertemperature": {
         "interval": 600,
@@ -79,6 +110,13 @@
         "interval": 10,
         "exec": "gcloud builds list --ongoing --format json | jq length"
     },
+    "custom/icon_backlight": {
+        "interval": "once",
+        "exec": "echo '󰚵'"
+    },
+    "backlight": {
+        "format": "{percent}"
+    },
     "custom/icon_pulseaudio": {
         "interval": "once",
         "exec": "echo ''"
@@ -87,14 +125,14 @@
         "scroll-step": 1,
         "format": "{volume}"
     },
-    "custom/icon_backlight": {
+    "custom/icon_fs": {
         "interval": "once",
-        "exec": "echo '󰚵'"
+        "exec": "echo '󰋊'"
     },
-    "backlight": {
-        "format": "{percent}"
+    "custom/fs": {
+        "interval": 3600,
+        "exec": "df / --output=pcent | tail -1 | tr -dc '0-9'"
     },
-  // TODO: root FS
     "custom/icon_cpu": {
         "interval": "once",
         "exec": "echo ' '"
@@ -151,5 +189,9 @@
             "locked": "caps",
             "unlocked": ""
         }
+    },
+    "custom/offset": {
+        "interval": "once",
+        "exec": "echo ' '"
     }
 }
