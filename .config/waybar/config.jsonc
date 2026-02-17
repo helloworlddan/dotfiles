@@ -9,7 +9,18 @@
     "margin": 5,
     "modules-left": [
         "custom/offset",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "custom/offset",
+        "custom/clouduser",
+        "custom/icon_at",
+        "custom/clouddomain",
+        "custom/icon_project",
+        "custom/cloudproject",
+        "custom/icon_server",
+        "custom/cloudregion",
+        "custom/offset",
+        "custom/artist",
+        "custom/track"
     ],
     "modules-center": [
         "custom/nettz",
@@ -69,7 +80,44 @@
             "default": ""
         }
     },
-
+    "custom/clouduser": {
+        "interval": 10,
+        "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null | awk '/account/{print $3}' | awk -F'@' '{print $1}'"
+    },
+    "custom/icon_at": {
+        "interval": "once",
+        "exec": "echo ' '"
+    },
+    "custom/clouddomain": {
+        "interval": 10,
+        "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/account/{print $3}' | awk -F'@' '{print $2}'"
+    },
+    "custom/icon_project": {
+        "interval": "once",
+        "exec": "echo ' '"
+    },
+    "custom/cloudproject": {
+        "interval": 10,
+        "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/project/{print $3}'"
+    },
+    "custom/icon_server": {
+        "interval": "once",
+        "exec": "echo ' '"
+    },
+    "custom/cloudregion": {
+        "interval": 10,
+        "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/region/{print $3}'"
+    },
+    "custom/artist": {
+        "interval": 10,
+        // "max-length": 80,
+        "exec": "baton status | grep -Po '^Artist: \\K(.*)$'"
+    },
+    "custom/track": {
+        "interval": 10,
+        // "max-length": 80,
+        "exec": "baton status | grep -Po '^Track: \\K(.*)$'"
+    },
     "custom/nettz": {
         "interval": 600,
         "exec": "curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq -r '.country'"
