@@ -1,0 +1,13 @@
+mode=run
+allow_images=false
+insensitive=true
+prompt=$
+width=666
+height=200
+fixed_num_lines=true
+
+location=2
+yoffset=5
+xoffset=0
+
+filter_rate=100
