@@ -4,11 +4,8 @@
   "name": "Ashen",
   "theme": {
     "images": {
-      "theme_tab_background": "theme_tab_background.png",
-      "theme_frame_overlay": "theme_frame_overlay.png",
-      "theme_ntp_attribution": "theme_ntp_attribution.png",
-      "theme_window_control_background": "theme_window_control_background.png",
-      "theme_ntp_background": "theme_ntp_background.png"
+      "theme_ntp_background": "theme_ntp_background.png",
+      "theme_tab_background": "theme_tab_background.png"
     },
     "colors": {
       "frame": [
@@ -27,9 +24,9 @@
         245
       ],
       "tab_background_text": [
-        245,
-        245,
-        245
+        201,
+        201,
+        201
       ],
       "bookmark_text": [
         245,
@@ -42,9 +39,9 @@
         245
       ],
       "ntp_link": [
-        245,
-        245,
-        245
+        74,
+        139,
+        139
       ],
       "ntp_header": [
         245,
@@ -57,9 +54,9 @@
         35
       ],
       "toolbar_text": [
-        60,
-        64,
-        67
+        245,
+        245,
+        245
       ],
       "button_background": [
         0,
@@ -68,9 +65,9 @@
         0
       ],
       "omnibox_background": [
-        166,
-        166,
-        166
+        245,
+        245,
+        245
       ],
       "omnibox_text": [
         18,
