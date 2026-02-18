@@ -7,7 +7,7 @@
 window {
   background-color: #121212;
   color: #f5f5f5;
-  border: 2px solid #f5f5f5;
+  border: 1px solid #f5f5f5;
 }
 
 #outer-box {
@@ -15,17 +15,23 @@ window {
 }
 
 #input {
-  margin: 5px 5px 20px 5px;
+  margin: 5px 5px 5px 5px;
   border: none;
   background-color: #121212;
   color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+}
+
+#input image {
+  color: transparent;
+  background-image: none;
+  display: none;
 }
 
 #inner-box {
   background-color: #121212;
 }
 
-/* List view spacing */
 #scroll {
   margin-top: 2px;
 }
@@ -36,8 +42,6 @@ window {
 }
 
 #entry:selected {
-  /* Rofi config didn't specify a selection color, 
-       but usually, we want a slight highlight */
   background-color: #121212;
 }
 
@@ -46,7 +50,6 @@ window {
   margin-left: 10px;
 }
 
-/* Matching your element-text highlight color (@green) */
 #text:selected {
   color: #d87c4a;
 }
