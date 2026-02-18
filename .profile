@@ -6,3 +6,5 @@ if [ -e "${HOME}/.shrc" ]; then
   source "${HOME}/.shrc"
   . "${HOME}/.shrc"
 fi
+
+[ -f "/home/stamer/.ghcup/env" ] && . "/home/stamer/.ghcup/env" # ghcup-env

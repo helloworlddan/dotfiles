@@ -1,246 +1,248 @@
 // -*- mode: jsonc -*-
 {
-    "reload_style_on_change": true,
-    "layer": "top",
-    "position": "top",
-    "height": 34,
-    // "width": 1920, // Waybar width
-    "spacing": 8,
-    "margin": 5,
-    "modules-left": [
-        "hyprland/workspaces",
-        "custom/offset",
-        "custom/clouduser",
-        "custom/icon_at",
-        "custom/clouddomain",
-        "custom/icon_project",
-        "custom/cloudproject",
-        "custom/icon_server",
-        "custom/cloudregion",
-        "custom/offset",
-        "custom/artist",
-        "custom/track"
-    ],
-    "modules-center": [
-        "custom/offset",
-        "custom/nettz",
-        "custom/daylocal",
-        "custom/datelocal",
-        "custom/icon_clock",
-        "custom/timelocal",
-        "custom/timeutc",
-        "custom/offset"
-    ],
-    "modules-right": [
-        "custom/weathertemperature",
-        "custom/weathercondition",
-        "custom/offset",
-        "custom/icon_builds",
-        "custom/builds",
-        "custom/icon_backlight",
-        "backlight",
-        "custom/icon_pulseaudio",
-        "pulseaudio",
-        "custom/icon_fs",
-        "custom/fs",
-        "custom/icon_cpu",
-        "cpu",
-        "custom/icon_memory",
-        "memory",
-        "custom/icon_battery",
-        "battery",
-        "custom/icon_temperature",
-        "temperature",
-        "custom/icon_network",
-        "network",
-        "custom/icon_keyboard",
-        "custom/layout",
-        "keyboard-state",
-        "custom/offset"
-    ],
-    "hyprland/workspaces": {
-        "disable-scroll": false,
-        "all-outputs": true,
-        "active-only": true,
-        "warp-on-scroll": false,
-        "format": " {icon}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "󱔗",
-            "4": "",
-            "5": "",
-            "6": "",
-            "7": "󰺻",
-            "8": "󰃰",
-            "9": "",
-            "10": "",
-            "11": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
-    },
-    "custom/clouduser": {
-        "interval": 10,
-        "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null | awk '/account/{print $3}' | awk -F'@' '{print $1}'"
-    },
-    "custom/icon_at": {
-        "interval": "once",
-        "exec": "echo ' '"
-    },
-    "custom/clouddomain": {
-        "interval": 10,
-        "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/account/{print $3}' | awk -F'@' '{print $2}'"
-    },
-    "custom/icon_project": {
-        "interval": "once",
-        "exec": "echo ' '"
-    },
-    "custom/cloudproject": {
-        "interval": 10,
-        "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/project/{print $3}'"
-    },
-    "custom/icon_server": {
-        "interval": "once",
-        "exec": "echo ' '"
-    },
-    "custom/cloudregion": {
-        "interval": 10,
-        "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/region/{print $3}'"
-    },
-    "custom/artist": {
-        "interval": 10,
-        // "max-length": 80,
-        "exec": "baton status | grep -Po '^Artist: \\K(.*)$'"
-    },
-    "custom/track": {
-        "interval": 10,
-        // "max-length": 80,
-        "exec": "baton status | grep -Po '^Track: \\K(.*)$'"
-    },
-    "custom/nettz": {
-        "interval": 600,
-        "exec": "curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq -r '.country'"
-    },
-    "custom/daylocal": {
-        "interval": 600,
-        "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%a'"
-    },
-    "custom/datelocal": {
-        "interval": 600,
-        "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%y-%m-%d'"
-    },
-    "custom/icon_clock": {
-        "interval": "once",
-        "exec": "echo '󱑌 '"
-    },
-    "custom/timelocal": {
-        "interval": 10,
-        "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%H:%M'"
-    },
-    "custom/timeutc": {
-        "interval": 10,
-        "exec": "TZ=UTC date +'%H:%M'"
-    },
-    "custom/weathertemperature": {
-        "interval": 600,
-        "exec": "curl -s 'wttr.in?format=%t'"
-    },
-    "custom/weathercondition": {
-        "interval": 600,
-        "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'"
-    },
-    "custom/icon_builds": {
-        "interval": "once",
-        "exec": "echo '󱇶 '"
-    },
-    "custom/builds": {
-        "interval": 10,
-        "exec": "gcloud builds list --ongoing --format json | jq length"
-    },
-    "custom/icon_backlight": {
-        "interval": "once",
-        "exec": "echo '󰚵'"
-    },
-    "backlight": {
-        "format": "{percent}"
-    },
-    "custom/icon_pulseaudio": {
-        "interval": "once",
-        "exec": "echo ''"
-    },
-    "pulseaudio": {
-        "scroll-step": 1,
-        "format": "{volume}"
-    },
-    "custom/icon_fs": {
-        "interval": "once",
-        "exec": "echo '󰋊'"
-    },
-    "custom/fs": {
-        "interval": 3600,
-        "exec": "df / --output=pcent | tail -1 | tr -dc '0-9'"
-    },
-    "custom/icon_cpu": {
-        "interval": "once",
-        "exec": "echo ' '"
-    },
-    "cpu": {
-        "format": "{usage}",
-        "tooltip": false
-    },
-    "custom/icon_memory": {
-        "interval": "once",
-        "exec": "echo ' '"
-    },
-    "memory": {
-        "format": "{}"
-    },
-    "custom/icon_battery": {
-        "interval": "once",
-        "exec": "echo ' '"
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}"
-    },
-    "custom/icon_temperature": {
-        "interval": "once",
-        "exec": "echo ''"
-    },
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{temperatureC}"
-    },
-    "custom/icon_network": {
-        "interval": "once",
-        "exec": "echo ' '"
-    },
-    "network": {
-        "format-wifi": "{signalStrength}"
-    },
-    "custom/icon_keyboard" : {
-        "interval": "once",
-        "exec": "echo ' '"
-    },
-    "custom/layout" : {
-        "exec": "echo us"
-    },
-    "keyboard-state": {
-        "capslock": true,
-        "format": "{icon}",
-        "format-icons": {
-            "locked": "caps",
-            "unlocked": ""
-        }
-    },
-    "custom/offset": {
-        "interval": "once",
-        "exec": "echo ' '"
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  // "width": 1920, // Waybar width
+  "spacing": 8,
+  "margin": 5,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/offset",
+    "custom/clouduser",
+    "custom/icon_at",
+    "custom/clouddomain",
+    "custom/icon_project",
+    "custom/cloudproject",
+    "custom/icon_server",
+    "custom/cloudregion",
+    "custom/offset",
+    "custom/artist",
+    "custom/track"
+  ],
+  "modules-center": [
+    "custom/offset",
+    "custom/nettz",
+    "custom/daylocal",
+    "custom/datelocal",
+    "custom/icon_clock",
+    "custom/timelocal",
+    "custom/timeutc",
+    "custom/offset"
+  ],
+  "modules-right": [
+    "custom/weathertemperature",
+    "custom/weathercondition",
+    "custom/offset",
+    "custom/icon_builds",
+    "custom/builds",
+    "custom/icon_backlight",
+    "backlight",
+    "custom/icon_pulseaudio",
+    "pulseaudio",
+    "custom/icon_fs",
+    "custom/fs",
+    "custom/icon_cpu",
+    "cpu",
+    "custom/icon_memory",
+    "memory",
+    "custom/icon_battery",
+    "battery",
+    "custom/icon_temperature",
+    "temperature",
+    "custom/icon_network",
+    "network",
+    "custom/icon_keyboard",
+    "custom/layout",
+    "keyboard-state",
+    "custom/offset"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "active-only": true,
+    "warp-on-scroll": false,
+    "format": " {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󱔗",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "󰺻",
+      "8": "󰃰",
+      "9": "",
+      "10": "",
+      "11": "",
+      "urgent": "",
+      "focused": "",
+      "default": ""
     }
+  },
+  "custom/clouduser": {
+    "interval": 10,
+    "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null | awk '/account/{print $3}' | awk -F'@' '{print $1}'"
+  },
+  "custom/icon_at": {
+    "interval": "once",
+    "exec": "echo ' '"
+  },
+  "custom/clouddomain": {
+    "interval": 10,
+    "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/account/{print $3}' | awk -F'@' '{print $2}'"
+  },
+  "custom/icon_project": {
+    "interval": "once",
+    "exec": "echo ' '"
+  },
+  "custom/cloudproject": {
+    "interval": 10,
+    "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/project/{print $3}'"
+  },
+  "custom/icon_server": {
+    "interval": "once",
+    "exec": "echo ' '"
+  },
+  "custom/cloudregion": {
+    "interval": 10,
+    "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/region/{print $3}'"
+  },
+  "custom/artist": {
+    "interval": 10,
+    // "max-length": 80,
+    "exec": "baton status | grep -Po '^Artist: \\K(.*)$'"
+  },
+  "custom/track": {
+    "interval": 10,
+    // "max-length": 80,
+    "exec": "baton status | grep -Po '^Track: \\K(.*)$'"
+  },
+  "custom/nettz": {
+    "interval": 600,
+    "exec": "curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq -r '.country'"
+  },
+  "custom/daylocal": {
+    "interval": 600,
+    "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%a'"
+  },
+  "custom/datelocal": {
+    "interval": 600,
+    "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%y-%m-%d'"
+  },
+  "custom/icon_clock": {
+    "interval": "once",
+    "exec": "echo '󱑌 '"
+  },
+  "custom/timelocal": {
+    "interval": 10,
+    "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%H:%M'"
+  },
+  "custom/timeutc": {
+    "interval": 10,
+    "exec": "TZ=UTC date +'%H:%M'"
+  },
+  "custom/weathertemperature": {
+    "interval": 600,
+    "exec": "curl -s 'wttr.in?format=%t'"
+  },
+  "custom/weathercondition": {
+    "interval": 600,
+    "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'"
+  },
+  "custom/icon_builds": {
+    "interval": "once",
+    "exec": "echo '󱇶 '"
+  },
+  "custom/builds": {
+    "interval": 10,
+    "exec": "gcloud builds list --ongoing --format json | jq length"
+  },
+  "custom/icon_backlight": {
+    "interval": "once",
+    "exec": "echo '󰚵'",
+    "exec-if": "stat /sys/class/power_supply/intel_backlight"
+  },
+  "backlight": {
+    "format": "{percent}"
+  },
+  "custom/icon_pulseaudio": {
+    "interval": "once",
+    "exec": "echo ''"
+  },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{volume}"
+  },
+  "custom/icon_fs": {
+    "interval": "once",
+    "exec": "echo '󰋊'"
+  },
+  "custom/fs": {
+    "interval": 3600,
+    "exec": "df / --output=pcent | tail -1 | tr -dc '0-9'"
+  },
+  "custom/icon_cpu": {
+    "interval": "once",
+    "exec": "echo ' '"
+  },
+  "cpu": {
+    "format": "{usage}",
+    "tooltip": false
+  },
+  "custom/icon_memory": {
+    "interval": "once",
+    "exec": "echo ' '"
+  },
+  "memory": {
+    "format": "{}"
+  },
+  "custom/icon_battery": {
+    "interval": "once",
+    "exec": "echo ' '",
+    "exec-if": "stat /sys/class/power_supply/BAT0"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}"
+  },
+  "custom/icon_temperature": {
+    "interval": "once",
+    "exec": "echo ''"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{temperatureC}"
+  },
+  "custom/icon_network": {
+    "interval": "once",
+    "exec": "echo ' '"
+  },
+  "network": {
+    "format-wifi": "{signalStrength}"
+  },
+  "custom/icon_keyboard": {
+    "interval": "once",
+    "exec": "echo ' '"
+  },
+  "custom/layout": {
+    "exec": "echo us"
+  },
+  "keyboard-state": {
+    "capslock": true,
+    "format": "{icon}",
+    "format-icons": {
+      "locked": "caps",
+      "unlocked": ""
+    }
+  },
+  "custom/offset": {
+    "interval": "once",
+    "exec": "echo ' '"
+  }
 }

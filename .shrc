@@ -483,3 +483,5 @@ snippet() {
 
 # Initializers
 test -r ${HOME}/.ghcup/env && . ${HOME}/.ghcup/env
+
+[ -f "/home/stamer/.ghcup/env" ] && . "/home/stamer/.ghcup/env" # ghcup-env
