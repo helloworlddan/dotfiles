@@ -60,7 +60,7 @@
     ],
     "hyprland/workspaces": {
         "disable-scroll": false,
-        "all-outputs": true,
+        "all-outputs": false,
         "active-only": true,
         "warp-on-scroll": false,
         "format": " {icon}",
@@ -76,6 +76,7 @@
             "9": "",
             "10": "",
             "11": "",
+            "12": "󰍺",
             "urgent": "",
             "focused": "",
             "default": ""

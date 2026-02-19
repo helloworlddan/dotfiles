@@ -39,3 +39,11 @@ window#waybar {
 #custom-layout {
   color: #949494;
 }
+
+#workspaces button:hover {
+  background: none;
+  box-shadow: none;
+  border: none;
+  transition: none;
+  text-shadow: none;
+}

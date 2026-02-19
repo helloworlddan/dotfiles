@@ -287,6 +287,7 @@ hswitchscreen() {
     hyprctl dispatch moveworkspacetomonitor 3 DP-1
     hyprctl dispatch moveworkspacetomonitor 4 DP-1
     hyprctl dispatch moveworkspacetomonitor 5 DP-1
+    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
     hyprctl dispatch moveworkspacetomonitor 6 DP-1
     hyprctl dispatch moveworkspacetomonitor 7 DP-1
     hyprctl dispatch moveworkspacetomonitor 8 DP-1
@@ -305,6 +306,7 @@ hswitchscreen() {
     hyprctl dispatch moveworkspacetomonitor 9 eDP-1
     hyprctl dispatch moveworkspacetomonitor 10 eDP-1
     hyprctl dispatch moveworkspacetomonitor 11 eDP-1
+    hyprctl dispatch moveworkspacetomonitor 12 DP-1
   else
     echo "unknown monitor supplied: use main or external"
   fi
