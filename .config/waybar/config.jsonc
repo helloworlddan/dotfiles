@@ -223,7 +223,8 @@
         "exec": "echo ' '"
     },
     "network": {
-        "format-wifi": "{signalStrength}"
+        "format-wifi": "{signalStrength}",
+        "format-ethernet": "100"
     },
     "custom/icon_keyboard" : {
         "interval": "once",
