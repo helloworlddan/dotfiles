@@ -282,19 +282,21 @@ hswitchscreen() {
   if [ -z ${1} ]; then
     echo "no monitor supplied"
   elif [ ${1} == "external" ]; then
+    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
     hyprctl dispatch moveworkspacetomonitor 1 DP-1
     hyprctl dispatch moveworkspacetomonitor 2 DP-1
     hyprctl dispatch moveworkspacetomonitor 3 DP-1
     hyprctl dispatch moveworkspacetomonitor 4 DP-1
     hyprctl dispatch moveworkspacetomonitor 5 DP-1
-    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
     hyprctl dispatch moveworkspacetomonitor 6 DP-1
     hyprctl dispatch moveworkspacetomonitor 7 DP-1
     hyprctl dispatch moveworkspacetomonitor 8 DP-1
     hyprctl dispatch moveworkspacetomonitor 9 DP-1
     hyprctl dispatch moveworkspacetomonitor 10 DP-1
     hyprctl dispatch moveworkspacetomonitor 11 DP-1
+    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
   elif [ ${1} == "main" ]; then
+    hyprctl dispatch moveworkspacetomonitor 12 DP-1
     hyprctl dispatch moveworkspacetomonitor 1 eDP-1
     hyprctl dispatch moveworkspacetomonitor 2 eDP-1
     hyprctl dispatch moveworkspacetomonitor 3 eDP-1
