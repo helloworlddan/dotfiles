@@ -224,7 +224,7 @@
     },
     "network": {
         "format-wifi": "{signalStrength}",
-        "format-ethernet": "100"
+        "format-ethernet": "e"
     },
     "custom/icon_keyboard" : {
         "interval": "once",
