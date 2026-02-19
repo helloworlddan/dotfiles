@@ -59,6 +59,7 @@
         "custom/offset"
     ],
     "hyprland/workspaces": {
+        "tooltip": false,
         "disable-scroll": false,
         "all-outputs": false,
         "active-only": true,
@@ -83,126 +84,156 @@
         }
     },
     "custom/clouduser": {
+        "tooltip": false,
         "interval": 10,
         "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null | awk '/account/{print $3}' | awk -F'@' '{print $1}'"
     },
     "custom/icon_at": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
     },
     "custom/clouddomain": {
+        "tooltip": false,
         "interval": 10,
         "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/account/{print $3}' | awk -F'@' '{print $2}'"
     },
     "custom/icon_project": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
     },
     "custom/cloudproject": {
+        "tooltip": false,
         "interval": 10,
         "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/project/{print $3}'"
     },
     "custom/icon_server": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
     },
     "custom/cloudregion": {
+        "tooltip": false,
         "interval": 10,
         "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/region/{print $3}'"
     },
     "custom/artist": {
+        "tooltip": false,
         "interval": 10,
         // "max-length": 80,
         "exec": "baton status | grep -Po '^Artist: \\K(.*)$'"
     },
     "custom/track": {
+        "tooltip": false,
         "interval": 10,
         // "max-length": 80,
         "exec": "baton status | grep -Po '^Track: \\K(.*)$'"
     },
     "custom/nettz": {
+        "tooltip": false,
         "interval": 600,
         "exec": "curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq -r '.country'"
     },
     "custom/daylocal": {
+        "tooltip": false,
         "interval": 600,
         "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%a'"
     },
     "custom/datelocal": {
+        "tooltip": false,
         "interval": 600,
         "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%y-%m-%d'"
     },
     "custom/icon_clock": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo '󱑌 '"
     },
     "custom/timelocal": {
+        "tooltip": false,
         "interval": 10,
         "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%H:%M'"
     },
     "custom/timeutc": {
+        "tooltip": false,
         "interval": 10,
         "exec": "TZ=UTC date +'%H:%M'"
     },
     "custom/weathertemperature": {
+        "tooltip": false,
         "interval": 600,
         "exec": "curl -s 'wttr.in?format=%t'"
     },
     "custom/weathercondition": {
+        "tooltip": false,
         "interval": 600,
         "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'"
     },
     "custom/icon_builds": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo '󱇶 '"
     },
     "custom/builds": {
+        "tooltip": false,
         "interval": 10,
         "exec": "gcloud builds list --ongoing --format json | jq length"
     },
     "custom/icon_backlight": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo '󰚵'"
     },
     "backlight": {
+        "tooltip": false,
         "format": "{percent}"
     },
     "custom/icon_pulseaudio": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ''"
     },
     "pulseaudio": {
+        "tooltip": false,
         "scroll-step": 1,
         "format": "{volume}"
     },
     "custom/icon_fs": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo '󰋊'"
     },
     "custom/fs": {
+        "tooltip": false,
         "interval": 3600,
         "exec": "df / --output=pcent | tail -1 | tr -dc '0-9'"
     },
     "custom/icon_cpu": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
     },
     "cpu": {
-        "format": "{usage}",
-        "tooltip": false
+        "tooltip": false,
+        "format": "{usage}"
     },
     "custom/icon_memory": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
     },
     "memory": {
+        "tooltip": false,
         "format": "{}"
     },
     "custom/icon_battery": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
     },
     "battery": {
+        "tooltip": false,
         "states": {
             "good": 95,
             "warning": 30,
@@ -211,29 +242,36 @@
         "format": "{capacity}"
     },
     "custom/icon_temperature": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ''"
     },
     "temperature": {
+        "tooltip": false,
         "critical-threshold": 80,
         "format": "{temperatureC}"
     },
     "custom/icon_network": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
     },
     "network": {
+        "tooltip": false,
         "format-wifi": "{signalStrength}",
         "format-ethernet": "e"
     },
     "custom/icon_keyboard" : {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
     },
     "custom/layout" : {
+        "tooltip": false,
         "exec": "echo us"
     },
     "keyboard-state": {
+        "tooltip": false,
         "capslock": true,
         "format": "{icon}",
         "format-icons": {
@@ -242,6 +280,7 @@
         }
     },
     "custom/offset": {
+        "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
     }
