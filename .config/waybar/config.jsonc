@@ -42,8 +42,8 @@
         "backlight",
         "custom/icon_pulseaudio",
         "pulseaudio",
-        "custom/icon_fs",
-        "custom/fs",
+        "custom/icon_disk",
+        "disk",
         "custom/icon_cpu",
         "cpu",
         "custom/icon_memory",
@@ -214,20 +214,21 @@
         "format": "{volume}"
 
     },
-    "custom/icon_fs": {
+    "custom/icon_disk": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo '󰋊'"
+        "exec": "echo '󰋊'",
+        "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && ranger' &"
     },
-    "custom/fs": {
+    "disk": {
         "tooltip": false,
-        "interval": 3600,
-        "exec": "df / --output=pcent | tail -1 | tr -dc '0-9'"
+        "format": "{percentage_used}"
     },
     "custom/icon_cpu": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo ' '"
+        "exec": "echo ' '",
+        "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && htop' &"
     },
     "cpu": {
         "tooltip": false,
@@ -236,7 +237,8 @@
     "custom/icon_memory": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo ' '"
+        "exec": "echo ' '",
+        "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && htop' &"
     },
     "memory": {
         "tooltip": false,
@@ -245,7 +247,8 @@
     "custom/icon_battery": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo ' '"
+        "exec": "echo ' '",
+        "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && upower -i /org/freedesktop/UPower/devices/battery_BAT0' &"
     },
     "battery": {
         "tooltip": false,
@@ -259,7 +262,8 @@
     "custom/icon_temperature": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo ''"
+        "exec": "echo ''",
+        "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && s-tui' &"
     },
     "temperature": {
         "tooltip": false,

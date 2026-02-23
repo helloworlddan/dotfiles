@@ -13,7 +13,7 @@ window#waybar {
 }
 
 #custom-cloudproject,
-#custom-fs,
+#disk,
 #custom-builds,
 #temperature {
   color: #b14242;
