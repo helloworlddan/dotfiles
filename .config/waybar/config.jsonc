@@ -284,11 +284,12 @@
     "custom/icon_keyboard" : {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo ' '"
+        "exec": "echo ' '",
+        "on-click": "xrdb -load ~/.Xresources && xterm -class corne -geometry 82x20  -hold -e 'cat ~/Code/github.com/helloworlddan/corne/layout.txt'"
     },
     "custom/layout" : {
         "tooltip": false,
-        "exec": "echo us"
+        "exec": "hyprctl getoption input:kb_layout | head -n 1 | cut -c6-7"
     },
     "keyboard-state": {
         "tooltip": false,
