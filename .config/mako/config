@@ -5,5 +5,9 @@ progress-color=#b14242ff
 anchor=top-center
 border-size=1
 margin=5
+height=200
+width=400
+icon-location=right
+max-icon-size=24
 font=JetBrains Mono Nerd Font 11
 
