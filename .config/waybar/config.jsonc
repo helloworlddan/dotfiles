@@ -4,7 +4,6 @@
     "layer": "top",
     "position": "top",
     "height": 34,
-    // "width": 1920, // Waybar width
     "spacing": 8,
     "margin": 5,
     "modules-left": [
@@ -37,6 +36,8 @@
         "custom/offset",
         "custom/icon_builds",
         "custom/builds",
+        "custom/icon_bluetooth",
+        "bluetooth",
         "custom/icon_backlight",
         "backlight",
         "custom/icon_pulseaudio",
@@ -163,12 +164,14 @@
     "custom/weathertemperature": {
         "tooltip": false,
         "interval": 600,
-        "exec": "curl -s 'wttr.in?format=%t'"
+        "exec": "curl -s 'wttr.in?format=%t'",
+        "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && curl wttr.in' &"
     },
     "custom/weathercondition": {
         "tooltip": false,
         "interval": 600,
-        "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'"
+        "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'",
+        "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && curl wttr.in' &"
     },
     "custom/icon_builds": {
         "tooltip": false,
@@ -179,6 +182,16 @@
         "tooltip": false,
         "interval": 10,
         "exec": "gcloud builds list --ongoing --format json | jq length"
+    },
+    "custom/icon_bluetooth": {
+        "tooltip": false,
+        "interval": "once",
+        "exec": "echo '󰂯'",
+        "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && bluetui' &"
+    },
+    "bluetooth": {
+        "tooltip": false,
+        "format": "{num_connections}"
     },
     "custom/icon_backlight": {
         "tooltip": false,
@@ -192,12 +205,14 @@
     "custom/icon_pulseaudio": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo ''"
+        "exec": "echo ''",
+        "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && pulsemixer' &"
     },
     "pulseaudio": {
         "tooltip": false,
         "scroll-step": 1,
         "format": "{volume}"
+
     },
     "custom/icon_fs": {
         "tooltip": false,
@@ -254,7 +269,8 @@
     "custom/icon_network": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo ' '"
+        "exec": "echo ' '",
+        "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && nmtui' &"
     },
     "network": {
         "tooltip": false,
