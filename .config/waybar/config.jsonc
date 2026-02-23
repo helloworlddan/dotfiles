@@ -14,7 +14,7 @@
         "custom/clouddomain",
         "custom/icon_project",
         "custom/cloudproject",
-        "custom/icon_server",
+        "custom/icon_region",
         "custom/cloudregion",
         "custom/offset",
         "custom/artist",
@@ -109,7 +109,7 @@
         "interval": 10,
         "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/project/{print $3}'"
     },
-    "custom/icon_server": {
+    "custom/icon_region": {
         "tooltip": false,
         "interval": "once",
         "exec": "echo ' '"
