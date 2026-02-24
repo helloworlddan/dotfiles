@@ -165,13 +165,13 @@
     "tooltip": false,
     "interval": 600,
     "exec": "curl -s 'wttr.in?format=%t'",
-    "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && curl wttr.in' &"
+    "on-click": "foot -H curl wttr.in"
   },
   "custom/weathercondition": {
     "tooltip": false,
     "interval": 600,
     "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'",
-    "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && curl wttr.in' &"
+    "on-click": "foot -H curl wttr.in"
   },
   "custom/icon_builds": {
     "tooltip": false,
@@ -187,7 +187,7 @@
     "tooltip": false,
     "interval": "once",
     "exec": "echo '󰂯'",
-    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && bluetui' &"
+    "on-click": "foot bluetui"
   },
   "bluetooth": {
     "tooltip": false,
@@ -196,7 +196,7 @@
   "custom/icon_backlight": {
     "tooltip": false,
     "interval": "once",
-    "exec-if": "stat /sys/class/backlight/intel_backlight",
+    // "exec-if": "stat /sys/class/backlight/intel_backlight",
     "exec": "echo '󰚵'"
   },
   "backlight": {
@@ -207,7 +207,7 @@
     "tooltip": false,
     "interval": "once",
     "exec": "echo ''",
-    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && pulsemixer' &"
+    "on-click": "foot pulsemixer"
   },
   "pulseaudio": {
     "tooltip": false,
@@ -218,7 +218,7 @@
     "tooltip": false,
     "interval": "once",
     "exec": "echo '󰋊'",
-    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && ranger' &"
+    "on-click": "foot ranger"
   },
   "disk": {
     "tooltip": false,
@@ -228,7 +228,7 @@
     "tooltip": false,
     "interval": "once",
     "exec": "echo ' '",
-    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && htop' &"
+    "on-click": "foot htop"
   },
   "cpu": {
     "tooltip": false,
@@ -238,7 +238,7 @@
     "tooltip": false,
     "interval": "once",
     "exec": "echo ' '",
-    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && htop' &"
+    "on-click": "foot htop"
   },
   "memory": {
     "tooltip": false,
@@ -247,9 +247,9 @@
   "custom/icon_battery": {
     "tooltip": false,
     "interval": "once",
-    "exec-if": "stat /sys/class/power_supply/BAT0",
+    // "exec-if": "stat /sys/class/power_supply/BAT0",
     "exec": "echo ' '",
-    "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && upower -i /org/freedesktop/UPower/devices/battery_BAT0' &"
+    "on-click": "foot -H upower -i /org/freedesktop/UPower/devices/battery_BAT0"
   },
   "battery": {
     "tooltip": false,
@@ -264,7 +264,7 @@
     "tooltip": false,
     "interval": "once",
     "exec": "echo ''",
-    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && s-tui' &"
+    "on-click": "foot s-tui"
   },
   "temperature": {
     "tooltip": false,
@@ -275,7 +275,7 @@
     "tooltip": false,
     "interval": "once",
     "exec": "echo ' '",
-    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && nmtui' &"
+    "on-click": "foot nmtui"
   },
   "network": {
     "tooltip": false,
@@ -286,7 +286,7 @@
     "tooltip": false,
     "interval": "once",
     "exec": "echo ' '",
-    "on-click": "xrdb -load ~/.Xresources && xterm -class corne -geometry 82x20  -hold -e 'cat ~/Code/github.com/helloworlddan/corne/layout.txt'"
+    "on-click": "foot -T corne -H cat Code/github.com/helloworlddan/corne/layout.txt"
   },
   "custom/layout": {
     "tooltip": false,
