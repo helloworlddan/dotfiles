@@ -13,7 +13,8 @@ window#waybar {
 }
 
 #custom-cloudproject,
-#custom-fs,
+#disk,
+#custom-builds,
 #temperature {
   color: #b14242;
 }
@@ -25,7 +26,7 @@ window#waybar {
 }
 
 #custom-cloudregion,
-#custom-builds,
+#bluetooth,
 #cpu,
 #network {
   color: #4a8b8b;

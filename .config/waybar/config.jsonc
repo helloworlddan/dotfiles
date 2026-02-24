@@ -4,7 +4,6 @@
   "layer": "top",
   "position": "top",
   "height": 34,
-  // "width": 1920, // Waybar width
   "spacing": 8,
   "margin": 5,
   "modules-left": [
@@ -15,7 +14,7 @@
     "custom/clouddomain",
     "custom/icon_project",
     "custom/cloudproject",
-    "custom/icon_server",
+    "custom/icon_region",
     "custom/cloudregion",
     "custom/offset",
     "custom/artist",
@@ -37,12 +36,14 @@
     "custom/offset",
     "custom/icon_builds",
     "custom/builds",
+    "custom/icon_bluetooth",
+    "bluetooth",
     "custom/icon_backlight",
     "backlight",
     "custom/icon_pulseaudio",
     "pulseaudio",
-    "custom/icon_fs",
-    "custom/fs",
+    "custom/icon_disk",
+    "disk",
     "custom/icon_cpu",
     "cpu",
     "custom/icon_memory",
@@ -108,7 +109,7 @@
     "interval": 10,
     "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/project/{print $3}'"
   },
-  "custom/icon_server": {
+  "custom/icon_region": {
     "tooltip": false,
     "interval": "once",
     "exec": "echo ' '"
@@ -163,12 +164,14 @@
   "custom/weathertemperature": {
     "tooltip": false,
     "interval": 600,
-    "exec": "curl -s 'wttr.in?format=%t'"
+    "exec": "curl -s 'wttr.in?format=%t'",
+    "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && curl wttr.in' &"
   },
   "custom/weathercondition": {
     "tooltip": false,
     "interval": 600,
-    "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'"
+    "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'",
+    "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && curl wttr.in' &"
   },
   "custom/icon_builds": {
     "tooltip": false,
@@ -179,6 +182,16 @@
     "tooltip": false,
     "interval": 10,
     "exec": "gcloud builds list --ongoing --format json | jq length"
+  },
+  "custom/icon_bluetooth": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo '󰂯'",
+    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && bluetui' &"
+  },
+  "bluetooth": {
+    "tooltip": false,
+    "format": "{num_connections}"
   },
   "custom/icon_backlight": {
     "tooltip": false,
@@ -192,27 +205,29 @@
   "custom/icon_pulseaudio": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ''"
+    "exec": "echo ''",
+    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && pulsemixer' &"
   },
   "pulseaudio": {
     "tooltip": false,
     "scroll-step": 1,
     "format": "{volume}"
   },
-  "custom/icon_fs": {
+  "custom/icon_disk": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo '󰋊'"
+    "exec": "echo '󰋊'",
+    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && ranger' &"
   },
-  "custom/fs": {
+  "disk": {
     "tooltip": false,
-    "interval": 3600,
-    "exec": "df / --output=pcent | tail -1 | tr -dc '0-9'"
+    "format": "{percentage_used}"
   },
   "custom/icon_cpu": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ' '"
+    "exec": "echo ' '",
+    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && htop' &"
   },
   "cpu": {
     "tooltip": false,
@@ -221,7 +236,8 @@
   "custom/icon_memory": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ' '"
+    "exec": "echo ' '",
+    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && htop' &"
   },
   "memory": {
     "tooltip": false,
@@ -230,7 +246,8 @@
   "custom/icon_battery": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ' '"
+    "exec": "echo ' '",
+    "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && upower -i /org/freedesktop/UPower/devices/battery_BAT0' &"
   },
   "battery": {
     "tooltip": false,
@@ -244,7 +261,8 @@
   "custom/icon_temperature": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ''"
+    "exec": "echo ''",
+    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && s-tui' &"
   },
   "temperature": {
     "tooltip": false,
@@ -254,7 +272,8 @@
   "custom/icon_network": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ' '"
+    "exec": "echo ' '",
+    "on-click": "xrdb -load ~/.Xresources && xterm -e 'source .shrc && nmtui' &"
   },
   "network": {
     "tooltip": false,
@@ -264,11 +283,13 @@
   "custom/icon_keyboard": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ' '"
+    "exec": "echo ' '",
+    "on-click": "xrdb -load ~/.Xresources && xterm -class corne -geometry 82x20  -hold -e 'cat ~/Code/github.com/helloworlddan/corne/layout.txt'"
   },
   "custom/layout": {
     "tooltip": false,
-    "exec": "echo us"
+    "interval": "60",
+    "exec": "hyprctl getoption input:kb_layout | head -n 1 | cut -c6-7"
   },
   "keyboard-state": {
     "tooltip": false,
