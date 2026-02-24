@@ -176,8 +176,7 @@
     "custom/icon_builds": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo '󱇶 '",
-        "on-click": "foot bash -c 'gbuildstream'"
+        "exec": "echo '󱇶 '"
     },
     "custom/builds": {
         "tooltip": false,
