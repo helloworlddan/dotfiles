@@ -196,6 +196,7 @@
   "custom/icon_backlight": {
     "tooltip": false,
     "interval": "once",
+    "exec-if": "stat /sys/class/backlight/intel_backlight",
     "exec": "echo '󰚵'"
   },
   "backlight": {
@@ -246,6 +247,7 @@
   "custom/icon_battery": {
     "tooltip": false,
     "interval": "once",
+    "exec-if": "stat /sys/class/power_supply/BAT0",
     "exec": "echo ' '",
     "on-click": "xrdb -load ~/.Xresources && xterm -hold -e 'source .shrc && upower -i /org/freedesktop/UPower/devices/battery_BAT0' &"
   },
