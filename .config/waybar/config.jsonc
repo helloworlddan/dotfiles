@@ -112,7 +112,7 @@
     "custom/icon_region": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo ' '"
+        "exec": "echo '󰒋 '"
     },
     "custom/cloudregion": {
         "tooltip": false,
@@ -129,7 +129,7 @@
         "tooltip": false,
         "interval": 10,
         // "max-length": 80,
-        "exec": "baton status | grep -Po '^Track: \\K(.*)$'"
+        "exec": "baton status | grep -Po '^Track:\\K(.*)$'"
     },
     "custom/nettz": {
         "tooltip": false,
@@ -176,7 +176,8 @@
     "custom/icon_builds": {
         "tooltip": false,
         "interval": "once",
-        "exec": "echo '󱇶 '"
+        "exec": "echo '󱇶 '",
+        "on-click": "foot -H bash -c 'gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format \"value(id)\") 2>/dev/null || echo no active builds'"
     },
     "custom/builds": {
         "tooltip": false,
@@ -187,7 +188,7 @@
         "tooltip": false,
         "interval": "once",
         "exec": "echo '󰂯'",
-        "on-click": "foot bluetui"
+        "on-click": "foot bash -c 'bluetui'"
     },
     "bluetooth": {
         "tooltip": false,
