@@ -123,13 +123,13 @@
         "tooltip": false,
         "interval": 10,
         // "max-length": 80,
-        "exec": "baton status | grep -Po '^Artist: \\K(.*)$'"
+        "exec": "baton status | grep -Po '(?<=Artist: ).*'"
     },
     "custom/track": {
         "tooltip": false,
         "interval": 10,
         // "max-length": 80,
-        "exec": "baton status | grep -Po '^Track:\\K(.*)$'"
+        "exec": "baton status | grep -Po '(?<=Track:).*'"
     },
     "custom/nettz": {
         "tooltip": false,
