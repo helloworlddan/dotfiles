@@ -282,7 +282,8 @@
     "network": {
         "tooltip": false,
         "format-wifi": "{signalStrength}",
-        "format-ethernet": "e"
+        "format-ethernet": "e",
+        "format-disconnected": "x"
     },
     "custom/icon_keyboard" : {
         "tooltip": false,
