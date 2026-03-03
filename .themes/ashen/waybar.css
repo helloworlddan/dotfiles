@@ -20,6 +20,7 @@ window#waybar {
 }
 
 #custom-clouduser,
+#custom-profile,
 #memory,
 #backlight {
   color: #e49a44;

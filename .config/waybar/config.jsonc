@@ -54,6 +54,8 @@
         "temperature",
         "custom/icon_network",
         "network",
+        "custom/icon_profile",
+        "custom/profile",
         "custom/icon_keyboard",
         "custom/layout",
         "keyboard-state",
@@ -197,7 +199,7 @@
     "custom/icon_backlight": {
         "tooltip": false,
         "interval": "once",
-        // "exec-if": "stat /sys/class/backlight/intel_backlight",
+        "exec-if": "ls /sys/class/backlight/ | grep -q .",
         "exec": "echo '󰚵'"
     },
     "backlight": {
@@ -249,7 +251,7 @@
     "custom/icon_battery": {
         "tooltip": false,
         "interval": "once",
-        // "exec-if": "stat /sys/class/power_supply/BAT0",
+        "exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
         "exec": "echo ' '",
         "on-click": "foot -H upower -i /org/freedesktop/UPower/devices/battery_BAT0"
     },
@@ -284,6 +286,19 @@
         "format-wifi": "{signalStrength}",
         "format-ethernet": "e",
         "format-disconnected": "x"
+    },
+    "custom/icon_profile": {
+        "tooltip": false,
+        "interval": "once",
+       // "exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
+        "exec": "echo '󰾆'",
+        "on-click": "powerprofilesctl set performance"
+    },
+    "custom/profile": {
+        "tooltip": false,
+        "interval": "10",
+        //"exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
+        "exec": "powerprofilesctl get | grep -oP '([^-]+-)\\K..|^..'"
     },
     "custom/icon_keyboard" : {
         "tooltip": false,
