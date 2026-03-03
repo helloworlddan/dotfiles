@@ -296,7 +296,7 @@
     },
     "custom/profile": {
         "tooltip": false,
-        "interval": "10",
+        "interval": 10,
         //"exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
         "exec": "powerprofilesctl get | grep -oP '([^-]+-)\\K..|^..'"
     },
@@ -308,7 +308,7 @@
     },
     "custom/layout" : {
         "tooltip": false,
-        "interval": "60",
+        "interval": 60,
         "exec": "hyprctl getoption input:kb_layout | head -n 1 | cut -c6-7"
     },
     "keyboard-state": {
