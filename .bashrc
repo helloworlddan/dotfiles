@@ -5,7 +5,6 @@ unset PROMPT_COMMAND
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export XDG_CONFIG_HOME="${HOME}/.config/"
-export TERM=xterm-256color
 export GPG_TTY=$(tty)
 export EDITOR="${HOME}/.local/bin/nvim"
 export VISUAL="${HOME}/.local/bin/nvim"
@@ -13,8 +12,6 @@ export PAGER="less"
 export GOPATH="${HOME}/.go"
 export PATH="${PATH}:${GOPATH}/bin:"
 export PATH="${PATH}:${HOME}/.local/bin"
-export PATH="${PATH}:${HOME}/.zig"
-export PATH="${PATH}:${HOME}/.pulumi/bin"
 export PATH="${PATH}:/usr/games"
 export PS1=" \[\e[1;35m\]\$(path_name) \[\e[0m\]\[\e[1;36m\]\$(branch_name) 
  \[\e[m\]\$ "
@@ -116,7 +113,7 @@ codewrap() {
 }
 
 textcopy() {
-  xclip -selection clipboard
+  wl-copy
 }
 
 codecopy() {
@@ -422,6 +419,7 @@ gproject() {
     echo "${project}"
   else
     gcloud config set project ${1}
+    gcloud application-default set-quota-project ${1}
     export GOOGLE_CLOUD_PROJECT="${1}"
   fi
 }
