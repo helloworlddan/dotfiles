@@ -190,7 +190,7 @@
         "tooltip": false,
         "interval": "once",
         "exec": "echo '󰂯'",
-        "on-click": "foot bash -c 'bluetui'"
+        "on-click": "foot bash -c 'source .bashrc && bluetui'"
     },
     "bluetooth": {
         "tooltip": false,
