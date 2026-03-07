@@ -54,6 +54,8 @@
     "temperature",
     "custom/icon_network",
     "network",
+    "custom/icon_profile",
+    "custom/profile",
     "custom/icon_keyboard",
     "custom/layout",
     "keyboard-state",
@@ -80,8 +82,7 @@
       "11": "",
       "12": "󰍺",
       "urgent": "",
-      "focused": "",
-      "default": ""
+      "focused": ""
     }
   },
   "custom/clouduser": {
@@ -188,7 +189,7 @@
     "tooltip": false,
     "interval": "once",
     "exec": "echo '󰂯'",
-    "on-click": "foot bash -c 'bluetui'"
+    "on-click": "foot bash -c 'source .bashrc && bluetui'"
   },
   "bluetooth": {
     "tooltip": false,
@@ -197,7 +198,7 @@
   "custom/icon_backlight": {
     "tooltip": false,
     "interval": "once",
-    // "exec-if": "stat /sys/class/backlight/intel_backlight",
+    "exec-if": "ls /sys/class/backlight/ | grep -q .",
     "exec": "echo '󰚵'"
   },
   "backlight": {
@@ -248,7 +249,7 @@
   "custom/icon_battery": {
     "tooltip": false,
     "interval": "once",
-    // "exec-if": "stat /sys/class/power_supply/BAT0",
+    "exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
     "exec": "echo ' '",
     "on-click": "foot -H upower -i /org/freedesktop/UPower/devices/battery_BAT0"
   },
@@ -281,7 +282,21 @@
   "network": {
     "tooltip": false,
     "format-wifi": "{signalStrength}",
-    "format-ethernet": "e"
+    "format-ethernet": "e",
+    "format-disconnected": "x"
+  },
+  "custom/icon_profile": {
+    "tooltip": false,
+    "interval": "once",
+    "exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
+    "exec": "echo '󰾆'",
+    "on-click": "powerprofilesctl set performance"
+  },
+  "custom/profile": {
+    "tooltip": false,
+    "interval": 10,
+    "exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
+    "exec": "powerprofilesctl get | grep -oP '([^-]+-)\\K..|^..'"
   },
   "custom/icon_keyboard": {
     "tooltip": false,
@@ -291,7 +306,7 @@
   },
   "custom/layout": {
     "tooltip": false,
-    "interval": "60",
+    "interval": 60,
     "exec": "hyprctl getoption input:kb_layout | head -n 1 | cut -c6-7"
   },
   "keyboard-state": {
