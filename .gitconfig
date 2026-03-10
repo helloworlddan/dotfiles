@@ -4,7 +4,7 @@
     gpgsign = true
 [user]
     name = Daniel Stamer
-    email = dan@hello-world.sh
+    email = stamer@google.com
 [color]
     branch = auto
     diff = auto
