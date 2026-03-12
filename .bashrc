@@ -302,22 +302,6 @@ switchtheme() {
 
 hswitchscreen() {
   if [ -z ${1} ]; then
-    echo "no monitor supplied"
-  elif [ ${1} == "external" ]; then
-    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
-    hyprctl dispatch moveworkspacetomonitor 1 DP-1
-    hyprctl dispatch moveworkspacetomonitor 2 DP-1
-    hyprctl dispatch moveworkspacetomonitor 3 DP-1
-    hyprctl dispatch moveworkspacetomonitor 4 DP-1
-    hyprctl dispatch moveworkspacetomonitor 5 DP-1
-    hyprctl dispatch moveworkspacetomonitor 6 DP-1
-    hyprctl dispatch moveworkspacetomonitor 7 DP-1
-    hyprctl dispatch moveworkspacetomonitor 8 DP-1
-    hyprctl dispatch moveworkspacetomonitor 9 DP-1
-    hyprctl dispatch moveworkspacetomonitor 10 DP-1
-    hyprctl dispatch moveworkspacetomonitor 11 DP-1
-    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
-  elif [ ${1} == "main" ]; then
     hyprctl dispatch moveworkspacetomonitor 12 DP-1
     hyprctl dispatch moveworkspacetomonitor 1 eDP-1
     hyprctl dispatch moveworkspacetomonitor 2 eDP-1
@@ -332,7 +316,19 @@ hswitchscreen() {
     hyprctl dispatch moveworkspacetomonitor 11 eDP-1
     hyprctl dispatch moveworkspacetomonitor 12 DP-1
   else
-    echo "unknown monitor supplied: use main or external"
+    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
+    hyprctl dispatch moveworkspacetomonitor 1 ${1}
+    hyprctl dispatch moveworkspacetomonitor 2 ${1}
+    hyprctl dispatch moveworkspacetomonitor 3 ${1}
+    hyprctl dispatch moveworkspacetomonitor 4 ${1}
+    hyprctl dispatch moveworkspacetomonitor 5 ${1}
+    hyprctl dispatch moveworkspacetomonitor 6 ${1}
+    hyprctl dispatch moveworkspacetomonitor 7 ${1}
+    hyprctl dispatch moveworkspacetomonitor 8 ${1}
+    hyprctl dispatch moveworkspacetomonitor 9 ${1}
+    hyprctl dispatch moveworkspacetomonitor 10 ${1}
+    hyprctl dispatch moveworkspacetomonitor 11 ${1}
+    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
   fi
 }
 
