@@ -415,7 +415,8 @@ gproject() {
     echo "${project}"
   else
     gcloud config set project ${1}
-    gcloud application-default set-quota-project ${1}
+    gcloud config unset billing/quota_project
+    gcloud auth application-default set-quota-project ${1}
     export GOOGLE_CLOUD_PROJECT="${1}"
   fi
 }
