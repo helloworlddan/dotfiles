@@ -8,6 +8,7 @@ window#waybar {
 }
 
 #custom-clouddomain,
+#custom-weatherprecipitation,
 #battery,
 #pulseaudio {
   color: #d87c4a;
@@ -23,6 +24,7 @@ window#waybar {
 #custom-clouduser,
 #custom-profile,
 #memory,
+#custom-weathertemperature,
 #backlight {
   color: #e49a44;
 }

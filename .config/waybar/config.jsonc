@@ -31,9 +31,10 @@
     "custom/offset"
   ],
   "modules-right": [
+    "custom/icon_weathertemperature",
     "custom/weathertemperature",
-    "custom/weathercondition",
-    "custom/offset",
+    "custom/icon_weatherprecipitation",
+    "custom/weatherprecipitation",
     "custom/icon_builds",
     "custom/builds",
     "custom/icon_bluetooth",
@@ -103,7 +104,7 @@
   "custom/icon_project": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ' '"
+    "exec": "echo '󱇶 '"
   },
   "custom/cloudproject": {
     "tooltip": false,
@@ -162,22 +163,32 @@
     "interval": 10,
     "exec": "TZ=UTC date +'%H:%M'"
   },
+  "custom/icon_weathertemperature": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ''",
+    "on-click": "goto -u google.com/search?q=weather"
+  },
   "custom/weathertemperature": {
     "tooltip": false,
     "interval": 900,
-    "exec": "curl 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=temperature' | jq -r '\"\\(.current.temperature)\\(.current_units.temperature)\"'",
-    "on-click": "foot -H curl wttr.in"
+    "exec": "curl 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=temperature' | jq -r '.current.temperature' | grep -Po '^(\\d)+'"
   },
-  "custom/weathercondition": {
+  "custom/icon_weatherprecipitation": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ''",
+    "on-click": "goto -u google.com/search?q=weather"
+  },
+  "custom/weatherprecipitation": {
     "tooltip": false,
     "interval": 900,
-    "exec": "curl 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=precipitation_probability' | jq -r '\"precip \\(.current.precipitation_probability)\\(.current_units.precipitation_probability)\"'",
-    "on-click": "foot -H curl wttr.in"
+    "exec": "curl 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=precipitation_probability' | jq -r '.current.precipitation_probability'"
   },
   "custom/icon_builds": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo '󱇶 '",
+    "exec": "echo ' '",
     "on-click": "foot -H bash -c 'gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format \"value(id)\") 2>/dev/null || echo no active builds'"
   },
   "custom/builds": {
@@ -265,7 +276,7 @@
   "custom/icon_temperature": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ''",
+    "exec": "echo '󰏈 '",
     "on-click": "foot s-tui"
   },
   "temperature": {
