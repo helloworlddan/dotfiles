@@ -125,13 +125,13 @@
     "tooltip": false,
     "interval": 10,
     // "max-length": 80,
-    "exec": "baton status | grep -Po '(?<=Artist: ).*'"
+    "exec": "baton status | grep -Po '(?<=Artist: ).*' | sed 's/\\&/&amp;/'"
   },
   "custom/track": {
     "tooltip": false,
     "interval": 10,
     // "max-length": 80,
-    "exec": "baton status | grep -Po '(?<=Track:).*'"
+    "exec": "baton status | grep -Po '(?<=Track:).*' | sed 's/\\&/&amp;/'"
   },
   "custom/nettz": {
     "tooltip": false,
