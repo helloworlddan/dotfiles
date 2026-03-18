@@ -171,7 +171,7 @@
   },
   "custom/weathertemperature": {
     "tooltip": false,
-    "interval": 900,
+    "interval": 60,
     "exec": "curl 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=temperature' | jq -r '.current.temperature' | grep -Po '^(\\d)+'"
   },
   "custom/icon_weatherprecipitation": {
@@ -182,7 +182,7 @@
   },
   "custom/weatherprecipitation": {
     "tooltip": false,
-    "interval": 900,
+    "interval": 60,
     "exec": "curl 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=precipitation_probability' | jq -r '.current.precipitation_probability'"
   },
   "custom/icon_builds": {
