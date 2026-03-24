@@ -12,7 +12,7 @@
   "ui": {
     "theme": "ANSI",
     "dynamicWindowTitle": false,
-    "showHomeDirectoryWarning": true,
+    "showHomeDirectoryWarning": false,
     "hideBanner": true,
     "footer": {
       "hideContextPercentage": false
