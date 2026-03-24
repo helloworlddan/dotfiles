@@ -87,7 +87,7 @@ alias gbuilds='gcloud builds list --limit 15 --format "table[box,title=\"Running
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
 
-alias gemini="gproject && GEMINI_API_KEY="" GOOGLE_CLOUD_LOCATION=global npx @google/gemini-cli"
+alias gemini="gproject && GEMINI_API_KEY='' GOOGLE_CLOUD_LOCATION=global npx @google/gemini-cli"
 alias chatgpt="gemini"
 alias claude="gemini"
 

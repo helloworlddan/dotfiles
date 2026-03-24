@@ -1,6 +1,5 @@
 window#waybar {
   border: 1px solid #f5f5f5;
-  /* background-color: #121212; */
   background-color: #121212;
   opacity: 0.95;
   color: #f5f5f5;
@@ -9,6 +8,7 @@ window#waybar {
 }
 
 #custom-clouddomain,
+#custom-weatherprecipitation,
 #battery,
 #pulseaudio {
   color: #d87c4a;
@@ -24,6 +24,7 @@ window#waybar {
 #custom-clouduser,
 #custom-profile,
 #memory,
+#custom-weathertemperature,
 #backlight {
   color: #e49a44;
 }

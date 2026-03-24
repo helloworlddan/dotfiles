@@ -31,9 +31,10 @@
     "custom/offset"
   ],
   "modules-right": [
+    "custom/icon_weathertemperature",
     "custom/weathertemperature",
-    "custom/weathercondition",
-    "custom/offset",
+    "custom/icon_weatherprecipitation",
+    "custom/weatherprecipitation",
     "custom/icon_builds",
     "custom/builds",
     "custom/icon_bluetooth",
@@ -73,7 +74,7 @@
       "2": "",
       "3": "󱔗",
       "4": "",
-      "5": "",
+      "5": "",
       "6": "",
       "7": "󰺻",
       "8": "󰃰",
@@ -103,7 +104,7 @@
   "custom/icon_project": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ' '"
+    "exec": "echo '󱇶 '"
   },
   "custom/cloudproject": {
     "tooltip": false,
@@ -124,13 +125,13 @@
     "tooltip": false,
     "interval": 10,
     // "max-length": 80,
-    "exec": "baton status | grep -Po '(?<=Artist: ).*'"
+    "exec": "baton status | grep -Po '(?<=Artist: ).*' | sed 's/\\&/&amp;/'"
   },
   "custom/track": {
     "tooltip": false,
     "interval": 10,
     // "max-length": 80,
-    "exec": "baton status | grep -Po '(?<=Track:).*'"
+    "exec": "baton status | grep -Po '(?<=Track:).*' | sed 's/\\&/&amp;/'"
   },
   "custom/nettz": {
     "tooltip": false,
@@ -162,22 +163,32 @@
     "interval": 10,
     "exec": "TZ=UTC date +'%H:%M'"
   },
+  "custom/icon_weathertemperature": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ''",
+    "on-click": "goto -u google.com/search?q=weather"
+  },
   "custom/weathertemperature": {
     "tooltip": false,
-    "interval": 600,
-    "exec": "curl -s 'wttr.in?format=%t'",
-    "on-click": "foot -H curl wttr.in"
+    "interval": 60,
+    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=temperature' | jq -r '.current.temperature' | grep -Po '^(\\d)+'"
   },
-  "custom/weathercondition": {
+  "custom/icon_weatherprecipitation": {
     "tooltip": false,
-    "interval": 600,
-    "exec": "curl -s 'wttr.in?format=%C' | tr '[:upper:]' '[:lower:]'",
-    "on-click": "foot -H curl wttr.in"
+    "interval": "once",
+    "exec": "echo ''",
+    "on-click": "goto -u google.com/search?q=weather"
+  },
+  "custom/weatherprecipitation": {
+    "tooltip": false,
+    "interval": 60,
+    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=precipitation_probability' | jq -r '.current.precipitation_probability'"
   },
   "custom/icon_builds": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo '󱇶 '",
+    "exec": "echo ' '",
     "on-click": "foot -H bash -c 'gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format \"value(id)\") 2>/dev/null || echo no active builds'"
   },
   "custom/builds": {
@@ -265,7 +276,7 @@
   "custom/icon_temperature": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo ''",
+    "exec": "echo '󰏈 '",
     "on-click": "foot s-tui"
   },
   "temperature": {
