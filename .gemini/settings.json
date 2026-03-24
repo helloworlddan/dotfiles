@@ -1,0 +1,40 @@
+{
+  "theme": "ANSI",
+  "selectedAuthType": "vertex-ai",
+  "security": {
+    "auth": {
+      "selectedType": "vertex-ai"
+    },
+    "folderTrust": {
+      "enabled": false
+    }
+  },
+  "ui": {
+    "theme": "ANSI",
+    "dynamicWindowTitle": false,
+    "showHomeDirectoryWarning": true,
+    "hideBanner": true,
+    "footer": {
+      "hideContextPercentage": false
+    },
+    "showCitations": true,
+    "loadingPhrases": "all"
+  },
+  "general": {
+    "vimMode": true,
+    "defaultApprovalMode": "auto_edit",
+    "enableAutoUpdate": false,
+    "enableNotifications": false
+  },
+  "ide": {
+    "enabled": false
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
+    }
+  },
+  "experimental": {
+    "directWebFetch": false
+  }
+}
