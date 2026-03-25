@@ -7,7 +7,8 @@
     },
     "folderTrust": {
       "enabled": false
-    }
+    },
+    "blockGitExtensions": false
   },
   "ui": {
     "theme": "ANSI",
