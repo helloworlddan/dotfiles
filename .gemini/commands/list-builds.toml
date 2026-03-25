@@ -1,0 +1,9 @@
+description = "List currently active Cloud Builds"
+prompt = """
+Here is an view of recent builds on the current Google Cloud Project
+
+!{gcloud builds list}
+
+summarize them for the user, focus on the not recent builds and the once that
+failed.
+"""
