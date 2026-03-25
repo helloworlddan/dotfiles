@@ -8,21 +8,30 @@
     "folderTrust": {
       "enabled": false
     },
-    "blockGitExtensions": false
+    "blockGitExtensions": false,
+    "enablePermanentToolApproval": true,
+    "environmentVariableRedaction": {
+      "enabled": true
+    },
+    "autoAddToPolicyByDefault": true
   },
   "ui": {
     "theme": "ANSI",
     "dynamicWindowTitle": false,
-    "showHomeDirectoryWarning": true,
+    "showHomeDirectoryWarning": false,
     "hideBanner": true,
     "footer": {
       "hideContextPercentage": false
     },
     "showCitations": true,
-    "loadingPhrases": "all"
+    "loadingPhrases": "all",
+    "showMemoryUsage": false,
+    "hideContextSummary": true,
+    "hideWindowTitle": true,
+    "escapePastedAtSymbols": true
   },
   "general": {
-    "vimMode": true,
+    "vimMode": false,
     "defaultApprovalMode": "auto_edit",
     "enableAutoUpdate": false,
     "enableNotifications": false
