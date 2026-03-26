@@ -11,6 +11,7 @@ return {
         sh = { "shfmt" },
         javascript = { "prettier" },
         html = { "prettier" },
+        nix = { "nixfmt" },
         css = { "prettier" },
         markdown = { "prettier" },
         proto = { "buf" },

@@ -17,6 +17,7 @@ return {
       vim.list_extend(opts.ensure_installed, { "hadolint" }) -- Docker
       vim.list_extend(opts.ensure_installed, { "black" }) -- Python
       vim.list_extend(opts.ensure_installed, { "shfmt" }) -- Bash
+      vim.list_extend(opts.ensure_installed, { "nixfmt", "statix" }) -- Nix
       vim.list_extend(opts.ensure_installed, { "prettier", "prettierd" }) -- JavaScript
       vim.list_extend(opts.ensure_installed, { "json-lsp", "jsonlint", "jq" }) -- JSON
       vim.list_extend(opts.ensure_installed, { "yq" }) -- YAML
