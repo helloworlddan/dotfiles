@@ -13,7 +13,7 @@ export GOPATH="${HOME}/.go"
 export PATH="${PATH}:${GOPATH}/bin:"
 export PATH="${PATH}:${HOME}/.local/bin"
 export PATH="${PATH}:/usr/games"
-export PS1=" \[\e[1;35m\]\$(path_name) \[\e[0m\]\[\e[1;36m\]\$(branch_name) 
+export PS1=" \[\e[1;35m\]\$(path_name) \[\e[1;34m\]\${IN_NIX_SHELL:+󱄅  }\[\e[1;32m\]\${VIRTUAL_ENV:+  }\[\e[0m\]\[\e[1;31m\]\$(branch_name) 
  \[\e[m\]\$ "
 export LINK_DIR=Links
 export LESS_TERMCAP_mb=$(
@@ -87,9 +87,13 @@ alias gbuilds='gcloud builds list --limit 15 --format "table[box,title=\"Running
 alias gbuildstream='gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format "value(id)") 2>/dev/null || echo "no active builds"'
 alias cross="/google/bin/releases/opensource/thirdparty/cross/cross"
 
-alias gemini="gproject && GEMINI_API_KEY='' GOOGLE_CLOUD_LOCATION=global npx @google/gemini-cli"
+alias gemini="gproject && GEMINI_API_KEY='' GOOGLE_CLOUD_LOCATION=global gemini"
 alias chatgpt="gemini"
 alias claude="gemini"
+
+if [ "$(hostname)" == "stamer" ] || [ "$(hostname)" == "battlestation" ]; then
+  alias npm="gpkg /usr/local/bin/npm"
+fi
 
 # Load API Keys
 for key in $HOME/.keys/*; do

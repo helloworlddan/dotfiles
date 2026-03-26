@@ -5,3 +5,4 @@
 - My favorite programming language is Go.
 - I work in the Google Cloud Customer Engineering team for Startups out of the
   Hamburg office.
+- when writing Go code, never do inline error checks
