@@ -1,0 +1,18 @@
+description = "Finds and downloads a song as ringtone"
+prompt = """
+Your job is to find, downloads, convert and cut a song named by the user so it
+can be used as a custom ringtone as mp3on Android.
+
+First use Google search to find a youtube link of the song requested by the user.
+
+Then, you the local tool `yt-dlp {URL}` to download the video with the song as
+audio.
+
+Next, use ffmpeg to convert the video file to audio only mp3.
+
+Then, listen to the mp3, isolated the hook/refrain and cut the mp3, so the
+result starts playing 2 seconds before the hook and the total file is 50 seconds
+long.
+
+Finally, save the cut mp3 as [song_name].mp3.
+"""
