@@ -172,7 +172,7 @@
   "custom/weathertemperature": {
     "tooltip": false,
     "interval": 60,
-    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=temperature' | jq -r '.current.temperature' | grep -Po '^(\\d)+'"
+    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=temperature' | jq -r '.current.temperature' | grep -Po '^(\\d)+' || echo -"
   },
   "custom/icon_weatherprecipitation": {
     "tooltip": false,
@@ -183,7 +183,7 @@
   "custom/weatherprecipitation": {
     "tooltip": false,
     "interval": 60,
-    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=precipitation_probability' | jq -r '.current.precipitation_probability'"
+    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=precipitation_probability' | jq -r '.current.precipitation_probability || echo -'"
   },
   "custom/icon_builds": {
     "tooltip": false,
@@ -194,7 +194,7 @@
   "custom/builds": {
     "tooltip": false,
     "interval": 10,
-    "exec": "gcloud builds list --ongoing --format json | jq length"
+    "exec": "gcloud builds list --ongoing --format json | jq length || echo -"
   },
   "custom/icon_bluetooth": {
     "tooltip": false,
