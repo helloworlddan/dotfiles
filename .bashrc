@@ -13,8 +13,7 @@ export GOPATH="${HOME}/.go"
 export PATH="${PATH}:${GOPATH}/bin:"
 export PATH="${PATH}:${HOME}/.local/bin"
 export PATH="${PATH}:/usr/games"
-export PS1=" \[\e[1;35m\]\$(path_name) \[\e[1;34m\]\${IN_NIX_SHELL:+󱄅  }\[\e[1;32m\]\${VIRTUAL_ENV:+  }\[\e[0m\]\[\e[1;31m\]\$(branch_name) 
- \[\e[m\]\$ "
+export PS1=" \[\e[1;35m\]\$(path_name) \[\e[1;33m\]\${SSH_TTY:+󰣀  }\[\e[1;34m\]\${IN_NIX_SHELL:+󱄅  }\[\e[1;32m\]\${VIRTUAL_ENV:+  }\[\e[0m\]\[\e[1;31m\]\$(branch_name)\n \[\e[m\]\$ "
 export LINK_DIR=Links
 export LESS_TERMCAP_mb=$(
   tput bold
