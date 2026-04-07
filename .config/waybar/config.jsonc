@@ -183,7 +183,7 @@
   "custom/weatherprecipitation": {
     "tooltip": false,
     "interval": 60,
-    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=precipitation_probability' | jq -r '.current.precipitation_probability || echo -'"
+    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=precipitation_probability' | jq -r '.current.precipitation_probability' || echo -"
   },
   "custom/icon_builds": {
     "tooltip": false,
