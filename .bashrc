@@ -132,6 +132,19 @@ commitcopy() {
   commitinfo | textcopy
 }
 
+gitanalysis() {
+  echo "Most changes in:"
+  git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20
+  echo "Most changes by:"
+  git shortlog -sn --no-merges
+  echo "Bug clusters in:"
+  git log -i -E --grep="fix|bug|broken" --name-only --format='' | sort | uniq -c | sort -nr | head -20
+  echo "Project acceleration:"
+  git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c
+  echo "Breakglass events:"
+  git log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback'
+}
+
 ml() {
   if [ -z ${1} ]; then
     echo "no path name supplied"
