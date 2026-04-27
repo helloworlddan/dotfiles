@@ -401,6 +401,12 @@ xswitchscreen() {
 }
 
 # Cloud Functions
+gauth() {
+  gcert
+  echo "//us-npm.pkg.dev/artifact-foundry-prod/npm-3p-trusted/:_authToken=$(gcloud auth application-default print-access-token)" >~/.npmrc
+  echo "//us-npm.pkg.dev/artifact-foundry-prod/ah-3p-staging-npm/:_authToken=$(gcloud auth application-default print-access-token)" >>~/.npmrc
+}
+
 gmeta() {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
 }
