@@ -13,8 +13,7 @@ export GOPATH="${HOME}/.go"
 export PATH="${PATH}:${GOPATH}/bin:"
 export PATH="${PATH}:${HOME}/.local/bin"
 export PATH="${PATH}:/usr/games"
-export PS1=" \[\e[1;35m\]\$(path_name) \[\e[1;34m\]\${IN_NIX_SHELL:+󱄅  }\[\e[1;32m\]\${VIRTUAL_ENV:+  }\[\e[0m\]\[\e[1;31m\]\$(branch_name) 
- \[\e[m\]\$ "
+export PS1=" \[\e[1;35m\]\$(path_name) \[\e[1;33m\]\${SSH_TTY:+󰣀  }\[\e[1;34m\]\${IN_NIX_SHELL:+󱄅  }\[\e[1;32m\]\${VIRTUAL_ENV:+  }\[\e[0m\]\[\e[1;31m\]\$(branch_name)\n \[\e[m\]\$ "
 export LINK_DIR=Links
 export LESS_TERMCAP_mb=$(
   tput bold
@@ -131,6 +130,19 @@ commitinfo() {
 
 commitcopy() {
   commitinfo | textcopy
+}
+
+gitanalysis() {
+  echo "Most changes in:"
+  git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20
+  echo "Most changes by:"
+  git shortlog -sn --no-merges
+  echo "Bug clusters in:"
+  git log -i -E --grep="fix|bug|broken" --name-only --format='' | sort | uniq -c | sort -nr | head -20
+  echo "Project acceleration:"
+  git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c
+  echo "Breakglass events:"
+  git log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback'
 }
 
 ml() {
@@ -389,6 +401,12 @@ xswitchscreen() {
 }
 
 # Cloud Functions
+gauth() {
+  gcert
+  echo "//us-npm.pkg.dev/artifact-foundry-prod/npm-3p-trusted/:_authToken=$(gcloud auth application-default print-access-token)" >~/.npmrc
+  echo "//us-npm.pkg.dev/artifact-foundry-prod/ah-3p-staging-npm/:_authToken=$(gcloud auth application-default print-access-token)" >>~/.npmrc
+}
+
 gmeta() {
   curl -H "Metadata-Flavor: Google" "http://metadata.google.internal/computeMetadata/v1/${1}"
 }
