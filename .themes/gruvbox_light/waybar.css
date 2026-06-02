@@ -42,7 +42,11 @@ window#waybar {
 #custom-track,
 #custom-icon_clock,
 #custom-layout {
-  color: #d5c4a1;
+  color: #7c6f64;
+}
+
+#workspaces button {
+  color: #3c3836;
 }
 
 #workspaces button:hover {
