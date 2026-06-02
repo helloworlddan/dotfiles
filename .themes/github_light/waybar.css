@@ -1,0 +1,58 @@
+window#waybar {
+  border: 1px solid #1f2328;
+  background-color: #ffffff;
+  opacity: 0.95;
+  color: #1f2328;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 15px;
+}
+
+#custom-clouddomain,
+#custom-weatherprecipitation,
+#battery,
+#pulseaudio {
+  color: #116329;
+}
+
+#custom-cloudproject,
+#disk,
+#custom-builds,
+#temperature {
+  color: #cf222e;
+}
+
+#custom-clouduser,
+#custom-profile,
+#memory,
+#custom-weathertemperature,
+#backlight {
+  color: #4d2d00;
+}
+
+#custom-cloudregion,
+#bluetooth,
+#cpu,
+#network {
+  color: #0969da;
+}
+
+#custom-weathercondition,
+#custom-timeutc,
+#custom-daylocal,
+#custom-track,
+#custom-icon_clock,
+#custom-layout {
+  color: #57606a;
+}
+
+#workspaces button {
+  color: #1f2328;
+}
+
+#workspaces button:hover {
+  background: none;
+  box-shadow: none;
+  border: none;
+  transition: none;
+  text-shadow: none;
+}

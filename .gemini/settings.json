@@ -16,7 +16,7 @@
     "autoAddToPolicyByDefault": true
   },
   "ui": {
-    "theme": "ANSI",
+    "theme": "ANSI Light",
     "dynamicWindowTitle": false,
     "showHomeDirectoryWarning": false,
     "hideBanner": true,

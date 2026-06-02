@@ -1,0 +1,89 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "GitHub Light",
+  "theme": {
+    "images": {
+      "theme_ntp_background": "theme_ntp_background.png",
+      "theme_tab_background": "theme_tab_background.png"
+    },
+    "colors": {
+      "frame": [
+        255,
+        255,
+        255
+      ],
+      "ntp_background": [
+        255,
+        255,
+        255
+      ],
+      "tab_text": [
+        31,
+        35,
+        40
+      ],
+      "tab_background_text": [
+        110,
+        119,
+        129
+      ],
+      "bookmark_text": [
+        31,
+        35,
+        40
+      ],
+      "ntp_text": [
+        31,
+        35,
+        40
+      ],
+      "ntp_link": [
+        9,
+        105,
+        218
+      ],
+      "ntp_header": [
+        31,
+        35,
+        40
+      ],
+      "toolbar": [
+        219,
+        219,
+        219
+      ],
+      "toolbar_text": [
+        31,
+        35,
+        40
+      ],
+      "button_background": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "omnibox_background": [
+        255,
+        255,
+        255
+      ],
+      "omnibox_text": [
+        31,
+        35,
+        40
+      ],
+      "toolbar_button_icon": [
+        31,
+        35,
+        40
+      ]
+    },
+    "tints": {},
+    "properties": {
+      "ntp_background_alignment": "center",
+      "ntp_background_repeat": "no-repeat"
+    }
+  }
+}
