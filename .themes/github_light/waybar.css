@@ -5,6 +5,7 @@ window#waybar {
   color: #1f2328;
   font-family: "JetBrainsMono Nerd Font";
   font-size: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 #custom-clouddomain,

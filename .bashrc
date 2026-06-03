@@ -75,6 +75,7 @@ alias matrix='cmatrix -sabC red'
 alias bonsai='cbonsai -lb 1 -k 4,3,10,11'
 alias fortune='tortune'
 alias cowsay='cowsay -s'
+alias hconf="nvim ~/.config/hypr/hyprland.conf"
 
 alias gicurl='curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json"'
 alias gacurl='curl -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/json"'
