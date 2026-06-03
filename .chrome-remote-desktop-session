@@ -1,2 +1,0 @@
-exec /etc/X11/Xsession /usr/bin/bspwm
-
