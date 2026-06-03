@@ -1,0 +1,339 @@
+// -*- mode: jsonc -*-
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "spacing": 8,
+  "margin-top": 5,
+  "margin-left": 5,
+  "margin-right": 5,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/offset",
+    "custom/clouduser",
+    "custom/icon_at",
+    "custom/clouddomain",
+    "custom/icon_project",
+    "custom/cloudproject",
+    "custom/icon_region",
+    "custom/cloudregion",
+    "custom/offset",
+    "custom/artist",
+    "custom/track"
+  ],
+  "modules-center": [
+    "custom/offset",
+    "custom/nettz",
+    "custom/daylocal",
+    "custom/datelocal",
+    "custom/icon_clock",
+    "custom/timelocal",
+    "custom/timeutc",
+    "custom/offset"
+  ],
+  "modules-right": [
+    "custom/icon_weathertemperature",
+    "custom/weathertemperature",
+    "custom/icon_weatherprecipitation",
+    "custom/weatherprecipitation",
+    "custom/icon_builds",
+    "custom/builds",
+    "custom/icon_bluetooth",
+    "bluetooth",
+    "custom/icon_backlight",
+    "backlight",
+    "custom/icon_pulseaudio",
+    "pulseaudio",
+    "custom/icon_disk",
+    "disk",
+    "custom/icon_cpu",
+    "cpu",
+    "custom/icon_memory",
+    "memory",
+    "custom/icon_battery",
+    "battery",
+    "custom/icon_temperature",
+    "temperature",
+    "custom/icon_network",
+    "network",
+    "custom/icon_profile",
+    "custom/profile",
+    "custom/icon_keyboard",
+    "custom/layout",
+    "keyboard-state",
+    "custom/offset"
+  ],
+  "hyprland/workspaces": {
+    "tooltip": false,
+    "disable-scroll": false,
+    "all-outputs": false,
+    "active-only": true,
+    "warp-on-scroll": false,
+    "format": " {icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󱔗",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "󰺻",
+      "8": "󰃰",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "󰍺",
+      "urgent": "",
+      "focused": ""
+    }
+  },
+  "custom/clouduser": {
+    "tooltip": false,
+    "interval": 10,
+    "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null | awk '/account/{print $3}' | awk -F'@' '{print $1}'"
+  },
+  "custom/icon_at": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ' '"
+  },
+  "custom/clouddomain": {
+    "tooltip": false,
+    "interval": 10,
+    "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/account/{print $3}' | awk -F'@' '{print $2}'"
+  },
+  "custom/icon_project": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo '󱇶 '"
+  },
+  "custom/cloudproject": {
+    "tooltip": false,
+    "interval": 10,
+    "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/project/{print $3}'"
+  },
+  "custom/icon_region": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo '󰒋 '"
+  },
+  "custom/cloudregion": {
+    "tooltip": false,
+    "interval": 10,
+    "exec": "cat $HOME/.config/gcloud/configurations/config_default 2>/dev/null  | awk '/region/{print $3}'"
+  },
+  "custom/artist": {
+    "tooltip": false,
+    "interval": 10,
+    // "max-length": 80,
+    "exec": "baton status | grep -Po '(?<=Artist: ).*' | sed 's/\\&/&amp;/'"
+  },
+  "custom/track": {
+    "tooltip": false,
+    "interval": 10,
+    // "max-length": 80,
+    "exec": "baton status | grep -Po '(?<=Track:).*' | sed 's/\\&/&amp;/'"
+  },
+  "custom/nettz": {
+    "tooltip": false,
+    "interval": 600,
+    "exec": "curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq -r '.country'"
+  },
+  "custom/daylocal": {
+    "tooltip": false,
+    "interval": 600,
+    "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%a'"
+  },
+  "custom/datelocal": {
+    "tooltip": false,
+    "interval": 600,
+    "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%y-%m-%d'"
+  },
+  "custom/icon_clock": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo '󱑌 '"
+  },
+  "custom/timelocal": {
+    "tooltip": false,
+    "interval": 10,
+    "exec": "TZ=$(cat $HOME/.config/helloworlddan/location) date +'%H:%M'"
+  },
+  "custom/timeutc": {
+    "tooltip": false,
+    "interval": 10,
+    "exec": "TZ=UTC date +'%H:%M'"
+  },
+  "custom/icon_weathertemperature": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ''",
+    "on-click": "goto -u google.com/search?q=weather"
+  },
+  "custom/weathertemperature": {
+    "tooltip": false,
+    "interval": 60,
+    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=temperature' | jq -r '.current.temperature' | grep -Po '^(\\d)+' || echo -"
+  },
+  "custom/icon_weatherprecipitation": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ''",
+    "on-click": "goto -u google.com/search?q=weather"
+  },
+  "custom/weatherprecipitation": {
+    "tooltip": false,
+    "interval": 60,
+    "exec": "curl -s 'https://api.open-meteo.com/v1/forecast?latitude=53.550&longitude=9.969&current=precipitation_probability' | jq -r '.current.precipitation_probability' || echo -"
+  },
+  "custom/icon_builds": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ' '",
+    "on-click": "foot -H bash -c 'gcloud builds log --stream $(gcloud builds list --ongoing --limit 1 --format \"value(id)\") 2>/dev/null || echo no active builds'"
+  },
+  "custom/builds": {
+    "tooltip": false,
+    "interval": 10,
+    "exec": "gcloud builds list --ongoing --format json | jq length || echo -"
+  },
+  "custom/icon_bluetooth": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo '󰂯'",
+    "on-click": "foot bash -c 'source .bashrc && bluetui'"
+  },
+  "bluetooth": {
+    "tooltip": false,
+    "format": "{num_connections}"
+  },
+  "custom/icon_backlight": {
+    "tooltip": false,
+    "interval": "once",
+    "exec-if": "ls /sys/class/backlight/ | grep -q .",
+    "exec": "echo '󰚵'"
+  },
+  "backlight": {
+    "tooltip": false,
+    "format": "{percent}"
+  },
+  "custom/icon_pulseaudio": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ''",
+    "on-click": "foot pulsemixer"
+  },
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 1,
+    "format": "{volume}"
+  },
+  "custom/icon_disk": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo '󰋊'",
+    "on-click": "foot ranger"
+  },
+  "disk": {
+    "tooltip": false,
+    "format": "{percentage_used}"
+  },
+  "custom/icon_cpu": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ' '",
+    "on-click": "foot htop"
+  },
+  "cpu": {
+    "tooltip": false,
+    "format": "{usage}"
+  },
+  "custom/icon_memory": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ' '",
+    "on-click": "foot htop"
+  },
+  "memory": {
+    "tooltip": false,
+    "format": "{}"
+  },
+  "custom/icon_battery": {
+    "tooltip": false,
+    "interval": "once",
+    "exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
+    "exec": "echo ' '",
+    "on-click": "foot -H upower -i /org/freedesktop/UPower/devices/battery_BAT0"
+  },
+  "battery": {
+    "tooltip": false,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}"
+  },
+  "custom/icon_temperature": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo '󰏈 '",
+    "on-click": "foot s-tui"
+  },
+  "temperature": {
+    "tooltip": false,
+    "critical-threshold": 80,
+    "format": "{temperatureC}"
+  },
+  "custom/icon_network": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ' '",
+    "on-click": "foot nmtui"
+  },
+  "network": {
+    "tooltip": false,
+    "format-wifi": "{signalStrength}",
+    "format-ethernet": "e",
+    "format-disconnected": "x"
+  },
+  "custom/icon_profile": {
+    "tooltip": false,
+    "interval": "once",
+    "exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
+    "exec": "echo '󰾆'",
+    "on-click": "powerprofilesctl set performance"
+  },
+  "custom/profile": {
+    "tooltip": false,
+    "interval": 10,
+    "exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
+    "exec": "powerprofilesctl get | grep -oP '([^-]+-)\\K..|^..'"
+  },
+  "custom/icon_keyboard": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ' '",
+    "on-click": "foot -T corne -H cat Code/github.com/helloworlddan/corne/layout.txt"
+  },
+  "custom/layout": {
+    "tooltip": false,
+    "interval": 60,
+    "exec": "hyprctl getoption input:kb_layout | head -n 1 | cut -c6-7"
+  },
+  "keyboard-state": {
+    "tooltip": false,
+    "capslock": true,
+    "format": "{icon}",
+    "format-icons": {
+      "locked": "caps",
+      "unlocked": ""
+    }
+  },
+  "custom/offset": {
+    "tooltip": false,
+    "interval": "once",
+    "exec": "echo ' '"
+  }
+}
