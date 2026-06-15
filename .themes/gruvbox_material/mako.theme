@@ -1,0 +1,12 @@
+text-color=#ebdbb2FF
+background-color=#282828FF
+border-color=#ebdbb2FF
+progress-color=#ea6962FF
+anchor=top-center
+border-size=1
+margin=5
+height=200
+width=400
+icon-location=right
+max-icon-size=24
+font=JetBrains Mono Nerd Font 11
