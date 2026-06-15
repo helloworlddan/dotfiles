@@ -1,40 +1,34 @@
 ignore-empty-password
 font=JetBrains Mono Nerd Font
 font-size=20px
-
-color=7c6764
-inside-color=7c6764
+color=282828
 
 indicator-radius=150
 indicator-thickness=15
 indicator-caps-lock
 
+key-hl-color=d4be98
 
 separator-color=00000000
-line-color=00000000
 
-ring-color=282828
-text-clear-color=ebdbb2
-
-ring-clear-color=e78a4e
-line-clear-color=e78a4e
+inside-color=282828
 inside-clear-color=e78a4e
-
-ring-caps-lock-color=a9b665
-line-caps-lock-color=a9b665
 inside-caps-lock-color=a9b665
-
-line-ver-color=7daea3
 inside-ver-color=7daea3
-ring-ver-color=7daea3
-
-text-ver-color=ebdbb2
-text-wrong-color=ebdbb2
-
 inside-wrong-color=ea6962
+
+ring-color=7c6764
+ring-clear-color=e78a4e
+ring-caps-lock-color=a9b665
+ring-ver-color=7daea3
 ring-wrong-color=ea6962
+
+line-color=00000000
+line-clear-color=e78a4e
+line-caps-lock-color=a9b665
+line-ver-color=7daea3
 line-wrong-color=ea6962
 
-
-key-hl-color=d5d5d5
-
+text-clear-color=ebdbb2
+text-ver-color=ebdbb2
+text-wrong-color=ebdbb2
