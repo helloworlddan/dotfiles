@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=gruvbox-dark
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=gruvbox-dark
+GtkTheme=gruvbox-dark
+IconTheme=gruvbox-dark
+MetacityTheme=gruvbox-dark
