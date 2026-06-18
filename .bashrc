@@ -209,83 +209,6 @@ decdir() {
   rm ${1%".gpg"}
 }
 
-monitor() {
-  xrandr --output ${1} --primary
-  bspc monitor ${1} -s '^1'
-}
-
-nested() {
-  startx -- /usr/bin/Xephyr -fullscreen -resizeable :2
-}
-
-terminal_session() {
-  tsesh Terminal
-}
-
-editor_session() {
-  tsesh Editor
-}
-
-tsesh() {
-  if [ -z ${1} ]; then
-    echo "no name given"
-  else
-    tmux attach-session -t ${1} || tmux new -s ${1}
-  fi
-}
-
-twin() {
-  if [ -z ${1} ]; then
-    echo "no name given"
-  else
-    tmux new-window -n ${1} -c "#{pane_current_path}"
-  fi
-}
-
-trepo() {
-  if [ -z ${1} ]; then
-    echo "no repo named"
-  else
-    tmux new-window -n ${1} -c ~/Code/github.com/${1}
-  fi
-}
-
-deckdesk() {
-  MAIN_PROFILE=1
-
-  # Full browser window
-  bspc desktop -f ""
-  goto -p ${MAIN_PROFILE} &
-  sleep 2
-
-  # Work machine only
-  if [ "$(hostname)" == "stamer" ] || [ "$(hostname)" == "battlestation" ]; then
-    DEMO_PROFILE=2
-    PRIVATE_PROFILE=3
-
-    # Full private browser
-    sleep 2
-    bspc desktop -f ""
-    goto -p ${PRIVATE_PROFILE} &
-    sleep 2
-
-    goto -p ${MAIN_PROFILE} stamer:notes &
-    goto -p ${DEMO_PROFILE} -g console.cloud &
-  fi
-
-  # Chrome apps
-  goto -p ${MAIN_PROFILE} -u pkg.go.dev &
-  goto -p ${MAIN_PROFILE} -g console.cloud &
-  goto -p ${MAIN_PROFILE} -g mail &
-  goto -p ${MAIN_PROFILE} -g calendar &
-  goto -p ${MAIN_PROFILE} -g meet &
-  goto -p ${MAIN_PROFILE} -g keep &
-
-  bspc desktop -f '^1'
-  disown -a
-  clear
-}
-
 birds() {
   if [ -z ${1} ]; then
     echo "no regions supplied"
@@ -293,6 +216,14 @@ birds() {
     curl -s \
       -H "X-eBirdApiToken: ${EBIRD_API_KEY}" \
       -X GET "https://api.ebird.org/v2/data/obs/${1}/recent" | jq
+  fi
+}
+
+yts() {
+  if [ -z ${1} ]; then
+    echo "no video supplied"
+  else
+    yt-dlp "https://www.youtube.com/watch?v=${1}" -o - | mpv - -force-seekable=yes
   fi
 }
 
@@ -343,58 +274,6 @@ hswitchscreen() {
     hyprctl dispatch moveworkspacetomonitor 11 ${1}
     hyprctl dispatch moveworkspacetomonitor 12 eDP-1
   fi
-}
-
-xswitchscreen() {
-  if [ -z ${1} ]; then
-    echo "no monitor supplied"
-  elif [ ${1} == "external" ]; then
-    bspc config top_padding 0 && killall polybar
-    xrandr --output DP-1 --primary
-    bspc monitor DP-1 -d ""
-
-    bspc desktop "" -m DP-1
-    bspc desktop "" -m DP-1
-    bspc desktop "󱔗" -m DP-1
-    bspc desktop "" -m DP-1
-    bspc desktop "" -m DP-1
-    bspc desktop "" -m eDP-1
-    bspc desktop "" -m DP-1
-    bspc desktop "󰺻" -m DP-1
-    bspc desktop "󰃰" -m DP-1
-    bspc desktop "" -m DP-1
-    bspc desktop "" -m DP-1
-    bspc desktop "" -m DP-1
-
-    bspc monitor DP-1 -s '^1'
-    export BAR_WIDTH="$(($(xrandr | grep " primary" | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f1) - 10))" && bspc config -m '^1' top_padding 48 && polybar &
-    disown -a
-    clear
-  elif [ ${1} == "main" ]; then
-    bspc config top_padding 0 && killall polybar
-    xrandr --output eDP-1 --primary
-
-    bspc desktop "" -m eDP-1
-    bspc desktop "" -m eDP-1
-    bspc desktop "󱔗" -m eDP-1
-    bspc desktop "" -m eDP-1
-    bspc desktop "" -m eDP-1
-    bspc desktop "" -m eDP-1
-    bspc desktop "󰺻" -m eDP-1
-    bspc desktop "" -m DP-1
-    bspc desktop "󰃰" -m eDP-1
-    bspc desktop "" -m eDP-1
-    bspc desktop "" -m eDP-1
-    bspc desktop "" -m eDP-1
-
-    bspc monitor eDP-1 -s '^1'
-    export BAR_WIDTH="$(($(xrandr | grep " primary" | grep -o '[0-9]\+x[0-9]\+' | cut -d'x' -f1) - 10))" && bspc config -m '^1' top_padding 48 && polybar &
-    disown -a
-    clear
-  else
-    echo "unknown monitor supplied: use main or external"
-  fi
-
 }
 
 # Cloud Functions
