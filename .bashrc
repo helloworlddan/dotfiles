@@ -186,7 +186,6 @@ clone_all() {
         (
           cd ${HOME}/Code/github.com/${1}/${REPO}
           git branch --set-upstream-to origin/main main
-          git branch --set-upstream-to origin/master master
           git pull --all
         )
       else
