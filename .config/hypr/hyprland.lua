@@ -1,82 +1,73 @@
--- Default monitor
-hl.monitor({
-	output = "",
-	mode = "preferred",
-	position = "auto",
-	scale = "auto",
-})
+local display_profile = "home-big"
 
--- Alone profile
--- hl.monitor({
--- 	output = "eDP-1",
--- 	mode = "1920x1200@60",
--- 	position = "0x0",
--- 	scale = 1,
--- })
-
--- Dual mirror profile
--- hl.monitor({
--- 	output = "eDP-1",
--- 	mode = "1920x1080@60",
--- 	position = "0x0",
--- 	scale = 1,
--- })
--- hl.monitor({
--- 	output = "DP-1",
--- 	mode = "1920x1080@60",
--- 	mirror = "eDP-1",
--- 	position = "0x0",
--- 	scale = 1,
--- })
--- hl.monitor({
--- 	output = "HDMI-A-1",
--- 	mode = "1920x1080@60",
--- 	mirror = "eDP-1",
--- 	position = "0x0",
--- 	scale = 1,
--- })
-
--- Office profile
-hl.monitor({
-	output = "eDP-1",
-	mode = "1920x1200@60",
-	position = "3840x0",
-	scale = 1,
-})
-hl.monitor({
-	output = "DP-1",
-	mode = "3840x2160@60",
-	position = "0x0",
-	scale = 1.0666,
-})
-
--- Home big profile
--- hl.monitor({
--- 	output = "eDP-1",
--- 	mode = "1920x1200@60",
--- 	position = "0x1440",
--- 	scale = 1,
--- })
--- hl.monitor({
--- 	output = "DP-1",
--- 	mode = "2560x1440@60",
--- 	position = "0x0",
--- 	scale = 1,
--- })
-
--- Home small profile
--- hl.monitor({
--- 	output = "eDP-1",
--- 	mode = "1920x1200@60",
--- 	position = "1920x0",
--- 	scale = 1,
--- })
--- hl.monitor({
--- 	output = "DP-1",
--- 	mode = "1920x1080@60",
--- 	position = "0x0",
--- 	scale = 1,
--- })
+if display_profile == "office" then
+	hl.monitor({
+		output = "eDP-1",
+		mode = "1920x1200@60",
+		position = "3840x0",
+		scale = 1,
+	})
+	hl.monitor({
+		output = "DP-1",
+		mode = "3840x2160@60",
+		position = "0x0",
+		scale = 1.0666,
+	})
+elseif display_profile == "home-big" then
+	hl.monitor({
+		output = "eDP-1",
+		mode = "1920x1200@60",
+		position = "0x1440",
+		scale = 1,
+	})
+	hl.monitor({
+		output = "DP-1",
+		mode = "2560x1440@60",
+		position = "0x0",
+		scale = 1,
+	})
+elseif display_profile == "home-small" then
+	hl.monitor({
+		output = "eDP-1",
+		mode = "1920x1200@60",
+		position = "1920x0",
+		scale = 1,
+	})
+	hl.monitor({
+		output = "DP-1",
+		mode = "1920x1080@60",
+		position = "0x0",
+		scale = 1,
+	})
+elseif display_profile == "dual-mirror" then
+	hl.monitor({
+		output = "eDP-1",
+		mode = "1920x1080@60",
+		position = "0x0",
+		scale = 1,
+	})
+	hl.monitor({
+		output = "DP-1",
+		mode = "1920x1080@60",
+		mirror = "eDP-1",
+		position = "0x0",
+		scale = 1,
+	})
+	hl.monitor({
+		output = "HDMI-A-1",
+		mode = "1920x1080@60",
+		mirror = "eDP-1",
+		position = "0x0",
+		scale = 1,
+	})
+else
+	hl.monitor({
+		output = "",
+		mode = "preferred",
+		position = "auto",
+		scale = "auto",
+	})
+end
 
 -- Workspaces Variables
 local ws_bsh = 1
@@ -113,6 +104,7 @@ local cp_personal = 3
 -- Launchers
 local hypr_reload = "hyprctl reload"
 local wall = "hyprpaper"
+local panel = "waybar"
 local terminal = "foot"
 local editor = "foot -T editor bash 'source .bashrc && nvim && bash'"
 local antigravity = "foot -T antigravity bash -c 'source .bashrc && agy && bash'"
@@ -173,7 +165,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd(wall)
 	hl.exec_cmd(idledaemon)
 	hl.exec_cmd(nightlight)
-	hl.exec_cmd("waybar")
+	hl.exec_cmd(panel)
 	hl.exec_cmd(editor, { workspace = ws_vim .. " silent" })
 	hl.exec_cmd(terminal, { workspace = ws_bsh .. " silent" })
 	hl.exec_cmd(godocs, { workspace = ws_doc .. " silent" })
@@ -191,20 +183,20 @@ end)
 local mainMod = "ALT"
 
 -- Basic layout controls
-hl.bind(mainMod .. " + F", hl.dsp.fullscreen())
-hl.bind(mainMod .. " SHIFT + F", hl.dsp.togglefloating())
-hl.bind(mainMod .. " + T", hl.dsp.togglesplit())
-hl.bind(mainMod .. " SHIFT + T", hl.dsp.pseudo())
-hl.bind(mainMod .. " SHIFT + Q", hl.dsp.killactive())
-hl.bind(mainMod .. " SHIFT + R", hl.dsp.exec_cmd(hypr_reload))
-hl.bind(mainMod .. " SHIFT + Escape", hl.dsp.exit())
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float())
+hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit"))
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.layout("pseudo"))
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(hypr_reload))
+hl.bind(mainMod .. " + SHIFT + Escape", hl.dsp.exit())
 
 -- Screen zooming keybinds (Native Lua implementation!)
-hl.bind(mainMod .. " SHIFT + I", function()
+hl.bind(mainMod .. " + SHIFT + I", function()
 	local current = hl.get_config("cursor.zoom_factor") or 1.0
 	hl.config({ cursor = { zoom_factor = current + 0.5 } })
 end)
-hl.bind(mainMod .. " SHIFT + O", function()
+hl.bind(mainMod .. " + SHIFT + O", function()
 	local current = hl.get_config("cursor.zoom_factor") or 1.0
 	hl.config({ cursor = { zoom_factor = math.max(1.0, current - 0.5) } })
 end)
@@ -224,34 +216,33 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(filemanager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + Backspace", hl.dsp.exec_cmd(corne))
 hl.bind(mainMod .. " + Comma", hl.dsp.exec_cmd(screenshot_clip))
-hl.bind(mainMod .. " SHIFT + Comma", hl.dsp.exec_cmd(screenshot_file))
+hl.bind(mainMod .. " + SHIFT + Comma", hl.dsp.exec_cmd(screenshot_file))
 hl.bind(mainMod .. " + Period", hl.dsp.exec_cmd(switch_main))
-hl.bind(mainMod .. " SHIFT + Period", hl.dsp.exec_cmd(switch_external))
+hl.bind(mainMod .. " + SHIFT + Period", hl.dsp.exec_cmd(switch_external))
 
-hl.bind(mainMod .. " SUPER + M", hl.dsp.exec_cmd(mail_new))
-hl.bind(mainMod .. " SUPER + S", hl.dsp.exec_cmd(slack))
-hl.bind(mainMod .. " SUPER + X", hl.dsp.exec_cmd(excalidraw))
-hl.bind(mainMod .. " SUPER + G", hl.dsp.exec_cmd(imageeditor))
-hl.bind(mainMod .. " SUPER + B", hl.dsp.exec_cmd(daw))
-hl.bind(mainMod .. " SUPER + P", hl.dsp.exec_cmd(colorpicker))
+hl.bind(mainMod .. " + SUPER + M", hl.dsp.exec_cmd(mail_new))
+hl.bind(mainMod .. " + SUPER + S", hl.dsp.exec_cmd(slack))
+hl.bind(mainMod .. " + SUPER + X", hl.dsp.exec_cmd(excalidraw))
+hl.bind(mainMod .. " + SUPER + G", hl.dsp.exec_cmd(imageeditor))
+hl.bind(mainMod .. " + SUPER + B", hl.dsp.exec_cmd(daw))
+hl.bind(mainMod .. " + SUPER + P", hl.dsp.exec_cmd(colorpicker))
 
 -- Move focus (Vim keys)
-hl.bind(mainMod .. " + L", hl.dsp.movefocus("r"))
-hl.bind(mainMod .. " + H", hl.dsp.movefocus("l"))
-hl.bind(mainMod .. " + K", hl.dsp.movefocus("u"))
-hl.bind(mainMod .. " + J", hl.dsp.movefocus("d"))
+hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 
 -- Move window (Vim keys)
-hl.bind(mainMod .. " SHIFT + L", hl.dsp.movewindow("r"))
-hl.bind(mainMod .. " SHIFT + H", hl.dsp.movewindow("l"))
-hl.bind(mainMod .. " SHIFT + K", hl.dsp.movewindow("u"))
-hl.bind(mainMod .. " SHIFT + J", hl.dsp.movewindow("d"))
+hl.bind(mainMod .. "+ SHIFT + L", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. "+ SHIFT + H", hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. "+ SHIFT + K", hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. "+ SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 
 -- Cycle monitor focus
-hl.bind(mainMod .. " + Tab", hl.dsp.focusmonitor("+1"))
-hl.bind(mainMod .. " SHIFT + Tab", hl.dsp.movewindow("mon:+1"))
+hl.bind(mainMod .. " + Tab", hl.dsp.focus({ monitor = "+1" }))
+hl.bind(mainMod .. " SHIFT + Tab", hl.dsp.window.move({ monitor = "+1" }))
 
--- Dynamic loop for Workspace Binds (Switching and silent movement)
 local workspaces = {
 	{ key = wsk_bsh, ws = ws_bsh },
 	{ key = wsk_vim, ws = ws_vim },
@@ -268,25 +259,22 @@ local workspaces = {
 }
 
 for _, item in ipairs(workspaces) do
-	hl.bind(mainMod .. " + " .. item.key, hl.dsp.workspace(item.ws))
-	hl.bind(mainMod .. " SHIFT + " .. item.key, hl.dsp.movetoworkspacesilent(item.ws))
+	hl.bind(mainMod .. " + " .. item.key, hl.dsp.focus({ workspace = item.ws }))
+	hl.bind(mainMod .. " + SHIFT + " .. item.key, hl.dsp.window.move({ workspace = item.ws }))
 end
 
--- Floating, sticky/pinned toggles
 hl.bind(mainMod .. " + Space", function()
 	hl.dispatch(hl.dsp.togglefloating())
 	hl.dispatch(hl.dsp.pin())
 end)
-hl.bind(mainMod .. " SHIFT + Space", function()
+hl.bind(mainMod .. " + SHIFT + Space", function()
 	hl.dispatch(hl.dsp.togglefloating())
 	hl.dispatch(hl.dsp.pin())
 end)
 
--- Window dragging and resizing
-hl.bind(mainMod .. " + mouse:272", hl.dsp.movewindow(), { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.resizewindow(), { mouse = true })
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Audio/Mic/Brightness Controls
 hl.bind(
 	"XF86AudioRaiseVolume",
 	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+"),
@@ -310,13 +298,11 @@ hl.bind(
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
--- Media Player Controls (Requires playerctl)
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
--- Input Configuration
 hl.config({
 	input = {
 		kb_layout = "us",
@@ -334,7 +320,6 @@ hl.config({
 	},
 })
 
--- Cursor settings
 hl.config({
 	cursor = {
 		inactive_timeout = 1,
@@ -342,10 +327,8 @@ hl.config({
 	},
 })
 
--- Touchpad Gestures
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
--- Look & Feel
 hl.config({
 	general = {
 		gaps_in = 5,
@@ -360,7 +343,6 @@ hl.config({
 		},
 	},
 	dwindle = {
-		pseudotile = true,
 		preserve_split = true,
 	},
 	master = {
@@ -429,5 +411,4 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 5, bezier = "fluid" 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
--- Dynamic Theme Sourcing (Standard Lua function!)
 dofile(os.getenv("HOME") .. "/.themes/default/hyprland.lua")
