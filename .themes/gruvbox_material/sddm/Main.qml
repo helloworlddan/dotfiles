@@ -23,7 +23,7 @@ Rectangle {
         Rectangle {
             anchors.fill: parent
             color: "#000000"
-            opacity: 0.25
+            opacity: 0.30
         }
     }
 
