@@ -263,7 +263,7 @@ hl.window_rule({
 	match = { initial_title = "corne" },
 	float = true,
 	center = true,
-	size = { 810, 470 },
+	size = { 810, 500 },
 })
 hl.window_rule({
 	match = { initial_title = "meet.google.com is sharing your screen." },
