@@ -1,5 +1,4 @@
 -- Monitors
---
 local layout = "home-big"
 
 local layouts = {
@@ -71,6 +70,27 @@ local launchers = {
 	excalidraw = "goto -p " .. profiles.default .. " -u excalidraw.com",
 }
 
+-- Workspaces
+local spaces = {
+	bash = { number = 1, key = "B", icon = "" },
+	vim = { number = 2, key = "V", icon = "" },
+	docs = { number = 3, key = "D", icon = "󱔗" },
+	cloud = { number = 4, key = "G", icon = "" },
+	ai = { number = 5, key = "A", icon = "" },
+	web = { number = 6, key = "W", icon = "" },
+	mail = { number = 7, key = "M", icon = "" },
+	calendar = { number = 8, key = "C", icon = "" },
+	notes = { number = 9, key = "N", icon = "" },
+	gvc = { number = 10, key = "Z", icon = "" },
+	personal = { number = 11, key = "P", icon = "" },
+	external = { number = 12, key = "X", icon = "󰍺" },
+}
+for _, item in pairs(spaces) do
+	local ws, key = item.number, item.key
+	hl.bind("ALT + " .. key, hl.dsp.focus({ workspace = ws }))
+	hl.bind("ALT + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
+end
+
 -- Autostart
 hl.on("hyprland.start", function()
 	hl.exec_cmd(launchers.wall)
@@ -105,27 +125,6 @@ hl.bind("ALT + SUPER + X", hl.dsp.exec_cmd(launchers.excalidraw))
 hl.bind("ALT + SUPER + G", hl.dsp.exec_cmd(launchers.imageeditor))
 hl.bind("ALT + SUPER + B", hl.dsp.exec_cmd(launchers.daw))
 hl.bind("ALT + SUPER + P", hl.dsp.exec_cmd(launchers.colorpicker))
-
--- Workspaces
-local spaces = {
-	bash = { number = 1, key = "B", icon = "" },
-	vim = { number = 2, key = "V", icon = "" },
-	docs = { number = 3, key = "D", icon = "󱔗" },
-	cloud = { number = 4, key = "G", icon = "" },
-	ai = { number = 5, key = "A", icon = "" },
-	web = { number = 6, key = "W", icon = "" },
-	mail = { number = 7, key = "M", icon = "" },
-	calendar = { number = 8, key = "C", icon = "" },
-	notes = { number = 9, key = "N", icon = "" },
-	gvc = { number = 10, key = "Z", icon = "" },
-	personal = { number = 11, key = "P", icon = "" },
-	external = { number = 12, key = "X", icon = "󰍺" },
-}
-for _, item in pairs(spaces) do
-	local ws, key = item.number, item.key
-	hl.bind("ALT + " .. key, hl.dsp.focus({ workspace = ws }))
-	hl.bind("ALT + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
-end
 
 -- Controls
 local controls = {
