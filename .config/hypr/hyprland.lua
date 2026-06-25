@@ -29,12 +29,35 @@ for _, layout_cfg in ipairs(selected) do
 	hl.monitor(layout_cfg)
 end
 
+-- Workspaces
+local spaces = {
+	bash = { number = 1, key = "B", icon = "" },
+	vim = { number = 2, key = "V", icon = "" },
+	docs = { number = 3, key = "D", icon = "󱔗" },
+	cloud = { number = 4, key = "G", icon = "" },
+	ai = { number = 5, key = "A", icon = "" },
+	web = { number = 6, key = "W", icon = "" },
+	mail = { number = 7, key = "M", icon = "" },
+	calendar = { number = 8, key = "C", icon = "" },
+	notes = { number = 9, key = "N", icon = "" },
+	gvc = { number = 10, key = "Z", icon = "" },
+	personal = { number = 11, key = "P", icon = "" },
+	external = { number = 12, key = "X", icon = "󰍺" },
+}
+for _, item in pairs(spaces) do
+	local ws, key = item.number, item.key
+	hl.bind("ALT + " .. key, hl.dsp.focus({ workspace = ws }))
+	hl.bind("ALT + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
+end
+
+-- Chrome profiles
 local profiles = {
 	default = 1,
 	argolis = 2,
 	personal = 3,
 }
 
+-- Launchers
 local launchers = {
 	reload = "hyprctl reload",
 	wall = "hyprpaper",
@@ -70,27 +93,6 @@ local launchers = {
 	excalidraw = "goto -p " .. profiles.default .. " -u excalidraw.com",
 }
 
--- Workspaces
-local spaces = {
-	bash = { number = 1, key = "B", icon = "" },
-	vim = { number = 2, key = "V", icon = "" },
-	docs = { number = 3, key = "D", icon = "󱔗" },
-	cloud = { number = 4, key = "G", icon = "" },
-	ai = { number = 5, key = "A", icon = "" },
-	web = { number = 6, key = "W", icon = "" },
-	mail = { number = 7, key = "M", icon = "" },
-	calendar = { number = 8, key = "C", icon = "" },
-	notes = { number = 9, key = "N", icon = "" },
-	gvc = { number = 10, key = "Z", icon = "" },
-	personal = { number = 11, key = "P", icon = "" },
-	external = { number = 12, key = "X", icon = "󰍺" },
-}
-for _, item in pairs(spaces) do
-	local ws, key = item.number, item.key
-	hl.bind("ALT + " .. key, hl.dsp.focus({ workspace = ws }))
-	hl.bind("ALT + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
-end
-
 -- Autostart
 hl.on("hyprland.start", function()
 	hl.exec_cmd(launchers.wall)
@@ -110,7 +112,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd(launchers.browser_personal, { workspace = spaces.personal.number .. " silent" })
 end)
 
--- Launchers
+-- Launchers Binds
 hl.bind("ALT + Escape", hl.dsp.exec_cmd(launchers.screenlock))
 hl.bind("ALT + Return", hl.dsp.exec_cmd(launchers.terminal))
 hl.bind("ALT + E", hl.dsp.exec_cmd(launchers.filemanager))
@@ -372,4 +374,5 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 5, bezier = "fluid" 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
+-- Source theme
 dofile(os.getenv("HOME") .. "/.themes/default/hyprland.lua")
