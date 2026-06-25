@@ -127,14 +127,14 @@
   "custom/artist": {
     "tooltip": false,
     "interval": 10,
-    // "max-length": 80,
+    "max-length": 80,
     "exec": "playerctl metadata artist",
     "on-click": "playerctl play-pause"
   },
   "custom/track": {
     "tooltip": false,
     "interval": 10,
-    // "max-length": 80,
+    "max-length": 80,
     "exec": "playerctl metadata title",
     "on-click": "playerctl play-pause"
   },
