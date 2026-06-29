@@ -128,15 +128,15 @@
     "tooltip": false,
     "interval": 10,
     "max-length": 80,
-    "exec": "playerctl metadata artist",
-    "on-click": "playerctl play-pause"
+    "exec": "playerctl -p ncspot metadata artist",
+    "on-click": "playerctl -p ncspot play-pause"
   },
   "custom/track": {
     "tooltip": false,
     "interval": 10,
     "max-length": 80,
-    "exec": "playerctl metadata title",
-    "on-click": "playerctl play-pause"
+    "exec": "playerctl -p ncspot metadata title",
+    "on-click": "playerctl -p ncspot play-pause"
   },
   "custom/nettz": {
     "tooltip": false,
