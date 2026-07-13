@@ -128,14 +128,14 @@
     "tooltip": false,
     "interval": 10,
     "max-length": 80,
-    "exec": "playerctl  metadata artist",
+    "exec": "playerctl  metadata artist | sed 's/\\&/\\&amp;/g'",
     "on-click": "playerctl  play-pause"
   },
   "custom/track": {
     "tooltip": false,
     "interval": 10,
     "max-length": 80,
-    "exec": "playerctl  metadata title",
+    "exec": "playerctl  metadata title | sed 's/\\&/\\&amp;/g'",
     "on-click": "playerctl  play-pause"
   },
   "custom/nettz": {
