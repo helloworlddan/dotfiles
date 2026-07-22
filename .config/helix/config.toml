@@ -3,6 +3,12 @@ theme = "gruvbox-material"
 [editor]
 line-number = "relative"
 mouse = false
+scrolloff = 10
+cursorline = true
+rulers = [80]
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+bufferline = "multiple"
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -10,4 +16,20 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-hidden = true
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name", "file-modification-indicator"]
+right = ["version-control", "diagnostics", "file-encoding", "file-type", "position"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
+     

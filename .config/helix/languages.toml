@@ -1,18 +1,11 @@
-# ==============================================================================
-# Helix Language Configuration
-# Full support for TOML, Bash, Go (Golang), and Python
-# ==============================================================================
-
 # --- Language Server Definitions ---
-
-# --- Go (gopls) ---
 [language-server.gopls]
 command = "gopls"
 
 [language-server.gopls.config]
-"formatting.gofumpt" = true       # Use gofumpt for stricter formatting
-staticcheck = true                # Enable staticcheck for advanced analysis
-vulncheck = "Imports"             # Enable vulnerability checking
+"formatting.gofumpt" = true
+staticcheck = true
+vulncheck = "Imports"
 "ui.completion.usePlaceholders" = true
 "ui.semanticTokens" = true
 
@@ -27,54 +20,49 @@ compositeLiteralTypes = true
 parameterNames = true
 assignVariableType = true
 
-# --- Python (pyright + ruff) ---
-# Pyright is used for robust type checking and completion
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
 
-# Ruff is used as an ultra-fast linter, code action provider, and formatter
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
 
-# --- Bash (bash-language-server) ---
 [language-server.bash-language-server]
 command = "bash-language-server"
 args = ["start"]
 
-# --- TOML (taplo) ---
 [language-server.taplo]
 command = "taplo"
 args = ["lsp"]
 
 
 # --- Language Integrations ---
-
-# --- Python ---
 [[language]]
 name = "python"
 auto-format = true
 language-servers = ["pyright", "ruff"]
 formatter = { command = "ruff", args = ["format", "-"] }
 
-# --- Go ---
 [[language]]
 name = "go"
 auto-format = true
 language-servers = ["gopls"]
 formatter = { command = "gofmt" }
 
-# --- Bash ---
 [[language]]
 name = "bash"
 auto-format = true
 language-servers = ["bash-language-server"]
 formatter = { command = "shfmt", args = ["-i", "4", "-ci"] }
 
-# --- TOML ---
 [[language]]
 name = "toml"
 auto-format = true
 language-servers = ["taplo"]
 formatter = { command = "taplo", args = ["fmt", "-"] }
+
+[[language]]
+name = "typescript"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
