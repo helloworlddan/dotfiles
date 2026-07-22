@@ -1,0 +1,11 @@
+[SddmGreeterTheme]
+Name=Gruvbox Material Dark Hard
+Description=A minimal, modern Gruvbox Material Dark Hard theme for SDDM.
+Type=sddm-theme
+Author=Daniel Stamer
+Copyright=(c) 2026 Daniel Stamer
+License=GPL-3.0
+Version=0.1
+Website=https://github.com/stamer/sddm-gruvbox_material
+ConfigFile=theme.conf
+Main=Main.qml
