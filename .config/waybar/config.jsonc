@@ -306,7 +306,8 @@
     "interval": "once",
     "exec-if": "ls /sys/class/power_supply/ | grep -q 'BAT'",
     "exec": "echo '󰾆'",
-    "on-click": "powerprofilesctl set performance"
+    "on-click": "powerprofilesctl set performance",
+    "on-click-right": "powerprofilesctl set power-saver"
   },
   "custom/profile": {
     "tooltip": false,
