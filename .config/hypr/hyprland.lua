@@ -46,8 +46,8 @@ local spaces = {
 }
 for _, item in pairs(spaces) do
 	local ws, key = item.number, item.key
-	hl.bind("ALT + " .. key, hl.dsp.focus({ workspace = ws }))
-	hl.bind("ALT + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
+	hl.bind("SUPER + " .. key, hl.dsp.focus({ workspace = ws }))
+	hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
 end
 
 -- Chrome profiles
@@ -113,20 +113,20 @@ hl.on("hyprland.start", function()
 end)
 
 -- Launchers Binds
-hl.bind("ALT + Escape", hl.dsp.exec_cmd(launchers.screenlock))
-hl.bind("ALT + Return", hl.dsp.exec_cmd(launchers.terminal))
-hl.bind("ALT + E", hl.dsp.exec_cmd(launchers.filemanager))
-hl.bind("ALT + R", hl.dsp.exec_cmd(launchers.menu))
-hl.bind("ALT + Backspace", hl.dsp.exec_cmd(launchers.corne))
-hl.bind("ALT + Comma", hl.dsp.exec_cmd(launchers.screenshot_clip))
-hl.bind("ALT + SHIFT + Comma", hl.dsp.exec_cmd(launchers.screenshot_file))
-hl.bind("ALT + Period", hl.dsp.exec_cmd(launchers.switch_main))
-hl.bind("ALT + SHIFT + Period", hl.dsp.exec_cmd(launchers.switch_external))
-hl.bind("ALT + SUPER + M", hl.dsp.exec_cmd(launchers.mail_new))
-hl.bind("ALT + SUPER + X", hl.dsp.exec_cmd(launchers.excalidraw))
-hl.bind("ALT + SUPER + G", hl.dsp.exec_cmd(launchers.imageeditor))
-hl.bind("ALT + SUPER + B", hl.dsp.exec_cmd(launchers.daw))
-hl.bind("ALT + SUPER + P", hl.dsp.exec_cmd(launchers.colorpicker))
+hl.bind("SUPER + Escape", hl.dsp.exec_cmd(launchers.screenlock))
+hl.bind("SUPER + Return", hl.dsp.exec_cmd(launchers.terminal))
+hl.bind("SUPER + E", hl.dsp.exec_cmd(launchers.filemanager))
+hl.bind("SUPER + R", hl.dsp.exec_cmd(launchers.menu))
+hl.bind("SUPER + Backspace", hl.dsp.exec_cmd(launchers.corne))
+hl.bind("SUPER + Comma", hl.dsp.exec_cmd(launchers.screenshot_clip))
+hl.bind("SUPER + SHIFT + Comma", hl.dsp.exec_cmd(launchers.screenshot_file))
+hl.bind("SUPER + Period", hl.dsp.exec_cmd(launchers.switch_main))
+hl.bind("SUPER + SHIFT + Period", hl.dsp.exec_cmd(launchers.switch_external))
+hl.bind("SUPER + ALT + M", hl.dsp.exec_cmd(launchers.mail_new))
+hl.bind("SUPER + ALT + X", hl.dsp.exec_cmd(launchers.excalidraw))
+hl.bind("SUPER + ALT + G", hl.dsp.exec_cmd(launchers.imageeditor))
+hl.bind("SUPER + ALT + B", hl.dsp.exec_cmd(launchers.daw))
+hl.bind("SUPER + ALT + P", hl.dsp.exec_cmd(launchers.colorpicker))
 
 -- Controls
 local controls = {
@@ -161,52 +161,52 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(controls.media.play), { locked = true }
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(controls.media.previous), { locked = true })
 
 -- Controls: Layout
-hl.bind("ALT + F", hl.dsp.window.fullscreen())
-hl.bind("ALT + SHIFT + F", hl.dsp.window.float())
-hl.bind("ALT + T", hl.dsp.layout("togglesplit"))
-hl.bind("ALT + SHIFT + T", hl.dsp.layout("pseudo"))
-hl.bind("ALT + SHIFT + Q", hl.dsp.window.close())
-hl.bind("ALT + SHIFT + R", hl.dsp.exec_cmd(launchers.reload))
-hl.bind("ALT + SHIFT + Escape", hl.dsp.exit())
-hl.bind("ALT + Space", function()
+hl.bind("SUPER + F", hl.dsp.window.fullscreen())
+hl.bind("SUPER + SHIFT + F", hl.dsp.window.float())
+hl.bind("SUPER + T", hl.dsp.layout("togglesplit"))
+hl.bind("SUPER + SHIFT + T", hl.dsp.layout("pseudo"))
+hl.bind("SUPER + SHIFT + Q", hl.dsp.window.close())
+hl.bind("SUPER + SHIFT + R", hl.dsp.exec_cmd(launchers.reload))
+hl.bind("SUPER + SHIFT + Escape", hl.dsp.exit())
+hl.bind("SUPER + Space", function()
 	hl.dispatch(hl.dsp.togglefloating())
 	hl.dispatch(hl.dsp.pin())
 end)
 
 -- Controls: Zoom
-hl.bind("ALT + SHIFT + I", function()
+hl.bind("SUPER + SHIFT + I", function()
 	local current = hl.get_config("cursor.zoom_factor") or 1.0
 	hl.config({ cursor = { zoom_factor = current + 0.5 } })
 end)
-hl.bind("ALT + SHIFT + O", function()
+hl.bind("SUPER + SHIFT + O", function()
 	local current = hl.get_config("cursor.zoom_factor") or 1.0
 	hl.config({ cursor = { zoom_factor = math.max(1.0, current - 0.5) } })
 end)
-hl.bind("ALT + mouse:276", function()
+hl.bind("SUPER + mouse:276", function()
 	local current = hl.get_config("cursor.zoom_factor") or 1.0
 	hl.config({ cursor = { zoom_factor = current + 0.5 } })
 end)
-hl.bind("ALT + mouse:275", function()
+hl.bind("SUPER + mouse:275", function()
 	local current = hl.get_config("cursor.zoom_factor") or 1.0
 	hl.config({ cursor = { zoom_factor = math.max(1.0, current - 0.5) } })
 end)
 
 -- Controls: Move focus
-hl.bind("ALT + L", hl.dsp.focus({ direction = "right" }))
-hl.bind("ALT + H", hl.dsp.focus({ direction = "left" }))
-hl.bind("ALT + K", hl.dsp.focus({ direction = "up" }))
-hl.bind("ALT + J", hl.dsp.focus({ direction = "down" }))
-hl.bind("ALT + Tab", hl.dsp.focus({ monitor = "+1" }))
+hl.bind("SUPER + L", hl.dsp.focus({ direction = "right" }))
+hl.bind("SUPER + H", hl.dsp.focus({ direction = "left" }))
+hl.bind("SUPER + K", hl.dsp.focus({ direction = "up" }))
+hl.bind("SUPER + J", hl.dsp.focus({ direction = "down" }))
+hl.bind("SUPER + Tab", hl.dsp.focus({ monitor = "+1" }))
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
 -- Controls: Move window
-hl.bind("ALT + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
-hl.bind("ALT + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
-hl.bind("ALT + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
-hl.bind("ALT + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
-hl.bind("ALT + SHIFT + Tab", hl.dsp.window.move({ monitor = "+1" }))
-hl.bind("ALT + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind("ALT + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind("SUPER + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
+hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
+hl.bind("SUPER + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
+hl.bind("SUPER + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
+hl.bind("SUPER + SHIFT + Tab", hl.dsp.window.move({ monitor = "+1" }))
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Window Rules
 hl.window_rule({
