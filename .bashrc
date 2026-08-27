@@ -256,10 +256,9 @@ hswitchscreen() {
     hyprctl dispatch moveworkspacetomonitor 8 eDP-1
     hyprctl dispatch moveworkspacetomonitor 9 eDP-1
     hyprctl dispatch moveworkspacetomonitor 10 eDP-1
-    hyprctl dispatch moveworkspacetomonitor 11 eDP-1
-    hyprctl dispatch moveworkspacetomonitor 12 DP-1
+    hyprctl dispatch moveworkspacetomonitor 11 DP-1
   else
-    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
+    hyprctl dispatch moveworkspacetomonitor 11 eDP-1
     hyprctl dispatch moveworkspacetomonitor 1 ${1}
     hyprctl dispatch moveworkspacetomonitor 2 ${1}
     hyprctl dispatch moveworkspacetomonitor 3 ${1}
@@ -270,8 +269,7 @@ hswitchscreen() {
     hyprctl dispatch moveworkspacetomonitor 8 ${1}
     hyprctl dispatch moveworkspacetomonitor 9 ${1}
     hyprctl dispatch moveworkspacetomonitor 10 ${1}
-    hyprctl dispatch moveworkspacetomonitor 11 ${1}
-    hyprctl dispatch moveworkspacetomonitor 12 eDP-1
+    hyprctl dispatch moveworkspacetomonitor 11 eDP-1
   fi
 }
 
