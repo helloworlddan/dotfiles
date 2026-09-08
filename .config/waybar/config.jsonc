@@ -155,7 +155,7 @@
   "custom/icon_clock": {
     "tooltip": false,
     "interval": "once",
-    "exec": "echo '󱑌 '"
+    "exec": "echo ' 󱑌 '"
   },
   "custom/timelocal": {
     "tooltip": false,
