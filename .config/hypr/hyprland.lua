@@ -42,16 +42,15 @@ end
 local spaces = {
 	{ name = "bash", number = 1, key = "B", icon = "" },
 	{ name = "vim", number = 2, key = "V", icon = "" },
-	{ name = "docs", number = 3, key = "D", icon = "󱔗" },
-	{ name = "cloud", number = 4, key = "G", icon = "" },
-	{ name = "ai", number = 5, key = "A", icon = "" },
-	{ name = "web", number = 6, key = "W", icon = "" },
-	{ name = "mail", number = 7, key = "M", icon = "" },
-	{ name = "calendar", number = 8, key = "C", icon = "" },
-	{ name = "notes", number = 9, key = "N", icon = "" },
-	{ name = "gvc", number = 10, key = "Z", icon = "" },
-	{ name = "personal", number = 11, key = "P", icon = "" },
-	{ name = "external", number = 12, key = "X", icon = "󰍺" },
+	{ name = "ai", number = 3, key = "A", icon = "" },
+	{ name = "web", number = 4, key = "W", icon = "" },
+	{ name = "mail", number = 5, key = "M", icon = "" },
+	{ name = "calendar", number = 6, key = "C", icon = "" },
+	{ name = "cloud", number = 7, key = "G", icon = "" },
+	{ name = "notes", number = 8, key = "N", icon = "" },
+	{ name = "gvc", number = 9, key = "Z", icon = "" },
+	{ name = "personal", number = 10, key = "P", icon = "" },
+	{ name = "external", number = 11, key = "X", icon = "󰍺" },
 }
 
 -- Lookup table by workspace name for convenient access
@@ -101,7 +100,6 @@ local launchers = {
 	cloud = "goto -p " .. profiles.default .. " -g console.cloud",
 	cloud_argolis = "goto -p " .. profiles.argolis .. " -g console.cloud",
 	cloud_personal = "goto -p " .. profiles.personal .. " -g console.cloud",
-	godocs = "goto -p " .. profiles.default .. " -u pkg.go.dev",
 	sparkplug = "goto -p " .. profiles.default .. " nucleus:sparkplug",
 	excalidraw = "goto -p " .. profiles.default .. " -u excalidraw.com",
 }
@@ -119,7 +117,6 @@ hl.on("hyprland.start", function()
 		-- Applications bound to workspaces
 		{ cmd = launchers.editor, ws = ws_by_name.vim },
 		{ cmd = launchers.terminal, ws = ws_by_name.bash },
-		{ cmd = launchers.godocs, ws = ws_by_name.docs },
 		{ cmd = launchers.antigravity, ws = ws_by_name.ai },
 		{ cmd = launchers.cloud, ws = ws_by_name.cloud },
 		{ cmd = launchers.cloud_argolis, ws = ws_by_name.cloud },
@@ -265,7 +262,6 @@ hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 --------------------------------------------------------------------------------
 local window_rules = {
 	-- Application Workspaces
-	{ match = { class = "chrome-pkg.go.dev__-Profile.*" }, workspace = ws_by_name.docs .. " silent" },
 	{ match = { class = "chrome-console.cloud.google.com__-Profile.*" }, workspace = ws_by_name.cloud .. " silent" },
 	{ match = { class = "chrome-excalidraw.com__-Profile.*" }, workspace = ws_by_name.external .. " silent" },
 	{ match = { class = "chrome-app.slack.com__client_-Profile.*" }, workspace = ws_by_name.external .. " silent" },
