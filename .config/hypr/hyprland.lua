@@ -160,7 +160,7 @@ local keybinds = {
 	{ combo = "SUPER + F", action = hl.dsp.window.fullscreen() },
 	{ combo = "SUPER + SHIFT + F", action = hl.dsp.window.float() },
 	{ combo = "SUPER + T", action = hl.dsp.layout("togglesplit") },
-	{ combo = "SUPER + SHIFT + T", action = hl.dsp.layout("pseudo") },
+	{ combo = "SUPER + SHIFT + T", action = hl.dsp.window.pseudo() },
 	{ combo = "SUPER + SHIFT + Q", action = hl.dsp.window.close() },
 	{ combo = "SUPER + SHIFT + R", action = hl.dsp.exec_cmd(launchers.reload) },
 	{ combo = "SUPER + SHIFT + Escape", action = hl.dsp.exit() },
