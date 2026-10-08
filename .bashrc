@@ -55,7 +55,7 @@ alias grep='grep --color=always'
 alias noise='play -n synth brownnoise'
 alias geoip='curl -s https://ipinfo.io/$(curl -s https://ipinfo.io/ip) | jq'
 alias legit='git commit -asS'
-alias ls="eza --icons"
+alias ls="eza --icons always"
 alias la="ls -lah"
 alias ll='ls -al'
 alias l='ls'
