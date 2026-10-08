@@ -7,3 +7,4 @@
   office.
 - when writing Go code, never do inline error checks. Instead expand into a full
   if err != nil {} block
+- Never commit or push commits on my behalf. Never modify my .gitconfig.
